@@ -21,8 +21,8 @@ import serviceImpl.UsuarioServiceImpl;
  */
 public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
-    Connection con = null;
-    Statement stmt = null;
+   // Connection con = null;
+    //Statement stmt = null;
     
     public VentanaRegistroUsuario() {
         initComponents();
