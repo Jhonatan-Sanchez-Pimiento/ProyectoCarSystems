@@ -5,6 +5,7 @@
  */
 package presentacion;
 
+import dominio.Usuario;
 import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import serviceImpl.UsuarioServiceImpl;
 
 /**
  *
@@ -555,61 +557,13 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         javax.swing.JOptionPane.showMessageDialog(this,"Debe diligenciar todos los campos \n","Error!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
         txt_nombre.requestFocus();
         } else {
-        try {
-           
-            String url = "jdbc:mysql://localhost:3306/carsystems";
-            String usuario = "root";
-            String contraseña = "12345678";
-            
-             Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-             con = DriverManager.getConnection(url,usuario,contraseña); 
-             if ( con != null ) 
-                    System.out.println("Se ha establecido una conexión a la base de datos " +  
-                                       "\n " + url ); 
-  
-                  stmt = con.createStatement(); 
-                  stmt.executeUpdate("INSERT INTO usuario VALUES('"+cadena1+",'"+cadena2+""
-                          + "','"+cadena3+"','"+cadena4+"','"+cadena5+"','" + 0 + "','"+cadena7+""
-                          + "','"+cadena8+"','"+cadena9+"','"+cadena10+"','"+cadena11+"','"+cadena12+""
-                          + "','"+cadena13+"','"+cadena14+"','"+cadena15+"')");
-                  
-                  System.out.println("Los valores han sido agregados a la base de datos ");
-                 
-                   
-        } catch (InstantiationException ex) {
-           Logger.getLogger(VentanaRegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (IllegalAccessException ex) {
-           Logger.getLogger(VentanaRegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (ClassNotFoundException ex) {
-           Logger.getLogger(VentanaRegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (SQLException ex) {
-           Logger.getLogger(VentanaRegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
-       }
+        UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
         
-        finally {
-            if (con != null) {
-                try {
-                    con.close();
-                    stmt.close();
-                } catch ( Exception e ) { 
-                         System.out.println( e.getMessage());
-                }
-            }
-        }
+        Usuario usuario = new Usuario("CE", Integer.parseInt(txt_documento.getText()), txt_nombre.getText(), txt_apellido1.getText(), txt_direccion.getText(), txt_telefono.getText(), txt_correo.getText(), pasf_contraseña.getText(), 2);
+        
+        usuarioServicio.guardar(usuario);
          javax.swing.JOptionPane.showMessageDialog(this,"Registro exitoso! \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
-        this.txt_documento.setText("");
-        this.txt_apellido1.setText("");
-        this.txt_apellido2.setText("");
-        this.txt_nombre.setText("");
-        this.txt_correo.setText("");
-        this.txt_direccion.setText("");
-        this.txt_telefono.setText("");
-        this.txt_idasignado.setText("");
-        this.pasf_contraseña.setText("");  
-        this.pasf_confirmacion.setText("");
-        
-
 
     }//GEN-LAST:event_btn_guardarActionPerformed
 

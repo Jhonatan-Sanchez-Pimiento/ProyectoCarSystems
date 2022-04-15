@@ -1,0 +1,18 @@
+package services;
+
+import dominio.Marca;
+import java.util.List;
+
+/**
+ *
+ * @author Jhonatan Sánchez
+ */
+public interface MarcaService {
+    public void guardar(Marca marca);
+    
+    public void eliminar(Marca marca);
+    
+    public List<Marca> listarMarca();
+    
+    public Marca encontrarMarca (Marca marca);
+}

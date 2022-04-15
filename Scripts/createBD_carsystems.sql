@@ -30,6 +30,20 @@ CREATE TABLE IF NOT EXISTS usuario(
     PRIMARY KEY (tipo_id, id_usuario)
 );
 
+CREATE TABLE IF NOT EXISTS departamento(
+    id_departamento BIGINT NOT NULL AUTO_INCREMENT,
+    nombre_departamento VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id_departamento)
+);
+
+CREATE TABLE IF NOT EXISTS municipio(
+    id_municipio BIGINT NOT NULL AUTO_INCREMENT,
+    id_departamento BIGINT NOT NULL,
+    nombre_municipio VARCHAR (50) NOT NULL,
+    PRIMARY KEY (id_municipio)
+
+);
+
 CREATE TABLE IF NOT EXISTS inicio_sesion (
     id_login BIGINT NOT NULL AUTO_INCREMENT,
     email_usuario VARCHAR (50) NOT NULL,
@@ -119,4 +133,10 @@ ALTER TABLE vehiculo
     ADD CONSTRAINT fk_tipo_maquinaria_vehiculo
         FOREIGN KEY (id_tipo_maquinaria)
         REFERENCES tipo_maquinaria (id_tipo_maquinaria)
+        ON UPDATE CASCADE;
+
+ALTER TABLE municipio
+    ADD CONSTRAINT fk_departamento_municipio
+        FOREIGN KEY (id_departamento)
+        REFERENCES departamento (id_departamento)
         ON UPDATE CASCADE;
