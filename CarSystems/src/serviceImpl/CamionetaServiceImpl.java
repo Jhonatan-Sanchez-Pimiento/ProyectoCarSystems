@@ -16,9 +16,11 @@ import services.CamionetaService;
  */
 public class CamionetaServiceImpl implements CamionetaService{
 
-    private static final String SQL_INSERT = "INSERT INTO vehiculo(id_vehiculo,tipo_id_usuario,id_usuario, id_tipo_servicio, tipo_vehiculo, id_marca, id_linea, color,"
-            + "modelo, cupo_persona, utiliario, blindado, precio, imagen, descripción, estado_judicial,"
-            + ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    private static final String SQL_INSERT = "INSERT INTO vehiculo(idVehiculo, tipoIdUsuario, IdUsuario, tipoServicio, tipoVehiculo, idMarca, idLinea, color, modelo, cupoPersona, utilitario, blindado, precio, imagen, descripcion, estadoJudicial) VALUES (?)";
+    private static final String SQL_SELECT = "SELECT id_marca, nombre_marca FROM marca";
+    private static final String SQL_UPDATE = "UPDATE marca SET nombre_marca = ? WHERE id_marca = ?";
+    private static final String SQL_DELETE = "DELETE FROM marca WHERE id_marca = ?";
+    private static String SQL_CONSULTA = "SELECT nombre_marca FROM marca WHERE id_marca = ?";
     
     @Override
     public void guardar(Camioneta camioneta, Usuario usuario) {

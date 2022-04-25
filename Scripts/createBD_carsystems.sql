@@ -5,28 +5,20 @@ CREATE DATABASE IF NOT EXISTS carsystems DEFAULT CHARACTER SET utf8;
 USE carsystems;
 
 --Creacion de las tablas de la BD--
-CREATE TABLE IF NOT EXISTS tipo_servicio(
-    id_tipo_servicio BIGINT NOT NULL AUTO_INCREMENT,
-    nombre_servicio VARCHAR (50) NOT NULL,
-    PRIMARY KEY (id_tipo_servicio)
-);
-
-CREATE TABLE IF NOT EXISTS rol (
-    id_rol BIGINT NOT NULL AUTO_INCREMENT,
-    nombre_rol VARCHAR(30),
-    PRIMARY KEY (id_rol)
-);
 
 CREATE TABLE IF NOT EXISTS usuario(
     tipo_id VARCHAR (3) NOT NULL COMMENT 'CC: CEDULA CIUDADANIA, CE: CEDULA EXTRANJERIA, PAS: PASAPORTE',
     id_usuario BIGINT NOT NULL,
+    primer_apellido VARCHAR (30) NOT NULL,
+    segundo_apellido VARCHAR (30) NULL,
     nombre_usuario VARCHAR (20) NOT NULL,
-    apellido_usuario VARCHAR (30) NOT NULL,
-    direccion VARCHAR (50) NULL,
-    telefono VARCHAR (10) NULL,
-    email_usuario VARCHAR (50) NOT NULL UNIQUE,
+    correo VARCHAR (50) NOT NULL UNIQUE,
+    departamento VARCHAR (50) NOT NULL,
+    municipio VARCHAR (50) NOT NULL,
+    direccion VARCHAR (50) NOT NULL,
+    telefono VARCHAR (10)  NOT NULL,
+    rol VARCHAR (30) NOT NULL,
     contrasena VARCHAR (20) NOT NULL,
-    id_rol BIGINT NOT NULL,
     PRIMARY KEY (tipo_id, id_usuario)
 );
 
@@ -41,7 +33,6 @@ CREATE TABLE IF NOT EXISTS municipio(
     id_departamento BIGINT NOT NULL,
     nombre_municipio VARCHAR (50) NOT NULL,
     PRIMARY KEY (id_municipio)
-
 );
 
 CREATE TABLE IF NOT EXISTS inicio_sesion (
@@ -50,22 +41,6 @@ CREATE TABLE IF NOT EXISTS inicio_sesion (
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     estado_login BOOLEAN,
     PRIMARY KEY (id_login)
-);
-
-CREATE TABLE IF NOT EXISTS chat_usuario (
-    id_chat BIGINT NOT NULL AUTO_INCREMENT,
-    email_usuario_uno VARCHAR (50) NOT NULL,
-    email_usuario_dos VARCHAR (50) NOT NULL,
-    PRIMARY KEY (id_chat)
-);
-
-CREATE TABLE IF NOT EXISTS mensaje_chat (
-    id_mensaje BIGINT NOT NULL AUTO_INCREMENT,
-    id_chat BIGINT NOT NULL,
-    email_usuario_receptor VARCHAR (50) NOT NULL,
-    email_usuario_lector VARCHAR (50) NOT NULL,
-    mensaje VARCHAR (255) NULL,
-    PRIMARY KEY (id_mensaje)
 );
 
 CREATE TABLE IF NOT EXISTS marca (
@@ -88,16 +63,16 @@ CREATE TABLE IF NOT EXISTS tipo_maquinaria(
 );
 
 CREATE TABLE IF NOT EXISTS vehiculo (
-    id_vehiculo VARCHAR (20) NOT NULL,
+    id_vehiculo VARCHAR (30) NOT NULL,
     tipo_id_usuario VARCHAR (3) NOT NULL,
     id_usuario BIGINT NOT NULL,
-    id_tipo_servicio BIGINT NOT NULL,
-    tipo_vehiculo ENUM ('AUTOMOVIL','CAMIONETA','MAQUINARIA PESADA') NULL, 
+    tipo_servicio VARCHAR (30) NOT NULL,
+    tipo_vehiculo VARCHAR(30) NOT NULL, 
     id_marca BIGINT NOT NULL,
     id_linea BIGINT NOT NULL,
-    color VARCHAR (15) NOT NULL,
+    color VARCHAR (20) NOT NULL,
     modelo YEAR NOT NULL,
-    cupo_persona SMALLINT DEFAULT 0,
+    cupo_persona SMALLINT DEFAULT 1,
     utiliario BOOLEAN NULL DEFAULT 0,
     blindado BOOLEAN NULL DEFAULT 0,
     precio REAL NOT NULL DEFAULT 0,
@@ -112,12 +87,56 @@ CREATE TABLE IF NOT EXISTS vehiculo (
     PRIMARY KEY (id_vehiculo)
 );
 
+CREATE TABLE IF NOT EXISTS inspeccion (
+    id_inspeccion BIGINT NOT NULL AUTO_INCREMENT,
+    id_vehiculo VARCHAR (20) NOT NULL,
+    fecha_inspeccion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_ven_soat DATE NOT NULL,
+    fecha_man_preventivo DATE NULL,
+    fecha_ult_cambio_aceite DATE NOT NULL,
+    km_actual INT NOT NULL DEFAULT 0,
+    liquido_refrigerante BOOLEAN NOT NULL,
+    liquido_freno BOOLEAN NOT NULL,
+    aceite_motor BOOLEAN NOT NULL,
+    liquido_hidraulico BOOLEAN NOT NULL,
+    agua_limpiavidrios BOOLEAN NOT NULL,
+    acelerador BOOLEAN NOT NULL,
+    clutsh BOOLEAN NOT NULL,
+    freno BOOLEAN NOT NULL,
+    luces BOOLEAN NOT NULL,
+    direccionales BOOLEAN NOT NULL,
+    estacionarias BOOLEAN NOT NULL,
+    stops BOOLEAN NOT NULL,
+    testigo_tablero BOOLEAN NOT NULL,
+    luz_reversa BOOLEAN NOT NULL,
+    luces_internas BOOLEAN NOT NULL,
+    equipo_carretera BOOLEAN NOT NULL,
+    extintor BOOLEAN NOT NULL,
+    fecha_ven_extintor BOOLEAN NOT NULL,
+    llanta_repuesto BOOLEAN NOT NULL,
+    cruceta BOOLEAN NOT NULL,
+    senales_reflectivas BOOLEAN NOT NULL,
+    caja_herramientas BOOLEAN NOT NULL,
+    linterna BOOLEAN NOT NULL,
+    gato BOOLEAN NOT NULL,
+    botiquin BOOLEAN NOT NULL,
+    llantas BOOLEAN NOT NULL,
+    bateria BOOLEAN NOT NULL,
+    rines BOOLEAN NOT NULL,
+    cinturon_seguridad BOOLEAN NOT NULL,
+    pito_reversa BOOLEAN NOT NULL,
+    pito BOOLEAN NOT NULL,
+    freno_emergencia BOOLEAN NOT NULL,
+    espejos BOOLEAN NOT NULL,
+    carcasa_luces BOOLEAN NOT NULL,
+    limpia_parabrisa BOOLEAN NOT NULL,
+    tapizado BOOLEAN NOT NULL,
+    panoramico BOOLEAN NOT NULL,
+    observacion VARCHAR (255) NULL,
+    PRIMARY KEY (id_inspeccion)
+);
+
 --Creacion de las llaves foraneas para las tablas--
-ALTER TABLE usuario
-    ADD CONSTRAINT fk_rol_usuario
-        FOREIGN KEY (id_rol)
-        REFERENCES rol (id_rol)
-        ON UPDATE CASCADE;
 
 ALTER TABLE linea
     ADD CONSTRAINT fk_marca_linea
@@ -133,6 +152,12 @@ ALTER TABLE vehiculo
     ADD CONSTRAINT fk_tipo_maquinaria_vehiculo
         FOREIGN KEY (id_tipo_maquinaria)
         REFERENCES tipo_maquinaria (id_tipo_maquinaria)
+        ON UPDATE CASCADE;
+
+ALTER TABLE inspeccion
+    ADD CONSTRAINT fk_vehiculo_inspeccion
+        FOREIGN KEY (id_vehiculo)
+        REFERENCES vehiculo (id_vehiculo)
         ON UPDATE CASCADE;
 
 ALTER TABLE municipio

@@ -1,7 +1,5 @@
 package dominio;
 
-import interfaces.IVehiculo;
-
 /**
  *
  * @author 
