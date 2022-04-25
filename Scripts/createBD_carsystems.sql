@@ -1,5 +1,5 @@
 --Creacion de la base de datos CarSystems--
-CREATE DATABASE IF NOT EXISTS carsystems;
+CREATE DATABASE IF NOT EXISTS carsystems DEFAULT CHARACTER SET utf8;
 
 --Usamos la base de datos creada para crear las tablas--
 USE carsystems;
