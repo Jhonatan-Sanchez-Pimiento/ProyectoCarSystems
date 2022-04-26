@@ -11,6 +11,11 @@ public class Marca {
     public Marca() {
     }
 
+    @Override
+    public String toString() {
+        return "Marca{" + "idMarca=" + idMarca + ", nombreMarca=" + nombreMarca + '}';
+    }
+
     public Marca(String nombreMarca) {
         this.nombreMarca = nombreMarca;
     }

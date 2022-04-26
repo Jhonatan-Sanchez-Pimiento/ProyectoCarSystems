@@ -14,5 +14,7 @@ public interface MarcaService {
     
     public List<Marca> listarMarca();
     
-    public Marca encontrarMarca (Marca marca);
+    public Marca encontrarMarca (int idMarca);
+    
+    public void actualizar (Marca marca);
 }

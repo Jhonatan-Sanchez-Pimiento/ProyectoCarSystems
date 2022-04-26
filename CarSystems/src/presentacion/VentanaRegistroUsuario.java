@@ -193,7 +193,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_correo.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_correo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_correo.setBorder(null);
         txt_correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_correoActionPerformed(evt);
@@ -203,7 +202,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_nombre.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_nombre.setBorder(null);
         txt_nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nombreActionPerformed(evt);
@@ -218,7 +216,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_documento.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_documento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_documento.setBorder(null);
         txt_documento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_documentoActionPerformed(evt);
@@ -233,7 +230,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_apellido1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_apellido1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_apellido1.setBorder(null);
         txt_apellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_apellido1ActionPerformed(evt);
@@ -248,7 +244,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_apellido2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_apellido2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_apellido2.setBorder(null);
         txt_apellido2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_apellido2ActionPerformed(evt);
@@ -263,7 +258,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_direccion.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_direccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_direccion.setBorder(null);
         txt_direccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_direccionActionPerformed(evt);
@@ -273,7 +267,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_telefono.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_telefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_telefono.setBorder(null);
         txt_telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_telefonoActionPerformed(evt);
@@ -289,7 +282,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         txt_idasignado.setEditable(false);
         txt_idasignado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_idasignado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_idasignado.setBorder(null);
         txt_idasignado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_idasignadoActionPerformed(evt);
@@ -366,12 +358,10 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         pasf_confirmacion.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         pasf_confirmacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pasf_confirmacion.setBorder(null);
         jPanel2.add(pasf_confirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, 190, 30));
 
         pasf_contraseña.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         pasf_contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pasf_contraseña.setBorder(null);
         jPanel2.add(pasf_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 190, 30));
 
         checkbox.setFont(new java.awt.Font("Comic Sans MS", 3, 10)); // NOI18N
