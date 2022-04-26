@@ -16,7 +16,7 @@ public class testUsuario {
     public static void main(String[] args) {
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
         
-        Usuario usuario = new Usuario("CC", 10203578, "Sandra", "Ahumada", "Calle 62 22 ", "3123578945", "smahumadao159@gmail.com", "12345678", 1);
+        Usuario usuario = new Usuario( "bgsdhsgd" ,"CC","","Sandra","Ahumada","Calle 62 22 ","3123578945","smahumadao159@gmail.com","1235","12345678");
         
         usuarioServicio.guardar(usuario);
         

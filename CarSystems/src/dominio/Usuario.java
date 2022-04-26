@@ -4,39 +4,57 @@ package dominio;
  * @author IntegraSoft
  */
 public class Usuario {
+    
+    private Long idUsuario;
     private String tipoId;
-    private int idUsuario;
+    private String apellido1;
+    private String apellido2;
     private String nombreUsuario;
-    private String apellidoUsuario;
+    private String departamento;
+    private String municipio;
     private String direccion;
     private String telefono;
     private String emailUsuario;
+    private String rol;
     private String contrasena;
-    private int idRol;
 
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String apellidoUsuario, String direccion, String telefono, String emailUsuario, String contrasena, int idRol) {
+    public Usuario(String apellido1, String apellido2, String nombreUsuario, String departamento, String municipio, String direccion, String telefono, String emailUsuario, String rol, String contrasena) {
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.nombreUsuario = nombreUsuario;
-        this.apellidoUsuario = apellidoUsuario;
+        this.departamento = departamento;
+        this.municipio = municipio;
         this.direccion = direccion;
         this.telefono = telefono;
         this.emailUsuario = emailUsuario;
+        this.rol = rol;
         this.contrasena = contrasena;
-        this.idRol = idRol;
     }
 
-    public Usuario(String tipoId, int idUsuario, String nombreUsuario, String apellidoUsuario, String direccion, String telefono, String emailUsuario, String contrasena, int idRol) {
-        this.tipoId = tipoId;
+    public Usuario(long idUsuario, String tipoId, String apellido1, String apellido2, String nombreUsuario, String departamento, String municipio, String direccion, String telefono, String emailUsuario, String rol, String contrasena) {
         this.idUsuario = idUsuario;
+        this.tipoId = tipoId;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.nombreUsuario = nombreUsuario;
-        this.apellidoUsuario = apellidoUsuario;
+        this.departamento = departamento;
+        this.municipio = municipio;
         this.direccion = direccion;
         this.telefono = telefono;
         this.emailUsuario = emailUsuario;
+        this.rol = rol;
         this.contrasena = contrasena;
-        this.idRol = idRol;
+    }
+
+    public long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getTipoId() {
@@ -47,12 +65,20 @@ public class Usuario {
         this.tipoId = tipoId;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public String getApellido1() {
+        return apellido1;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
     }
 
     public String getNombreUsuario() {
@@ -63,12 +89,20 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getApellidoUsuario() {
-        return apellidoUsuario;
+    public String getDepartamento() {
+        return departamento;
     }
 
-    public void setApellidoUsuario(String apellidoUsuario) {
-        this.apellidoUsuario = apellidoUsuario;
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 
     public String getDireccion() {
@@ -95,6 +129,14 @@ public class Usuario {
         this.emailUsuario = emailUsuario;
     }
 
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
     public String getContrasena() {
         return contrasena;
     }
@@ -102,13 +144,9 @@ public class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-
-    public int getIdRol() {
-        return idRol;
-    }
-
-    public void setIdRol(int idRol) {
-        this.idRol = idRol;
-    }
     
+    @Override
+       public String toString(){
+           return departamento;      
+    }
 }
