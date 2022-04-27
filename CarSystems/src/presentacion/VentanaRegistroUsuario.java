@@ -214,7 +214,12 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         jPanel2.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 190, 30));
 
         cmbTipoDocumento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia", "l Permanencia", "Salvoconducto", "Pasaporte" }));
+        cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia de permanencia", "Salvoconducto", "Pasaporte" }));
+        cmbTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbTipoDocumentoActionPerformed(evt);
+            }
+        });
         jPanel2.add(cmbTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, 180, 30));
 
         cmbRol.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -369,31 +374,20 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         String conficontrasena = pasf_confirmacion.getText();
 
         if (txt_documento.getText().equals("")
-               // || (cmbTipoDocumento.getSelectedItem().equals("Seleccionar"))
+                || (cmbTipoDocumento.getSelectedItem().equals("Seleccionar"))
                 || (txt_apellido1.getText().equals(""))
                 || (txt_nombre.getText().equals(""))
                 || (txt_correo.getText().equals(""))
                 || (txt_direccion.getText().equals(""))
-               // || (cmbDepartamento.getSelectedItem().equals("Seleccionar"))
-               // || (cmbMunicipio.getSelectedItem().equals("Seleccionar"))
+                || (cmbDepartamento.getSelectedItem().equals("Seleccionar"))
+                || (cmbMunicipio.getSelectedItem().equals("Seleccionar"))
                 || (txt_telefono.getText().equals(""))
-               // || (cmbRol.getSelectedItem().equals("Seleccionar"))
+                || (cmbRol.getSelectedItem().equals("Seleccionar"))
                 || (pasf_contrasena.getText().equals(""))
                 || (pasf_confirmacion.getText().equals(""))) {
             
             javax.swing.JOptionPane.showMessageDialog(this, "Debe diligenciar los capos vacios \n", "Error!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } 
-        
-        if ((cmbTipoDocumento.getSelectedItem().equals("Seleccionar"))
-                || (cmbDepartamento.getSelectedItem().equals("Seleccionar"))
-                || (cmbMunicipio.getSelectedItem().equals("Seleccionar"))
-                || (cmbRol.getSelectedItem().equals("Seleccionar"))
-                || (pasf_confirmacion.getText().equals(""))) {
-            
-            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar los campos requeridos \n", "Error!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        else {
+        }  else {
             
             //validar congtrasena
             if (conficontrasena.equals(contrasena)) {
@@ -408,7 +402,7 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
     public void guardarUsuario() {
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
-
+//        long campoTxt_documento = (txt_documento.getText().toString().equals(null))? 0 : Long.parseLong(txt_documento.getText());
         Usuario usuario = new Usuario(Long.parseLong(txt_documento.getText()), validarTipoDocumento(), 
                 txt_apellido1.getText(), txt_apellido2.getText(), txt_nombre.getText(), 
                 cmbDepartamento.getSelectedItem().toString(), cmbMunicipio.getSelectedItem().toString(),
@@ -447,21 +441,21 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         this.txt_documento.setText("");
         this.pasf_contrasena.setText("");
         this.pasf_confirmacion.setText("");
-        cmbMunicipio.removeAllItems();
-        cmbMunicipio.addItem("Seleccionar");
+        limpiarCmbMunicipio();
         cmbDepartamento.removeAllItems();
         cmbDepartamento.addItem("Seleccionar");
-        cmbTipoDocumento.removeAllItems();
-        cmbTipoDocumento.addItem("Seleccionar");
-        cmbRol.removeAllItems();
-        cmbRol.addItem("Seleccionar");
-        
-        guardarUsuario();
+        cmbRol.setSelectedItem("Seleccionar");
+        cmbTipoDocumento.setSelectedItem("Seleccionar");
+        cargarDepartamentos();
 
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
     private void cmbDepartamentoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbDepartamentoItemStateChanged
-        cargarMunicipio();
+        if(cmbDepartamento.getItemCount()!= 0){
+        if(! (cmbDepartamento.getSelectedItem().toString().equals("Seleccionar"))){
+            cargarMunicipio();
+        }
+        }
     }//GEN-LAST:event_cmbDepartamentoItemStateChanged
 
     private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
@@ -475,6 +469,10 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_btn_cerrarActionPerformed
+
+    private void cmbTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbTipoDocumentoActionPerformed
 
     public void cargarDepartamentos() {
         DepartamentoServiceImpl departamentoServicio = new DepartamentoServiceImpl();
@@ -495,7 +493,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         //Listar municipios
         List<Municipio> municipios = municipioServicio.encontrarMunicipioxDepartamento(cmbDepartamento.getSelectedItem().toString());
         municipios.forEach(municipiosList -> {
-        System.out.println("municipio = " + municipiosList.getNombreMunicipio());
         cmbMunicipio.addItem(municipiosList.getNombreMunicipio());
         }
         );
@@ -507,6 +504,7 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
     public void limpiarCmbMunicipio(){
         cmbMunicipio.removeAllItems();
         cmbMunicipio.addItem("Seleccionar");
+        cmbMunicipio.setSelectedItem(1);
     }
     
 
