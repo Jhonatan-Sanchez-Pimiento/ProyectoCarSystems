@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package presentacion;
 
 import dominio.Departamento;
 import dominio.Municipio;
 import dominio.Usuario;
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
@@ -20,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import serviceImpl.UsuarioServiceImpl;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import serviceImpl.DepartamentoServiceImpl;
 import serviceImpl.MunicipioServiceImpl;
 
@@ -31,9 +29,7 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
     public VentanaRegistroUsuario() throws SQLException {
         initComponents();
-
         cargarDepartamentos();
-        //cargarMunicipio();
         
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -218,11 +214,11 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         jPanel2.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 190, 30));
 
         cmbTipoDocumento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especial Permanencia", "Salvoconducto", "Pasaporte" }));
+        cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia", "l Permanencia", "Salvoconducto", "Pasaporte" }));
         jPanel2.add(cmbTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, 180, 30));
 
         cmbRol.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor", "Comprador", "Funcionario" }));
+        cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Vendedor", "Comprador", "Funcionario" }));
         jPanel2.add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 220, 30));
 
         cmbDepartamento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -245,11 +241,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
                 btn_guardarActionPerformed(evt);
             }
         });
-        btn_guardar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                btn_guardarKeyTyped(evt);
-            }
-        });
         jPanel2.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 120, 30));
 
         btn_limpiar.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -263,6 +254,11 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         btn_cerrar.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         btn_cerrar.setText("Cerrar");
+        btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, 110, 30));
 
         pasf_confirmacion.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -373,22 +369,33 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         String conficontrasena = pasf_confirmacion.getText();
 
         if (txt_documento.getText().equals("")
-                || (cmbTipoDocumento.getSelectedItem().equals(null))
+               // || (cmbTipoDocumento.getSelectedItem().equals("Seleccionar"))
                 || (txt_apellido1.getText().equals(""))
                 || (txt_nombre.getText().equals(""))
                 || (txt_correo.getText().equals(""))
                 || (txt_direccion.getText().equals(""))
-                || (cmbDepartamento.getSelectedItem().equals(null))
-                || (cmbMunicipio.getSelectedItem().equals(null))
+               // || (cmbDepartamento.getSelectedItem().equals("Seleccionar"))
+               // || (cmbMunicipio.getSelectedItem().equals("Seleccionar"))
                 || (txt_telefono.getText().equals(""))
-                || (cmbRol.getSelectedItem().equals(null))
+               // || (cmbRol.getSelectedItem().equals("Seleccionar"))
                 || (pasf_contrasena.getText().equals(""))
                 || (pasf_confirmacion.getText().equals(""))) {
             
-            javax.swing.JOptionPane.showMessageDialog(this, "Debe diligenciar todos los campos \n", "Error!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe diligenciar los capos vacios \n", "Error!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } 
+        
+        if ((cmbTipoDocumento.getSelectedItem().equals("Seleccionar"))
+                || (cmbDepartamento.getSelectedItem().equals("Seleccionar"))
+                || (cmbMunicipio.getSelectedItem().equals("Seleccionar"))
+                || (cmbRol.getSelectedItem().equals("Seleccionar"))
+                || (pasf_confirmacion.getText().equals(""))) {
             
-            //validar congtraseña
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar los campos requeridos \n", "Error!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        else {
+            
+            //validar congtrasena
             if (conficontrasena.equals(contrasena)) {
                 guardarUsuario();
                 javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso! \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -426,13 +433,8 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         } else if (cmbTipoDoc.equals("Pasaporte")) {
             tipoDocumento = "PAS";
         }
-        System.out.println("tipoDocumento = " + tipoDocumento);
         return tipoDocumento;
     }
-
-    private void btn_guardarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn_guardarKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_guardarKeyTyped
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
         
@@ -445,12 +447,34 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         this.txt_documento.setText("");
         this.pasf_contrasena.setText("");
         this.pasf_confirmacion.setText("");
+        cmbMunicipio.removeAllItems();
+        cmbMunicipio.addItem("Seleccionar");
+        cmbDepartamento.removeAllItems();
+        cmbDepartamento.addItem("Seleccionar");
+        cmbTipoDocumento.removeAllItems();
+        cmbTipoDocumento.addItem("Seleccionar");
+        cmbRol.removeAllItems();
+        cmbRol.addItem("Seleccionar");
+        
+        guardarUsuario();
 
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
     private void cmbDepartamentoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbDepartamentoItemStateChanged
         cargarMunicipio();
     }//GEN-LAST:event_cmbDepartamentoItemStateChanged
+
+    private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
+            try {
+       int cerrar = JOptionPane.YES_NO_OPTION;
+       int result = JOptionPane.showConfirmDialog(null,"Desea volver","EXIT",cerrar);
+       if (result==0) {
+         System.exit(0);
+         }
+    } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_btn_cerrarActionPerformed
 
     public void cargarDepartamentos() {
         DepartamentoServiceImpl departamentoServicio = new DepartamentoServiceImpl();
