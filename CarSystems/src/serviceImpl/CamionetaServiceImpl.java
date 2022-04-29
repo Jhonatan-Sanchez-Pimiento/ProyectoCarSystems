@@ -32,7 +32,7 @@ public class CamionetaServiceImpl implements CamionetaService{
             stmt = conn.prepareStatement(SQL_INSERT);
             stmt.setString(1, camioneta.getIdVehiculo());
             stmt.setString(2, usuario.getTipoId());
-            stmt.setInt(3, usuario.getIdUsuario());
+            stmt.setLong(3, usuario.getIdUsuario());
             stmt.setString(4, camioneta.getTipoServicio());
             stmt.setInt(5, camioneta.getTipoVehiculo());
             stmt.setInt(6, camioneta.getIdMarca());

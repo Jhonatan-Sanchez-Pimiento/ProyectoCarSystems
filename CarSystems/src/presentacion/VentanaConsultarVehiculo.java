@@ -1,6 +1,5 @@
 package presentacion;
 
-import recursos.*;
 import presentacion.*;
 
 /**

@@ -6,6 +6,7 @@ import java.util.List;
  * @author IntegraSoft
  */
 public interface UsuarioService {
+    
     public void guardar(Usuario usuario);
     
     public void eliminar(Usuario usuario);

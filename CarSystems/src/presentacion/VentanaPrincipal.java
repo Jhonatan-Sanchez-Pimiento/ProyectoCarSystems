@@ -26,11 +26,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CarSystems - Ventana Principal");
-        setPreferredSize(new java.awt.Dimension(815, 515));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        VentanaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Fondo CarSystem.png"))); // NOI18N
+        VentanaPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondo opcion 1.png"))); // NOI18N
         jPanel1.add(VentanaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
