@@ -19,10 +19,10 @@ import java.util.logging.Logger;
 public class UsuarioServiceImpl implements UsuarioService{
     
     private static final String SQL_SELECT = "SELECT * FROM usuario";
-    private static final String SQL_UPDATE = "UPDATE usuario SET primer_apellido=?, segundo_apellido=?, nombre_usuario=?,correo=?, departamento=?, municipio=?, direccion=?, telefono=?, rol=?, contrasena = ? WHERE id_departamento = ?";
+    private static final String SQL_UPDATE = "UPDATE usuario SET primer_apellido=?, segundo_apellido=?, nombre_usuario=?,correo=?, departamento=?, municipio=?, direccion=?, telefono=?, rol=?, contrasena = ? WHERE id_Usuario = ?";
     private static final String SQL_DELETE = "DELETE FROM usuario WHERE id_usuario = ?, tipo_id=?";
-    private static String SQL_CONSULTA = "SELECT * FROM usuario WHERE id_usuario = ?, tipo_id = ?";
-    private static final String SQL_INSERT = "INSERT INTO usuario (id_usuario, tipo_id, primer_apellido, segundo_apellido, nombre_usuario,correo, departamento, municipio, direccion, telefono, rol, contrasena)"
+    private static final String SQL_CONSULTA = "SELECT * FROM usuario WHERE id_usuario = ? AND tipo_id = ?";
+    private static final String SQL_INSERT = "INSERT INTO usuario (id_usuario, tipo_id, primer_apellido, segundo_apellido, nombre_usuario,departamento, municipio,correo, direccion, telefono, rol, contrasena)"
             + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
     @Override
@@ -47,7 +47,7 @@ public class UsuarioServiceImpl implements UsuarioService{
             stmt.setString(12, usuario.getContrasena());
             
             registros = stmt.executeUpdate();
-            System.out.println("Usuario guardado.");
+
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
@@ -63,24 +63,80 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public void eliminar(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int registros = 0;
+        try {
+            conn = new Conexion().getConnection();
+            stmt = conn.prepareStatement(SQL_DELETE);
+            stmt.setLong(1, usuario.getIdUsuario());
+            registros = stmt.executeUpdate();
+            System.out.println("Usuario eliminado");
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
+        finally{
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+    
     }
-   
+    
     @Override
-    public Usuario encontrarUsuario(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Usuario encontrarUsuario(Long IdUsuario, String tipoId) {
+    Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Usuario usuario = null;
+        try {
+            conn = new Conexion().getConnection();
+            stmt = conn.prepareStatement(SQL_CONSULTA);
+            stmt.setLong(1, IdUsuario);
+            stmt.setString(2, tipoId);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                String primerApellido = rs.getString("primer_apellido");
+                String segundoApellido = rs.getString("segundo_apellido");
+                String nombreUsuario = rs.getString("nombre_usuario");
+                String correo = rs.getString("correo");
+                String departamento = rs.getString("departamento");
+                String municipio = rs.getString("municipio");
+                String direccion = rs.getString("direccion");
+                String telefono = rs.getString("telefono");
+                String rol = rs.getString("rol");
+                String contrasena = rs.getString("contrasena");
+                usuario = new Usuario(IdUsuario, tipoId, primerApellido, segundoApellido, nombreUsuario, departamento, municipio, direccion, telefono, correo, rol, contrasena);
+                System.out.println("Usuario = " + usuario);
+                
+                
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
 
-    public void getUsuario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return usuario;
     }
+    
 
     @Override
     public List<Usuario> listarUsuario() {
             
             Connection conn = new Conexion().getConnection();
             PreparedStatement stmt;
-            ResultSet rs =null;
+            ResultSet rs;
             
             List<Usuario> listaUsuario = new ArrayList<>();
 
@@ -110,5 +166,38 @@ public class UsuarioServiceImpl implements UsuarioService{
         return listaUsuario;
         
     }
-    
-}
+
+    @Override
+    public void actualizar(Usuario usuario) {
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int registros = 0;
+        try {
+            conn = new Conexion().getConnection();
+            stmt = conn.prepareStatement(SQL_UPDATE);
+
+            stmt.setString(1, usuario.getApellido1());
+            stmt.setString(2, usuario.getApellido2());
+            stmt.setString(3, usuario.getNombreUsuario());
+            stmt.setString(4, usuario.getEmailUsuario());
+            stmt.setString(5, usuario.getDepartamento());
+            stmt.setString(6, usuario.getMunicipio());
+            stmt.setString(7, usuario.getDireccion());
+            stmt.setString(8, usuario.getTelefono());
+            stmt.setString(9, usuario.getRol());
+            registros = stmt.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
+        finally{
+            try {
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+    }
+
+    }

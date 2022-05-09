@@ -10,6 +10,7 @@ import serviceImpl.MarcaServiceImpl;
 public class test {
 
     public static void main(String[] args) {
+        
         MarcaServiceImpl marcaServicio = new MarcaServiceImpl();
         /**
          * @Method Registrar
@@ -41,6 +42,6 @@ public class test {
         /**
          * @Method Eliminar Marca
          */
-        marcaServicio.eliminar(marcaEncontrada);
+       //marcaServicio.eliminar(marcaEncontrada);
     }
 }

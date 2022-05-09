@@ -17,10 +17,12 @@ public class Usuario {
     private String emailUsuario;
     private String rol;
     private String contrasena;
+    
+
 
     public Usuario() {
     }
-
+    
     public Usuario(String apellido1, String apellido2, String nombreUsuario, String departamento, String municipio, String direccion, String telefono, String emailUsuario, String rol, String contrasena) {
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -47,6 +49,18 @@ public class Usuario {
         this.emailUsuario = emailUsuario;
         this.rol = rol;
         this.contrasena = contrasena;
+    }
+
+    public Usuario(Long IdUsuario, String nombreUsuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Usuario(long parseLong, String text, String text0, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Usuario(String IdUsuario, String tipoId, String primerApellido, String segundoApellido, String nombreUsuario, String departamento, String municipio, String direccion, String telefono, String correo, String rol) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public long getIdUsuario() {
@@ -144,9 +158,13 @@ public class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
+
     @Override
-       public String toString(){
-           return departamento;      
+    public String toString() {
+        return "Usuario{" + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", nombreUsuario=" + nombreUsuario + ", departamento=" + departamento + ", municipio=" + municipio + ", direccion=" + direccion + ", telefono=" + telefono + ", emailUsuario=" + emailUsuario + ", rol=" + rol + '}';
     }
-}
+
+    }
+    
+    
+
