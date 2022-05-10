@@ -6,10 +6,17 @@ import java.awt.Image;
  * @author IntegraSoft
  */
 public class Camioneta extends Vehiculo{
-    
-    public Camioneta(String idVehiculo, String tipoIdUsuario, int idUsuario, String tipoServicio, int tipoVehiculo, int idMarca, int idLinea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, Image imagen, String descripcion, String estadoJudicial) {
-        super(idVehiculo, tipoIdUsuario, idUsuario, tipoServicio, tipoVehiculo, idMarca, idLinea, color, modelo, cupoPersona, utilitario, blindado, precio, imagen, descripcion, estadoJudicial);
+
+    //Método constructor vacio y con las variables para crear un objeto Camioneta
+    public Camioneta() {
     }
-    
-    
+
+    public Camioneta(String idVehiculo, String tipoIdUsuario, long idUsuario, String tipoServicio, String tipoVehiculo, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, String descripcion) {
+        super(idVehiculo, tipoIdUsuario, idUsuario, tipoServicio, tipoVehiculo, marca, linea, color, modelo, cupoPersona, utilitario, blindado, precio, descripcion);
+    }
+
+    public Camioneta(String idVehiculo, String tipoIdUsuario, long idUsuario, String tipoServicio, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, Image imagen, String descripcion, byte [] estadoJudicial) {
+        super(idVehiculo, tipoIdUsuario, idUsuario, tipoServicio, "Camioneta", marca, linea, color, modelo, cupoPersona, utilitario, blindado, precio, imagen, descripcion, estadoJudicial);
+    }
+
 }

@@ -7,7 +7,7 @@ USE carsystems;
 --Creacion de las tablas de la BD--
 
 CREATE TABLE IF NOT EXISTS usuario(
-    tipo_id VARCHAR (3) NOT NULL COMMENT 'CC: CEDULA CIUDADANIA, CE: CEDULA EXTRANJERIA, PAS: PASAPORTE',
+    tipo_id VARCHAR (30) NOT NULL,
     id_usuario BIGINT NOT NULL,
     primer_apellido VARCHAR (30) NOT NULL,
     segundo_apellido VARCHAR (30) NULL,
@@ -45,14 +45,14 @@ CREATE TABLE IF NOT EXISTS inicio_sesion (
 
 CREATE TABLE IF NOT EXISTS marca (
     id_marca BIGINT NOT NULL AUTO_INCREMENT,
-    nombre_marca VARCHAR (20) NOT NULL,
+    nombre_marca VARCHAR (50) NOT NULL,
     PRIMARY KEY (id_marca)
 );
 
 CREATE TABLE IF NOT EXISTS linea (
     id_linea BIGINT NOT NULL AUTO_INCREMENT,
     id_marca BIGINT NOT NULL,
-    nombre_linea VARCHAR (30) NOT NULL,
+    nombre_linea VARCHAR (50) NOT NULL,
     PRIMARY KEY (id_linea)
 );
 
@@ -68,28 +68,28 @@ CREATE TABLE IF NOT EXISTS vehiculo (
     id_usuario BIGINT NOT NULL,
     tipo_servicio VARCHAR (30) NOT NULL,
     tipo_vehiculo VARCHAR(30) NOT NULL, 
-    id_marca BIGINT NOT NULL,
-    id_linea BIGINT NOT NULL,
+    marca VARCHAR(50) NOT NULL,
+    linea VARCHAR(50) NOT NULL,
     color VARCHAR (20) NOT NULL,
-    modelo YEAR NOT NULL,
+    modelo INT NULL,
     cupo_persona SMALLINT DEFAULT 1,
-    utiliario BOOLEAN NULL DEFAULT 0,
+    utilitario BOOLEAN NULL DEFAULT 0,
     blindado BOOLEAN NULL DEFAULT 0,
     precio REAL NOT NULL DEFAULT 0,
     imagen LONGBLOB NULL,
     descripcion TEXT NULL,
-    estado_judicial VARCHAR (20) NULL COMMENT 'EMBARGADO, ACCIDENTADO, ROBADO',
+    estado_judicial LONGBLOB NULL COMMENT 'Archivo PDF',
     peso REAL NULL,
     alto REAL NULL,
     ancho REAL NULL,
     largo REAL NULL,
-    id_tipo_maquinaria BIGINT NULL,
+    tipo_maquinaria VARCHAR (50) NULL,
     PRIMARY KEY (id_vehiculo)
 );
 
 CREATE TABLE IF NOT EXISTS inspeccion (
     id_inspeccion BIGINT NOT NULL AUTO_INCREMENT,
-    id_vehiculo VARCHAR (20) NOT NULL,
+    id_vehiculo VARCHAR (30) NOT NULL,
     fecha_inspeccion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_ven_soat DATE NOT NULL,
     fecha_man_preventivo DATE NULL,
@@ -148,12 +148,8 @@ ALTER TABLE vehiculo
     ADD CONSTRAINT fk_usuario_vehiculo
         FOREIGN KEY (tipo_id_usuario, id_usuario)
         REFERENCES usuario (tipo_id, id_usuario)
-        ON UPDATE CASCADE,
-    ADD CONSTRAINT fk_tipo_maquinaria_vehiculo
-        FOREIGN KEY (id_tipo_maquinaria)
-        REFERENCES tipo_maquinaria (id_tipo_maquinaria)
         ON UPDATE CASCADE;
-
+    
 ALTER TABLE inspeccion
     ADD CONSTRAINT fk_vehiculo_inspeccion
         FOREIGN KEY (id_vehiculo)

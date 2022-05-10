@@ -4,16 +4,16 @@ import java.awt.Image;
 
 /**
  *
- * @author Jhonatan Sánchez
+ * @author IntegraSoft
  */
 public abstract class Vehiculo {
     private String idVehiculo;
     private String tipoIdUsuario;
-    private int idUsuario;
+    private long idUsuario;
     private String tipoServicio;
-    private int tipoVehiculo;
-    private int idMarca;
-    private int idLinea;
+    private String tipoVehiculo;
+    private String marca;
+    private String linea;
     private String color;
     private int modelo;
     private int cupoPersona;
@@ -22,21 +22,65 @@ public abstract class Vehiculo {
     private double precio;
     private Image imagen;
     private String descripcion;
-    private String estadoJudicial;
+    private byte[] estadoJudicial;
     private int peso;
     private int alto;
     private int ancho;
     private int largo;
-    private int tipoMaquinaria;
+    private String tipoMaquinaria;
 
-    public Vehiculo(String idVehiculo, String tipoIdUsuario, int idUsuario, String tipoServicio, int tipoVehiculo, int idMarca, int idLinea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, Image imagen, String descripcion, String estadoJudicial) {
+    public Vehiculo() {
+    }
+
+    public Vehiculo(String idVehiculo, String tipoIdUsuario, long idUsuario, String tipoServicio, String tipoVehiculo, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, String descripcion) {
         this.idVehiculo = idVehiculo;
         this.tipoIdUsuario = tipoIdUsuario;
         this.idUsuario = idUsuario;
         this.tipoServicio = tipoServicio;
         this.tipoVehiculo = tipoVehiculo;
-        this.idMarca = idMarca;
-        this.idLinea = idLinea;
+        this.marca = marca;
+        this.linea = linea;
+        this.color = color;
+        this.modelo = modelo;
+        this.cupoPersona = cupoPersona;
+        this.utilitario = utilitario;
+        this.blindado = blindado;
+        this.precio = precio;
+        this.descripcion = descripcion;
+    }
+
+    public Vehiculo(String idVehiculo, String tipoIdUsuario, long idUsuario, String tipoServicio, String tipoVehiculo, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, String descripcion, int peso, int alto, int ancho, int largo, String tipoMaquinaria) {
+        this.idVehiculo = idVehiculo;
+        this.tipoIdUsuario = tipoIdUsuario;
+        this.idUsuario = idUsuario;
+        this.tipoServicio = tipoServicio;
+        this.tipoVehiculo = tipoVehiculo;
+        this.marca = marca;
+        this.linea = linea;
+        this.color = color;
+        this.modelo = modelo;
+        this.cupoPersona = cupoPersona;
+        this.utilitario = utilitario;
+        this.blindado = blindado;
+        this.precio = precio;
+        this.descripcion = descripcion;
+        this.peso = peso;
+        this.alto = alto;
+        this.ancho = ancho;
+        this.largo = largo;
+        this.tipoMaquinaria = tipoMaquinaria;
+    }
+
+    
+    
+    public Vehiculo(String idVehiculo, String tipoIdUsuario, long idUsuario, String tipoServicio, String tipoVehiculo, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, Image imagen, String descripcion, byte[] estadoJudicial) {
+        this.idVehiculo = idVehiculo;
+        this.tipoIdUsuario = tipoIdUsuario;
+        this.idUsuario = idUsuario;
+        this.tipoServicio = tipoServicio;
+        this.tipoVehiculo = tipoVehiculo;
+        this.marca = marca;
+        this.linea = linea;
         this.color = color;
         this.modelo = modelo;
         this.cupoPersona = cupoPersona;
@@ -48,6 +92,38 @@ public abstract class Vehiculo {
         this.estadoJudicial = estadoJudicial;
     }
 
+    public Vehiculo(String idVehiculo, String tipoIdUsuario, long idUsuario, String tipoServicio, String tipoVehiculo, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, boolean blindado, double precio, Image imagen, String descripcion, byte[] estadoJudicial, int peso, int alto, int ancho, int largo, String tipoMaquinaria) {
+        this.idVehiculo = idVehiculo;
+        this.tipoIdUsuario = tipoIdUsuario;
+        this.idUsuario = idUsuario;
+        this.tipoServicio = tipoServicio;
+        this.tipoVehiculo = tipoVehiculo;
+        this.marca = marca;
+        this.linea = linea;
+        this.color = color;
+        this.modelo = modelo;
+        this.cupoPersona = cupoPersona;
+        this.utilitario = utilitario;
+        this.blindado = blindado;
+        this.precio = precio;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
+        this.estadoJudicial = estadoJudicial;
+        this.peso = peso;
+        this.alto = alto;
+        this.ancho = ancho;
+        this.largo = largo;
+        this.tipoMaquinaria = tipoMaquinaria;
+    }
+
+    public String getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(String idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
     public String getTipoIdUsuario() {
         return tipoIdUsuario;
     }
@@ -56,11 +132,11 @@ public abstract class Vehiculo {
         this.tipoIdUsuario = tipoIdUsuario;
     }
 
-    public int getIdUsuario() {
+    public long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(long idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -72,76 +148,36 @@ public abstract class Vehiculo {
         this.tipoServicio = tipoServicio;
     }
 
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getLinea() {
+        return linea;
+    }
+
+    public void setLinea(String linea) {
+        this.linea = linea;
+    }
+
     public String getColor() {
         return color;
     }
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public boolean isUtilitario() {
-        return utilitario;
-    }
-
-    public void setUtilitario(boolean utilitario) {
-        this.utilitario = utilitario;
-    }
-
-    public boolean isBlindado() {
-        return blindado;
-    }
-
-    public void setBlindado(boolean blindado) {
-        this.blindado = blindado;
-    }
-
-    public Image getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
-    }
-
-    public String getEstadoJudicial() {
-        return estadoJudicial;
-    }
-
-    public void setEstadoJudicial(String estadoJudicial) {
-        this.estadoJudicial = estadoJudicial;
-    }
-       
-    public String getIdVehiculo() {
-        return idVehiculo;
-    }
-
-    public void setIdVehiculo(String idVehiculo) {
-        this.idVehiculo = idVehiculo;
-    }
-
-    public int getTipoVehiculo() {
-        return tipoVehiculo;
-    }
-
-    public void setTipoVehiculo(int tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
-    }
-
-    public int getIdMarca() {
-        return idMarca;
-    }
-
-    public void setIdMarca(int idMarca) {
-        this.idMarca = idMarca;
-    }
-
-    public int getIdLinea() {
-        return idLinea;
-    }
-
-    public void setIdLinea(int idLinea) {
-        this.idLinea = idLinea;
     }
 
     public int getModelo() {
@@ -160,12 +196,36 @@ public abstract class Vehiculo {
         this.cupoPersona = cupoPersona;
     }
 
+    public boolean isUtilitario() {
+        return utilitario;
+    }
+
+    public void setUtilitario(boolean utilitario) {
+        this.utilitario = utilitario;
+    }
+
+    public boolean isBlindado() {
+        return blindado;
+    }
+
+    public void setBlindado(boolean blindado) {
+        this.blindado = blindado;
+    }
+
     public double getPrecio() {
         return precio;
     }
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public Image getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Image imagen) {
+        this.imagen = imagen;
     }
 
     public String getDescripcion() {
@@ -175,45 +235,57 @@ public abstract class Vehiculo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    public int  getpeso() {
+
+    public byte [] getEstadoJudicial() {
+        return estadoJudicial;
+    }
+
+    public void setEstadoJudicial(byte [] estadoJudicial) {
+        this.estadoJudicial = estadoJudicial;
+    }
+
+    public int getPeso() {
         return peso;
     }
 
-    public void setpeso(int peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
-    
-    public int  getalto() {
+
+    public int getAlto() {
         return alto;
     }
 
-    public void setalto(int alto) {
+    public void setAlto(int alto) {
         this.alto = alto;
     }
-    
-    public int  getancho() {
+
+    public int getAncho() {
         return ancho;
     }
 
-    public void setancho(int ancho) {
+    public void setAncho(int ancho) {
         this.ancho = ancho;
     }
-    
-    public int  getlargo() {
+
+    public int getLargo() {
         return largo;
     }
 
-    public void setlargo(int largo) {
+    public void setLargo(int largo) {
         this.largo = largo;
     }
-    
-    public int  gettipoMaquinaria() {
+
+    public String getTipoMaquinaria() {
         return tipoMaquinaria;
     }
 
-    public void settipoMaquinaria(int tipoMaquinaria) {
+    public void setTipoMaquinaria(String tipoMaquinaria) {
         this.tipoMaquinaria = tipoMaquinaria;
     }
-   
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "idVehiculo=" + idVehiculo + ", tipoIdUsuario=" + tipoIdUsuario + ", idUsuario=" + idUsuario + ", tipoServicio=" + tipoServicio + ", tipoVehiculo=" + tipoVehiculo + ", marca=" + marca + ", linea=" + linea + ", color=" + color + ", modelo=" + modelo + ", cupoPersona=" + cupoPersona + ", utilitario=" + utilitario + ", blindado=" + blindado + ", precio=" + precio + ", imagen=" + imagen + ", descripcion=" + descripcion + ", estadoJudicial=" + estadoJudicial + ", peso=" + peso + ", alto=" + alto + ", ancho=" + ancho + ", largo=" + largo + ", tipoMaquinaria=" + tipoMaquinaria + '}';
+    }
 }
