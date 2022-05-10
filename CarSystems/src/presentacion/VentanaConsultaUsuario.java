@@ -37,13 +37,16 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.camposBloqueados();
+        cargarDepartamentos();
         btnEditar.setEnabled(false);
         btnGuardarCambios.setEnabled(false);
 
         cmbTipoDocumento.setBackground(new java.awt.Color(80, 80, 80, 80));
+        cmbRol.setBackground(new java.awt.Color(80, 80, 80, 80));
+        cmbDepartamento.setBackground(new java.awt.Color(80, 80, 80, 80));
+        cmbMunicipio.setBackground(new java.awt.Color(80, 80, 80, 80));
+        
         txt_documento.setBackground(new java.awt.Color(180, 180, 180, 180));
-
-        txtTipoDocumento.setBackground(new java.awt.Color(180, 180, 180, 180));
         txtDocumento.setBackground(new java.awt.Color(180, 180, 180, 180));
         txt_apellido1.setBackground(new java.awt.Color(180, 180, 180, 180));
         txt_apellido2.setBackground(new java.awt.Color(180, 180, 180, 180));
@@ -52,9 +55,6 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         txt_correo.setBackground(new java.awt.Color(180, 180, 180, 180));
         txt_direccion.setBackground(new java.awt.Color(180, 180, 180, 180));
         txt_telefono.setBackground(new java.awt.Color(180, 180, 180, 180));
-        txtRol.setBackground(new java.awt.Color(180, 180, 180, 180));
-        txtDepartamento.setBackground(new java.awt.Color(180, 180, 180, 180));
-        txtMunicipio.setBackground(new java.awt.Color(180, 180, 180, 180));
 
         btnConsultar.setBackground(new java.awt.Color(80, 80, 80, 80));
         btn_limpiar.setBackground(new java.awt.Color(80, 80, 80, 80));
@@ -93,15 +93,13 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cmbTipoDocumento1 = new javax.swing.JComboBox<>();
-        txtMunicipio = new javax.swing.JTextField();
-        txtRol = new javax.swing.JTextField();
-        txtDepartamento = new javax.swing.JTextField();
-        txtTipoDocumento = new javax.swing.JTextField();
         txtDocumento = new javax.swing.JTextField();
         btnEditar = new javax.swing.JButton();
         btnGuardarCambios = new javax.swing.JButton();
-        jlbConsulta = new javax.swing.JLabel();
         jlbConsulta1 = new javax.swing.JLabel();
+        cmbDepartamento = new javax.swing.JComboBox<>();
+        cmbMunicipio = new javax.swing.JComboBox<>();
+        cmbRol = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,18 +134,18 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Dirección");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Teléfono");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Correo electronico");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -162,16 +160,16 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Departamento");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Segundo apellido");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, -1, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, -1, -1));
 
         txt_correo.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_correo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 580, 30));
+        jPanel2.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 580, 30));
 
         txt_nombre.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -192,15 +190,15 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
         txt_apellido2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_apellido2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(txt_apellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 200, 190, 30));
+        jPanel2.add(txt_apellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 180, 190, 30));
 
         txt_direccion.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_direccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(txt_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 340, 30));
+        jPanel2.add(txt_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 340, 30));
 
         txt_telefono.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_telefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 410, 190, 30));
+        jPanel2.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 430, 190, 30));
 
         cmbTipoDocumento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia de permanencia", "Salvoconducto", "Pasaporte" }));
@@ -246,10 +244,6 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         cmbTipoDocumento1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         cmbTipoDocumento1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia de permanencia", "Salvoconducto", "Pasaporte" }));
         jPanel2.add(cmbTipoDocumento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 180, 30));
-        jPanel2.add(txtMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 220, 30));
-        jPanel2.add(txtRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 260, 30));
-        jPanel2.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 250, 30));
-        jPanel2.add(txtTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 170, 30));
         jPanel2.add(txtDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 140, 190, 30));
 
         btnEditar.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -270,11 +264,35 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         });
         jPanel2.add(btnGuardarCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 490, 170, 30));
 
-        jlbConsulta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 255), 3));
-        jPanel2.add(jlbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 820, 420));
-
         jlbConsulta1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 255), 3));
         jPanel2.add(jlbConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 260, 420));
+
+        cmbDepartamento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        cmbDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        cmbDepartamento.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbDepartamentoItemStateChanged(evt);
+            }
+        });
+        jPanel2.add(cmbDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 280, 30));
+
+        cmbMunicipio.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        cmbMunicipio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        cmbMunicipio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMunicipioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmbMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, 220, 30));
+
+        cmbRol.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Vendedor", "Comprador", "Funcionario" }));
+        cmbRol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbRolActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, 220, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -316,14 +334,14 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         
         this.cmbTipoDocumento.setSelectedItem("Seleccionar");
         this.txt_documento.setText("");
-        this.txtTipoDocumento.setText("");
+        this.cmbTipoDocumento1.setSelectedItem("Seleccionar");
         this.txtDocumento.setText("");
         this.txt_apellido1.setText("");
         this.txt_apellido2.setText("");
         this.txt_nombre.setText("");
-        this.txtRol.setText("");
-        this.txtDepartamento.setText("");
-        this.txtMunicipio.setText("");
+        this.cmbRol.setSelectedItem("Seleccionar");
+        this.cmbDepartamento.setSelectedItem("Seleccionar");
+        this.cmbMunicipio.setSelectedItem("Seleccionar");
         this.txt_correo.setText("");
         this.txt_direccion.setText("");
         this.txt_telefono.setText("");
@@ -357,9 +375,9 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         txt_apellido1.setEditable(true);
         txt_apellido2.setEditable(true);
         txt_nombre.setEditable(true);
-        txtRol.setEditable(true);
-        txtDepartamento.setEditable(true);
-        txtMunicipio.setEditable(true);
+        cmbRol.setEnabled(true);
+        cmbDepartamento.setEnabled(true);
+        cmbMunicipio.setEnabled(true);
         txt_correo.setEditable(true);
         txt_direccion.setEditable(true);
         txt_telefono.setEditable(true);
@@ -372,16 +390,32 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnGuardarCambiosActionPerformed
 
+    private void cmbDepartamentoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbDepartamentoItemStateChanged
+        if(cmbDepartamento.getItemCount()!= 0){
+            if(! (cmbDepartamento.getSelectedItem().toString().equals("Seleccionar"))){
+                cargarMunicipio();
+            }
+        }
+    }//GEN-LAST:event_cmbDepartamentoItemStateChanged
+
+    private void cmbMunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMunicipioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbMunicipioActionPerformed
+
+    private void cmbRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbRolActionPerformed
+
     public void camposBloqueados() {
         txt_apellido2.setEditable(false);
         txt_apellido1.setEditable(false);
         txt_apellido2.setEditable(false);
-        txtTipoDocumento.setEditable(false);
+        cmbTipoDocumento1.setEnabled(false);
         txtDocumento.setEditable(false);
         txt_nombre.setEditable(false);
-        txtRol.setEditable(false);
-        txtDepartamento.setEditable(false);
-        txtMunicipio.setEditable(false);
+        cmbRol.setEnabled(false);
+        cmbDepartamento.setEnabled(false);
+        cmbMunicipio.setEnabled(false);
         txt_correo.setEditable(false);
         txt_direccion.setEditable(false);
         txt_telefono.setEditable(false);
@@ -412,20 +446,50 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
         Usuario usuarioEncontrada = usuarioServicio.encontrarUsuario(Long.parseLong(txt_documento.getText()), validarTipoDocumento());
 
-        txtTipoDocumento.setText(usuarioEncontrada.getTipoId());
+        cmbTipoDocumento1.setSelectedItem(cmbTipoDocumento.getSelectedItem().toString());
+        cmbTipoDocumento.setSelectedItem(usuarioEncontrada.getTipoId());
         txtDocumento.setText(String.valueOf(usuarioEncontrada.getIdUsuario()));
         txt_apellido1.setText(usuarioEncontrada.getApellido1());
         txt_apellido2.setText(usuarioEncontrada.getApellido2());
         txt_nombre.setText(usuarioEncontrada.getNombreUsuario());
-        txtRol.setText(usuarioEncontrada.getRol());
-        txtDepartamento.setText(usuarioEncontrada.getDepartamento());
-        txtMunicipio.setText(usuarioEncontrada.getMunicipio());
+        System.out.println(usuarioEncontrada.getRol());
+        System.out.println(usuarioEncontrada.toString());
+        cmbRol.setSelectedItem(usuarioEncontrada.getRol().toString());
+        System.out.println(usuarioEncontrada.getDepartamento().toString());
+        cmbDepartamento.setSelectedItem(usuarioEncontrada.getDepartamento().toString());
+        cmbMunicipio.setSelectedItem(usuarioEncontrada.getMunicipio().toString());
         txt_correo.setText(usuarioEncontrada.getEmailUsuario());
         txt_direccion.setText(usuarioEncontrada.getDireccion());
         txt_telefono.setText(usuarioEncontrada.getTelefono());
 
     }
-
+        private void cargarDepartamentos() {
+            
+        DepartamentoServiceImpl departamentoServicio = new DepartamentoServiceImpl();
+        List<Departamento> departamentos = departamentoServicio.listarDepartamento();
+        departamentos.forEach(departamentoLista -> {
+            cmbDepartamento.addItem(departamentoLista.getNombreDepartamento());
+        }
+        );
+    }    
+    
+        public void cargarMunicipio() {
+        try{ 
+       // limpiarCmbMunicipio();
+        MunicipioServiceImpl municipioServicio = new MunicipioServiceImpl();
+        /**
+         * @Method Listar
+         */
+        //Listar municipios
+        List<Municipio> municipios = municipioServicio.encontrarMunicipioxDepartamento(cmbDepartamento.getSelectedItem().toString());
+        municipios.forEach(municipiosList -> {
+        cmbMunicipio.addItem(municipiosList.getNombreMunicipio());
+        }
+        );
+        }catch(Exception e){
+            e.printStackTrace(System.out);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -472,6 +536,9 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardarCambios;
     private javax.swing.JButton btn_cerrar;
     private javax.swing.JButton btn_limpiar;
+    private javax.swing.JComboBox<String> cmbDepartamento;
+    private javax.swing.JComboBox<String> cmbMunicipio;
+    private javax.swing.JComboBox<String> cmbRol;
     private javax.swing.JComboBox<String> cmbTipoDocumento;
     private javax.swing.JComboBox<String> cmbTipoDocumento1;
     private javax.swing.JLabel jLabel1;
@@ -489,13 +556,8 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel jlbConsulta;
     private javax.swing.JLabel jlbConsulta1;
-    private javax.swing.JTextField txtDepartamento;
     private javax.swing.JTextField txtDocumento;
-    private javax.swing.JTextField txtMunicipio;
-    private javax.swing.JTextField txtRol;
-    private javax.swing.JTextField txtTipoDocumento;
     private javax.swing.JTextField txt_apellido1;
     private javax.swing.JTextField txt_apellido2;
     private javax.swing.JTextField txt_correo;
