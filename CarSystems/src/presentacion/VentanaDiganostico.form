@@ -41,7 +41,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -127,7 +127,7 @@
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel30" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jComboBox9" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbFreno" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -141,11 +141,11 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txtFechaInspeccion3" alignment="0" pref="175" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion2" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtFechaVenSOAT" alignment="0" pref="175" max="32767" attributes="0"/>
+                                              <Component id="txtFechaUltimoMan" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtFechaRevision" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtFechaInspeccion" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtTipoVehiculo" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -157,21 +157,21 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="txtFechaInspeccion9" alignment="0" pref="175" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion6" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion5" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion7" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtFechaInspeccion8" max="32767" attributes="0"/>
+                                              <Component id="txtModeloVehiculo" alignment="0" pref="175" max="32767" attributes="0"/>
+                                              <Component id="txtUltmaInspeccion" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtFexhaUltimoCambioAce" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtKilometrajeActual" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtPlacaVehiculo" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel28" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jComboBox7" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbAcelerador" min="-2" pref="175" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                           <Component id="jLabel29" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jComboBox8" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbClutch" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -189,9 +189,9 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jComboBox3" pref="175" max="32767" attributes="0"/>
-                                              <Component id="jComboBox5" pref="175" max="32767" attributes="0"/>
-                                              <Component id="jComboBox6" max="32767" attributes="0"/>
+                                              <Component id="cmbAceiteMotor" pref="175" max="32767" attributes="0"/>
+                                              <Component id="cmbLiquidoRefrige" pref="175" max="32767" attributes="0"/>
+                                              <Component id="cmbAguaLimVidrios" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -200,8 +200,8 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jComboBox2" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="jComboBox4" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="cmbLiquidoFrenos" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="cmbLiquidoHidra" min="-2" pref="175" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
@@ -219,23 +219,23 @@
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel32" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jComboBox10" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbLuces" min="-2" pref="175" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                           <Component id="jLabel33" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jComboBox11" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbDireccionales" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jLabel34" min="-2" pref="296" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox12" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  <Component id="cmbEstacionarias" min="-2" pref="175" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel36" min="-2" pref="296" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox14" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  <Component id="cmbTestigoTablero" min="-2" pref="175" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="45" pref="45" max="-2" attributes="0"/>
@@ -243,12 +243,12 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel37" min="-2" pref="296" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox15" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  <Component id="cmbLucesReversa" min="-2" pref="175" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel35" min="-2" pref="296" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox13" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  <Component id="cmbStops" min="-2" pref="175" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -266,34 +266,34 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel38" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jComboBox16" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbLucesInternas" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel44" min="-2" pref="296" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jComboBox21" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="cmbFrenoEmergencia" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel40" min="-2" pref="296" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jComboBox17" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="cmbLlantas" min="-2" pref="175" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                               <Component id="jLabel41" min="-2" pref="296" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jComboBox18" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="cmbBateria" min="-2" pref="175" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel42" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox19" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbRines" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel43" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox20" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbPito" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace min="45" max="32767" attributes="0"/>
@@ -301,27 +301,27 @@
                                                   <Group type="102" attributes="0">
                                                       <Component id="jLabel46" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox23" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbPitoReversa" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" attributes="0">
                                                       <Component id="jLabel45" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox22" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbCinturonSeguridad" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel47" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox24" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbEspejos" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel50" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox27" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbLimpiaParabrisas" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel51" min="-2" pref="296" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox28" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="cmbPanoramica" min="-2" pref="175" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -337,12 +337,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel48" min="-2" pref="296" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBox25" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="cmbCarcasaLuces" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel49" min="-2" pref="296" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBox26" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="cmbTapizado" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -366,35 +366,35 @@
                               <Component id="txtFechaInspeccion" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion8" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtPlacaVehiculo" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtFechaRevision" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion9" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtModeloVehiculo" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtFechaInspeccion3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtFechaVenSOAT" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion6" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtUltmaInspeccion" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtFechaUltimoMan" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion5" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtFexhaUltimoCambioAce" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtTipoVehiculo" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtFechaInspeccion7" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtKilometrajeActual" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                           <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
@@ -402,109 +402,113 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jComboBox5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLiquidoFrenos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLiquidoRefrige" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox3" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jComboBox4" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbAceiteMotor" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLiquidoHidra" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox6" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbAguaLimVidrios" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox7" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbAcelerador" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox8" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbClutch" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox9" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbFreno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox10" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLuces" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox11" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbDireccionales" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox12" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbEstacionarias" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox13" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbStops" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox14" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbTestigoTablero" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox15" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLucesReversa" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox16" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLucesInternas" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox17" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbLlantas" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox18" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbBateria" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox19" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbRines" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox22" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbCinturonSeguridad" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox20" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbPito" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox23" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbPitoReversa" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox21" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbFrenoEmergencia" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox24" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="cmbEspejos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox25" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox27" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="cmbLimpiaParabrisas" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbCarcasaLuces" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox26" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox28" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="cmbPanoramica" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbTapizado" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="266" max="32767" attributes="0"/>
@@ -533,9 +537,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtFechaInspeccion">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccionActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -645,50 +646,23 @@
                     <Property name="text" type="java.lang.String" value="Kilometraje actual :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion1">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion1ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtFechaRevision">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion2">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion2ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtFechaUltimoMan">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion3">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion3ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtFechaVenSOAT">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion4">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion4ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtTipoVehiculo">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion5">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion5ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtFexhaUltimoCambioAce">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion6">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion6ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtUltmaInspeccion">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion7">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion7ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtKilometrajeActual">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion8">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion8ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtPlacaVehiculo">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion9">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInspeccion9ActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtModeloVehiculo">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -780,7 +754,7 @@
                     <Property name="text" type="java.lang.String" value="Para las opciones de &quot;si y &quot;no indique si el elemento se encuentra en el vehiculo el cual se le est&#xe1; realizando el respectivo diagn&#xf3;stico"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="cmbLiquidoFrenos">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -797,7 +771,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                <Component class="javax.swing.JComboBox" name="cmbAceiteMotor">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -814,7 +788,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox4">
+                <Component class="javax.swing.JComboBox" name="cmbLiquidoHidra">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -831,7 +805,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox5">
+                <Component class="javax.swing.JComboBox" name="cmbLiquidoRefrige">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -848,7 +822,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox6">
+                <Component class="javax.swing.JComboBox" name="cmbAguaLimVidrios">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -889,7 +863,7 @@
                     <Property name="text" type="java.lang.String" value="Acelerador :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox7">
+                <Component class="javax.swing.JComboBox" name="cmbAcelerador">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -918,7 +892,7 @@
                     <Property name="text" type="java.lang.String" value="Clutch :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox8">
+                <Component class="javax.swing.JComboBox" name="cmbClutch">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -947,7 +921,7 @@
                     <Property name="text" type="java.lang.String" value="Freno :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox9">
+                <Component class="javax.swing.JComboBox" name="cmbFreno">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -988,7 +962,7 @@
                     <Property name="text" type="java.lang.String" value="Luces :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox10">
+                <Component class="javax.swing.JComboBox" name="cmbLuces">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1001,9 +975,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox10ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1020,7 +991,7 @@
                     <Property name="text" type="java.lang.String" value="Luces direccionales :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox11">
+                <Component class="javax.swing.JComboBox" name="cmbDireccionales">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1033,9 +1004,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox11ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1052,7 +1020,7 @@
                     <Property name="text" type="java.lang.String" value="Luces estacionarias :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox12">
+                <Component class="javax.swing.JComboBox" name="cmbEstacionarias">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1065,9 +1033,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox12ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1084,7 +1049,7 @@
                     <Property name="text" type="java.lang.String" value="Stops :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox13">
+                <Component class="javax.swing.JComboBox" name="cmbStops">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1097,9 +1062,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox13ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1116,7 +1078,7 @@
                     <Property name="text" type="java.lang.String" value="Testigos tablero :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox14">
+                <Component class="javax.swing.JComboBox" name="cmbTestigoTablero">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1129,9 +1091,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox14ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1148,7 +1107,7 @@
                     <Property name="text" type="java.lang.String" value="Luces de reversa :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox15">
+                <Component class="javax.swing.JComboBox" name="cmbLucesReversa">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1161,9 +1120,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox15ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1180,7 +1136,7 @@
                     <Property name="text" type="java.lang.String" value="Luces internas :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox16">
+                <Component class="javax.swing.JComboBox" name="cmbLucesInternas">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1193,9 +1149,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox16ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1224,7 +1177,7 @@
                     <Property name="text" type="java.lang.String" value="Llantas :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox17">
+                <Component class="javax.swing.JComboBox" name="cmbLlantas">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1237,9 +1190,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox17ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1256,7 +1206,7 @@
                     <Property name="text" type="java.lang.String" value="Bateria :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox18">
+                <Component class="javax.swing.JComboBox" name="cmbBateria">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1269,9 +1219,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox18ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1288,7 +1235,7 @@
                     <Property name="text" type="java.lang.String" value="Rines :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox19">
+                <Component class="javax.swing.JComboBox" name="cmbRines">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1301,9 +1248,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox19ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1320,7 +1264,7 @@
                     <Property name="text" type="java.lang.String" value="Pito :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox20">
+                <Component class="javax.swing.JComboBox" name="cmbPito">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1333,9 +1277,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox20ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1352,7 +1293,7 @@
                     <Property name="text" type="java.lang.String" value="Freno de emergencia :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox21">
+                <Component class="javax.swing.JComboBox" name="cmbFrenoEmergencia">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1365,9 +1306,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox21ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1384,7 +1322,7 @@
                     <Property name="text" type="java.lang.String" value="Cintur&#xf3;n de seguridad :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox22">
+                <Component class="javax.swing.JComboBox" name="cmbCinturonSeguridad">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1397,9 +1335,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox22ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1416,7 +1351,7 @@
                     <Property name="text" type="java.lang.String" value="Pito de reversa :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox23">
+                <Component class="javax.swing.JComboBox" name="cmbPitoReversa">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1429,9 +1364,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox23ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1448,7 +1380,7 @@
                     <Property name="text" type="java.lang.String" value="Espejos :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox24">
+                <Component class="javax.swing.JComboBox" name="cmbEspejos">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1461,9 +1393,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox24ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1480,7 +1409,7 @@
                     <Property name="text" type="java.lang.String" value="Carcasa de luces :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox25">
+                <Component class="javax.swing.JComboBox" name="cmbCarcasaLuces">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1493,9 +1422,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox25ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1512,7 +1438,7 @@
                     <Property name="text" type="java.lang.String" value="Tapizado :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox26">
+                <Component class="javax.swing.JComboBox" name="cmbTapizado">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1525,9 +1451,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox26ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1544,7 +1467,7 @@
                     <Property name="text" type="java.lang.String" value="Limpia parabrisas :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox27">
+                <Component class="javax.swing.JComboBox" name="cmbLimpiaParabrisas">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1557,9 +1480,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox27ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1576,7 +1496,7 @@
                     <Property name="text" type="java.lang.String" value="Panor&#xe1;mica :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox28">
+                <Component class="javax.swing.JComboBox" name="cmbPanoramica">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Myanmar Text" size="18" style="2"/>
@@ -1589,9 +1509,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox28ActionPerformed"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
