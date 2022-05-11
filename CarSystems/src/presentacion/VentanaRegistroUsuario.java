@@ -203,11 +203,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_apellido2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_apellido2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_apellido2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_apellido2ActionPerformed(evt);
-            }
-        });
         txt_apellido2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_apellido2KeyTyped(evt);
@@ -230,11 +225,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         cmbTipoDocumento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia de permanencia", "Salvoconducto", "Pasaporte" }));
-        cmbTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbTipoDocumentoActionPerformed(evt);
-            }
-        });
         jPanel2.add(cmbTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 180, 30));
 
         cmbRol.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -337,6 +327,8 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         cmbRol.setSelectedItem("Seleccionar");
         cmbTipoDocumento.setSelectedItem("Seleccionar");
         cargarDepartamentos();
+        btn_guardar.setEnabled(true);
+        
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
@@ -379,10 +371,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmbDepartamentoItemStateChanged
 
-    private void cmbTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoDocumentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbTipoDocumentoActionPerformed
-
     private void txt_telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_telefonoKeyTyped
 
         char a = evt.getKeyChar();
@@ -408,10 +396,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
             Toolkit.getDefaultToolkit().beep();
         }
     }//GEN-LAST:event_txt_apellido2KeyTyped
-
-    private void txt_apellido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_apellido2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_apellido2ActionPerformed
 
     private void txt_apellido1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_apellido1KeyTyped
 
@@ -454,8 +438,8 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
     public void guardarUsuario() {
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
-//        long campoTxt_documento = (txt_documento.getText().toString().equals(null))? 0 : Long.parseLong(txt_documento.getText());
-        Usuario usuario = new Usuario(Long.parseLong(txt_documento.getText()), validarTipoDocumento(), 
+
+        Usuario usuario = new Usuario(Long.parseLong(txt_documento.getText()), cmbTipoDocumento.getSelectedItem().toString(), 
                 txt_apellido1.getText(), txt_apellido2.getText(), txt_nombre.getText(), 
                 cmbDepartamento.getSelectedItem().toString(), cmbMunicipio.getSelectedItem().toString(),
                 txt_direccion.getText(), txt_telefono.getText(), txt_correo.getText(), 
@@ -463,24 +447,6 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         usuarioServicio.guardar(usuario);
     }
 
-    public String validarTipoDocumento() {
-        String tipoDocumento = null;
-        String cmbTipoDoc = cmbTipoDocumento.getSelectedItem().toString();
-
-        //validacion y asignacion del campo Tipo de Documento
-        if (cmbTipoDoc == "Cédula de Ciudadanía") {
-            tipoDocumento = "CC";
-        } else if (cmbTipoDoc.equals("Cédula de Extranjeria")) {
-            tipoDocumento = "CE";
-        } else if (cmbTipoDoc.equals("Permiso Especial Permanencia")) {
-            tipoDocumento = "PEP";
-        } else if (cmbTipoDoc.equals("Salvoconducto")) {
-            tipoDocumento = "SAL";
-        } else if (cmbTipoDoc.equals("Pasaporte")) {
-            tipoDocumento = "PAS";
-        }
-        return tipoDocumento;
-    }
 
     public void cargarDepartamentos() {
         DepartamentoServiceImpl departamentoServicio = new DepartamentoServiceImpl();
