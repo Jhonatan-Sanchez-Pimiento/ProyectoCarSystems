@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class UsuarioServiceImpl implements UsuarioService{
     
     private static final String SQL_SELECT = "SELECT * FROM usuario";
-    private static final String SQL_UPDATE = "UPDATE usuario SET primer_apellido=?, segundo_apellido=?, nombre_usuario=?, departamento=?, municipio=?, correo=?,direccion=?, telefono=?, rol=?, contrasena = ? WHERE id_Usuario = ?";
+    private static final String SQL_UPDATE = "UPDATE usuario SET primer_apellido=?, segundo_apellido=?, nombre_usuario=?, departamento=?, municipio=?, correo=?,direccion=?, telefono=?, rol=?, contrasena = ? WHERE id_Usuario = ? AND tipo_id=?";
     private static final String SQL_DELETE = "DELETE FROM usuario WHERE id_usuario = ?, tipo_id=?";
     private static final String SQL_CONSULTA = "SELECT * FROM usuario WHERE id_usuario = ? AND tipo_id = ?";
     private static final String SQL_INSERT = "INSERT INTO usuario (id_usuario, tipo_id, primer_apellido, segundo_apellido, nombre_usuario,correo,departamento, municipio, direccion, telefono, rol, contrasena)"
@@ -186,6 +186,9 @@ public class UsuarioServiceImpl implements UsuarioService{
             stmt.setString(7, usuario.getDireccion());
             stmt.setString(8, usuario.getTelefono());
             stmt.setString(9, usuario.getRol());
+            stmt.setString(10, usuario.getContrasena());
+            stmt.setLong(11, usuario.getIdUsuario());
+            stmt.setString(12, usuario.getTipoId());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

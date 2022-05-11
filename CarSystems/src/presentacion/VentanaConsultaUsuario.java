@@ -31,6 +31,8 @@ import serviceImpl.MunicipioServiceImpl;
  */
 public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
+    Usuario usuarioEncontrada;
+    
     public VentanaConsultaUsuario() throws SQLException {
         initComponents();
 
@@ -278,20 +280,10 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
         cmbMunicipio.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         cmbMunicipio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
-        cmbMunicipio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMunicipioActionPerformed(evt);
-            }
-        });
         jPanel2.add(cmbMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, 220, 30));
 
         cmbRol.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Vendedor", "Comprador", "Funcionario" }));
-        cmbRol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbRolActionPerformed(evt);
-            }
-        });
         jPanel2.add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, 220, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -339,12 +331,17 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         this.txt_apellido1.setText("");
         this.txt_apellido2.setText("");
         this.txt_nombre.setText("");
-        this.cmbRol.setSelectedItem("Seleccionar");
-        this.cmbDepartamento.setSelectedItem("Seleccionar");
-        this.cmbMunicipio.setSelectedItem("Seleccionar");
         this.txt_correo.setText("");
         this.txt_direccion.setText("");
         this.txt_telefono.setText("");
+        this.cmbRol.setSelectedItem("Seleccionar");
+        limpiarCmbMunicipio();
+        cmbDepartamento.removeAllItems();;
+        cmbTipoDocumento.setSelectedItem("Seleccionar");
+        cargarDepartamentos();
+
+        
+        btnConsultar.setEnabled(true);
 
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
@@ -386,6 +383,8 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
     private void btnGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCambiosActionPerformed
         
+        actualizarUsuario();
+        limpiarCmbMunicipio();
         
         
     }//GEN-LAST:event_btnGuardarCambiosActionPerformed
@@ -397,14 +396,6 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_cmbDepartamentoItemStateChanged
-
-    private void cmbMunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMunicipioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbMunicipioActionPerformed
-
-    private void cmbRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbRolActionPerformed
 
     public void camposBloqueados() {
         txt_apellido2.setEditable(false);
@@ -421,47 +412,25 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         txt_telefono.setEditable(false);
     }
 
-    public String validarTipoDocumento() {
-        String tipoDocumento = null;
-        String cmbTipoDoc = cmbTipoDocumento.getSelectedItem().toString();
-
-        //validacion y asignacion del campo Tipo de Documento
-        if (cmbTipoDoc == "Cédula de Ciudadanía") {
-            tipoDocumento = "CC";
-        } else if (cmbTipoDoc.equals("Cédula de Extranjeria")) {
-            tipoDocumento = "CE";
-        } else if (cmbTipoDoc.equals("Permiso Especial Permanencia")) {
-            tipoDocumento = "PEP";
-        } else if (cmbTipoDoc.equals("Salvoconducto")) {
-            tipoDocumento = "SAL";
-        } else if (cmbTipoDoc.equals("Pasaporte")) {
-            tipoDocumento = "PAS";
-        }
-        return tipoDocumento;
-    }
-
     public void consultarUsuario() {
 
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
 
-        Usuario usuarioEncontrada = usuarioServicio.encontrarUsuario(Long.parseLong(txt_documento.getText()), validarTipoDocumento());
+         this.usuarioEncontrada = usuarioServicio.encontrarUsuario(Long.parseLong(txt_documento.getText()), cmbTipoDocumento.getSelectedItem().toString());
 
-        cmbTipoDocumento1.setSelectedItem(cmbTipoDocumento.getSelectedItem().toString());
+        cmbTipoDocumento1.setSelectedItem(usuarioEncontrada.getTipoId());
         cmbTipoDocumento.setSelectedItem(usuarioEncontrada.getTipoId());
         txtDocumento.setText(String.valueOf(usuarioEncontrada.getIdUsuario()));
         txt_apellido1.setText(usuarioEncontrada.getApellido1());
         txt_apellido2.setText(usuarioEncontrada.getApellido2());
         txt_nombre.setText(usuarioEncontrada.getNombreUsuario());
-        System.out.println(usuarioEncontrada.getRol());
-        System.out.println(usuarioEncontrada.toString());
         cmbRol.setSelectedItem(usuarioEncontrada.getRol().toString());
-        System.out.println(usuarioEncontrada.getDepartamento().toString());
         cmbDepartamento.setSelectedItem(usuarioEncontrada.getDepartamento().toString());
         cmbMunicipio.setSelectedItem(usuarioEncontrada.getMunicipio().toString());
         txt_correo.setText(usuarioEncontrada.getEmailUsuario());
         txt_direccion.setText(usuarioEncontrada.getDireccion());
         txt_telefono.setText(usuarioEncontrada.getTelefono());
-
+        
     }
         private void cargarDepartamentos() {
             
@@ -489,6 +458,31 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         }catch(Exception e){
             e.printStackTrace(System.out);
         }
+    }
+        public void actualizarUsuario(){
+            
+            UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
+            
+            usuarioEncontrada.setApellido1(txt_apellido1.getText());
+            usuarioEncontrada.setApellido2(txt_apellido2.getText());
+            usuarioEncontrada.setNombreUsuario(txt_nombre.getText());
+            usuarioEncontrada.setRol(cmbRol.getSelectedItem().toString());
+            usuarioEncontrada.setDepartamento(cmbDepartamento.getSelectedItem().toString());
+            usuarioEncontrada.setMunicipio(cmbMunicipio.getSelectedItem().toString());
+            usuarioEncontrada.setEmailUsuario(txt_correo.getText());
+            usuarioEncontrada.setDireccion(txt_direccion.getText());
+            usuarioEncontrada.setTelefono(txt_telefono.getText());
+            
+            usuarioServicio.actualizar(usuarioEncontrada);
+            
+            JOptionPane.showMessageDialog(this, "Usuario actualizado correctamente.","Actualización de Usuario",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        
+       public void limpiarCmbMunicipio(){
+            cmbMunicipio.removeAllItems();
+            cmbMunicipio.addItem("Seleccionar");
+            cmbMunicipio.setSelectedItem(1);
     }
     /**
      * @param args the command line arguments

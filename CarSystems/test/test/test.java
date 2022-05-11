@@ -31,13 +31,13 @@ public class test {
         /**
          * @Method Actualizar
          */
-        //Marca marcaModificar = new Marca(2, "AUDI");
-        //marcaServicio.actualizar(marcaModificar);
+        Marca marcaModificar = new Marca(2, "AUDI");
+        marcaServicio.actualizar(marcaModificar);
         
         /**
          * @Method Encontrar Marca por ID
          */
-        Marca marcaEncontrada = marcaServicio.encontrarMarca(1);
+       // Marca marcaEncontrada = marcaServicio.encontrarMarca(1);
         
         /**
          * @Method Eliminar Marca
