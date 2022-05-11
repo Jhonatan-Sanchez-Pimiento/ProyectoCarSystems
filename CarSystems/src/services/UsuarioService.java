@@ -13,5 +13,7 @@ public interface UsuarioService {
     
     public List<Usuario> listarUsuario();
     
-    public Usuario encontrarUsuario (Usuario usuario);
+    public Usuario encontrarUsuario (Long idUsuario, String tipoIds);
+    
+    public void actualizar (Usuario usuario);
 }
