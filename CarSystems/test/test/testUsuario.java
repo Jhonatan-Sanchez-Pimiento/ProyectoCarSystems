@@ -18,13 +18,9 @@ public class testUsuario {
         
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
         
-<<<<<<< HEAD
-        Usuario usuario = new Usuario(1090442900L,"Cedula de Ciudadanía" , "Saenz", "Rodriguez", "Juan Mateo", "Norte de Santander", "Cúcuta", "Calle 32 22 - 80", "3123577331", "Jmsanchezp1234@sanmateo.edu.co", "Vendedor", "123456");
-=======
         //Usuario usuario = new Usuario( 1022968969 ,"CC","ahumada","forero","sandra","bogota","bogota","callecarrera","3123578945","smahumadao159@gmail.com","vendedor","1235");
         
        // usuarioServicio.guardar(usuario);
->>>>>>> 972d6c9f86c33aeedef4c553cae0e3505d9cc9c5
         
         /**
          * @Method Listar
