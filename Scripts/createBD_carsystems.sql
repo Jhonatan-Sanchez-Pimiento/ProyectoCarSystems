@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS tipo_maquinaria(
 
 CREATE TABLE IF NOT EXISTS vehiculo (
     id_vehiculo VARCHAR (30) NOT NULL,
-    tipo_id_usuario VARCHAR (3) NOT NULL,
+    tipo_id_usuario VARCHAR (30) NOT NULL,
     id_usuario BIGINT NOT NULL,
     tipo_servicio VARCHAR (30) NOT NULL,
     tipo_vehiculo VARCHAR(30) NOT NULL, 

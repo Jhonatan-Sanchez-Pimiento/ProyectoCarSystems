@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package test;
 
 import dominio.ManejoPDF;
 
 /**
- *
- * @author Jhonatan Sánchez
+ * @author IntegraSoft
  */
 public class testManejoPDF extends javax.swing.JFrame {
     ManejoPDF manejoPDF = new ManejoPDF();
@@ -117,7 +111,7 @@ public class testManejoPDF extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLeerPDFActionPerformed
 
     private void btnGuardarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPDFActionPerformed
-        manejoPDF.descargarPDF(archivoPDF);
+        manejoPDF.descargarPDF(archivoPDF,"vehiculoXYZ");
     }//GEN-LAST:event_btnGuardarPDFActionPerformed
 
     /**

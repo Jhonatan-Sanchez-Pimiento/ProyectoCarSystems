@@ -1,12 +1,15 @@
 package dominio;
 
 import java.awt.Desktop;
+import java.awt.HeadlessException;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Arrays;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -77,8 +80,8 @@ public class ManejoPDF extends javax.swing.JFrame {
     }
 
     //Descarga el archivo Byte[] como PDF en una ruta especifica del disco
-    public void descargarPDF(byte[] archivoPDF) {
-        System.out.println("archivoPDF = " + archivoPDF);
+    public void descargarPDF(byte[] archivoPDF, String vehiculo) {
+        System.out.println("archivoPDF = " + Arrays.toString(archivoPDF));
         try {
             //convierte el archivo byte enviado en uno nuevo PDF para almacenar
             InputStream archivo = new ByteArrayInputStream(archivoPDF);
@@ -90,29 +93,31 @@ public class ManejoPDF extends javax.swing.JFrame {
             seleccionarCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             seleccionarCarpeta.showSaveDialog(this);
             File carpetaSeleccionada = seleccionarCarpeta.getSelectedFile();
-            //guardar archivo en carpeta seleccionada
-            OutputStream salida = new FileOutputStream(carpetaSeleccionada.getAbsolutePath() + File.separator + "archivoPrueba.pdf");
-            salida.write(archivoPDF);
-            salida.close();
-        } catch (Exception e) {
+            try ( //guardar archivo en carpeta seleccionada
+                OutputStream salida = new FileOutputStream(carpetaSeleccionada.getAbsolutePath() + File.separator + "Informe_Diagnostico_" + vehiculo + ".pdf")) {
+                salida.write(archivoPDF);
+            }
+        } catch (HeadlessException | IOException e) {
+            e.printStackTrace(System.out);
+            JOptionPane.showMessageDialog(null,"Error al descargar el archivo PDF : "+e,"Descargar PDF", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     //Abre un PDF extraido de la BD guardandolo en la carpeta del proyecto
-    public void abriPDF(byte[] archivoPDF){
+    public void abriPDF(byte[] archivoPDF) {
         try {
             //convierte el archivo byte enviado en uno nuevo PDF para almacenar
             InputStream archivo = new ByteArrayInputStream(archivoPDF);
             int tamanoPDF = archivo.available();
             byte[] nuevoArchivoPDF = new byte[tamanoPDF];
             archivo.read(nuevoArchivoPDF, 0, tamanoPDF);
-            OutputStream salida = new FileOutputStream("."+File.separator+"archivosPDF"+File.separator+"archivoPrueba.pdf");
+            OutputStream salida = new FileOutputStream("." + File.separator + "archivosPDF" + File.separator + "archivoPrueba.pdf");
             salida.write(archivoPDF);
             salida.close();
         } catch (Exception e) {
         }
     }
-    
+
     //Abre un archivo PDF de una ruta especifica
     public void abrirPDF(File archivoPDF) {
         try {
@@ -122,7 +127,6 @@ public class ManejoPDF extends javax.swing.JFrame {
         }
     }
 
-    
     /**
      * @param args the command line arguments
      */

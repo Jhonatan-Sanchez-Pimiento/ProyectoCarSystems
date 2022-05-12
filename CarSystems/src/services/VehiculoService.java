@@ -10,9 +10,7 @@ import java.util.List;
  */
 public interface VehiculoService {
     
-    public void guardar(Vehiculo vehiculo, String ruta, Usuario usuario);
-    
-    public void guardarEstadoJudicial(File estadoJudicial);
+    public void guardar(Vehiculo vehiculo, Usuario usuario);
     
     public void eliminar(Vehiculo vehiculo);
     
@@ -34,7 +32,7 @@ public interface VehiculoService {
     
     public List<Vehiculo> listarVehiculoAutomovil();
     
-    public List<Vehiculo> listarVehiculoMarca();
+    public List<Vehiculo> listarVehiculoMarca(String marca);
     
-    public List<Vehiculo> listarVehiculoTipoMaquinariaPesada(MaquinariaPesada maquinariaPesada);
+    public List<Vehiculo> listarVehiculoTipoMaquinariaPesada(String tipoMaquinaria);
 }

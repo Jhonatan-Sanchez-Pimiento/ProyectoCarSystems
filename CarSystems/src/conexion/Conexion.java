@@ -1,6 +1,7 @@
 package conexion;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  * @author IntegraSoft
