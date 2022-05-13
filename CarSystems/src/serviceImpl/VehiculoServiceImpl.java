@@ -489,4 +489,8 @@ public class VehiculoServiceImpl implements VehiculoService {
         return vehiculos;
     }
 
+    public void guardar(Vehiculo vehiculo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

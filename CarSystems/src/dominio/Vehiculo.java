@@ -77,6 +77,20 @@ public abstract class Vehiculo {
         this.tipoMaquinaria = tipoMaquinaria;
     }
 
+//    public Vehiculo(String tipoServicio, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, double precio, String descripcion) {
+//        this.tipoServicio = tipoServicio;
+//        this.marca = marca;
+//        this.linea = linea;
+//        this.color = color;
+//        this.modelo = modelo;
+//        this.cupoPersona = cupoPersona;
+//        this.utilitario = utilitario;
+//        this.precio = precio;
+//        this.descripcion = descripcion;
+//    }
+    
+    
+
     public String getIdVehiculo() {
         return idVehiculo;
     }

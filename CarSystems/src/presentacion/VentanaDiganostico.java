@@ -37,13 +37,11 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txtFechaInspeccion = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtFechaRevision = new javax.swing.JTextField();
@@ -115,6 +113,27 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         cmbLimpiaParabrisas = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         cmbPanoramica = new javax.swing.JComboBox<>();
+        jLabel52 = new javax.swing.JLabel();
+        cmbEquipoCarretera = new javax.swing.JComboBox<>();
+        cmbExtintor = new javax.swing.JComboBox<>();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        cmbFechaVenExtintor = new javax.swing.JComboBox<>();
+        jLabel55 = new javax.swing.JLabel();
+        cmbLlantaRepuesto = new javax.swing.JComboBox<>();
+        jLabel56 = new javax.swing.JLabel();
+        cmbCruceta = new javax.swing.JComboBox<>();
+        jLabel57 = new javax.swing.JLabel();
+        cmbSeñalesReflectivas = new javax.swing.JComboBox<>();
+        jLabel58 = new javax.swing.JLabel();
+        cmbLinterna = new javax.swing.JComboBox<>();
+        jLabel59 = new javax.swing.JLabel();
+        cmbCajaHerramientas = new javax.swing.JComboBox<>();
+        jLabel60 = new javax.swing.JLabel();
+        cmbLinterna1 = new javax.swing.JComboBox<>();
+        jLabel61 = new javax.swing.JLabel();
+        cmbBotiquin = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -133,11 +152,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Placa del vehiculo :");
-
-        jLabel5.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("Fecha de revisión :");
 
         jLabel6.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(240, 240, 240));
@@ -163,11 +177,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(240, 240, 240));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("Modelo del vehiculo :");
-
-        jLabel12.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel12.setText("Fecha de última inspección :");
 
         jLabel13.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(240, 240, 240));
@@ -423,6 +432,88 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         cmbPanoramica.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
         cmbPanoramica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
 
+        jLabel52.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel52.setText("Equipo carretera");
+
+        cmbEquipoCarretera.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbEquipoCarretera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        cmbExtintor.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbExtintor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel53.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel53.setText("Extintor");
+
+        jLabel54.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel54.setText("Fecha ven extintor");
+
+        cmbFechaVenExtintor.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbFechaVenExtintor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel55.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel55.setText("Llantas repuesto");
+
+        cmbLlantaRepuesto.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbLlantaRepuesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel56.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel56.setText("Cruceta");
+
+        cmbCruceta.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbCruceta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel57.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel57.setText("señales reflectivas");
+
+        cmbSeñalesReflectivas.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbSeñalesReflectivas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel58.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel58.setText("Linterna");
+
+        cmbLinterna.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbLinterna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel59.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel59.setText("Caja herramientas");
+
+        cmbCajaHerramientas.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbCajaHerramientas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel60.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel60.setText("gato");
+
+        cmbLinterna1.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbLinterna1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jLabel61.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel61.setText("Botiquin");
+
+        cmbBotiquin.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
+        cmbBotiquin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione ", "Si tiene", "No tiene" }));
+
+        jButton1.setText("Guardar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -440,7 +531,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel7)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -456,8 +546,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel14)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txtModeloVehiculo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
@@ -502,7 +591,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, 1129, Short.MAX_VALUE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -533,11 +622,11 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                         .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(cmbStops, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(106, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1129, Short.MAX_VALUE)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -566,7 +655,15 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                             .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(cmbPito, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(cmbPito, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(cmbEquipoCarretera, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(cmbFechaVenExtintor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
@@ -588,7 +685,21 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                             .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(cmbPanoramica, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(cmbPanoramica, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(cmbExtintor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cmbLlantaRepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cmbSeñalesReflectivas, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cmbCajaHerramientas, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cmbBotiquin, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -600,8 +711,24 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(cmbTapizado, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cmbTapizado, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbCruceta, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbLinterna, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbLinterna1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(369, 369, 369))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -621,7 +748,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                     .addComponent(txtPlacaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
                     .addComponent(txtFechaRevision, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
                     .addComponent(txtModeloVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -629,7 +755,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtFechaVenSOAT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel12)
                     .addComponent(txtUltmaInspeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -733,13 +858,51 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                         .addComponent(cmbCarcasaLuces, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel51)
-                        .addComponent(cmbPanoramica, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel51)
+                            .addComponent(cmbPanoramica, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel53))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmbEquipoCarretera, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbExtintor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel52))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(cmbFechaVenExtintor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel55))
+                                    .addComponent(cmbLlantaRepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel49)
                         .addComponent(cmbTapizado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(cmbCruceta, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57)
+                    .addComponent(cmbSeñalesReflectivas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(cmbLinterna, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59)
+                    .addComponent(cmbCajaHerramientas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(cmbLinterna1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61)
+                    .addComponent(cmbBotiquin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(471, 471, 471)
@@ -853,18 +1016,27 @@ public class VentanaDiganostico extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbAcelerador;
     private javax.swing.JComboBox<String> cmbAguaLimVidrios;
     private javax.swing.JComboBox<String> cmbBateria;
+    private javax.swing.JComboBox<String> cmbBotiquin;
+    private javax.swing.JComboBox<String> cmbCajaHerramientas;
     private javax.swing.JComboBox<String> cmbCarcasaLuces;
     private javax.swing.JComboBox<String> cmbCinturonSeguridad;
     private javax.swing.JComboBox<String> cmbClutch;
+    private javax.swing.JComboBox<String> cmbCruceta;
     private javax.swing.JComboBox<String> cmbDireccionales;
+    private javax.swing.JComboBox<String> cmbEquipoCarretera;
     private javax.swing.JComboBox<String> cmbEspejos;
     private javax.swing.JComboBox<String> cmbEstacionarias;
+    private javax.swing.JComboBox<String> cmbExtintor;
+    private javax.swing.JComboBox<String> cmbFechaVenExtintor;
     private javax.swing.JComboBox<String> cmbFreno;
     private javax.swing.JComboBox<String> cmbFrenoEmergencia;
     private javax.swing.JComboBox<String> cmbLimpiaParabrisas;
+    private javax.swing.JComboBox<String> cmbLinterna;
+    private javax.swing.JComboBox<String> cmbLinterna1;
     private javax.swing.JComboBox<String> cmbLiquidoFrenos;
     private javax.swing.JComboBox<String> cmbLiquidoHidra;
     private javax.swing.JComboBox<String> cmbLiquidoRefrige;
+    private javax.swing.JComboBox<String> cmbLlantaRepuesto;
     private javax.swing.JComboBox<String> cmbLlantas;
     private javax.swing.JComboBox<String> cmbLuces;
     private javax.swing.JComboBox<String> cmbLucesInternas;
@@ -873,13 +1045,14 @@ public class VentanaDiganostico extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbPito;
     private javax.swing.JComboBox<String> cmbPitoReversa;
     private javax.swing.JComboBox<String> cmbRines;
+    private javax.swing.JComboBox<String> cmbSeñalesReflectivas;
     private javax.swing.JComboBox<String> cmbStops;
     private javax.swing.JComboBox<String> cmbTapizado;
     private javax.swing.JComboBox<String> cmbTestigoTablero;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
@@ -915,10 +1088,19 @@ public class VentanaDiganostico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
