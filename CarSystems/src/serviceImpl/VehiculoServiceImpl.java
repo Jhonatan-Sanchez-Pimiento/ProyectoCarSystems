@@ -6,7 +6,6 @@ import dominio.*;
 import java.awt.Image;
 import java.sql.*;
 import java.util.*;
-import javax.swing.JOptionPane;
 import services.VehiculoService;
 
 /**
@@ -15,13 +14,11 @@ import services.VehiculoService;
 public class VehiculoServiceImpl implements VehiculoService {
 
     ManejoImagen manejoImagen = new ManejoImagen();
-    ManejoPDF manejoPDF = new ManejoPDF();
-    Vehiculo vehiculo;
     private static final String SQL_INSERT = "INSERT INTO vehiculo(id_vehiculo, tipo_id_usuario, id_usuario, "
             + "tipo_servicio, tipo_vehiculo, marca, linea, color, modelo, cupo_persona, utilitario,"
             + "blindado, precio, imagen, descripcion, estado_judicial, peso, alto, ancho, largo, tipo_maquinaria) "
             + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-    private static String SQL_SELECT = "SELECT * FROM vehiculo";
+    private static final String SQL_SELECT = "SELECT * FROM vehiculo";
     private static final String SQL_UPDATE = "UPDATE vehiculo SET ("
             + "tipo_servicio, tipo_vehiculo, marca, linea, color, modelo, cupo_persona, utiliario,"
             + "blindado, precio, imagen, descripcion, estado_judicial, peso, alto, ancho, largo, tipo_maquinaria)"
@@ -31,7 +28,7 @@ public class VehiculoServiceImpl implements VehiculoService {
     private static String SQL_CONSULTA = "SELECT * FROM vehiculo WHERE id_vehiculo = ?";
 
     @Override
-    public void guardar(Vehiculo vehiculo, Usuario usuario) {
+    public void guardar(Vehiculo vehiculo) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
@@ -39,8 +36,8 @@ public class VehiculoServiceImpl implements VehiculoService {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
             stmt.setString(1, vehiculo.getIdVehiculo());
-            stmt.setString(2, usuario.getTipoId());
-            stmt.setLong(3, usuario.getIdUsuario());
+            stmt.setString(2, vehiculo.getTipoIdUsuario());
+            stmt.setLong(3, vehiculo.getIdUsuario());
             stmt.setString(4, vehiculo.getTipoServicio());
             stmt.setString(5, vehiculo.getTipoVehiculo());
             stmt.setString(6, vehiculo.getMarca());
@@ -62,6 +59,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
             registros = stmt.executeUpdate();
             System.out.println("Vehiculo guardada.");
+            
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         } finally {
@@ -98,7 +96,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculo() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -110,7 +108,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -133,7 +131,7 @@ public class VehiculoServiceImpl implements VehiculoService {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         SQL_CONSULTA = "SELECT * FROM vehiculo WHERE id_vehiculo = ?";
         try {
             conn = new Conexion().getConnection();
@@ -213,7 +211,6 @@ public class VehiculoServiceImpl implements VehiculoService {
             stmt.setString(19, vehiculo.getIdVehiculo());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar el vehiculo con id = " + vehiculo.getIdVehiculo(), "Error actualización vehículo", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace(System.out);
         } finally {
             try {
@@ -227,7 +224,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoCamioneta() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -240,7 +237,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -260,7 +257,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoMaquinariaPesada() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -273,7 +270,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -293,7 +290,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoBlindado() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -306,7 +303,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -326,7 +323,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoServicioPublico() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -339,7 +336,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -359,7 +356,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoServicioPrivado() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -372,7 +369,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -392,7 +389,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoAutomovil() {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -405,7 +402,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -425,7 +422,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoMarca(String marca) {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -438,7 +435,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {
@@ -458,7 +455,7 @@ public class VehiculoServiceImpl implements VehiculoService {
 
     @Override
     public List<Vehiculo> listarVehiculoTipoMaquinariaPesada(String tipoMaquinaria) {
-        this.vehiculo = null;
+        Vehiculo vehiculo = null;
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -471,7 +468,7 @@ public class VehiculoServiceImpl implements VehiculoService {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String idVehiculo = rs.getString("id_vehiculo");
-                this.vehiculo = this.encontrarVehiculo(idVehiculo);
+                vehiculo = this.encontrarVehiculo(idVehiculo);
                 vehiculos.add(vehiculo);
             }
         } catch (SQLException ex) {

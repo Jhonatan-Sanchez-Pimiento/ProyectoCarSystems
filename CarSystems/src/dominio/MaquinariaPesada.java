@@ -15,5 +15,4 @@ public class MaquinariaPesada extends Vehiculo {
         super(idVehiculo, tipoIdUsuario, idUsuario, tipoServicio, "Maquinaria pesada", marca, linea, color, modelo, cupoPersona, utilitario, blindado, precio, imagen, imagenByte, descripcion, estadoJudicial, peso, alto, ancho, largo, tipoMaquinaria);
     }
 
-
 }

@@ -12,8 +12,7 @@ import java.util.List;
 import services.MarcaService;
 
 /**
- *
- * @author Jhonatan Sánchez
+ * @author IntegraSoft
  */
 public class MarcaServiceImpl implements MarcaService {
 

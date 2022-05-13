@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface VehiculoService {
     
-    public void guardar(Vehiculo vehiculo, Usuario usuario);
+    public void guardar(Vehiculo vehiculo);
     
     public void eliminar(Vehiculo vehiculo);
     

@@ -4,8 +4,7 @@ import dominio.Marca;
 import java.util.List;
 
 /**
- *
- * @author Jhonatan Sánchez
+ * @author IntegraSoft
  */
 public interface MarcaService {
     public void guardar(Marca marca);
