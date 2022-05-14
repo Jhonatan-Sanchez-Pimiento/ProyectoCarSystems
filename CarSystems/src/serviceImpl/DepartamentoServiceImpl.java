@@ -3,7 +3,6 @@ package serviceImpl;
 import conexion.Conexion;
 import static conexion.Conexion.close;
 import dominio.Departamento;
-import dominio.Departamento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

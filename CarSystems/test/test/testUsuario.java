@@ -12,9 +12,9 @@ public class testUsuario {
         
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
         
-        //Usuario usuario = new Usuario( 1022968969 ,"CC","ahumada","forero","sandra","bogota","bogota","callecarrera","3123578945","smahumadao159@gmail.com","vendedor","1235");
+       Usuario usuario = new Usuario( 1022968969 ,"CC","ahumada","forero","sandra","bogota","bogota","callecarrera","3123578945","smahumadao159@gmail.com","vendedor","1235");
         
-       // usuarioServicio.guardar(usuario);
+        usuarioServicio.guardar(usuario);
         
         /**
          * @Method Listar
@@ -29,9 +29,9 @@ public class testUsuario {
 //                /**
 //         * @Method Actualizar
 //         */
-        Usuario usuarioModificar = new Usuario("ahumada","forero","sandra","bogota","bogota","callecarrera","3123578945","smahumadao159@gmail.com","vendedor","1235");
-        usuarioServicio.actualizar(usuarioModificar);
-       
+//        Usuario usuarioModificar = new Usuario("ahumada","forero","sandra","bogota","bogota","callecarrera","3123578945","smahumadao159@gmail.com","vendedor","1235");
+//        usuarioServicio.actualizar(usuarioModificar);
+//       
          /**
          * @Method Encontrar Usuario por ID
          */

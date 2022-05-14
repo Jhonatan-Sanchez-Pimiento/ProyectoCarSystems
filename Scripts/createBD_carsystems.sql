@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS inspeccion (
     luces_internas BOOLEAN NOT NULL,
     equipo_carretera BOOLEAN NOT NULL,
     extintor BOOLEAN NOT NULL,
-    fecha_ven_extintor BOOLEAN NOT NULL,
+    fecha_ven_extintor TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     llanta_repuesto BOOLEAN NOT NULL,
     cruceta BOOLEAN NOT NULL,
     senales_reflectivas BOOLEAN NOT NULL,

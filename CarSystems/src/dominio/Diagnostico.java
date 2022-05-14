@@ -1,64 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
+
 /**
- *
- * @author nicol
+ * @author IntegraSoft
  */
 public class Diagnostico {
+    private long idInspeccion;
+    private String idVehiculo;
     private String fechaInspeccion;
-    private String fechaRevision;
     private String fechaVenSoat;
     private String fechaManPreventivo;
-    private String tipoVehiculo;
-    private String placaVehiculo;
-    private String modeloVehiculo;
-    private String numeroLicConduccion;
     private String fechaUltCamAceite;
-    private String kilometrajeActual;
-/*
-    Niveles
-    */    
+    private int kmActual;
     private boolean liquidoRefrigerante;
-    private boolean liquidoFrenos;
+    private boolean liquidoFreno;
     private boolean aceiteMotor;
     private boolean liquidoHidraulico;
     private boolean aguaLimpiavidrios;
-    /*
-    Pedales
-    */
     private boolean acelerador;
     private boolean clutsh;
     private boolean freno;
-    /*
-    Luces
-    */
     private boolean luces;
     private boolean direccionales;
     private boolean estacionarias;
     private boolean stops;
-    private boolean testigosTablero;
+    private boolean testigoTablero;
     private boolean luzReversa;
     private boolean lucesInternas;
-    /*
-    Equipo de carretera y botiquin
-    */
+    private boolean equipoCarretera;
     private boolean extintor;
-    private boolean fechaVenExtintor;
-    private boolean llantasRepuesto;
+    private String fechaVenExtintor;
+    private boolean llantaRepuesto;
     private boolean cruceta;
-    private boolean señalesReflectivas;
+    private boolean senalesReflectivas;
     private boolean cajaHerramientas;
     private boolean linterna;
     private boolean gato;
     private boolean botiquin;
-    /*
-    Varios
-    */
     private boolean llantas;
     private boolean bateria;
     private boolean rines;
@@ -71,23 +49,20 @@ public class Diagnostico {
     private boolean limpiaparabrisas;
     private boolean tapizado;
     private boolean panoramico;
-
+    private String observacion;
+    
     public Diagnostico() {
     }
 
-    public Diagnostico(String fechaInspeccion, String fechaRevision, String fechaVenSoat, String fechaManPreventivo, String tipoVehiculo, String placaVehiculo, String modeloVehiculo, String numeroLicConduccion, String fechaUltCamAceite, String kilometrajeActual, boolean liquidoRefrigerante, boolean liquidoFrenos, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigosTablero, boolean luzReversa, boolean lucesInternas, boolean extintor, boolean fechaVenExtintor, boolean llantasRepuesto, boolean cruceta, boolean señalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico) {
+    public Diagnostico(String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCamAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, String fechaVenExtintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
+        this.idVehiculo = idVehiculo;
         this.fechaInspeccion = fechaInspeccion;
-        this.fechaRevision = fechaRevision;
         this.fechaVenSoat = fechaVenSoat;
         this.fechaManPreventivo = fechaManPreventivo;
-        this.tipoVehiculo = tipoVehiculo;
-        this.placaVehiculo = placaVehiculo;
-        this.modeloVehiculo = modeloVehiculo;
-        this.numeroLicConduccion = numeroLicConduccion;
         this.fechaUltCamAceite = fechaUltCamAceite;
-        this.kilometrajeActual = kilometrajeActual;
+        this.kmActual = kmActual;
         this.liquidoRefrigerante = liquidoRefrigerante;
-        this.liquidoFrenos = liquidoFrenos;
+        this.liquidoFreno = liquidoFreno;
         this.aceiteMotor = aceiteMotor;
         this.liquidoHidraulico = liquidoHidraulico;
         this.aguaLimpiavidrios = aguaLimpiavidrios;
@@ -98,14 +73,15 @@ public class Diagnostico {
         this.direccionales = direccionales;
         this.estacionarias = estacionarias;
         this.stops = stops;
-        this.testigosTablero = testigosTablero;
+        this.testigoTablero = testigoTablero;
         this.luzReversa = luzReversa;
         this.lucesInternas = lucesInternas;
+        this.equipoCarretera = equipoCarretera;
         this.extintor = extintor;
         this.fechaVenExtintor = fechaVenExtintor;
-        this.llantasRepuesto = llantasRepuesto;
+        this.llantaRepuesto = llantaRepuesto;
         this.cruceta = cruceta;
-        this.señalesReflectivas = señalesReflectivas;
+        this.senalesReflectivas = senalesReflectivas;
         this.cajaHerramientas = cajaHerramientas;
         this.linterna = linterna;
         this.gato = gato;
@@ -122,6 +98,71 @@ public class Diagnostico {
         this.limpiaparabrisas = limpiaparabrisas;
         this.tapizado = tapizado;
         this.panoramico = panoramico;
+        this.observacion = observacion;
+    }
+
+    public Diagnostico(long idInspeccion, String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCamAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, String fechaVenExtintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
+        this.idInspeccion = idInspeccion;
+        this.idVehiculo = idVehiculo;
+        this.fechaInspeccion = fechaInspeccion;
+        this.fechaVenSoat = fechaVenSoat;
+        this.fechaManPreventivo = fechaManPreventivo;
+        this.fechaUltCamAceite = fechaUltCamAceite;
+        this.kmActual = kmActual;
+        this.liquidoRefrigerante = liquidoRefrigerante;
+        this.liquidoFreno = liquidoFreno;
+        this.aceiteMotor = aceiteMotor;
+        this.liquidoHidraulico = liquidoHidraulico;
+        this.aguaLimpiavidrios = aguaLimpiavidrios;
+        this.acelerador = acelerador;
+        this.clutsh = clutsh;
+        this.freno = freno;
+        this.luces = luces;
+        this.direccionales = direccionales;
+        this.estacionarias = estacionarias;
+        this.stops = stops;
+        this.testigoTablero = testigoTablero;
+        this.luzReversa = luzReversa;
+        this.lucesInternas = lucesInternas;
+        this.equipoCarretera = equipoCarretera;
+        this.extintor = extintor;
+        this.fechaVenExtintor = fechaVenExtintor;
+        this.llantaRepuesto = llantaRepuesto;
+        this.cruceta = cruceta;
+        this.senalesReflectivas = senalesReflectivas;
+        this.cajaHerramientas = cajaHerramientas;
+        this.linterna = linterna;
+        this.gato = gato;
+        this.botiquin = botiquin;
+        this.llantas = llantas;
+        this.bateria = bateria;
+        this.rines = rines;
+        this.cinturonSeguridad = cinturonSeguridad;
+        this.pitoReversa = pitoReversa;
+        this.pito = pito;
+        this.frenoEmergencia = frenoEmergencia;
+        this.espejos = espejos;
+        this.carcasaLuces = carcasaLuces;
+        this.limpiaparabrisas = limpiaparabrisas;
+        this.tapizado = tapizado;
+        this.panoramico = panoramico;
+        this.observacion = observacion;
+    }
+
+    public long getIdInspeccion() {
+        return idInspeccion;
+    }
+
+    public void setIdInspeccion(long idInspeccion) {
+        this.idInspeccion = idInspeccion;
+    }
+
+    public String getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(String idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     public String getFechaInspeccion() {
@@ -130,14 +171,6 @@ public class Diagnostico {
 
     public void setFechaInspeccion(String fechaInspeccion) {
         this.fechaInspeccion = fechaInspeccion;
-    }
-
-    public String getFechaRevision() {
-        return fechaRevision;
-    }
-
-    public void setFechaRevision(String fechaRevision) {
-        this.fechaRevision = fechaRevision;
     }
 
     public String getFechaVenSoat() {
@@ -156,38 +189,6 @@ public class Diagnostico {
         this.fechaManPreventivo = fechaManPreventivo;
     }
 
-    public String getTipoVehiculo() {
-        return tipoVehiculo;
-    }
-
-    public void setTipoVehiculo(String tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
-    }
-
-    public String getPlacaVehiculo() {
-        return placaVehiculo;
-    }
-
-    public void setPlacaVehiculo(String placaVehiculo) {
-        this.placaVehiculo = placaVehiculo;
-    }
-
-    public String getModeloVehiculo() {
-        return modeloVehiculo;
-    }
-
-    public void setModeloVehiculo(String modeloVehiculo) {
-        this.modeloVehiculo = modeloVehiculo;
-    }
-
-    public String getNumeroLicConduccion() {
-        return numeroLicConduccion;
-    }
-
-    public void setNumeroLicConduccion(String numeroLicConduccion) {
-        this.numeroLicConduccion = numeroLicConduccion;
-    }
-
     public String getFechaUltCamAceite() {
         return fechaUltCamAceite;
     }
@@ -196,12 +197,12 @@ public class Diagnostico {
         this.fechaUltCamAceite = fechaUltCamAceite;
     }
 
-    public String getKilometrajeActual() {
-        return kilometrajeActual;
+    public int getKmActual() {
+        return kmActual;
     }
 
-    public void setKilometrajeActual(String kilometrajeActual) {
-        this.kilometrajeActual = kilometrajeActual;
+    public void setKmActual(int kmActual) {
+        this.kmActual = kmActual;
     }
 
     public boolean isLiquidoRefrigerante() {
@@ -212,12 +213,12 @@ public class Diagnostico {
         this.liquidoRefrigerante = liquidoRefrigerante;
     }
 
-    public boolean isLiquidoFrenos() {
-        return liquidoFrenos;
+    public boolean isLiquidoFreno() {
+        return liquidoFreno;
     }
 
-    public void setLiquidoFrenos(boolean liquidoFrenos) {
-        this.liquidoFrenos = liquidoFrenos;
+    public void setLiquidoFreno(boolean liquidoFreno) {
+        this.liquidoFreno = liquidoFreno;
     }
 
     public boolean isAceiteMotor() {
@@ -300,12 +301,12 @@ public class Diagnostico {
         this.stops = stops;
     }
 
-    public boolean isTestigosTablero() {
-        return testigosTablero;
+    public boolean isTestigoTablero() {
+        return testigoTablero;
     }
 
-    public void setTestigosTablero(boolean testigosTablero) {
-        this.testigosTablero = testigosTablero;
+    public void setTestigoTablero(boolean testigoTablero) {
+        this.testigoTablero = testigoTablero;
     }
 
     public boolean isLuzReversa() {
@@ -324,6 +325,14 @@ public class Diagnostico {
         this.lucesInternas = lucesInternas;
     }
 
+    public boolean isEquipoCarretera() {
+        return equipoCarretera;
+    }
+
+    public void setEquipoCarretera(boolean equipoCarretera) {
+        this.equipoCarretera = equipoCarretera;
+    }
+
     public boolean isExtintor() {
         return extintor;
     }
@@ -332,20 +341,20 @@ public class Diagnostico {
         this.extintor = extintor;
     }
 
-    public boolean isFechaVenExtintor() {
+    public String getFechaVenExtintor() {
         return fechaVenExtintor;
     }
 
-    public void setFechaVenExtintor(boolean fechaVenExtintor) {
+    public void setFechaVenExtintor(String fechaVenExtintor) {
         this.fechaVenExtintor = fechaVenExtintor;
     }
 
-    public boolean isLlantasRepuesto() {
-        return llantasRepuesto;
+    public boolean isLlantaRepuesto() {
+        return llantaRepuesto;
     }
 
-    public void setLlantasRepuesto(boolean llantasRepuesto) {
-        this.llantasRepuesto = llantasRepuesto;
+    public void setLlantaRepuesto(boolean llantaRepuesto) {
+        this.llantaRepuesto = llantaRepuesto;
     }
 
     public boolean isCruceta() {
@@ -356,12 +365,12 @@ public class Diagnostico {
         this.cruceta = cruceta;
     }
 
-    public boolean isSeñalesReflectivas() {
-        return señalesReflectivas;
+    public boolean isSenalesReflectivas() {
+        return senalesReflectivas;
     }
 
-    public void setSeñalesReflectivas(boolean señalesReflectivas) {
-        this.señalesReflectivas = señalesReflectivas;
+    public void setSenalesReflectivas(boolean senalesReflectivas) {
+        this.senalesReflectivas = senalesReflectivas;
     }
 
     public boolean isCajaHerramientas() {
@@ -492,8 +501,17 @@ public class Diagnostico {
         this.panoramico = panoramico;
     }
 
+    public String getObservacion() {
+        return observacion;
+    }
 
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Diagnostico{" + "idInspeccion=" + idInspeccion + ", idVehiculo=" + idVehiculo + ", fechaInspeccion=" + fechaInspeccion + ", fechaVenSoat=" + fechaVenSoat + ", fechaManPreventivo=" + fechaManPreventivo + ", fechaUltCamAceite=" + fechaUltCamAceite + ", kmActual=" + kmActual + ", liquidoRefrigerante=" + liquidoRefrigerante + ", liquidoFreno=" + liquidoFreno + ", aceiteMotor=" + aceiteMotor + ", liquidoHidraulico=" + liquidoHidraulico + ", aguaLimpiavidrios=" + aguaLimpiavidrios + ", acelerador=" + acelerador + ", clutsh=" + clutsh + ", freno=" + freno + ", luces=" + luces + ", direccionales=" + direccionales + ", estacionarias=" + estacionarias + ", stops=" + stops + ", testigoTablero=" + testigoTablero + ", luzReversa=" + luzReversa + ", lucesInternas=" + lucesInternas + ", equipoCarretera=" + equipoCarretera + ", extintor=" + extintor + ", fechaVenExtintor=" + fechaVenExtintor + ", llantaRepuesto=" + llantaRepuesto + ", cruceta=" + cruceta + ", senalesReflectivas=" + senalesReflectivas + ", cajaHerramientas=" + cajaHerramientas + ", linterna=" + linterna + ", gato=" + gato + ", botiquin=" + botiquin + ", llantas=" + llantas + ", bateria=" + bateria + ", rines=" + rines + ", cinturonSeguridad=" + cinturonSeguridad + ", pitoReversa=" + pitoReversa + ", pito=" + pito + ", frenoEmergencia=" + frenoEmergencia + ", espejos=" + espejos + ", carcasaLuces=" + carcasaLuces + ", limpiaparabrisas=" + limpiaparabrisas + ", tapizado=" + tapizado + ", panoramico=" + panoramico + ", observacion=" + observacion + '}';
+    }
     
 }
-
-    

@@ -17,33 +17,18 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  * @author IntegraSoft
  */
-public class ManejoPDF extends javax.swing.JFrame {
+public class ManejoPDF {
 
     private String rutaArchivo;
+    private String nombrePDF;
 
-    public ManejoPDF() {
-        initComponents();
+    public String getNombrePDF() {
+        return nombrePDF;
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+    public void setNombrePDF(String nombrePDF) {
+        this.nombrePDF = nombrePDF;
+    }
 
     //método que selecciona un archivo PDF del disco duro
     public String seleccionarPDF() {
@@ -51,9 +36,13 @@ public class ManejoPDF extends javax.swing.JFrame {
             JFileChooser buscadorArchivo = new JFileChooser();
             FileNameExtensionFilter extension = new FileNameExtensionFilter("pdf", "pdf");
             buscadorArchivo.setFileFilter(extension);
-            int seleccion = buscadorArchivo.showOpenDialog(this);
+            int seleccion = buscadorArchivo.showOpenDialog(null);
             if (seleccion == 0) {
+                nombrePDF = buscadorArchivo.getSelectedFile().getName();
                 rutaArchivo = buscadorArchivo.getSelectedFile().getAbsolutePath();
+            } else {
+                nombrePDF = null;
+                rutaArchivo = null;
             }
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -91,15 +80,15 @@ public class ManejoPDF extends javax.swing.JFrame {
             //Seleccionar carpeta a donde se almacenara el PDF
             JFileChooser seleccionarCarpeta = new JFileChooser();
             seleccionarCarpeta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            seleccionarCarpeta.showSaveDialog(this);
+            seleccionarCarpeta.showSaveDialog(null);
             File carpetaSeleccionada = seleccionarCarpeta.getSelectedFile();
             try ( //guardar archivo en carpeta seleccionada
-                OutputStream salida = new FileOutputStream(carpetaSeleccionada.getAbsolutePath() + File.separator + "Informe_Diagnostico_" + vehiculo + ".pdf")) {
+                    OutputStream salida = new FileOutputStream(carpetaSeleccionada.getAbsolutePath() + File.separator + "Informe_Diagnostico_" + vehiculo + ".pdf")) {
                 salida.write(archivoPDF);
             }
         } catch (HeadlessException | IOException e) {
             e.printStackTrace(System.out);
-            JOptionPane.showMessageDialog(null,"Error al descargar el archivo PDF : "+e,"Descargar PDF", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error al descargar el archivo PDF : " + e, "Descargar PDF", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -123,44 +112,7 @@ public class ManejoPDF extends javax.swing.JFrame {
         try {
             Desktop.getDesktop().open(archivoPDF);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al abrir el archivo PDF", "Abrir PDF", JOptionPane.ERROR);
+            JOptionPane.showMessageDialog(null, "Error al abrir el archivo PDF", "Abrir PDF", JOptionPane.ERROR);
         }
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManejoPDF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManejoPDF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManejoPDF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManejoPDF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ManejoPDF().setVisible(true);
-            }
-        });
-    }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
 }
