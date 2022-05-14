@@ -1,0 +1,2052 @@
+1;1;ARX-02
+2;1;CL-X
+3;1;ARX-01
+4;1;CSX
+5;1;Legend
+6;1;MDX
+7;1;NSX
+8;1;RDX
+9;1;RL
+10;1;RSX
+11;1;TL
+12;1;TLX
+13;1;TSX
+14;2;33
+15;2;75
+16;2;90
+17;2;145
+18;2;146
+19;2;147
+20;2;155
+21;2;156
+22;2;158
+23;2;159
+24;2;164
+25;2;166
+26;2;1900
+27;2;2000
+28;2;2600
+29;2;158/159 Alfetta
+30;2;1750/2000 Berlina
+31;2;20/30 HP
+32;2;33 Stradale
+33;2;4C
+34;2;4C Spider
+35;2;6C 1500
+36;2;6C 1750
+37;2;6C 1900
+38;2;6C 2300
+39;2;6C 2500
+40;2;8C 2300
+41;2;8C 2900
+42;2;8C Competizione
+43;2;8C Spider
+44;2;Alfa 6
+45;2;Alfasud
+46;2;Alfetta
+47;2;Alfetta GT/GTV
+48;2;Arna
+49;2;Brera
+50;2;Dauphine
+51;2;G1
+52;2;G2
+53;2;Giulia
+54;2;Giulia (2015)
+55;2;Giulia Spider
+56;2;Giulia TZ
+57;2;Giulietta
+58;2;Giulietta
+59;2;Giulietta (1955)
+60;2;Gran Sport Quattroruote
+61;2;GT
+62;2;GTA
+63;2;GTV
+64;2;Matta
+65;2;MiTo
+66;2;Montreal
+67;2;RL
+68;2;RM
+69;2;Spider
+70;2;Spider
+71;2;Sprint
+72;2;Sprint GT Veloce-Giulia Sprint
+73;2;Stelvio
+74;2;SZ/RZ
+75;3;50
+76;3;80
+77;3;100
+78;3;200
+79;3; A1
+80;3; A2
+81;3; A3
+82;3; A4
+83;3; A5
+84;3; A6
+85;3; A6 allroad quattro
+86;3; A7
+87;3; A8
+88;3; AI:TRAIL quattro
+89;3; Allroad Quattro Concept
+90;3; Avus Quattro
+91;3; Cross Cabriolet
+92;3; e-tron
+93;3; e-tron GT
+94;3; F103
+95;3; Le Mans quattro
+96;3; Nuvolari
+97;3; PB18 e-tron
+98;3; Q2
+99;3; Q3
+100;3; Q4 e-tron
+101;3; Q5
+102;3; Q7
+103;3; Q8
+104;3; Quattro
+105;3; Quattro Concept
+106;3; R8
+107;3; R8 42
+108;3; R8 4S
+109;3; Roadjet
+110;3; RS 6
+111;3; RS2 Avant
+112;3; RSQ
+113;3; S1
+114;3; Shooting Brake
+115;3; Sportback concept
+116;3; SQ5
+117;3; TT
+118;3; Urban Concept
+119;4;Arcfox Alpha-S
+120;4;ArcFox ECF
+121;4;ArcFox GT
+122;4;ArcFox ?-T
+123;4;BAIC BJ90
+124;4;Beijing BJ30 (BAIC BJ20)
+125;4;Beijing BJ40 (BJ40 Plus/ BJ40L)
+126;4;Beijing BJ60
+127;4;Beijing BJ80
+128;4;Senova CC
+129;4;Senova D20
+130;4;Senova D60
+131;4;Senova D70
+132;4;Senova D80
+133;4;Senova X25
+134;4;Senova X65
+135;5;BAW Ruiling
+136;5;BAW Yueling
+137;5;BAW Yusheng
+138;6;328
+139;6;507
+140;6;600
+141;6;700
+142;6; 3.0 CSL
+143;6; 3.0 CSL Hommage
+144;6; CS
+145;6; Dixi
+146;6; E46 M3
+147;6; E65/E66
+148;6; F 76
+149;6; G30
+150;6; i4
+151;6; iX
+152;6; M
+153;6; M1
+154;6; M3
+155;6; M5
+156;6; M6
+157;6; Nazca C2
+158;6; Serie 1
+159;6; Serie 2
+160;6; Serie 2 Active Tourer
+161;6; Serie 3
+162;6; Serie 3 Compact
+163;6; Serie 4
+164;6; Serie 5
+165;6; Serie 5 Gran Turismo
+166;6; Serie 6
+167;6; Serie 7
+168;6; Serie 8
+169;6; Turbo
+170;6; X1
+171;6; X2
+172;6; X3
+173;6; X4
+174;6; X5
+175;6; X6
+176;6; X7
+177;6; Z1
+178;6; Z2
+179;6; Z3
+180;6; Z4
+181;6; Z4 GTE
+182;6; Z4 M
+183;6; Z8
+184;6; Z9
+185;6;Isetta
+186;7;ZINORO 1E
+187;7;ZINORO 60H
+188;8; e5
+189;8; e6
+190;8; F0
+191;8; F2
+192;8; F3
+193;8; F3DM
+194;8; F3e
+195;8; F3-R
+196;8; F5 SURI
+197;8; F6
+198;8; F6DM /  F6e 
+199;8; F8
+200;8; Flyer (F1)
+201;8; Q1M
+202;8; Qin
+203;8; S6 SUV
+204;8; T5
+205;8; T7
+206;8; T9
+207;8; Yuan
+208;8;Clase 6
+209;8;T3
+210;9; Allanté
+211;9; ATS
+212;9; BLS
+213;9; Brougham
+214;9; Calais
+215;9; Catera
+216;9; Catera (automóvil)
+217;9; Cien
+218;9; Cimarron
+219;9; CT4
+220;9; CT6
+221;9; CTS
+222;9; DeVille
+223;9; DTS
+224;9; Eldorado
+225;9; ELR
+226;9; Escalade
+227;9; Evoq
+228;9; Fleetwood
+229;9; Modelo 30
+230;9; Modelo D
+231;9; Northstar LMP
+232;9; Runabout y Tonneau
+233;9; Seville
+234;9; Sixteen
+235;9; Sixty Special
+236;9; SRX
+237;9; STS
+238;9; Type 51
+239;9; Type V-63
+240;9; V-16
+241;9; V-Series
+242;9; XLR
+243;9; XT4
+244;9; XT5
+245;9; XT6
+246;9; XTS
+247;9;Opel Omega
+248;10;CS35 Plus
+249;11; A6
+250;11; Beidouxing ( Big Dipper)
+251;11; Freedom
+252;11; Freedom M50
+253;11; Freedom M60
+254;11; Freedom M70
+255;11; Fuyun
+256;11; Haitun
+257;11; Ideal
+258;11; Q25
+259;11; Q35
+260;11; Q7
+261;12;A1
+262;12;A11
+263;12;A15
+264;12;A5
+265;12;Celer
+266;12;Cielo
+267;12;Exeed TX
+268;12;Face
+269;12;QQ
+270;12;Tiggo
+271;12;V5
+272;13;7 de Oro
+273;13;490
+274;13;1957
+275;13; Agile
+276;13; Astra
+277;13; Astro
+278;13; Avalanche
+279;13; Aveo
+280;13;Baojun 510
+281;13; Bel Air
+282;13; Beretta
+283;13; Blazer
+284;13; Bolt
+285;13; C-10
+286;13; Calibra
+287;13; Camaro
+288;13; Captiva
+289;13; Celebrity
+290;13; Celta
+291;13; Chevette
+292;13; Caprice
+293;13; Cavalier
+294;13; Chevelle
+295;13; Chevy (México)
+296;13; Chevy II / Nova
+297;13; Cheyenne
+298;13; Combo
+299;13; Corsa
+300;13; Corvette (C4)
+301;13; Corvette C7
+302;13; Tracker (2019)
+303;13; Chevy 500
+304;13; Citation IV
+305;13; Classic
+306;13; Cobalt (Estados Unidos)
+307;13; Cobalt (Brasil)
+308;13; Colorado
+309;13; Corvair
+310;13; Corvette
+311;13; Cruze
+312;13; D-20
+313;13; Equinox
+314;13; Fleetline
+315;13; Impala
+316;13;Isuzu Serie N
+317;13; Kadett
+318;13; Lumina
+319;13; Lumina APV
+320;13; LUV
+321;13;Isuzu D-Max
+322;13;Isuzu i-Series
+323;13; Malibu
+324;13; Marajó
+325;13; Master
+326;13; Matiz
+327;13; Meriva
+328;13;Minivan U (General Motors)
+329;13; Monte Carlo
+330;13; Monza
+331;13; N300
+332;13; Niva/VAZ-2123
+333;13; Nuevo Aveo / Sonic
+334;13; Omega
+335;13;Opel Omega
+336;13; Omega Suprema
+337;13; Onix
+338;13; Opala
+339;13; Optra
+340;13; Orlando
+341;13; Prisma
+342;13; Rezzo
+343;13;Isuzu Rodeo
+344;13; S-10
+345;13; Sail
+346;13;Isuzu Forward
+347;13; Silverado
+348;13; Sonic
+349;13; Spark
+350;13; Spin
+351;13;Suzuki Swift
+352;13; SS
+353;13; SSR
+354;13; Suburban
+355;13; Suprema
+356;13; Tahoe
+357;13; Tigra
+358;13; Tornado
+359;13; Tracker
+360;13; TrailBlazer
+361;13; Traverse
+362;13; Trax
+363;13; WTCC Ultra
+364;13; Van
+365;13; Vectra
+366;13; Vega
+367;13; Venture
+368;13; Vivant
+369;13; Volt
+370;13;Zafira
+371;14;200
+372;14;300 (series con letra)
+373;14;300C
+374;14;300M
+375;14;Airflow
+376;14;Aspen
+377;14;Cirrus
+378;14;Concorde
+379;14;Crossfire
+380;14;Delta
+381;14;Hillman Avenger
+382;14;Imperial
+383;14;Imperial Parade Phaeton
+384;14;LeBaron
+385;14;LHS
+386;14;ME Four Twelve
+387;14;Neon
+388;14;New Yorker
+389;14;Norseman
+390;14;Pacifica
+391;14;PT Cruiser
+392;14;Sebring
+393;14;Shadow
+394;14;Sunbeam
+395;14;Town & Country
+396;14;Town & Country (1941-1988)
+397;14;Turbine
+398;15;2 CV
+399;15;Acadiane
+400;15;Ami
+401;15;Ami (2020)
+402;15;AX
+403;15;Axel
+404;15;BX
+405;15;C1
+406;15;C15
+407;15;C2
+408;15;C3
+409;15;C3 Aircross
+410;15;C3 Picasso
+411;15;C35
+412;15;C4
+413;15;C4 (1928)
+414;15;C4 Aircross
+415;15;C4 Cactus
+416;15;C4 Picasso
+417;15;C4 SpaceTourer
+418;15;C5
+419;15;C5 Aircross
+420;15;C6
+421;15;C6 (1928)
+422;15;C6 (China)
+423;15;C8
+424;15;C-Crosser
+425;15;Citroën-Kégresse
+426;15;Citycar (PSA/Toyota)
+427;15;CX
+428;15;DS
+429;15;DS3
+430;15;DS4
+431;15;DS5
+432;15;Dyane
+433;15;Elysée
+434;15;Evasion
+435;15;Furgoneta mediana (Sevel)
+436;15;Furgoneta pequeña PSA
+437;15;GS
+438;15;H
+439;15;Jumper
+440;15;Jumpy
+441;15;LNA
+442;15;Méhari
+443;15;Mitsubishi RVR
+444;15;Nemo
+445;15;Rosalie
+446;15;Saxo
+447;15;SM
+448;15;Tipo C
+449;15;Traction Avant
+450;15;Visa
+451;15;Xantia
+452;15;XM
+453;15;Xsara
+454;15;Xsara Picasso
+455;15;ZX
+456;16;Altis
+457;16;Applause
+458;16;Boon
+459;16;Charade
+460;16;Consorte
+461;16;Coo
+462;16;Copen
+463;16;Cuore
+464;16;Delta
+465;16;K3-VE
+466;16;Materia
+467;16;Midget
+468;16;Mira
+469;16;Move
+470;16;Sirion
+471;16;Terios
+472;17;C37/C36
+473;17;C31/C32
+474;17;K05
+475;17;K07
+476;17;K09
+477;17;K05S
+478;17;K07S
+479;17;K01/K02
+480;17;V07S, microvan
+481;17;V21, camioneta de cabina única
+482;17;V22, camioneta de cabina doble
+483;17;V25, microvan
+484;17;V26, microvan
+485;17;V27, microvan
+486;17;V29, microvan/camioneta
+487;18;400
+488;18;600
+489;18;1500
+490;18;3700
+491;18;Aries
+492;18;Aspen
+493;18;Attitude
+494;18;Avenger
+495;18;Caliber
+496;18;Caravan
+497;18;Challenger
+498;18;Charger
+499;18;Charger (B-body)
+500;18;Charger (LX)
+501;18;Cherokee
+502;18;Colt
+503;18;Coronado
+504;18;Coronet
+505;18;Dart
+506;18;Dart (España)
+507;18;Dart (2012)
+508;18;Dart GT
+509;18;Charger Daytona
+510;18;Dakota
+511;18;Daytona
+512;18;Diplomat
+513;18;Durango
+514;18;Dynasty
+515;18;Neon SRT-4
+516;18;GTX
+517;18;Intrepid
+518;18;Journey
+519;18;Lancer
+520;18;Magnum
+521;18;Mirada
+522;18;Monaco
+523;18;Nitro
+524;18;Omni
+525;18;Polara
+526;18;Polara (Argentina)
+527;18;Ram SRT 10
+528;18;Ramcharger
+529;18;Ram Pickup
+530;18;Spirit
+531;18;Stratus
+532;18;Super Bee
+533;18;Viper
+534;19;Divine
+535;19;DS3 Crossback E-Tense
+536;19;DS7 Crossback
+537;19;E-Tense
+538;19;X E-Tense
+539;20;Besturn B70
+540;20;Besturn E01
+541;20;Besturn T55
+542;20;Hongqi H5
+543;20;Hongqi H9
+544;20;Hongqi L5
+545;21;166
+546;21;212
+547;21;250
+548;21;275
+549;21;328
+550;21;348
+551;21;360
+552;21;400
+553;21;456
+554;21;488
+555;21;550
+556;21;166 Inter
+557;21;212 Export
+558;21;250 GT Berlinetta
+559;21;288 GTO
+560;21;296 GTB
+561;21;308 GTB
+562;21;365 GT4 2+2
+563;21;458 Italia
+564;21;458 Speciale
+565;21;575M Maranello
+566;21;599 GTB Fiorano
+567;21;612 Scaglietti
+568;21;812 Superfast
+569;21;Abarth 695 Tributo Ferrari
+570;21;America
+571;21;Berlinetta Boxer
+572;21;California
+573;21;Daytona
+574;21;Dino
+575;21;Enzo
+576;21;F12 TRS
+577;21;F12berlinetta
+578;21;F12tdf
+579;21;F355
+580;21;F40
+581;21;F430
+582;21;F50
+583;21;F8 Tributo
+584;21;FF
+585;21;FX
+586;21;FXX
+587;21;GT4
+588;21;GTC4Lusso
+589;21;LaFerrari
+590;21;Mondial
+591;21;Monza
+592;21;Mythos
+593;21;P4/5
+594;21;Portofino
+595;21;Roma
+596;21;SF90 Stradale
+597;21;Testarossa
+598;22;1
+599;22;70
+600;22;124
+601;22;125
+602;22;126
+603;22;127
+604;22;128
+605;22;130
+606;22;131
+607;22;132
+608;22;133
+609;22;147
+610;22;238
+611;22;241
+612;22;242
+613;22;501
+614;22;502
+615;22;503
+616;22;505
+617;22;507
+618;22;508
+619;22;509
+620;22;510
+621;22;512
+622;22;514
+623;22;515
+624;22;518
+625;22;520
+626;22;521
+627;22;522
+628;22;524
+629;22;525
+630;22;527
+631;22;600
+632;22;615
+633;22;850
+634;22;1100
+635;22;1200
+636;22;1600
+637;22;2800
+638;22;10 HP
+639;22;1100 (1937)
+640;22;12 HP
+641;22;124 Spider (2016)
+642;22;124 Sport Spider
+643;22;125 Centurión
+644;22;125 Mirafiori
+645;22;130 HP
+646;22;1300/1500
+647;22;1400/1900
+648;22;1500 (1935)
+649;22;1500 Coupé Vignale
+650;22;1600 Sport
+651;22;16-20 HP
+652;22;1800/2100
+653;22;24-32 HP
+654;22;2B
+655;22;3 ½ HP
+656;22;50 HP
+657;22;500 (1936)
+658;22;500 (1957)
+659;22;500 (2007)
+660;22;500C
+661;22;500e
+662;22;500L
+663;22;500X
+664;22;60 HP
+665;22;6-8 HP
+666;22;8 HP
+667;22;8V
+668;22;Abarth 695 Tributo Ferrari
+669;22;Abarth Grande Punto
+670;22;Albea
+671;22;Argo
+672;22;Barchetta
+673;22;Bravo (2007)
+674;22;Bravo/Brava/Marea
+675;22;Centoventi
+676;22;Cinquecento
+677;22;Coupé
+678;22;Croma
+679;22;Croma (1985)
+680;22;Croma (2005)
+681;22;Cronos
+682;22;Doblò
+683;22;Duna
+684;22;Elba
+685;22;Freemont
+686;22;Fullback
+687;22;Furgoneta mediana (Sevel)
+688;22;Grande Punto
+689;22;Idea
+690;22;Linea
+691;22;Linea TRV6
+692;22;Mobi
+693;22;Multipla
+694;22;New 500
+695;22;Oggi
+696;22;Ottimo
+697;22;Palio
+698;22;Palio (2011)
+699;22;Palio Weekend
+700;22;Panda
+701;22;Phyllis
+702;22;Pininfarina Coupé y Cabriolet
+703;22;Prêmio
+704;22;Punto
+705;22;Qubo
+706;22;Regata
+707;22;Ritmo
+708;22;S76
+709;22;Sedici
+710;22;Seicento
+711;22;Siena
+712;22;Stilo
+713;22;Strada
+714;22;Tempra
+715;22;Tipo (1988)
+716;22;Tipo (2016)
+717;22;Toro
+718;22;Ulysse (1994)
+719;22;Ulysse (2002)
+720;22;Uno
+721;22;Viaggio
+722;22;X1/23
+723;22;X1/9
+724;22;Zero
+725;23;7Y
+726;23;48
+727;23;999
+728;23;1937
+729;23;1941
+730;23;1949
+731;23;1952
+732;23;1955
+733;23;1957
+734;23;1960
+735;23;A
+736;23;A (1903-1904)
+737;23;Aerostar
+738;23;Anglia
+739;23;B
+740;23;Belina
+741;23;B-Max
+742;23;Bronco
+743;23;Bronco Sport
+744;23;C
+745;23;C (1904)
+746;23;Capri
+747;23;C-Max
+748;23;C-Max Energi
+749;23;Consul Capri
+750;23;Contour
+751;23;Corcel
+752;23;Cougar (Europa)
+753;23;Courier
+754;23;Crown Victoria
+755;23;Cuadriciclo Ford
+756;23;Del Rey
+757;23;EcoSport
+758;23;Edge
+759;23;Edsel
+760;23;Eifel
+761;23;Escape
+762;23;Escort
+763;23;Escort (América del Norte)
+764;23;Escort (China)
+765;23;Escort MK I
+766;23;Escort MK II
+767;23;Escort MK III
+768;23;Escort MK IV
+769;23;Escort MK V
+770;23;EXP
+771;23;Expedition
+772;23;F-100
+773;23;F-1000
+774;23;F-150
+775;23;Fairlane (Argentina)
+776;23;Fairmont
+777;23;Falcon (Argentina)
+778;23;Falcon (Australia)
+779;23;Falcon (Estados Unidos)
+780;23;Festiva
+781;23;Fiesta
+782;23;Figo
+783;23;Five Hundred
+784;23;Flex
+785;23;Focus
+786;23;Forty-Nine
+787;23;Fusion (América)
+788;23;Fusion (Europa)
+789;23;Fusion Hybrid
+790;23;Galaxie
+791;23;Galaxy
+792;23;GT
+793;23;GT40
+794;23;Ikon
+795;23;Ka
+796;23;Kuga
+797;23;Laser
+798;23;Maverick
+799;23;Meteor
+800;23;Mondeo
+801;23;Mustang
+802;23;Mustang Mach-E
+803;23;Mustang VI
+804;23;N
+805;23;Orion
+806;23;Pampa
+807;23;Pinto
+808;23;Popular
+809;23;Probe
+810;23;Puma
+811;23;Ranchero (Argentina)
+812;23;Ranger
+813;23;Royale
+814;23;RS200
+815;23;S
+816;23;Scorpio
+817;23;Shelby
+818;23;Sierra
+819;23;S-Max
+820;23;T
+821;23;Tamaño completo de Ford
+822;23;Taunus
+823;23;Taurus
+824;23;Tempo
+825;23;Thunderbird
+826;23;Torino
+827;23;Transit
+828;23;Transit Connect
+829;23;V8
+830;23;Vedette
+831;23;Verona
+832;23;Versailles
+833;23;Windstar
+834;23;Y 8 HP
+835;24;Auman H4
+836;24;Auman Jones
+837;24;Auman Kunlun Mountains
+838;24;Auman Lion 
+839;24;Auman Shenzhou
+840;24;AUV New Directions
+841;24;AUV panoramic Unlimited
+842;24;AUV Pioneer Europe
+843;24;Forland
+844;24;Forland King Kong 
+845;24;Forland Ruiwo
+846;24;Gratour im6
+847;24;Gratour im6
+848;24;Gratour im8
+849;24;Gratour im8
+850;24;Gratour ix5
+851;24;Gratour ix5 
+852;24;Gratour ix7
+853;24;Gratour ix7
+854;24;Green Earth
+855;24;Midi LWB
+856;24;MP-X
+857;24;MP-X
+858;24;Rowor Dajingang 1
+859;24;Rowor Dajingang 3
+860;24;Rowor Dajingang ES3
+861;24;Rowor Dajingang ES5
+862;24;Rowor E3
+863;24;Rowor ES3
+864;24;Rowor ES5
+865;24;Rowor ES7
+866;24;Rowor Q5
+867;24;Rowor Q9
+868;24;Rowor Xiaojingang
+869;24;Sauvana
+870;24;SUP
+871;24;Toano
+872;24;Tunland
+873;24;Tunland E3
+874;24;Tunland E5
+875;24;Tunland S
+876;24;Tunland Yutu 8
+877;24;Tunland Yutu 9
+878;24;View
+879;24;View G7 
+880;24;View G9
+881;24;View V3 microvan
+882;24;View V5 compact MPV
+883;24;Xiangling M
+884;24;Xiangling V
+885;25;EC7
+886;25;GC2
+887;26;Chevette
+888;27;Alter
+889;27;Dual Luck
+890;27;E Mei
+891;27;FAN
+892;27;Finite
+893;27;GA200
+894;27;GA6380
+895;27;GA6530
+896;27;GP150
+897;27;GS-1
+898;27;GS-2
+899;27;GS50 II
+900;27;GX6
+901;27;GX6
+902;27;Jetstar
+903;27;Katay Troy
+904;27;Katay Victor
+905;27;Katay Victory
+906;27;Lightweight
+907;27;Minivan
+908;27;Saboo
+909;27;Starry
+910;27;Troy 200
+911;27;Troy 500
+912;27;Way
+913;27;Way CL
+914;27;Way L
+915;28;Deer
+916;28;Florid
+917;28;Florid Cross
+918;28;Great Wall C30 PLUS,
+919;28;Haval H3
+920;28;Haval H5 Turbo
+921;28;Haval H6
+922;28;Haval H6 sport
+923;28;Haval H9
+924;28;Haval M2
+925;28;Hover
+926;28;Hover H3
+927;28;Hover H6
+928;28;M4
+929;28;Peri
+930;28;Poer
+931;28;POER C
+932;28;POER P
+933;28;Safe
+934;28;SoCool
+935;28;Voleex C10
+936;28;Voleex C20r
+937;28;Voleex C30,
+938;28;Voleex C50
+939;28;Voleex C70
+940;28;Wingle 3
+941;28;Wingle 5
+942;28;Wingle 6
+943;28;Wingle 7
+944;28;Wingle 7 Cabina DOble y Cabina Simple
+945;28;Wingle S
+946;29;"1 ""Aishang"""
+947;29;6P PHEV CUV
+948;29;7X MPV
+949;29;8S CUV
+950;29;F7 MPV
+951;29;Freema EV
+952;29;Fstar microvan
+953;29;M3 sedan
+954;29;M5 sedan
+955;29;M6 sedan
+956;29;M8 sedan
+957;29;S5 Young CUV
+958;29;S5 CUV
+959;29;S7 CUV
+960;30;1300
+961;30;Accord
+962;30;Acty
+963;30;Acura ARX-01
+964;30;Acura RSX
+965;30;Airwave
+966;30;Amaze
+967;30;ATC200
+968;30;Beat
+969;30;Brio
+970;30;City
+971;30;City AA
+972;30;Civic
+973;30;Civic (Cuarta Generación)
+974;30;Civic (Primera Generación)
+975;30;Civic (quinta generación)
+976;30;Civic (segunda generación)
+977;30;Civic (sexta generación)
+978;30;Civic (tercera generación)
+979;30;Civic Si
+980;30;Civic Type-R
+981;30;Civic VIII
+982;30;Concerto
+983;30;CR-V
+984;30;CR-X
+985;30;CR-X del Sol
+986;30;CR-Z
+987;30;CR-Z GT
+988;30;Dualnote
+989;30;FCX Clarity
+990;30;Fit
+991;30;FR-V
+992;30;Goldwing
+993;30;HR-V
+994;30;HSC
+995;30;HSV-010 GT
+996;30;Insight
+997;30;Integra
+998;30;Jazz
+999;30;J-VX
+1000;30;Legend
+1001;30;Life
+1002;30;Logo
+1003;30;N360
+1004;30;New Small Concept
+1005;30;NSX
+1006;30;NSX
+1007;30;Passport
+1008;30;Pilot
+1009;30;Prelude
+1010;30;Quint
+1011;30;RA106
+1012;30;RA107
+1013;30;RA108
+1014;30;RA271
+1015;30;S2000
+1016;30;S360
+1017;30;S500
+1018;30;S600
+1019;30;S660
+1020;30;S800
+1021;30;Small Hybrid Sports Concept
+1022;30;S-MX
+1023;30;T360
+1024;30;U3-X
+1025;30;Vigor
+1026;30;WOW
+1027;30;WR-V
+1028;30;Zest
+1029;31;H1
+1030;31;H2
+1031;31;H3
+1032;31;HX
+1033;32;Accent
+1034;32;Alcazar
+1035;32;Atos
+1036;32;Azera
+1037;32;Click
+1038;32;Coupe
+1039;32;Creta
+1040;32;Elantra
+1041;32;Elantra GT
+1042;32;Entourage
+1043;32;Eon
+1044;32;Excel
+1045;32;Genesis
+1046;32;Genesis Coupe
+1047;32;Getz
+1048;32;H-1
+1049;32;HB20
+1050;32;HB20S
+1051;32;i10
+1052;32;i20
+1053;32;i35
+1054;32;i40
+1055;32;Ioniq 5
+1056;32;ix20
+1057;32;ix35
+1058;32;ix35 FCEV
+1059;32;ix55
+1060;32;Kona
+1061;32;Lavita
+1062;32;Matrix
+1063;32;Santa Fe
+1064;32;Santamo
+1065;32;Sonata
+1066;32;Stellar
+1067;32;Terracan
+1068;32;Tiburon
+1069;32;Trajet
+1070;32;Tucson
+1071;32;Veloster
+1072;32;Venue
+1073;32;Veracruz
+1074;32;Verna
+1075;32;XG
+1076;33;EX
+1077;33;FX
+1078;33;G
+1079;33;Infiniti
+1080;33;M
+1081;33;Q50
+1082;33;Q60
+1083;33;Q70
+1084;33;QX
+1085;33;QX30
+1086;33;QX50
+1087;33;QX60
+1088;33;QX70
+1089;33;QX80
+1090;34;J2
+1091;34;J3
+1092;34;J5
+1093;34;J6
+1094;34;T40
+1095;34;T6
+1096;35;SS 1
+1097;35;C-Type
+1098;35;C-X75
+1099;35;D-Type
+1100;35;E-Pace
+1101;35;E-Type
+1102;35;F-Pace
+1103;35;F-Type
+1104;35;I-Pace
+1105;35;S-Type
+1106;35;XE
+1107;35;XF
+1108;35;XJ
+1109;35;XJ220
+1110;35;XJR-11
+1111;35;XJR-12
+1112;35;XJR-14
+1113;35;XJR-15
+1114;35;XJR-8
+1115;35;XJR-9
+1116;35;XJS
+1117;35;XK
+1118;35;XK (1948-1961)
+1119;35;XKSS
+1120;35;X-Type
+1121;36;Cherokee
+1122;36;CJ
+1123;36;Commander
+1124;36;Compass
+1125;36;Gladiator (JT)
+1126;36;Grand Cherokee
+1127;36;Jeepster Commando
+1128;36;Liberty
+1129;36;Patriot
+1130;36;Renegade
+1131;36;Wagoneer
+1132;36;Willys MB
+1133;36;Willys-Overland Jeepster
+1134;36;Wrangler
+1135;37;Avella
+1136;37;Besta
+1137;37;Bongo
+1138;37;Cadenza
+1139;37;Carens
+1140;37;Carnival
+1141;37;Ceed
+1142;37;Cerato
+1143;37;Clarus
+1144;37;Concord
+1145;37;EV6
+1146;37;Forte
+1147;37;Granbird
+1148;37;K9
+1149;37;KM131 Jeep
+1150;37;Koup
+1151;37;Mohave
+1152;37;Niro
+1153;37;Opirus
+1154;37;Optima
+1155;37;Picanto
+1156;37;Pregio
+1157;37;Ray
+1158;37;Ray (prototipo 2010)
+1159;37;Retona
+1160;37;Rio
+1161;37;Rondo
+1162;37;Sedona
+1163;37;Sephia
+1164;37;Shuma
+1165;37;Soluto
+1166;37;Sonet
+1167;37;Sorento
+1168;37;Soul
+1169;37;Sportage
+1170;37;Stonic
+1171;37;Towner
+1172;37;Venga
+1173;38;101 Forward Control
+1174;38;Defender
+1175;38;Discovery
+1176;38;Discovery Sport
+1177;38;Freelander
+1178;38;Range Rover
+1179;38;Range Rover Evoque
+1180;39;CT
+1181;39;ES
+1182;39;GS
+1183;39;IS
+1184;39;LFA
+1185;39;LX
+1186;39;NX
+1187;39;RX
+1188;39;SC
+1189;39;UX
+1190;39;Toyota Land Cruiser Prado
+1191;40;530
+1192;40;Foison
+1193;40;X60
+1194;41;MM540DP
+1195;41;MM550DP
+1196;41;Armada
+1197;41;Cimarrón
+1198;41;Commander
+1199;41;Marshal
+1200;41;Major
+1201;41;Legend
+1202;41;Thar
+1203;41;Invader
+1204;41;Bolero
+1205;42;3200 GT
+1206;42;5000 GT
+1207;42;8CM
+1208;42;A6
+1209;42;Biturbo
+1210;42;Bora
+1211;42;Coupé/Spyder
+1212;42;Ghibli (1967)
+1213;42;Ghibli (2013)
+1214;42;GranTurismo
+1215;42;Khamsin
+1216;42;Levante
+1217;43;D60
+1218;43;D90 
+1219;43;EG10 electric G10 
+1220;43;EUNIQ 5 G50 eléctrico 
+1221;43;EUNIQ 6 D60 eléctrico 
+1222;43;EV30 van 
+1223;43;EV80 V80 eléctrico 
+1224;43;FCV80 V80 extendido
+1225;43;G10 MPV 
+1226;43;G20 MPV 
+1227;43;G50 MPV 
+1228;43;Istana
+1229;43;LD100
+1230;43;RG10 RV based on G10
+1231;43;RV80 RV basado en V80 
+1232;43;SV62 V80 chasis
+1233;43;T60 
+1234;43;T70 
+1235;43;Tarantula SUV 
+1236;43;V80 van
+1237;43;V90 van 
+1238;44;2
+1239;44;3
+1240;44;5
+1241;44;6
+1242;44;323
+1243;44;626
+1244;44;787B
+1245;44;Atenza
+1246;44;Axela
+1247;44;BT-50
+1248;44;Chantez
+1249;44;Cosmo
+1250;44;CX-3
+1251;44;CX-30
+1252;44;CX-5
+1253;44;CX-60
+1254;44;CX-7
+1255;44;CX-9
+1256;44;Furai
+1257;44;Miata
+1258;44;Millenia
+1259;44;Minagi Concept
+1260;44;MX-5
+1261;44;MXR-01
+1262;44;Navajo
+1263;44;Premacy
+1264;44;RX-7
+1265;44;RX-8
+1266;44;Serie B
+1267;44;T
+1268;44;Takeri Concept
+1269;44;Tribute
+1270;44;Xedos
+1271;45;Mercedes 35 CV
+1272;45;190
+1273;45;600
+1274;45;770
+1275;45;190 SL
+1276;45;300 SL
+1277;45;300SEL 6.3
+1278;45;Actros
+1279;45;Benz Patent-Motorwagen
+1280;45;Benz-Tropfenwagen
+1281;45;C W204
+1282;45;C112
+1283;45;Citan
+1284;45;CLA-Class
+1285;45;Clase A
+1286;45;Clase B
+1287;45;Clase C
+1288;45;Clase C Sportcoupé
+1289;45;Clase CL
+1290;45;Clase CLC
+1291;45;Clase CLK
+1292;45;Clase CLS
+1293;45;Clase E
+1294;45;Clase G
+1295;45;Clase GLA
+1296;45;Clase GLB
+1297;45;Clase GLC
+1298;45;Clase GLE
+1299;45;Clase GLS
+1300;45;Clase R
+1301;45;Clase S
+1302;45;Clase SL
+1303;45;Clase SLC
+1304;45;Clase SLC (2015)
+1305;45;CLK GTR
+1306;45;Econic
+1307;45;EQC
+1308;45;EQS
+1309;45;Flechas plateadas
+1310;45;Heckmotor
+1311;45;L 319
+1312;45;L3000
+1313;45;MB 100
+1314;45;Mercedes S63 AMG
+1315;45;Mercedes S65 AMG
+1316;45;Mercedes Simplex
+1317;45;Mercedes SL 65 AMG Black Series Edition
+1318;45;Mercedes-AMG GT
+1319;45;Mercedes-AMG One
+1320;45;N1300
+1321;45;Necar 5
+1322;45;R107
+1323;45;R170
+1324;45;SLK
+1325;45;SLR McLaren
+1326;45;SLS AMG
+1327;45;SS
+1328;45;SSK
+1329;45;T2
+1330;45;Unimog
+1331;45;Vaneo
+1332;45;Vito
+1333;45;W114/W115
+1334;45;W123
+1335;45;W125
+1336;45;W180
+1337;45;W201
+1338;45;W212 E63 AMG
+1339;46;3
+1340;46;6
+1341;46;(MG 5)
+1342;46;360 (Roewe 360)
+1343;46;550 (Roewe 550)
+1344;46;750 (Roewe 750)
+1345;46;Extender (Maxus T60)
+1346;46;GS
+1347;46;HS
+1348;46;TA 1936-39
+1349;46;TF 1954-55
+1350;46;ZS
+1351;46;ZS EV
+1352;47;Countryman
+1353;47;John Cooper Works S2000
+1354;47;John Cooper Works WRC
+1355;47;MINI
+1356;48;Carisma
+1357;48;Chariot
+1358;48;Colt
+1359;48;Concept-RA
+1360;48;Eclipse
+1361;48;Endeavor
+1362;48;Galant
+1363;48;Galant VR-4
+1364;48;Grandis
+1365;48;GTO
+1366;48;i-MiEV
+1367;48;L200
+1368;48;Lancer
+1369;48;Lancer (A70)
+1370;48;Lancer Evolution
+1371;48;Montero
+1372;48;Montero Evolution
+1373;48;Nativa
+1374;48;Outlander
+1375;48;RVR
+1376;49;260Z
+1377;49;280 ZX
+1378;49;300 ZX
+1379;49;350Z
+1380;49;370Z
+1381;49;Almera
+1382;49;Altima
+1383;49;Ariya
+1384;49;Armada
+1385;49;Concept 2020 Vision Gran Turismo
+1386;49;Cube
+1387;49;Datsun 510
+1388;49;Esflow
+1389;49;Fairlady Z
+1390;49;Figaro
+1391;49;Frontier
+1392;49;GT-R
+1393;49;Interstar
+1394;49;Juke
+1395;49;Kicks
+1396;49;Kubistar
+1397;49;Latio
+1398;49;Leaf
+1399;49;Lucino
+1400;49;March
+1401;49;Maxima
+1402;49;Micra
+1403;49;Murano
+1404;49;Navara
+1405;49;Note
+1406;49;NV200
+1407;49;Pao
+1408;49;Pathfinder
+1409;49;Patrol
+1410;49;Pixo
+1411;49;Platina
+1412;49;Primastar
+1413;49;Primera
+1414;49;Qashqai
+1415;49;Quest
+1416;49;R90C
+1417;49;Sentra
+1418;49;Sentra B17
+1419;49;Serena
+1420;49;Sileighty
+1421;49;Silvia
+1422;49;Skyline
+1423;49;Skyline Crossover
+1424;49;Teana
+1425;49;Terrano II
+1426;49;Tiida
+1427;49;Titan
+1428;49;Trade
+1429;49;Tsuru V16
+1430;49;URGE
+1431;49;Urvan
+1432;49;Vanette
+1433;49;Versa
+1434;49;Violet
+1435;49;X-Trail
+1436;49;Z (Z34)
+1437;50;Adam
+1438;50;Admiral
+1439;50;Agila
+1440;50;Antara
+1441;50;Ascona
+1442;50;Astra
+1443;50;Blitz
+1444;50;Buick Cascada
+1445;50;Calibra
+1446;50;Chevrolet Kadett
+1447;50;Combo
+1448;50;Commodore
+1449;50;Corsa
+1450;50;Corsa (2006)
+1451;50;Crossland X
+1452;50;Diplomat
+1453;50;Frontera
+1454;50;Grandland X
+1455;50;GT
+1456;50;GTC Concept
+1457;50;Insignia
+1458;50;Insignia Concept
+1459;50;K-180
+1460;50;Kadett
+1461;50;Kapitän
+1462;50;Manta
+1463;50;Meriva
+1464;50;Mokka
+1465;50;Monterey
+1466;50;Monza
+1467;50;Movano
+1468;50;Olympia
+1469;50;Omega
+1470;50;Rekord
+1471;50;Senator
+1472;50;Signum
+1473;50;Speedster
+1474;50;Tigra
+1475;50;Vectra
+1476;50;Vivaro
+1477;50;Zafira
+1478;51;106
+1479;51;108
+1480;51;201
+1481;51;202
+1482;51;203
+1483;51;204
+1484;51;205
+1485;51;206
+1486;51;207
+1487;51;208
+1488;51;301
+1489;51;302
+1490;51;304
+1491;51;305
+1492;51;306
+1493;51;307
+1494;51;308
+1495;51;309
+1496;51;401
+1497;51;402
+1498;51;403
+1499;51;404
+1500;51;405
+1501;51;406
+1502;51;407
+1503;51;408
+1504;51;504
+1505;51;505
+1506;51;508
+1507;51;601
+1508;51;604
+1509;51;605
+1510;51;607
+1511;51;806
+1512;51;807
+1513;51;1007
+1514;51;2008
+1515;51;3008
+1516;51;4007
+1517;51;4008
+1518;51;5008
+1519;51;205 Turbo 16
+1520;51;207 Compact
+1521;51;301 (1932)
+1522;51;301 (2012)
+1523;51;908 RC
+1524;51;Bipper
+1525;51;Boxer
+1526;51;Citycar (PSA/Toyota)
+1527;51;EX3
+1528;51;Expert
+1529;51;Furgoneta mediana (Sevel)
+1530;51;Hoggar
+1531;51;J5
+1532;51;L76
+1533;51;Mitsubishi RVR
+1534;51;Onyx
+1535;51;P4
+1536;51;RCZ
+1537;51;Tipo 1
+1538;51;Tipo 10
+1539;51;Tipo 105
+1540;51;Tipo 125
+1541;51;Tipo 143
+1542;51;Tipo 159
+1543;51;Tipo 163
+1544;51;Tipo 176
+1545;51;Tipo 190
+1546;51;Tipo 26
+1547;51;Tipo 4
+1548;51;Tipo 56
+1549;51;Tipo 58
+1550;51;Tipo 69
+1551;51;Tipo 8
+1552;52;550
+1553;52;597
+1554;52;901
+1555;52;911
+1556;52;914
+1557;52;917
+1558;52;918
+1559;52;924
+1560;52;928
+1561;52;942
+1562;52;944
+1563;52;959
+1564;52;968
+1565;52;911 (clásico)
+1566;52;911 Carrera RSR Turbo
+1567;52;911 GT1
+1568;52;911 GT2
+1569;52;911 GT3
+1570;52;931 Club Sport
+1571;52;Boxster
+1572;52;Cajun
+1573;52;Carrera GT
+1574;52;Cayenne
+1575;52;Cayman
+1576;52;Junior
+1577;52;Macan
+1578;52;Memminger Roadster 2.7
+1579;52;Panamera
+1580;52;Spirit
+1581;52;Super
+1582;52;Taycan
+1583;53;700
+1584;53;Chasis Cab 
+1585;53;Pickup 
+1586;53;ProMaster City 
+1587;53;ProMaster 
+1588;54;3
+1589;54;4
+1590;54;5
+1591;54;6
+1592;54;7
+1593;54;8
+1594;54;10
+1595;54;12
+1596;54;14
+1597;54;16
+1598;54;18
+1599;54;19
+1600;54;21
+1601;54;25
+1602;54;900
+1603;54;9-nov
+1604;54;15/17
+1605;54;20/30
+1606;54;4 furgoneta
+1607;54;40CV
+1608;54;4CV
+1609;54;Altica
+1610;54;Argos
+1611;54;Arkana
+1612;54;Avantime
+1613;54;Be Bop
+1614;54;Captur
+1615;54;Caravelle
+1616;54;Celtaquatre
+1617;54;Clio
+1618;54;Dacia Sandero
+1619;54;Dauphine
+1620;54;Duster
+1621;54;Duster Oroch
+1622;54;Egeus
+1623;54;Espace
+1624;54;Étoile Filante
+1625;54;Express
+1626;54;Fluence
+1627;54;Fluence Z.E.
+1628;54;Frégate
+1629;54;Fuego
+1630;54;Grand Modus
+1631;54;Juvaquatre
+1632;54;Kadjar
+1633;54;Kangoo
+1634;54;Kerax
+1635;54;Koleos
+1636;54;Kwid
+1637;54;Laguna
+1638;54;Latitude
+1639;54;Magnum
+1640;54;Mascott
+1641;54;Master
+1642;54;Maxity
+1643;54;Mégane
+1644;54;Megane III RS Trophy
+1645;54;Modus
+1646;54;Monaquatre
+1647;54;Nepta
+1648;54;Nervastella
+1649;54;Premium Distribution
+1650;54;Premium Lander
+1651;54;Premium Long Distance
+1652;54;Racoon
+1653;54;Safrane
+1654;54;Samsung SM7
+1655;54;Sandero
+1656;54;Scénic
+1657;54;Sport R.S. 01
+1658;54;Supercinco
+1659;54;Symbol
+1660;54;Talisman
+1661;54;Trafic
+1662;54;Trucks T
+1663;54;Twingo
+1664;54;Twizy
+1665;54;Vel Satis
+1666;54;Vesta 2
+1667;54;Voiturette
+1668;54;Wind
+1669;55;20v20 Concept
+1670;55;124
+1671;55;127
+1672;55;128
+1673;55;131
+1674;55;132
+1675;55;133
+1676;55;600
+1677;55;800
+1678;55;850
+1679;55;1400
+1680;55;1430
+1681;55;1500
+1682;55;Alhambra
+1683;55;Altea
+1684;55;Arona
+1685;55;Arosa
+1686;55;Ateca
+1687;55;Bocanegra
+1688;55;Bolero
+1689;55;Concepto T
+1690;55;Córdoba
+1691;55;Córdoba I
+1692;55;Córdoba II
+1693;55;Córdoba Vario
+1694;55;Cupra Born
+1695;55;Cupra e-Racer
+1696;55;Cupra GT
+1697;55;Cupra Tavascan
+1698;55;Fura
+1699;55;Ibiza
+1700;55;Ibiza II
+1701;55;Ibiza III
+1702;55;Ibiza V
+1703;55;IBL
+1704;55;IBX
+1705;55;IBZ
+1706;55;Inca
+1707;55;León
+1708;55;León I
+1709;55;León II
+1710;55;León IV
+1711;55;Málaga
+1712;55;Marbella
+1713;55;Mii
+1714;55;Minimó
+1715;55;Panda
+1716;55;Proto
+1717;55;Ritmo
+1718;55;Ronda
+1719;55;Salsa
+1720;55;Tango
+1721;55;Tarraco
+1722;55;Toledo
+1723;55;Toledo I
+1724;55;Toledo II
+1725;55;Toledo III
+1726;55;Toledo IV
+1727;55;Tribu
+1728;56;1201
+1729;56;Citigo
+1730;56;Enyaq
+1731;56;Fabia
+1732;56;Favorit
+1733;56;Felicia
+1734;56;Kamiq
+1735;56;Karoq
+1736;56;Kodiaq
+1737;56;Octavia
+1738;56;Octavia (1959)
+1739;56;Rapid
+1740;56;Rapid (2012)
+1741;56;Roomster
+1742;56;Scala
+1743;56;Spaceback
+1744;56;Superb
+1745;56;Yeti
+1746;57;Actyon
+1747;57;Actyon Sports
+1748;57;Istana
+1749;57;Korando
+1750;57;Musso
+1751;57;Rodius/Stavic
+1752;58;360
+1753;58;BRZ
+1754;58;Forester
+1755;58;Impreza
+1756;58;Impreza STI 22B
+1757;58;Impreza WRC
+1758;58;Justy
+1759;58;Legacy
+1760;58;Leone
+1761;58;Outback
+1762;58;Rex
+1763;58;Stella
+1764;58;SVX
+1765;58;Tribeca
+1766;58;XV
+1767;59;Aerio
+1768;59;Alto
+1769;59;Baleno
+1770;59;Cappuccino
+1771;59;Carry
+1772;59;Ciaz
+1773;59;Ertiga
+1774;59;Escudo
+1775;59;Escudo Pikes Peak
+1776;59;Grand Vitara
+1777;59;Ignis
+1778;59;Jimny
+1779;59;Kizashi
+1780;59;Maruti
+1781;59;S-Cross
+1782;59;Sidekick
+1783;59;Splash
+1784;59;Swift
+1785;59;SX4
+1786;59;Vitara
+1787;59;Wagon R
+1788;59;XL7
+1789;60;7
+1790;60;2000GT
+1791;60;4Runner
+1792;60;AA
+1793;60;AE86
+1794;60;AE86
+1795;60;Alphard
+1796;60;Altezza
+1797;60;Auris
+1798;60;Avalon
+1799;60;Avanza
+1800;60;Avensis
+1801;60;Aygo
+1802;60;Belta
+1803;60;Camry
+1804;60;Camry TC
+1805;60;Celica
+1806;60;Celica Twincam Turbo
+1807;60;Chevrolet Cavalier
+1808;60;C-HR
+1809;60;Citycar (PSA/Toyota)
+1810;60;Coaster
+1811;60;Corolla
+1812;60;Corolla Verso
+1813;60;Corolla WRC
+1814;60;Crown
+1815;60;Dyna
+1816;60;Echo
+1817;60;Etios
+1818;60;Fielder
+1819;60;FJ Cruiser
+1820;60;Fortuner
+1821;60;FT1
+1822;60;Fun Cargo
+1823;60;GR Yaris WRC Rally1
+1824;60;GR010 Hybrid
+1825;60;Granvia
+1826;60;GT86
+1827;60;GT-One
+1828;60;Harrier
+1829;60;Hiace
+1830;60;Highlander
+1831;60;Hilux
+1832;60;Innova
+1833;60;iQ
+1834;60;Land Cruiser
+1835;60;Lunar Cruiser
+1836;60;Matrix
+1837;60;Mirai
+1838;60;MR2
+1839;60;MR2
+1840;60;Noah
+1841;60;Paseo
+1842;60;Platz
+1843;60;Premio
+1844;60;Previa
+1845;60;Prius
+1846;60;Prius c
+1847;60;Prius Plug-in
+1848;60;Prius V
+1849;60;Probox
+1850;60;RAV4
+1851;60;Sera
+1852;60;Sienna
+1853;60;Starlet
+1854;60;Supra
+1855;60;T100
+1856;60;TF101
+1857;60;TF102
+1858;60;TF103
+1859;60;TF104
+1860;60;TF105
+1861;60;TF106
+1862;60;TF107
+1863;60;TF108
+1864;60;TF109
+1865;60;ToyoAce
+1866;60;TS010
+1867;60;TS030 Hybrid
+1868;60;TS040 Hybrid
+1869;60;TS050 Hybrid
+1870;60;Tundra
+1871;60;Urban Cruiser
+1872;60;Verso
+1873;60;Vios
+1874;60;Vitz
+1875;60;Voltz
+1876;60;Yaris
+1877;60;Yaris WRC
+1878;61;469
+1879;61;452
+1880;61;Beijing BJ212
+1881;61;Patriot
+1882;61;Willys MB
+1883;62;1500
+1884;62;Amarok
+1885;62;Apollo
+1886;62;Arteon
+1887;62;ARVW
+1888;62;Atlas
+1889;62;Bora
+1890;62;Brasilia
+1891;62;Caddy
+1892;62;CC
+1893;62;Corrado
+1894;62;Crafter
+1895;62;CrossFox
+1896;62;CrossGolf
+1897;62;Derby
+1898;62;e-Golf
+1899;62;Eos
+1900;62;e-up!
+1901;62;Fox
+1902;62;Fox (Norte América)
+1903;62;Futura
+1904;62;Gol
+1905;62;Gol AB9
+1906;62;Gol BX
+1907;62;Golf
+1908;62;Golf I
+1909;62;Golf II
+1910;62;Golf III
+1911;62;Golf IV
+1912;62;Golf Plus
+1913;62;Golf V
+1914;62;Golf Variant
+1915;62;Golf VI
+1916;62;Golf VII
+1917;62;Golf VIII
+1918;62;Hormiga
+1919;62;ID.3
+1920;62;Iltis
+1921;62;Jetta
+1922;62;Jetta I
+1923;62;Jetta II
+1924;62;Jetta V
+1925;62;Jetta VI
+1926;62;Jetta VII
+1927;62;K70
+1928;62;Karmann Ghia
+1929;62;Kübelwagen
+1930;62;Lavida
+1931;62;Logus
+1932;62;Lupo
+1933;62;Memminger Roadster 2.7
+1934;62;New Beetle
+1935;62;Nivus/Taigo
+1936;62;Parati
+1937;62;Passat
+1938;62;Passat B1
+1939;62;Passat B2
+1940;62;Passat B3
+1941;62;Passat B4
+1942;62;Passat B5
+1943;62;Passat B6
+1944;62;Passat B7
+1945;62;Passat B8
+1946;62;Passat CC
+1947;62;Passat Lingyu
+1948;62;Passat NMS
+1949;62;Passat Variant
+1950;62;Phaeton
+1951;62;Phideon
+1952;62;Pointer
+1953;62;Polo
+1954;62;Polo Classic
+1955;62;Polo I
+1956;62;Polo II
+1957;62;Polo III
+1958;62;Polo IV
+1959;62;Polo V
+1960;62;Polo VI
+1961;62;Routan
+1962;62;Safari
+1963;62;Santana
+1964;62;Santana Quantum
+1965;62;Saveiro
+1966;62;Schwimmwagen
+1967;62;Scirocco
+1968;62;SEAT Mii
+1969;62;Sharan
+1970;62;SP
+1971;62;SpaceCross
+1972;62;SpaceFox
+1973;62;T3
+1974;62;Taos
+1975;62;T-Cross
+1976;62;Tiguan
+1977;62;Tipo 1
+1978;62;tipo 14A (Hebmüller Cabriolet)
+1979;62;Tipo 3
+1980;62;Tipo 4
+1981;62;Touareg
+1982;62;Touran
+1983;62;Transporter
+1984;62;T-Roc
+1985;62;up!
+1986;62;Vento
+1987;62;Vento (A3)
+1988;62;Virtus
+1989;62;Voyage
+1990;63;140
+1991;63;142
+1992;63;164
+1993;63;240
+1994;63;400
+1995;63;440
+1996;63;480
+1997;63;760
+1998;63;780
+1999;63;850
+2000;63;Amazon
+2001;63;C30
+2002;63;C70
+2003;63;ECC
+2004;63;ÖV 4
+2005;63;P1800
+2006;63;Polestar 2
+2007;63;PV 36 Carioca
+2008;63;S40
+2009;63;S60
+2010;63;S80
+2011;63;S90
+2012;63;SCC
+2013;63;Serie 300
+2014;63;Serie 900
+2015;63;V40
+2016;63;V50
+2017;63;V60
+2018;63;V70
+2019;63;V90
+2020;63;XC40
+2021;63;XC60
+2022;63;XC70
+2023;63;XC90
+2024;63;YCC
+2025;64;Confero/Confero S
+2026;64;Cortez
+2027;64;Hongguang
+2028;64;Hongguang S
+2029;64;Hongguang S Clásico
+2030;64;Hongguang S1
+2031;64;Hongguang S3
+2032;64;Hongguang V
+2033;64;Hongtu
+2034;64;Rongguang
+2035;64;Rongguang S
+2036;64;Rongguang V
+2037;64;Sunshine
+2038;64;Sunshine II
+2039;64;Sunshine S
+2040;64;Sunshine V
+2041;64;Zhengcheng
+2042;65;ZX Admiral
+2043;65;ZX C3 Urban Ark
+2044;65;ZX Chanling 
+2045;65;ZX Grand Tiger 
+2046;65;ZX Landmark
+2047;65;ZX Terralord
+2048;65;ZX Weihu
+2049;66;ZT01-001
+2050;66;ZT01-002
+2051;66;ZT01-003
+2052;66;ZT01-004

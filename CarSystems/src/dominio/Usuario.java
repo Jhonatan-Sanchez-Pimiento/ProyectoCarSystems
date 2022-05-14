@@ -51,18 +51,6 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public Usuario(Long IdUsuario, String nombreUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Usuario(long parseLong, String text, String text0, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Usuario(String IdUsuario, String tipoId, String primerApellido, String segundoApellido, String nombreUsuario, String departamento, String municipio, String direccion, String telefono, String correo, String rol) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public long getIdUsuario() {
         return idUsuario;
     }

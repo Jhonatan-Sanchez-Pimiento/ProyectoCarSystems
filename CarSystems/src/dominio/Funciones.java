@@ -1,6 +1,8 @@
 package dominio;
 
 import java.awt.Image;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -26,6 +28,7 @@ public class Funciones {
         return valorString;
     }
     
+    //Convierte un valor String en un Booleano
     public boolean convertirStringBoolean(String valorString){
         boolean valorBoolean=false;
         if(valorString.equals("Si")){
@@ -34,5 +37,12 @@ public class Funciones {
             valorBoolean = false;
         }
         return valorBoolean;
+    }
+    
+    //Valida si una cadena String cumple con las condiciones de Email y retorna un Boolean
+    public boolean isEmail (String correo){
+        Pattern pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\.[\\w\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
+        Matcher mat = pat.matcher(correo);
+        return mat.find();
     }
 }

@@ -21,7 +21,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     private static final String SQL_SELECT = "SELECT * FROM usuario";
     private static final String SQL_UPDATE = "UPDATE usuario SET primer_apellido=?, segundo_apellido=?, nombre_usuario=?, departamento=?, municipio=?, correo=?,direccion=?, telefono=?, rol=?, contrasena = ? WHERE id_Usuario = ? AND tipo_id=?";
     private static final String SQL_DELETE = "DELETE FROM usuario WHERE id_usuario = ?, tipo_id=?";
-    private static final String SQL_CONSULTA = "SELECT * FROM usuario WHERE id_usuario = ? AND tipo_id = ?";
+    private static String SQL_CONSULTA = "SELECT * FROM usuario WHERE id_usuario = ? AND tipo_id = ?";
     private static final String SQL_INSERT = "INSERT INTO usuario (id_usuario, tipo_id, primer_apellido, segundo_apellido, nombre_usuario,correo,departamento, municipio, direccion, telefono, rol, contrasena)"
             + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -87,7 +87,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     }
     
     @Override
-    public Usuario encontrarUsuario(Long IdUsuario, String tipoId) {
+    public Usuario encontrarUsuario(Long idUsuario, String tipoId) {
     Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -95,7 +95,7 @@ public class UsuarioServiceImpl implements UsuarioService{
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_CONSULTA);
-            stmt.setLong(1, IdUsuario);
+            stmt.setLong(1, idUsuario);
             stmt.setString(2, tipoId);
             rs = stmt.executeQuery();
             
@@ -110,7 +110,7 @@ public class UsuarioServiceImpl implements UsuarioService{
                 String telefono = rs.getString("telefono");
                 String rol = rs.getString("rol");
                 String contrasena = rs.getString("contrasena");
-                usuario = new Usuario(IdUsuario, tipoId, primerApellido, segundoApellido, nombreUsuario, departamento, municipio, direccion, telefono, correo, rol, contrasena);
+                usuario = new Usuario(idUsuario, tipoId, primerApellido, segundoApellido, nombreUsuario, departamento, municipio, direccion, telefono, correo, rol, contrasena);
                 System.out.println("Usuario = " + usuario);
                 
                 
@@ -203,4 +203,45 @@ public class UsuarioServiceImpl implements UsuarioService{
         }
     }
 
+    @Override
+    public Usuario encontrarUsuario(String correo){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Usuario usuario = null;
+        SQL_CONSULTA = "SELECT * FROM usuario WHERE correo = ?";
+        try {
+            conn = new Conexion().getConnection();
+            stmt = conn.prepareStatement(SQL_CONSULTA);
+            stmt.setString(1, correo);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                String tipoId = rs.getString("tipo_id");
+                long idUsuario = rs.getLong("id_usuario");
+                String primerApellido = rs.getString("primer_apellido");
+                String segundoApellido = rs.getString("segundo_apellido");
+                String nombreUsuario = rs.getString("nombre_usuario");
+                String departamento = rs.getString("departamento");
+                String municipio = rs.getString("municipio");
+                String direccion = rs.getString("direccion");
+                String telefono = rs.getString("telefono");
+                String rol = rs.getString("rol");
+                String contrasena = rs.getString("contrasena");
+                usuario = new Usuario(idUsuario, tipoId, primerApellido, segundoApellido, nombreUsuario, departamento, municipio, direccion, telefono, correo, rol, contrasena);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+
+        return usuario;
+    }
     }

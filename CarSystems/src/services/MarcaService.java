@@ -13,7 +13,7 @@ public interface MarcaService {
     
     public List<Marca> listarMarca();
     
-    public Marca encontrarMarca (int idMarca);
+    public Marca encontrarMarca (String nombreMarca);
     
     public void actualizar (Marca marca);
 }

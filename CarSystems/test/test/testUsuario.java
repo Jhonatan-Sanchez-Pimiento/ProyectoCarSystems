@@ -12,7 +12,7 @@ public class testUsuario {
         
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
         
-       Usuario usuario = new Usuario( 1022968969 ,"CC","ahumada","forero","sandra","bogota","bogota","callecarrera","3123578945","smahumadao159@gmail.com","vendedor","1235");
+       Usuario usuario = new Usuario( 1001077953 ,"Cedula de Ciudadanía","Sutachan","Osorio","Nicolas Felipe","bogota","bogota","calle 82 carrera 4","3123578945","nfsutachano@sanmateo.edu.co","Funcionario","Nicolas1234");
         
         usuarioServicio.guardar(usuario);
         

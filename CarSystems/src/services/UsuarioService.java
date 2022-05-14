@@ -13,7 +13,9 @@ public interface UsuarioService {
     
     public List<Usuario> listarUsuario();
     
-    public Usuario encontrarUsuario (Long idUsuario, String tipoIds);
+    public Usuario encontrarUsuario (Long idUsuario, String tipoId);
     
     public void actualizar (Usuario usuario);
+    
+    public Usuario encontrarUsuario (String correo);
 }
