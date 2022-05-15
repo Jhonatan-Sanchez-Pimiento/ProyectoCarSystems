@@ -99,6 +99,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(30, 41, 57));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(37, 196, 164), 3));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Myanmar Text", 1, 38)); // NOI18N
@@ -119,7 +120,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Tipo documento");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         txt_documento.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_documento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -128,11 +129,11 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
                 txt_documentoKeyTyped(evt);
             }
         });
-        jPanel2.add(txt_documento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 170, 30));
+        jPanel2.add(txt_documento, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 170, 30));
 
         cmbTipoDocumento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         cmbTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Cédula de Ciudadanía", "Cédula de Extranjeria", "Permiso Especia de permanencia", "Salvoconducto", "Pasaporte" }));
-        jPanel2.add(cmbTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 170, 30));
+        jPanel2.add(cmbTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 170, 30));
 
         btnConsultar.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         btnConsultar.setText("Consultar");
@@ -141,7 +142,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 120, 30));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 120, 30));
 
         btn_limpiar.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         btn_limpiar.setText("Limpiar");
@@ -150,7 +151,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
                 btn_limpiarActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 120, 30));
+        jPanel2.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 120, 30));
 
         btn_cerrar.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         btn_cerrar.setText("Cerrar");
@@ -159,15 +160,15 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
                 btn_cerrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 120, 30));
+        jPanel2.add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 120, 30));
 
         jLabel13.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Número Identidad");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         jlbConsulta1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 255), 3));
-        jPanel2.add(jlbConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 250, 370));
+        jPanel2.add(jlbConsulta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 250, 370));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(37, 196, 164), 3));
 
@@ -299,22 +300,20 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel34)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel40))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_nombre)
-                                    .addComponent(txt_apellido2)
-                                    .addComponent(txtDocumento, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(180, 180, 180)
                                 .addComponent(cmbDepartamento, 0, 181, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel39)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel39))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_direccion)
+                                    .addComponent(txt_nombre)
+                                    .addComponent(txt_apellido2)
+                                    .addComponent(txtDocumento, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel31)
