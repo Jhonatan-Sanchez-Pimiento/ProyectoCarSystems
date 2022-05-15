@@ -2,37 +2,37 @@ package serviceImpl;
 
 import conexion.Conexion;
 import static conexion.Conexion.close;
-import dominio.Marca;
+import dominio.TipoMaquinaria;
+import dominio.TipoMaquinaria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import services.MarcaService;
+import services.TipoMaquinariaService;
 
 /**
  * @author IntegraSoft
  */
-public class MarcaServiceImpl implements MarcaService {
+public class TipoMaquinariaServiceImpl implements TipoMaquinariaService{
 
-    private static final String SQL_INSERT = "INSERT INTO marca(nombre_marca) VALUES (?)";
-    private static final String SQL_SELECT = "SELECT id_marca, nombre_marca FROM marca";
-    private static final String SQL_UPDATE = "UPDATE marca SET nombre_marca = ? WHERE id_marca = ?";
-    private static final String SQL_DELETE = "DELETE FROM marca WHERE id_marca = ?";
-    private static String SQL_CONSULTA = "SELECT * FROM marca WHERE nombre_marca = ?";
+    private static final String SQL_INSERT = "INSERT INTO tipo_maquinaria(nombre_tipo_maquinaria) VALUES (?)";
+    private static final String SQL_SELECT = "SELECT * FROM tipo_maquinaria";
+    private static final String SQL_UPDATE = "UPDATE tipo_maquinaria SET nombre_tipo_maquinaria = ? WHERE id_tipo_maquinaria = ?";
+    private static final String SQL_DELETE = "DELETE FROM tipo_maquinaria WHERE id_tipo_maquinaria = ?";
+    private static String SQL_CONSULTA = "SELECT * FROM tipo_maquinaria WHERE nombre_tipo_maquinaria = ?";
 
     @Override
-    public void guardar(Marca marca) {
+    public void guardar(TipoMaquinaria tipoMaquinaria) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, marca.getNombreMarca());
+            stmt.setString(1, tipoMaquinaria.getNombreTipoMaquinaria());
             registros = stmt.executeUpdate();
-            System.out.println("Marca guardada.");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         } finally {
@@ -46,16 +46,15 @@ public class MarcaServiceImpl implements MarcaService {
     }
 
     @Override
-    public void eliminar(Marca marca) {
+    public void eliminar(TipoMaquinaria tipoMaquinaria) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setInt(1, marca.getIdMarca());
+            stmt.setInt(1, tipoMaquinaria.getIdTipoMaquinaria());
             registros = stmt.executeUpdate();
-            System.out.println("Marca eliminada");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
@@ -70,24 +69,24 @@ public class MarcaServiceImpl implements MarcaService {
     }
 
     @Override
-    public List<Marca> listarMarca() {
+    public List<TipoMaquinaria> listarTipoMaquinaria() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Marca marca = null;
-        List<Marca> marcas = new ArrayList<>();
+        TipoMaquinaria tipoMaquinaria = null;
+        List<TipoMaquinaria> tipoMaquinarias = new ArrayList<>();
 
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idMarca = rs.getInt("id_marca");
-                String nombreMarca = rs.getString("nombre_marca");
+                int idTipoMaquinaria = rs.getInt("id_tipo_maquinaria");
+                String nombreTipoMaquinaria = rs.getString("nombre_tipo_maquinaria");
 
-                marca = new Marca(idMarca, nombreMarca);
+                tipoMaquinaria = new TipoMaquinaria(idTipoMaquinaria, nombreTipoMaquinaria);
 
-                marcas.add(marca);
+                tipoMaquinarias.add(tipoMaquinaria);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -101,23 +100,23 @@ public class MarcaServiceImpl implements MarcaService {
             }
         }
 
-        return marcas;
+        return tipoMaquinarias;
     }
 
     @Override
-    public Marca encontrarMarca (String nombreMarca) {
+    public TipoMaquinaria encontrarTipoMaquinaria (String nombreTipoMaquinaria) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Marca marca = null;
+        TipoMaquinaria tipoMaquinaria = null;
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_CONSULTA);
-            stmt.setString(1, nombreMarca);
+            stmt.setString(1, nombreTipoMaquinaria);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int idMarca = rs.getInt("id_marca");
-                marca = new Marca(idMarca, nombreMarca);
+                int idTipoMaquinaria = rs.getInt("id_tipo_maquinaria");
+                tipoMaquinaria = new TipoMaquinaria(idTipoMaquinaria, nombreTipoMaquinaria);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -131,19 +130,19 @@ public class MarcaServiceImpl implements MarcaService {
             }
         }
 
-        return marca;
+        return tipoMaquinaria;
     }
 
     @Override
-    public void actualizar(Marca marca) {
+    public void actualizar(TipoMaquinaria tipoMaquinaria) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, marca.getNombreMarca());
-            stmt.setInt(2, marca.getIdMarca());
+            stmt.setString(1, tipoMaquinaria.getNombreTipoMaquinaria());
+            stmt.setInt(2, tipoMaquinaria.getIdTipoMaquinaria());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

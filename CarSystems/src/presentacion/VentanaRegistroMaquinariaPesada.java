@@ -1,11 +1,12 @@
 package presentacion;
 
-import dominio.Camioneta;
+import dominio.MaquinariaPesada;
 import dominio.Funciones;
 import dominio.Linea;
 import dominio.ManejoImagen;
 import dominio.ManejoPDF;
 import dominio.Marca;
+import dominio.TipoMaquinaria;
 import dominio.Usuario;
 import dominio.Vehiculo;
 import java.awt.Image;
@@ -20,7 +21,7 @@ import serviceImpl.VehiculoServiceImpl;
 /**
  * @author IntegraSoft
  */
-public class VentanaRegistroCamioneta extends javax.swing.JFrame {
+public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
 
     Funciones funciones = new Funciones();
     UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
@@ -32,11 +33,11 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     /**
      * Creates new form VentanaInicioDeSesion
      */
-    public VentanaRegistroCamioneta() {
+    public VentanaRegistroMaquinariaPesada() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        this.setTitle("Formulario de Registro de Camioneta");
+        this.setTitle("Formulario de Registro de Maquinaria Pesada");
         cargarMarcas();
         areatxtDescripcion.setLineWrap(true);
     }
@@ -68,18 +69,8 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         cmbMarca = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         cmbLinea = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        choModelo = new com.toedter.calendar.JYearChooser();
-        jLabel9 = new javax.swing.JLabel();
-        txtColor = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtCupo = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        cmbUtilitario = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        cmbBlindado = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        txtPrecio = new javax.swing.JTextField();
+        txtPeso = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         btnCargarPDF = new javax.swing.JButton();
         lblEstadoJudicial = new javax.swing.JLabel();
@@ -87,6 +78,24 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         areatxtDescripcion = new javax.swing.JTextArea();
+        jLabel16 = new javax.swing.JLabel();
+        txtAncho = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtAlto = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtLargo = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        choModelo = new com.toedter.calendar.JYearChooser();
+        jLabel22 = new javax.swing.JLabel();
+        txtColor = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        cmbTipoMaquinaria = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -107,7 +116,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Registrar Camioneta");
+        jLabel4.setText("Registrar Maquinaria Pesada");
 
         btnGuardar.setBackground(new java.awt.Color(37, 196, 164));
         btnGuardar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -134,7 +143,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Placa de vehículo:");
+        jLabel1.setText("Nro. de Registro:");
 
         txtPlaca.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         txtPlaca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -191,11 +200,6 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         cmbMarca.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         cmbMarca.setPreferredSize(new java.awt.Dimension(78, 30));
-        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMarcaActionPerformed(evt);
-            }
-        });
         cmbMarca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 cmbMarcaKeyReleased(evt);
@@ -209,7 +213,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         jLabel7.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbLinea.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        cmbLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camiones articulados", "Camiones de obras", "Cargadores de cadenas", "Cargadores de ruedas", "Compactadores", "Dragalinas", "Excavadoras", "Manipuladores de materiales", "Manipuladores telescópicos", "Maquinas forestales", "Minicargadores", "Motoniveladoras", "Mototraillas", "Palas de Cable Electrica", "Palas hidraulica para mineria", "Pavimentadoras de asfalto", "Perfiladoras de pavimento en frio", "Perforadoras", "Recuperadores de camiones", "Retroexcavadoras cargadoras", "Subterraneo: roca dura", "Subterraneo:tajo largo", "Tiendetubos", "Tractores", "Volquetas" }));
         cmbLinea.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbLinea.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -217,99 +221,20 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Año de Modelo:");
-
-        choModelo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        choModelo.setMinimumSize(new java.awt.Dimension(47, 30));
-        choModelo.setPreferredSize(new java.awt.Dimension(78, 30));
-        choModelo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                choModeloKeyReleased(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("Color:");
-
-        txtColor.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtColor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtColor.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtColorKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtColorKeyTyped(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setText("Cupo de personas:");
-
-        txtCupo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtCupo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCupo.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtCupo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtCupoKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCupoKeyTyped(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Utilitario:");
-        jLabel11.setPreferredSize(new java.awt.Dimension(161, 35));
-
-        cmbUtilitario.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbUtilitario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Si", "No" }));
-        cmbUtilitario.setToolTipText("Es un vehículo que está diseñado para realizar una tarea específica con más eficacia que un vehículo de pasajeros. A veces se refiere a un camión pequeño con lados bajos.");
-        cmbUtilitario.setPreferredSize(new java.awt.Dimension(78, 30));
-        cmbUtilitario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                cmbUtilitarioKeyReleased(evt);
-            }
-        });
-
-        jLabel12.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setText("Blindado:");
-        jLabel12.setPreferredSize(new java.awt.Dimension(161, 35));
-
-        cmbBlindado.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbBlindado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Si", "No" }));
-        cmbBlindado.setPreferredSize(new java.awt.Dimension(78, 30));
-        cmbBlindado.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                cmbBlindadoKeyReleased(evt);
-            }
-        });
-
         jLabel13.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel13.setText("Precio: $");
+        jLabel13.setText("Peso:");
 
-        txtPrecio.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtPrecio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPrecio.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtPeso.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtPeso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPeso.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPrecioKeyReleased(evt);
+                txtPesoKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPrecioKeyTyped(evt);
+                txtPesoKeyTyped(evt);
             }
         });
 
@@ -363,6 +288,139 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(areatxtDescripcion);
 
+        jLabel16.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel16.setText("Ancho:");
+
+        txtAncho.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtAncho.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAncho.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtAncho.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAnchoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAnchoKeyTyped(evt);
+            }
+        });
+
+        jLabel17.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("Alto:");
+
+        txtAlto.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtAlto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAlto.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtAlto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAltoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAltoKeyTyped(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel18.setText("Largo:");
+
+        txtLargo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtLargo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtLargo.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtLargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtLargoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLargoKeyTyped(evt);
+            }
+        });
+
+        jLabel19.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel19.setText("Precio: $");
+
+        txtPrecio.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtPrecio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPrecio.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyTyped(evt);
+            }
+        });
+
+        jLabel21.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel21.setText("Año de Modelo:");
+
+        choModelo.setMinimumSize(new java.awt.Dimension(47, 30));
+        choModelo.setPreferredSize(new java.awt.Dimension(78, 30));
+        choModelo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                choModeloKeyReleased(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel22.setText("Color:");
+
+        txtColor.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtColor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtColor.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtColorKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtColorKeyTyped(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel20.setText("Tipo maquinaria:");
+        jLabel20.setPreferredSize(new java.awt.Dimension(161, 35));
+
+        cmbTipoMaquinaria.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        cmbTipoMaquinaria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Agricultura", "Asfaltado", "Canteras", "Construcción", "Demolición", "Pavimentación", "Reciclaje", "Transporte de escombros" }));
+        cmbTipoMaquinaria.setPreferredSize(new java.awt.Dimension(78, 30));
+        cmbTipoMaquinaria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cmbTipoMaquinariaKeyReleased(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel23.setText("Kg");
+
+        jLabel24.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel24.setText("mm");
+
+        jLabel25.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel25.setText("mm");
+
+        jLabel26.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel26.setText("mm");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -371,66 +429,82 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbTipoMaquinaria, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(choModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(choModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtLargo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmbBlindado, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblEstadoJudicial, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(8, 8, 8)
-                            .addComponent(btnCargarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnDescargarEJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane2))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblEstadoJudicial, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(8, 8, 8)
+                                    .addComponent(btnCargarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnDescargarEJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(345, 345, 345)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cmbUtilitario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cmbTipoServicio, 0, 173, Short.MAX_VALUE)
+                                    .addComponent(cmbLinea, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnCargarImagen)
@@ -462,27 +536,34 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                             .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(choModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbUtilitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(cmbBlindado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbTipoMaquinaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(choModelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAlto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtLargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -511,14 +592,13 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(467, 467, 467)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(467, 467, 467))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(3, 3, 3)
@@ -536,15 +616,15 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(125, 125, 125)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(426, Short.MAX_VALUE)))
+                    .addContainerGap(466, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -555,7 +635,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
         );
 
         pack();
@@ -585,7 +665,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarPDFKeyReleased
 
     private void txtPlacaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlacaKeyTyped
-        if (txtPlaca.getText().length() >= 6) {
+        if (txtPlaca.getText().length() >= 30) {
             evt.consume();
             Toolkit.getDefaultToolkit().beep();
         } else {
@@ -610,52 +690,21 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
 
     private void cmbMarcaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbMarcaKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            cargarLineas();
             cmbLinea.requestFocus();
         }
     }//GEN-LAST:event_cmbMarcaKeyReleased
 
     private void cmbLineaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbLineaKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            choModelo.requestFocus();
+            cmbTipoMaquinaria.requestFocus();
         }
     }//GEN-LAST:event_cmbLineaKeyReleased
 
-    private void choModeloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_choModeloKeyReleased
+    private void txtPesoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtColor.requestFocus();
+            txtAncho.requestFocus();
         }
-    }//GEN-LAST:event_choModeloKeyReleased
-
-    private void txtColorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtCupo.requestFocus();
-        }
-    }//GEN-LAST:event_txtColorKeyReleased
-
-    private void txtCupoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupoKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            cmbUtilitario.requestFocus();
-        }
-    }//GEN-LAST:event_txtCupoKeyReleased
-
-    private void cmbUtilitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbUtilitarioKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            cmbBlindado.requestFocus();
-        }
-    }//GEN-LAST:event_cmbUtilitarioKeyReleased
-
-    private void cmbBlindadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbBlindadoKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtPrecio.requestFocus();
-        }
-    }//GEN-LAST:event_cmbBlindadoKeyReleased
-
-    private void txtPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            btnCargarPDF.requestFocus();
-        }
-    }//GEN-LAST:event_txtPrecioKeyReleased
+    }//GEN-LAST:event_txtPesoKeyReleased
 
     private void btnCargarImagenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCargarImagenKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -675,9 +724,61 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGuardarKeyReleased
 
-    private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMarcaActionPerformed
-        cargarLineas();
-    }//GEN-LAST:event_cmbMarcaActionPerformed
+    private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
+        funciones.validarCampoNumero(evt, txtPeso, 12);
+    }//GEN-LAST:event_txtPesoKeyTyped
+
+    private void txtAnchoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnchoKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtAlto.requestFocus();
+        }
+    }//GEN-LAST:event_txtAnchoKeyReleased
+
+    private void txtAnchoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnchoKeyTyped
+        funciones.validarCampoNumero(evt, txtAncho, 12);
+    }//GEN-LAST:event_txtAnchoKeyTyped
+
+    private void txtAltoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltoKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtLargo.requestFocus();
+        }
+    }//GEN-LAST:event_txtAltoKeyReleased
+
+    private void txtAltoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltoKeyTyped
+        funciones.validarCampoNumero(evt, txtAlto, 12);
+    }//GEN-LAST:event_txtAltoKeyTyped
+
+    private void txtLargoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLargoKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtPrecio.requestFocus();
+        }
+    }//GEN-LAST:event_txtLargoKeyReleased
+
+    private void txtLargoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLargoKeyTyped
+        funciones.validarCampoNumero(evt, txtLargo, 12);
+    }//GEN-LAST:event_txtLargoKeyTyped
+
+    private void txtPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnCargarPDF.requestFocus();
+        }
+    }//GEN-LAST:event_txtPrecioKeyReleased
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+        funciones.validarCampoNumero(evt, txtPrecio, 12);
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void choModeloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_choModeloKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtColor.requestFocus();
+        }
+    }//GEN-LAST:event_choModeloKeyReleased
+
+    private void txtColorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtPeso.requestFocus();
+        }
+    }//GEN-LAST:event_txtColorKeyReleased
 
     private void txtColorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyTyped
         funciones.validarCampoTexto(evt, txtColor, 20);
@@ -687,13 +788,11 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtColorKeyTyped
 
-    private void txtCupoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupoKeyTyped
-        funciones.validarCampoNumero(evt, txtCupo, 3);
-    }//GEN-LAST:event_txtCupoKeyTyped
-
-    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
-        funciones.validarCampoNumero(evt, txtPrecio, 12);
-    }//GEN-LAST:event_txtPrecioKeyTyped
+    private void cmbTipoMaquinariaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbTipoMaquinariaKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            choModelo.requestFocus();
+        }
+    }//GEN-LAST:event_cmbTipoMaquinariaKeyReleased
 
     public void guardar() {
         if (validarCampos()) {
@@ -701,20 +800,20 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
             Usuario usuario = new Usuario();
             usuario.setTipoId("Cedula de Ciudadanía");
             usuario.setIdUsuario(1090497465L);
-            Camioneta camioneta = new Camioneta(txtPlaca.getText(), usuario.getTipoId(), usuario.getIdUsuario(),
+            MaquinariaPesada maquinariaPesada = new MaquinariaPesada(txtPlaca.getText(), usuario.getTipoId(), usuario.getIdUsuario(),
                     cmbTipoServicio.getSelectedItem().toString(), cmbMarca.getSelectedItem().toString(), cmbLinea.getSelectedItem().toString(),
-                    txtColor.getText(), choModelo.getYear(), Integer.parseInt(txtCupo.getText()),
-                    funciones.convertirStringBoolean(cmbUtilitario.getSelectedItem().toString()), funciones.convertirStringBoolean(cmbBlindado.getSelectedItem().toString()),
-                    Double.parseDouble(txtPrecio.getText()), manejoImagen.guardarImagenVehiculo(rutaImagen), manejoImagen.convertirImagenaByte(rutaImagen),
-                    areatxtDescripcion.getText(), manejoPDF.convertirPDFaByte(rutaPDF));
-            Vehiculo camionetaEncontrado = vehiculoServicio.encontrarVehiculo(camioneta.getIdVehiculo());
-            if (camionetaEncontrado != null) {
-                JOptionPane.showMessageDialog(null, "La placa del vehículo ingresado, ya se encuentra registrado en el sistema. Por favor validé el campo e inténtelo nuevamente.", "Vehículo registrado", JOptionPane.ERROR_MESSAGE);
+                    txtColor.getText(), choModelo.getYear(), 2, false, false, Double.parseDouble(txtPeso.getText()),
+                    manejoImagen.guardarImagenVehiculo(rutaImagen), manejoImagen.convertirImagenaByte(rutaImagen), areatxtDescripcion.getText(),
+                    manejoPDF.convertirPDFaByte(rutaPDF), Integer.parseInt(txtPeso.getText()), Integer.parseInt(txtAlto.getText()),
+                    Integer.parseInt(txtAncho.getText()), Integer.parseInt(txtLargo.getText()), cmbTipoMaquinaria.getSelectedItem().toString());
+            Vehiculo maquinariaPesadaEncontrado = vehiculoServicio.encontrarVehiculo(maquinariaPesada.getIdVehiculo());
+            if (maquinariaPesadaEncontrado != null) {
+                JOptionPane.showMessageDialog(null, "El Nro. de Registro ingresado, ya se encuentra registrado en el sistema. Por favor valide el campo e inténtelo nuevamente.", "Vehículo registrado", JOptionPane.ERROR_MESSAGE);
                 txtPlaca.selectAll();
                 txtPlaca.requestFocus();
             } else {
                 try {
-                    vehiculoServicio.guardar(camioneta);
+                    vehiculoServicio.guardar(maquinariaPesada);
                     int opcion = JOptionPane.showConfirmDialog(null, "<html>Vehículo registrado exitosamente. <strong>¿Desea realizar el registro del diagnóstico del vehículo? </strong></html>", "Registro exitoso", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (opcion == 0) {
                         VentanaDiganostico ventanaDiagnostico = new VentanaDiganostico();
@@ -727,29 +826,14 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Ha ocurrido un error, por favor inténtelo de nuevo más tarde. \n" + e.getMessage(), "Registrar vehículo", JOptionPane.ERROR_MESSAGE);
                 }
             }
-
         }
     }
 
     public void cargarMarcas() {
-        List<Marca> marcas = funciones.listarMarcas();
-        marcas.forEach(marca -> {
-            cmbMarca.addItem(marca.getNombreMarca());
+        List<TipoMaquinaria> tipoMaquinarias = funciones.listarTipoMaquinaria();
+        tipoMaquinarias.forEach(tipoMaquinaria -> {
+            cmbMarca.addItem(tipoMaquinaria.getNombreTipoMaquinaria());
         });
-    }
-
-    public void cargarLineas() {
-        if (cmbMarca.getSelectedItem().equals("Seleccionar")) {
-            cmbLinea.removeAllItems();
-            cmbLinea.addItem("Seleccionar");
-        } else {
-            cmbLinea.removeAllItems();
-            cmbLinea.addItem("Seleccionar");
-            List<Linea> lineas = funciones.listarLineaXMarca(cmbMarca.getSelectedItem().toString());
-            lineas.forEach(linea -> {
-                cmbLinea.addItem(linea.getNombreLinea());
-            });
-        }
     }
 
     public void seleccionarEstadoJudicial() {
@@ -793,6 +877,10 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
             imprimirCampoVacio("Linea", "sin seleccionar");
             cumplenCampos = false;
             cmbLinea.requestFocus();
+        } else if (cmbTipoMaquinaria.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Tipo de maquinaria", "sin seleccionar");
+            cumplenCampos = false;
+            cmbTipoMaquinaria.requestFocus();
         } else if (yearModelo == 0) {
             imprimirCampoVacio("Año de modelo", "sin seleccionar");
             cumplenCampos = false;
@@ -801,18 +889,22 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
             imprimirCampoVacio("Color", "vacío");
             cumplenCampos = false;
             txtColor.requestFocus();
-        } else if (txtCupo.getText().equals("")) {
-            imprimirCampoVacio("Cupo de personas", "vacío");
+        } else if (txtPeso.getText().equals("")) {
+            imprimirCampoVacio("Peso", "vacío");
             cumplenCampos = false;
-            txtCupo.requestFocus();
-        } else if (cmbUtilitario.getSelectedItem().toString().equals("Seleccionar")) {
-            imprimirCampoVacio("Utilitario", "sin seleccionar");
+            txtPeso.requestFocus();
+        } else if (txtAncho.getText().equals("")) {
+            imprimirCampoVacio("Ancho", "vacío");
             cumplenCampos = false;
-            cmbUtilitario.requestFocus();
-        } else if (cmbBlindado.getSelectedItem().toString().equals("Seleccionar")) {
-            imprimirCampoVacio("Blindado", "sin seleccionar");
+            txtAncho.requestFocus();
+        } else if (txtAlto.getText().equals("")) {
+            imprimirCampoVacio("Alto", "vacío");
             cumplenCampos = false;
-            cmbBlindado.requestFocus();
+            txtAlto.requestFocus();
+        } else if (txtLargo.getText().equals("")) {
+            imprimirCampoVacio("Largo", "vacío");
+            cumplenCampos = false;
+            txtLargo.requestFocus();
         } else if (txtPrecio.getText().equals("")) {
             imprimirCampoVacio("Precio", "vacío");
             cumplenCampos = false;
@@ -838,11 +930,13 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         cmbTipoServicio.setSelectedItem("Seleccionar");
         cmbMarca.setSelectedItem("Seleccionar");
         cmbLinea.setSelectedItem("Seleccionar");
+        cmbTipoMaquinaria.setSelectedItem("Seleccionar");
         choModelo.setYear(2022);
         txtColor.setText("");
-        txtCupo.setText("");
-        cmbUtilitario.setSelectedItem("Seleccionar");
-        cmbBlindado.setSelectedItem("Seleccionar");
+        txtPeso.setText("");
+        txtAncho.setText("");
+        txtAlto.setText("");
+        txtLargo.setText("");
         txtPrecio.setText("");
         lblImagen.setIcon(null);
         lblEstadoJudicial.setText("");
@@ -868,14 +962,22 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaRegistroCamioneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaRegistroMaquinariaPesada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaRegistroCamioneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaRegistroMaquinariaPesada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaRegistroCamioneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaRegistroMaquinariaPesada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaRegistroCamioneta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaRegistroMaquinariaPesada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -888,7 +990,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaRegistroCamioneta().setVisible(true);
+                new VentanaRegistroMaquinariaPesada().setVisible(true);
             }
         });
     }
@@ -900,26 +1002,31 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     private javax.swing.JButton btnDescargarEJ;
     private javax.swing.JButton btnGuardar;
     private com.toedter.calendar.JYearChooser choModelo;
-    private javax.swing.JComboBox<String> cmbBlindado;
     private javax.swing.JComboBox<String> cmbLinea;
     private javax.swing.JComboBox<String> cmbMarca;
+    private javax.swing.JComboBox<String> cmbTipoMaquinaria;
     private javax.swing.JComboBox<String> cmbTipoServicio;
-    private javax.swing.JComboBox<String> cmbUtilitario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -927,8 +1034,11 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblEstadoJudicial;
     private javax.swing.JLabel lblImagen;
+    private javax.swing.JTextField txtAlto;
+    private javax.swing.JTextField txtAncho;
     private javax.swing.JTextField txtColor;
-    private javax.swing.JTextField txtCupo;
+    private javax.swing.JTextField txtLargo;
+    private javax.swing.JTextField txtPeso;
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables

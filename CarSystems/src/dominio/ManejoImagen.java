@@ -45,9 +45,10 @@ public class ManejoImagen {
                 nombreArchivo = buscadorArchivo.getName();
                 rutaArchivo = buscadorArchivo.getSelectedFile().getAbsolutePath();
             } else {
-                rutaArchivo = null;
+                rutaArchivo = "";
             }
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al seleccionar la imagen :"+e.getMessage(),"Seleccionar imagen",JOptionPane.ERROR_MESSAGE);
             e.printStackTrace(System.out);
         }
         return rutaArchivo;

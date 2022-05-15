@@ -13,7 +13,7 @@ public class Conexion {
    private static final String JDBC_PASSWORD = "12345678";
    private static final String JDBC_URL = "jdbc:mysql://localhost/" + JDBC_BD;
 
-    Connection connection = null;
+    private static Connection connection = null;
 
    /** Constructor de DbConnection */
    public Conexion() {
@@ -28,6 +28,8 @@ public class Conexion {
          }
       }
       catch(SQLException e){
+         JOptionPane.showMessageDialog(null, "El sistema no se encuentra disponible en este momento, por favor intente más tarde o comuniquese con el administrador.", "Fallo en el sistema", JOptionPane.ERROR_MESSAGE);
+         System.exit(0);
          System.out.println(e);
       }catch(ClassNotFoundException e){
          System.out.println(e);

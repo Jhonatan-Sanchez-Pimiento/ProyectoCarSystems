@@ -1,4 +1,4 @@
-1;1;ARX-02
+ï»¿1;1;ARX-02
 2;1;CL-X
 3;1;ARX-01
 4;1;CSX
@@ -121,8 +121,8 @@
 121;4;ArcFox GT
 122;4;ArcFox ?-T
 123;4;BAIC BJ90
-124;4;Beijing BJ30 (BAIC BJ20)
-125;4;Beijing BJ40 (BJ40 Plus/ BJ40L)
+124;4;Beijing BJ30Â (BAIC BJ20)
+125;4;Beijing BJ40Â (BJ40 Plus/ BJ40L)
 126;4;Beijing BJ60
 127;4;Beijing BJ80
 128;4;Senova CC
@@ -195,9 +195,9 @@
 195;8; F3-R
 196;8; F5 SURI
 197;8; F6
-198;8; F6DM /  F6e 
+198;8; F6DMÂ /Â  F6eÂ 
 199;8; F8
-200;8; Flyer (F1)
+200;8; FlyerÂ (F1)
 201;8; Q1M
 202;8; Qin
 203;8; S6 SUV
@@ -207,13 +207,13 @@
 207;8; Yuan
 208;8;Clase 6
 209;8;T3
-210;9; Allanté
+210;9; AllantÃ©
 211;9; ATS
 212;9; BLS
 213;9; Brougham
 214;9; Calais
 215;9; Catera
-216;9; Catera (automóvil)
+216;9; Catera (automÃ³vil)
 217;9; Cien
 218;9; Cimarron
 219;9; CT4
@@ -247,7 +247,7 @@
 247;9;Opel Omega
 248;10;CS35 Plus
 249;11; A6
-250;11; Beidouxing ( Big Dipper)
+250;11; BeidouxingÂ ( Big Dipper)
 251;11; Freedom
 252;11; Freedom M50
 253;11; Freedom M60
@@ -292,7 +292,7 @@
 292;13; Caprice
 293;13; Cavalier
 294;13; Chevelle
-295;13; Chevy (México)
+295;13; Chevy (MÃ©xico)
 296;13; Chevy II / Nova
 297;13; Cheyenne
 298;13; Combo
@@ -321,7 +321,7 @@
 321;13;Isuzu D-Max
 322;13;Isuzu i-Series
 323;13; Malibu
-324;13; Marajó
+324;13; MarajÃ³
 325;13; Master
 326;13; Matiz
 327;13; Meriva
@@ -422,7 +422,7 @@
 422;15;C6 (China)
 423;15;C8
 424;15;C-Crosser
-425;15;Citroën-Kégresse
+425;15;CitroÃ«n-KÃ©gresse
 426;15;Citycar (PSA/Toyota)
 427;15;CX
 428;15;DS
@@ -430,16 +430,16 @@
 430;15;DS4
 431;15;DS5
 432;15;Dyane
-433;15;Elysée
+433;15;ElysÃ©e
 434;15;Evasion
 435;15;Furgoneta mediana (Sevel)
-436;15;Furgoneta pequeña PSA
+436;15;Furgoneta pequeÃ±a PSA
 437;15;GS
 438;15;H
 439;15;Jumper
 440;15;Jumpy
 441;15;LNA
-442;15;Méhari
+442;15;MÃ©hari
 443;15;Mitsubishi RVR
 444;15;Nemo
 445;15;Rosalie
@@ -478,7 +478,7 @@
 478;17;K07S
 479;17;K01/K02
 480;17;V07S, microvan
-481;17;V21, camioneta de cabina única
+481;17;V21, camioneta de cabina Ãºnica
 482;17;V22, camioneta de cabina doble
 483;17;V25, microvan
 484;17;V26, microvan
@@ -503,7 +503,7 @@
 503;18;Coronado
 504;18;Coronet
 505;18;Dart
-506;18;Dart (España)
+506;18;Dart (EspaÃ±a)
 507;18;Dart (2012)
 508;18;Dart GT
 509;18;Charger Daytona
@@ -640,19 +640,19 @@
 640;22;12 HP
 641;22;124 Spider (2016)
 642;22;124 Sport Spider
-643;22;125 Centurión
+643;22;125 CenturiÃ³n
 644;22;125 Mirafiori
 645;22;130 HP
 646;22;1300/1500
 647;22;1400/1900
 648;22;1500 (1935)
-649;22;1500 Coupé Vignale
+649;22;1500 CoupÃ© Vignale
 650;22;1600 Sport
 651;22;16-20 HP
 652;22;1800/2100
 653;22;24-32 HP
 654;22;2B
-655;22;3 ½ HP
+655;22;3 Â½ HP
 656;22;50 HP
 657;22;500 (1936)
 658;22;500 (1957)
@@ -674,12 +674,12 @@
 674;22;Bravo/Brava/Marea
 675;22;Centoventi
 676;22;Cinquecento
-677;22;Coupé
+677;22;CoupÃ©
 678;22;Croma
 679;22;Croma (1985)
 680;22;Croma (2005)
 681;22;Cronos
-682;22;Doblò
+682;22;DoblÃ²
 683;22;Duna
 684;22;Elba
 685;22;Freemont
@@ -699,8 +699,8 @@
 699;22;Palio Weekend
 700;22;Panda
 701;22;Phyllis
-702;22;Pininfarina Coupé y Cabriolet
-703;22;Prêmio
+702;22;Pininfarina CoupÃ© y Cabriolet
+703;22;PrÃªmio
 704;22;Punto
 705;22;Qubo
 706;22;Regata
@@ -760,7 +760,7 @@
 760;23;Eifel
 761;23;Escape
 762;23;Escort
-763;23;Escort (América del Norte)
+763;23;Escort (AmÃ©rica del Norte)
 764;23;Escort (China)
 765;23;Escort MK I
 766;23;Escort MK II
@@ -784,7 +784,7 @@
 784;23;Flex
 785;23;Focus
 786;23;Forty-Nine
-787;23;Fusion (América)
+787;23;Fusion (AmÃ©rica)
 788;23;Fusion (Europa)
 789;23;Fusion Hybrid
 790;23;Galaxie
@@ -818,7 +818,7 @@
 818;23;Sierra
 819;23;S-Max
 820;23;T
-821;23;Tamaño completo de Ford
+821;23;TamaÃ±o completo de Ford
 822;23;Taunus
 823;23;Taurus
 824;23;Tempo
@@ -848,7 +848,7 @@
 848;24;Gratour im8
 849;24;Gratour im8
 850;24;Gratour ix5
-851;24;Gratour ix5 
+851;24;Gratour ix5Â 
 852;24;Gratour ix7
 853;24;Gratour ix7
 854;24;Green Earth
@@ -944,19 +944,19 @@
 944;28;Wingle 7 Cabina DOble y Cabina Simple
 945;28;Wingle S
 946;29;"1 ""Aishang"""
-947;29;6P PHEV CUV
-948;29;7X MPV
-949;29;8S CUV
-950;29;F7 MPV
+947;29;6PÂ PHEV CUV
+948;29;7XÂ MPV
+949;29;8SÂ CUV
+950;29;F7Â MPV
 951;29;Freema EV
-952;29;Fstar microvan
-953;29;M3 sedan
-954;29;M5 sedan
-955;29;M6 sedan
-956;29;M8 sedan
-957;29;S5 Young CUV
-958;29;S5 CUV
-959;29;S7 CUV
+952;29;FstarÂ microvan
+953;29;M3Â sedan
+954;29;M5Â sedan
+955;29;M6Â sedan
+956;29;M8Â sedan
+957;29;S5 YoungÂ CUV
+958;29;S5Â CUV
+959;29;S7Â CUV
 960;30;1300
 961;30;Accord
 962;30;Acty
@@ -970,12 +970,12 @@
 970;30;City
 971;30;City AA
 972;30;Civic
-973;30;Civic (Cuarta Generación)
-974;30;Civic (Primera Generación)
-975;30;Civic (quinta generación)
-976;30;Civic (segunda generación)
-977;30;Civic (sexta generación)
-978;30;Civic (tercera generación)
+973;30;Civic (Cuarta GeneraciÃ³n)
+974;30;Civic (Primera GeneraciÃ³n)
+975;30;Civic (quinta generaciÃ³n)
+976;30;Civic (segunda generaciÃ³n)
+977;30;Civic (sexta generaciÃ³n)
+978;30;Civic (tercera generaciÃ³n)
 979;30;Civic Si
 980;30;Civic Type-R
 981;30;Civic VIII
@@ -1194,7 +1194,7 @@
 1194;41;MM540DP
 1195;41;MM550DP
 1196;41;Armada
-1197;41;Cimarrón
+1197;41;CimarrÃ³n
 1198;41;Commander
 1199;41;Marshal
 1200;41;Major
@@ -1208,33 +1208,33 @@
 1208;42;A6
 1209;42;Biturbo
 1210;42;Bora
-1211;42;Coupé/Spyder
+1211;42;CoupÃ©/Spyder
 1212;42;Ghibli (1967)
 1213;42;Ghibli (2013)
 1214;42;GranTurismo
 1215;42;Khamsin
 1216;42;Levante
 1217;43;D60
-1218;43;D90 
+1218;43;D90Â 
 1219;43;EG10 electric G10 
-1220;43;EUNIQ 5 G50 eléctrico 
-1221;43;EUNIQ 6 D60 eléctrico 
-1222;43;EV30 van 
-1223;43;EV80 V80 eléctrico 
+1220;43;EUNIQ 5Â G50 elÃ©ctrico 
+1221;43;EUNIQ 6Â D60 elÃ©ctrico 
+1222;43;EV30Â van 
+1223;43;EV80 V80 elÃ©ctrico 
 1224;43;FCV80 V80 extendido
-1225;43;G10 MPV 
-1226;43;G20 MPV 
-1227;43;G50 MPV 
+1225;43;G10Â MPV 
+1226;43;G20Â MPV 
+1227;43;G50Â MPV 
 1228;43;Istana
 1229;43;LD100
 1230;43;RG10 RV based on G10
 1231;43;RV80 RV basado en V80 
 1232;43;SV62 V80 chasis
-1233;43;T60 
-1234;43;T70 
-1235;43;Tarantula SUV 
-1236;43;V80 van
-1237;43;V90 van 
+1233;43;T60Â 
+1234;43;T70Â 
+1235;43;TarantulaÂ SUV 
+1236;43;V80Â van
+1237;43;V90Â van 
 1238;44;2
 1239;44;3
 1240;44;5
@@ -1285,7 +1285,7 @@
 1285;45;Clase A
 1286;45;Clase B
 1287;45;Clase C
-1288;45;Clase C Sportcoupé
+1288;45;Clase C SportcoupÃ©
 1289;45;Clase CL
 1290;45;Clase CLC
 1291;45;Clase CLK
@@ -1340,9 +1340,9 @@
 1340;46;6
 1341;46;(MG 5)
 1342;46;360 (Roewe 360)
-1343;46;550 (Roewe 550)
-1344;46;750 (Roewe 750)
-1345;46;Extender (Maxus T60)
+1343;46;550Â (Roewe 550)
+1344;46;750Â (Roewe 750)
+1345;46;ExtenderÂ (Maxus T60)
 1346;46;GS
 1347;46;HS
 1348;46;TA 1936-39
@@ -1458,7 +1458,7 @@
 1458;50;Insignia Concept
 1459;50;K-180
 1460;50;Kadett
-1461;50;Kapitän
+1461;50;KapitÃ¤n
 1462;50;Manta
 1463;50;Meriva
 1464;50;Mokka
@@ -1562,7 +1562,7 @@
 1562;52;944
 1563;52;959
 1564;52;968
-1565;52;911 (clásico)
+1565;52;911 (clÃ¡sico)
 1566;52;911 Carrera RSR Turbo
 1567;52;911 GT1
 1568;52;911 GT2
@@ -1581,10 +1581,10 @@
 1581;52;Super
 1582;52;Taycan
 1583;53;700
-1584;53;Chasis Cab 
-1585;53;Pickup 
-1586;53;ProMaster City 
-1587;53;ProMaster 
+1584;53;Chasis CabÂ 
+1585;53;PickupÂ 
+1586;53;ProMaster CityÂ 
+1587;53;ProMasterÂ 
 1588;54;3
 1589;54;4
 1590;54;5
@@ -1621,11 +1621,11 @@
 1621;54;Duster Oroch
 1622;54;Egeus
 1623;54;Espace
-1624;54;Étoile Filante
+1624;54;Ã‰toile Filante
 1625;54;Express
 1626;54;Fluence
 1627;54;Fluence Z.E.
-1628;54;Frégate
+1628;54;FrÃ©gate
 1629;54;Fuego
 1630;54;Grand Modus
 1631;54;Juvaquatre
@@ -1640,7 +1640,7 @@
 1640;54;Mascott
 1641;54;Master
 1642;54;Maxity
-1643;54;Mégane
+1643;54;MÃ©gane
 1644;54;Megane III RS Trophy
 1645;54;Modus
 1646;54;Monaquatre
@@ -1653,7 +1653,7 @@
 1653;54;Safrane
 1654;54;Samsung SM7
 1655;54;Sandero
-1656;54;Scénic
+1656;54;ScÃ©nic
 1657;54;Sport R.S. 01
 1658;54;Supercinco
 1659;54;Symbol
@@ -1687,10 +1687,10 @@
 1687;55;Bocanegra
 1688;55;Bolero
 1689;55;Concepto T
-1690;55;Córdoba
-1691;55;Córdoba I
-1692;55;Córdoba II
-1693;55;Córdoba Vario
+1690;55;CÃ³rdoba
+1691;55;CÃ³rdoba I
+1692;55;CÃ³rdoba II
+1693;55;CÃ³rdoba Vario
 1694;55;Cupra Born
 1695;55;Cupra e-Racer
 1696;55;Cupra GT
@@ -1704,14 +1704,14 @@
 1704;55;IBX
 1705;55;IBZ
 1706;55;Inca
-1707;55;León
-1708;55;León I
-1709;55;León II
-1710;55;León IV
-1711;55;Málaga
+1707;55;LeÃ³n
+1708;55;LeÃ³n I
+1709;55;LeÃ³n II
+1710;55;LeÃ³n IV
+1711;55;MÃ¡laga
 1712;55;Marbella
 1713;55;Mii
-1714;55;Minimó
+1714;55;MinimÃ³
 1715;55;Panda
 1716;55;Proto
 1717;55;Ritmo
@@ -1899,7 +1899,7 @@
 1899;62;Eos
 1900;62;e-up!
 1901;62;Fox
-1902;62;Fox (Norte América)
+1902;62;Fox (Norte AmÃ©rica)
 1903;62;Futura
 1904;62;Gol
 1905;62;Gol AB9
@@ -1926,7 +1926,7 @@
 1926;62;Jetta VII
 1927;62;K70
 1928;62;Karmann Ghia
-1929;62;Kübelwagen
+1929;62;KÃ¼belwagen
 1930;62;Lavida
 1931;62;Logus
 1932;62;Lupo
@@ -1975,7 +1975,7 @@
 1975;62;T-Cross
 1976;62;Tiguan
 1977;62;Tipo 1
-1978;62;tipo 14A (Hebmüller Cabriolet)
+1978;62;tipo 14A (HebmÃ¼ller Cabriolet)
 1979;62;Tipo 3
 1980;62;Tipo 4
 1981;62;Touareg
@@ -2001,7 +2001,7 @@
 2001;63;C30
 2002;63;C70
 2003;63;ECC
-2004;63;ÖV 4
+2004;63;Ã–V 4
 2005;63;P1800
 2006;63;Polestar 2
 2007;63;PV 36 Carioca
@@ -2026,7 +2026,7 @@
 2026;64;Cortez
 2027;64;Hongguang
 2028;64;Hongguang S
-2029;64;Hongguang S Clásico
+2029;64;Hongguang S ClÃ¡sico
 2030;64;Hongguang S1
 2031;64;Hongguang S3
 2032;64;Hongguang V
@@ -2041,8 +2041,8 @@
 2041;64;Zhengcheng
 2042;65;ZX Admiral
 2043;65;ZX C3 Urban Ark
-2044;65;ZX Chanling 
-2045;65;ZX Grand Tiger 
+2044;65;ZX ChanlingÂ 
+2045;65;ZX Grand TigerÂ 
 2046;65;ZX Landmark
 2047;65;ZX Terralord
 2048;65;ZX Weihu

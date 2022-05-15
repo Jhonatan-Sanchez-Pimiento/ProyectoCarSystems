@@ -186,9 +186,7 @@ public class LineaServiceImpl implements LineaService{
             while (rs.next()) {
                 int idLinea = rs.getInt("id_linea");
                 String nombreLinea = rs.getString("nombre_linea");
-
                 linea = new Linea(idLinea, marca.getIdMarca(), nombreLinea);
-
                 lineas.add(linea);
             }
         } catch (SQLException ex) {
