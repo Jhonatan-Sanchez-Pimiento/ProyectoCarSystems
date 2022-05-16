@@ -69,7 +69,7 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         cmbLinea = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        choModelo = new com.toedter.calendar.JYearChooser();
+        choModelo = new org.netbeans.modules.form.InvalidComponent();
         jLabel9 = new javax.swing.JLabel();
         txtColor = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -222,14 +222,6 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Año de Modelo:");
-
-        choModelo.setMinimumSize(new java.awt.Dimension(47, 30));
-        choModelo.setPreferredSize(new java.awt.Dimension(78, 30));
-        choModelo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                choModeloKeyReleased(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -902,7 +894,7 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarPDF;
     private javax.swing.JButton btnDescargarEJ;
     private javax.swing.JButton btnGuardar;
-    private com.toedter.calendar.JYearChooser choModelo;
+    private org.netbeans.modules.form.InvalidComponent choModelo;
     private javax.swing.JComboBox<String> cmbBlindado;
     private javax.swing.JComboBox<String> cmbLinea;
     private javax.swing.JComboBox<String> cmbMarca;
