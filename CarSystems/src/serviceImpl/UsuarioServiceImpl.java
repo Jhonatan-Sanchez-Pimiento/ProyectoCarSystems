@@ -133,28 +133,28 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public List<Usuario> listarUsuario() {
-            
-            Connection conn = new Conexion().getConnection();
+            Connection conn;
             PreparedStatement stmt;
             ResultSet rs;
-            
             List<Usuario> listaUsuario = new ArrayList<>();
-
         try {
-            stmt = (PreparedStatement) conn.createStatement();
-            rs = stmt.executeQuery("SELEC * FROM Usuarios ");
+             conn= new Conexion().getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
             
-            while(rs.next())
-            {   
+            while(rs.next()){   
             Usuario usuario = new Usuario();
             
-                usuario.setIdUsuario(rs.getInt("id"));
-                usuario.setApellido1(rs.getString("apellido1"));
-                usuario.setApellido2(rs.getString("apellido2"));
-                usuario.setNombreUsuario(rs.getString("nombre usuario"));
+                usuario.setTipoId(rs.getString("tipo_id"));
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setApellido1(rs.getString("primer_apellido"));
+                usuario.setApellido2(rs.getString("segundo_apellido"));
+                usuario.setNombreUsuario(rs.getString("nombre_usuario"));
+                usuario.setEmailUsuario(rs.getString("correo"));
+                usuario.setDepartamento(rs.getString("departamento"));
+                usuario.setMunicipio(rs.getString("municipio"));
                 usuario.setDireccion(rs.getString("direccion"));
                 usuario.setTelefono(rs.getString("telefono"));
-                usuario.setEmailUsuario(rs.getString("correo electronico"));
                 usuario.setRol(rs.getString("rol"));
                 usuario.setContrasena(rs.getString("contrasena"));
                 listaUsuario.add(usuario);
@@ -164,7 +164,6 @@ public class UsuarioServiceImpl implements UsuarioService{
             Logger.getLogger(UsuarioServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaUsuario;
-        
     }
 
     @Override

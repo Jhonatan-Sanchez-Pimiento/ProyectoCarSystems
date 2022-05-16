@@ -50,5 +50,6 @@ public class Linea {
     public String toString() {
         return "Linea{" + "idLinea=" + idLinea + ", idMarca=" + idMarca + ", nombreLinea=" + nombreLinea + '}';
     }
-    
+
+  
 }

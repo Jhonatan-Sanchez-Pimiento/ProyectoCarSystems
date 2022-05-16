@@ -2,27 +2,39 @@
 package presentacion;
 
 import dominio.Marca;
+import dominio.Usuario;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import serviceImpl.MarcaServiceImpl;
+import serviceImpl.UsuarioServiceImpl;
 import sun.security.pkcs11.wrapper.Functions;
 
 /**
  *
  * @author nicol
  */
-public class VentanaListarMarca extends javax.swing.JFrame {
+public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
     
     DefaultTableModel modelo;
     
-    public VentanaListarMarca() {
+    public VentanaListarUsuariosRegistrados() {
         initComponents();
         modelo = new DefaultTableModel();
-        modelo.addColumn("Id Marca");//Con este comando se le coloca el nombre a las columnas
-        modelo.addColumn("Nombre marca");
-        this.jtablaMarcas.setModel(modelo);//aquí le asigna el modelo a la tabla
-        cargarMarca();
+        modelo.addColumn("Tipo documento");//Con este comando se le coloca el nombre a las columnas
+        modelo.addColumn("Docuemto");
+        modelo.addColumn("Primer apellido");
+        modelo.addColumn("Segundo apellido");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Correo");
+        modelo.addColumn("Departamento");
+        modelo.addColumn("Municipio");
+        modelo.addColumn("Direccion");
+        modelo.addColumn("Telefono");
+        modelo.addColumn("Rol");
+        modelo.addColumn("Contrasena");
+        this.jtablaUsuarios.setModel(modelo);//aquí le asigna el modelo a la tabla
+        cargarUsiaros();
     }
 
 
@@ -36,7 +48,7 @@ public class VentanaListarMarca extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtablaMarcas = new javax.swing.JTable();
+        jtablaUsuarios = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -53,28 +65,28 @@ public class VentanaListarMarca extends javax.swing.JFrame {
         jLabel2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jLabel2.setIconTextGap(1);
 
-        jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Listado de marcas");
+        jLabel4.setText("Listado usuarios registrados");
 
         jSeparator1.setBackground(new java.awt.Color(37, 196, 164));
 
-        jtablaMarcas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jtablaMarcas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jtablaMarcas.setModel(new javax.swing.table.DefaultTableModel(
+        jtablaUsuarios.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jtablaUsuarios.setFont(new java.awt.Font("Myanmar Text", 0, 12)); // NOI18N
+        jtablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id Marca", "Nombre Marca"
+                "Tipo Documento", "Documento", "Pirmer apellido", "Segundo apellido", "Nombre", "Correo", "Departamento", "Municipio", "Direccion", "Telefono", "Rol", "Contrasena"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -85,15 +97,23 @@ public class VentanaListarMarca extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jtablaMarcas.setColumnSelectionAllowed(true);
-        jtablaMarcas.setGridColor(new java.awt.Color(51, 255, 255));
-        jScrollPane1.setViewportView(jtablaMarcas);
-        jtablaMarcas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jtablaMarcas.getColumnModel().getColumnCount() > 0) {
-            jtablaMarcas.getColumnModel().getColumn(0).setResizable(false);
-            jtablaMarcas.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jtablaMarcas.getColumnModel().getColumn(1).setResizable(false);
-            jtablaMarcas.getColumnModel().getColumn(1).setPreferredWidth(120);
+        jtablaUsuarios.setColumnSelectionAllowed(true);
+        jtablaUsuarios.setGridColor(new java.awt.Color(51, 255, 255));
+        jScrollPane1.setViewportView(jtablaUsuarios);
+        jtablaUsuarios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (jtablaUsuarios.getColumnModel().getColumnCount() > 0) {
+            jtablaUsuarios.getColumnModel().getColumn(0).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(1).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(2).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(3).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(4).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(5).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(6).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(7).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(8).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(9).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(10).setPreferredWidth(20);
+            jtablaUsuarios.getColumnModel().getColumn(11).setPreferredWidth(20);
         }
 
         jButton1.setText("Exportar");
@@ -115,14 +135,18 @@ public class VentanaListarMarca extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
+                .addComponent(jSeparator1)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -130,13 +154,8 @@ public class VentanaListarMarca extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(280, 280, 280))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(378, 378, 378))))
+                .addComponent(jButton1)
+                .addGap(481, 481, 481))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,11 +164,11 @@ public class VentanaListarMarca extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
@@ -162,9 +181,7 @@ public class VentanaListarMarca extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1146, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,19 +197,29 @@ public class VentanaListarMarca extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-        private void cargarMarca() {
+        private void cargarUsiaros() {
         
-            MarcaServiceImpl marcaServicio = new MarcaServiceImpl();
+            UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
             
-            modelo = (DefaultTableModel) jtablaMarcas.getModel();
+            modelo = (DefaultTableModel) jtablaUsuarios.getModel();
 
-                List<Marca> marcas = marcaServicio.listarMarca();
-                int tamanoLista = marcas.size(); //Tamaño de filas
+                List<Usuario> usuario = usuarioServicio.listarUsuario();
+                int tamanoLista = usuario.size(); //Tamaño de filas
                 modelo.setRowCount(tamanoLista);//Se establecen la cantidad de filas
 
                 for(int posicionFila = 0; posicionFila<tamanoLista;posicionFila++){
-                    jtablaMarcas.setValueAt(marcas.get(posicionFila).getIdMarca(),posicionFila , 0);
-                    jtablaMarcas.setValueAt(marcas.get(posicionFila).getNombreMarca(),posicionFila , 1);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getTipoId(),posicionFila , 0);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getIdUsuario(),posicionFila , 1);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getApellido1(),posicionFila , 2);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getApellido2(),posicionFila , 3);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getNombreUsuario(),posicionFila , 4);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getEmailUsuario(),posicionFila , 5);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getDepartamento(),posicionFila , 6);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getMunicipio(),posicionFila , 7);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getDireccion(),posicionFila , 8);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getTelefono(),posicionFila , 9);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getRol(),posicionFila , 10);
+                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getContrasena(),posicionFila , 11);
                 }           
     }
 
@@ -215,21 +242,23 @@ public class VentanaListarMarca extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaListarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaListarUsuariosRegistrados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaListarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaListarUsuariosRegistrados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaListarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaListarUsuariosRegistrados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaListarMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaListarUsuariosRegistrados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaListarMarca().setVisible(true);
+                new VentanaListarUsuariosRegistrados().setVisible(true);
             }
         });
     }
@@ -243,7 +272,7 @@ public class VentanaListarMarca extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jtablaMarcas;
+    private javax.swing.JTable jtablaUsuarios;
     // End of variables declaration//GEN-END:variables
 
 }
