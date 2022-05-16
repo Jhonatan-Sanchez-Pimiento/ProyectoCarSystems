@@ -20,7 +20,7 @@ public class MarcaServiceImpl implements MarcaService {
     private static final String SQL_SELECT = "SELECT id_marca, nombre_marca FROM marca";
     private static final String SQL_UPDATE = "UPDATE marca SET nombre_marca = ? WHERE id_marca = ?";
     private static final String SQL_DELETE = "DELETE FROM marca WHERE id_marca = ?";
-    private static String SQL_CONSULTA = "SELECT * FROM marca WHERE nombre_marca = ?";
+    private static String SQL_CONSULTA = "SELECT * FROM marca WHERE nombre_marca =?";
 
     @Override
     public void guardar(Marca marca) {
@@ -115,7 +115,7 @@ public class MarcaServiceImpl implements MarcaService {
             stmt = conn.prepareStatement(SQL_CONSULTA);
             stmt.setString(1, nombreMarca);
             rs = stmt.executeQuery();
-            while (rs.next()) {
+            while (rs.first()) {
                 int idMarca = rs.getInt("id_marca");
                 marca = new Marca(idMarca, nombreMarca);
             }
@@ -158,4 +158,35 @@ public class MarcaServiceImpl implements MarcaService {
         }
     }
 
+     @Override
+    public Marca encontrarMarca (int idMarca) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Marca marca = null;
+        SQL_CONSULTA = "SELECT * FROM marca WHERE id_marca = ?";
+        try {
+            conn = new Conexion().getConnection();
+            stmt = conn.prepareStatement(SQL_CONSULTA);
+            stmt.setInt(1, idMarca);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                String nombreMarca = rs.getString("nombre_marca");
+                marca = new Marca(idMarca, nombreMarca);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+
+        return marca;
+    }
+    
 }

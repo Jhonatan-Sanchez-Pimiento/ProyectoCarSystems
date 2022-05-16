@@ -15,5 +15,7 @@ public interface MarcaService {
     
     public Marca encontrarMarca (String nombreMarca);
     
+    public Marca encontrarMarca (int idMarca);
+    
     public void actualizar (Marca marca);
 }

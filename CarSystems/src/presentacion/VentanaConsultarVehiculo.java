@@ -142,7 +142,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Consultar Vehículo");
+        jLabel4.setText("Consultar VehÃ­culo");
 
         btnEditar.setBackground(new java.awt.Color(37, 196, 164));
         btnEditar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -172,7 +172,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         btnCargarImagen.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
         btnCargarImagen.setText("Cargar Imagen");
-        btnCargarImagen.setToolTipText("Seleccione un imagen del vehículo.");
+        btnCargarImagen.setToolTipText("Seleccione un imagen del vehÃ­culo.");
         btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarImagenActionPerformed(evt);
@@ -207,11 +207,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("Línea:");
+        jLabel7.setText("LÃ­nea:");
         jLabel7.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbLinea.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camiones articulados", "Camiones de obras", "Cargadores de cadenas", "Cargadores de ruedas", "Compactadores", "Dragalinas", "Excavadoras", "Manipuladores de materiales", "Manipuladores telescópicos", "Maquinas forestales", "Minicargadores", "Motoniveladoras", "Mototraillas", "Palas de Cable Electrica", "Palas hidraulica para mineria", "Pavimentadoras de asfalto", "Perfiladoras de pavimento en frio", "Perforadoras", "Recuperadores de camiones", "Retroexcavadoras cargadoras", "Subterraneo: roca dura", "Subterraneo:tajo largo", "Tiendetubos", "Tractores", "Volquetas" }));
+        cmbLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camiones articulados", "Camiones de obras", "Cargadores de cadenas", "Cargadores de ruedas", "Compactadores", "Dragalinas", "Excavadoras", "Manipuladores de materiales", "Manipuladores telescÃ³picos", "Maquinas forestales", "Minicargadores", "Motoniveladoras", "Mototraillas", "Palas de Cable Electrica", "Palas hidraulica para mineria", "Pavimentadoras de asfalto", "Perfiladoras de pavimento en frio", "Perforadoras", "Recuperadores de camiones", "Retroexcavadoras cargadoras", "Subterraneo: roca dura", "Subterraneo:tajo largo", "Tiendetubos", "Tractores", "Volquetas" }));
         cmbLinea.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbLinea.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -245,7 +245,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         btnCargarPDF.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         btnCargarPDF.setForeground(new java.awt.Color(255, 255, 255));
         btnCargarPDF.setText("Cargar PDF");
-        btnCargarPDF.setToolTipText("Seleccione un archivo PDF con la información del estado judicial del vehículo.");
+        btnCargarPDF.setToolTipText("Seleccione un archivo PDF con la informaciÃ³n del estado judicial del vehÃ­culo.");
         btnCargarPDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarPDFActionPerformed(evt);
@@ -275,7 +275,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel15.setText("Descripción:");
+        jLabel15.setText("DescripciÃ³n:");
 
         areatxtDescripcion.setColumns(20);
         areatxtDescripcion.setRows(5);
@@ -357,7 +357,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel21.setText("Año de Modelo:");
+        jLabel21.setText("AÃ±o de Modelo:");
 
         choModelo.setMinimumSize(new java.awt.Dimension(47, 30));
         choModelo.setPreferredSize(new java.awt.Dimension(78, 30));
@@ -391,7 +391,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel20.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbTipoMaquinaria.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbTipoMaquinaria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Agricultura", "Asfaltado", "Canteras", "Construcción", "Demolición", "Pavimentación", "Reciclaje", "Transporte de escombros" }));
+        cmbTipoMaquinaria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Agricultura", "Asfaltado", "Canteras", "ConstrucciÃ³n", "DemoliciÃ³n", "PavimentaciÃ³n", "Reciclaje", "Transporte de escombros" }));
         cmbTipoMaquinaria.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbTipoMaquinaria.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -445,7 +445,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("Tipo de vehículo:");
+        jLabel9.setText("Tipo de vehÃ­culo:");
         jLabel9.setPreferredSize(new java.awt.Dimension(161, 35));
 
         jLabel12.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -456,7 +456,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
         cmbUtilitario.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         cmbUtilitario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Si", "No" }));
-        cmbUtilitario.setToolTipText("Es un vehículo que está diseñado para realizar una tarea específica con más eficacia que un vehículo de pasajeros. A veces se refiere a un camión pequeño con lados bajos.");
+        cmbUtilitario.setToolTipText("Es un vehÃ­culo que estÃ¡ diseÃ±ado para realizar una tarea especÃ­fica con mÃ¡s eficacia que un vehÃ­culo de pasajeros. A veces se refiere a un camiÃ³n pequeÃ±o con lados bajos.");
         cmbUtilitario.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbUtilitario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -467,7 +467,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel33.setText("Correo eléctronico:");
+        jLabel33.setText("Correo elÃ©ctronico:");
 
         txtEmail.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -480,7 +480,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel32.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbTipoServicio.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Público", "Privado" }));
+        cmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "PÃºblico", "Privado" }));
         cmbTipoServicio.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbTipoServicio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -740,7 +740,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Buscar vehículo por:");
+        jLabel8.setText("Buscar vehÃ­culo por:");
 
         txtPlaca.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         txtPlaca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -772,7 +772,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         lblBuscar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         lblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         lblBuscar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblBuscar.setText("Id. vehículo:");
+        lblBuscar.setText("Id. vehÃ­culo:");
 
         btnConsultar.setBackground(new java.awt.Color(37, 196, 164));
         btnConsultar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -862,7 +862,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
         btnMenu.setBackground(new java.awt.Color(37, 196, 164));
         btnMenu.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        btnMenu.setText("Menú Principal");
+        btnMenu.setText("MenÃº Principal");
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
@@ -1210,10 +1210,10 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     public void eliminarVehiculo() {
         Vehiculo vehiculoEliminar = new Vehiculo();
         vehiculoEliminar.setIdVehiculo(txtPlaca.getText());
-        int opcion = JOptionPane.showConfirmDialog(null, "<html><strong>¿Está seguro que desea eliminar el vehículo del sistema de información?</strong></html>", "Eliminar vehículo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int opcion = JOptionPane.showConfirmDialog(null, "<html><strong>Â¿EstÃ¡ seguro que desea eliminar el vehÃ­culo del sistema de informaciÃ³n?</strong></html>", "Eliminar vehÃ­culo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opcion == 0) {
             vehiculoServicio.eliminar(vehiculoEliminar);
-            JOptionPane.showMessageDialog(null, "<html><span style='color:DimGray'>Vehículo eliminado correctamente.<strong> </strong></span> se encuentra por favor validar campo.</html>", "Vehículo eliminado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "<html><span style='color:DimGray'>VehÃ­culo eliminado correctamente.<strong> </strong></span> se encuentra por favor validar campo.</html>", "VehÃ­culo eliminado", JOptionPane.INFORMATION_MESSAGE);
             limpiarCampos();
         } else {
             txtPlaca.selectAll();
@@ -1246,7 +1246,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
         vehiculoServicio.actualizar(vehiculoActualizado);
 
-        JOptionPane.showMessageDialog(null, "<html>El vehículo con " + cmbOpcionBusqueda.getSelectedItem().toString() + " " + txtPlaca.getText() + ",<strong> ha sido actualizado exitosamente.</strong></html>", "Vehículo actualizado", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "<html>El vehÃ­culo con " + cmbOpcionBusqueda.getSelectedItem().toString() + " " + txtPlaca.getText() + ",<strong> ha sido actualizado exitosamente.</strong></html>", "VehÃ­culo actualizado", JOptionPane.INFORMATION_MESSAGE);
         limpiarCampos();
     }
 
@@ -1310,7 +1310,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                 cargarLineasAutomovilCamioneta();
                 cmbLinea.setSelectedItem(vehiculo.getLinea());
             } else {
-                JOptionPane.showMessageDialog(null, "<html>La placa ingresada <strong> no se encuentra registrada en el sistema.</strong> Por favor validé el campo e inténtelo nuevamente.</html>", "Consulta de vehículo", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "<html>La placa ingresada <strong> no se encuentra registrada en el sistema.</strong> Por favor validÃ© el campo e intÃ©ntelo nuevamente.</html>", "Consulta de vehÃ­culo", JOptionPane.INFORMATION_MESSAGE);
                 txtPlaca.selectAll();
                 txtPlaca.requestFocus();
             }
@@ -1328,12 +1328,12 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                 txtAlto.setText(String.valueOf(vehiculo.getAlto()));
                 txtLargo.setText(String.valueOf(vehiculo.getLargo()));
             } else {
-                JOptionPane.showMessageDialog(null, "<html>El Nro. de registro ingresado <strong> no se encuentra registrado en el sistema.</strong> Por favor validé el campo e inténtelo nuevamente.</html>", "Consulta de vehículo", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "<html>El Nro. de registro ingresado <strong> no se encuentra registrado en el sistema.</strong> Por favor validÃ© el campo e intÃ©ntelo nuevamente.</html>", "Consulta de vehÃ­culo", JOptionPane.INFORMATION_MESSAGE);
                 txtPlaca.selectAll();
                 txtPlaca.requestFocus();
             }
         } else {
-            imprimirCampoVacio("Busqueda de vehículo por", "sin seleccionar");
+            imprimirCampoVacio("Busqueda de vehÃ­culo por", "sin seleccionar");
             cmbOpcionBusqueda.requestFocus();
         }
     }
@@ -1435,7 +1435,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         cmbLinea.addItem("Dragalinas");
         cmbLinea.addItem("Excavadoras");
         cmbLinea.addItem("Manipuladores de materiales");
-        cmbLinea.addItem("Manipuladores telescópicos");
+        cmbLinea.addItem("Manipuladores telescÃ³picos");
         cmbLinea.addItem("Maquinas forestales");
         cmbLinea.addItem("Minicargadores");
         cmbLinea.addItem("Motoniveladoras");
@@ -1495,31 +1495,31 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             cumplenCampos = false;
             cmbTipoMaquinaria.requestFocus();
         } else if (yearModelo == 0) {
-            imprimirCampoVacio("Año de modelo", "sin seleccionar");
+            imprimirCampoVacio("AÃ±o de modelo", "sin seleccionar");
             cumplenCampos = false;
             choModelo.requestFocus();
         } else if (txtColor.getText().equals("")) {
-            imprimirCampoVacio("Color", "vacío");
+            imprimirCampoVacio("Color", "vacÃ­o");
             cumplenCampos = false;
             txtColor.requestFocus();
         } else if (txtPeso.getText().equals("")) {
-            imprimirCampoVacio("Peso", "vacío");
+            imprimirCampoVacio("Peso", "vacÃ­o");
             cumplenCampos = false;
             txtPeso.requestFocus();
         } else if (txtAncho.getText().equals("")) {
-            imprimirCampoVacio("Ancho", "vacío");
+            imprimirCampoVacio("Ancho", "vacÃ­o");
             cumplenCampos = false;
             txtAncho.requestFocus();
         } else if (txtAlto.getText().equals("")) {
-            imprimirCampoVacio("Alto", "vacío");
+            imprimirCampoVacio("Alto", "vacÃ­o");
             cumplenCampos = false;
             txtAlto.requestFocus();
         } else if (txtLargo.getText().equals("")) {
-            imprimirCampoVacio("Largo", "vacío");
+            imprimirCampoVacio("Largo", "vacÃ­o");
             cumplenCampos = false;
             txtLargo.requestFocus();
         } else if (txtPrecio.getText().equals("")) {
-            imprimirCampoVacio("Precio", "vacío");
+            imprimirCampoVacio("Precio", "vacÃ­o");
             cumplenCampos = false;
             txtPrecio.requestFocus();
         } else if ((lblEstadoJudicial.getText() == null) || (lblEstadoJudicial.getText().equals(""))) {
@@ -1550,15 +1550,15 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             cumplenCampos = false;
             cmbLinea.requestFocus();
         } else if (yearModelo == 0) {
-            imprimirCampoVacio("Año de modelo", "sin seleccionar");
+            imprimirCampoVacio("AÃ±o de modelo", "sin seleccionar");
             cumplenCampos = false;
             choModelo.requestFocus();
         } else if (txtColor.getText().equals("")) {
-            imprimirCampoVacio("Color", "vacío");
+            imprimirCampoVacio("Color", "vacÃ­o");
             cumplenCampos = false;
             txtColor.requestFocus();
         } else if (txtCupo.getText().equals("")) {
-            imprimirCampoVacio("Cupo de personas", "vacío");
+            imprimirCampoVacio("Cupo de personas", "vacÃ­o");
             cumplenCampos = false;
             txtCupo.requestFocus();
         } else if (cmbUtilitario.getSelectedItem().toString().equals("Seleccionar")) {
@@ -1570,7 +1570,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             cumplenCampos = false;
             cmbBlindado.requestFocus();
         } else if (txtPrecio.getText().equals("")) {
-            imprimirCampoVacio("Precio", "vacío");
+            imprimirCampoVacio("Precio", "vacÃ­o");
             cumplenCampos = false;
             txtPrecio.requestFocus();
         } else if ((lblEstadoJudicial.getText() == null) || (lblEstadoJudicial.getText().equals(""))) {
@@ -1590,7 +1590,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     }
 
     public void colocarNombreBuscar() {
-        String nombreCampo = "Id. Vehículo";
+        String nombreCampo = "Id. VehÃ­culo";
         if (cmbOpcionBusqueda.getSelectedItem().equals("Placa")) {
             nombreCampo = "Placa";
         } else if (cmbOpcionBusqueda.getSelectedItem().equals("Nro. de Registro")) {

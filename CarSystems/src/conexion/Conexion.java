@@ -23,9 +23,6 @@ public class Conexion {
          //obtenemos la conexión enviando el parametro de la URL, User y Contrasena
          connection = DriverManager.getConnection(JDBC_URL,JDBC_USER,JDBC_PASSWORD);
 
-         if (connection!=null){
-            System.out.println("Conexión a base de datos "+JDBC_BD+" OK\n");
-         }
       }
       catch(SQLException e){
          JOptionPane.showMessageDialog(null, "El sistema no se encuentra disponible en este momento, por favor intente más tarde o comuniquese con el administrador.", "Fallo en el sistema", JOptionPane.ERROR_MESSAGE);

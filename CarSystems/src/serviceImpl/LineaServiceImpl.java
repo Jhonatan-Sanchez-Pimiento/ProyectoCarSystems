@@ -88,7 +88,7 @@ public class LineaServiceImpl implements LineaService{
             while (rs.next()) {
                 int idLinea = rs.getInt("id_linea");
                 int idMarca = rs.getInt("id_marca");
-                String nombreLinea = rs.getString("nombre_marca");
+                String nombreLinea = rs.getString("nombre_linea");
 
                 linea = new Linea(idLinea, idMarca, nombreLinea);
 
@@ -177,11 +177,12 @@ public class LineaServiceImpl implements LineaService{
         ResultSet rs = null;
         Linea linea = null;
         SQL_CONSULTA = "SELECT * FROM linea WHERE id_marca = ?";
-        
+        System.out.println("Marca encontrada ="+marca);
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_CONSULTA);
             stmt.setInt(1,marca.getIdMarca());
+            
             rs = stmt.executeQuery();
             while (rs.next()) {
                 int idLinea = rs.getInt("id_linea");
@@ -203,5 +204,4 @@ public class LineaServiceImpl implements LineaService{
         }
         return lineas;
     }
-    
 }

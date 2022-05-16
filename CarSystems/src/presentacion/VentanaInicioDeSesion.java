@@ -2,7 +2,6 @@ package presentacion;
 
 import dominio.Funciones;
 import dominio.Usuario;
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -15,7 +14,6 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 import serviceImpl.UsuarioServiceImpl;
 
 /**
