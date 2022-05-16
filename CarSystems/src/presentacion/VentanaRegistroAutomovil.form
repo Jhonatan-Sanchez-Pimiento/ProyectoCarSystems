@@ -549,7 +549,7 @@
                     <Property name="text" type="java.lang.String" value="A&#xf1;o de Modelo:"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JYearChooser" name="choModelo">
+                <Component class="org.netbeans.modules.form.InvalidComponent" name="choModelo">
                   <Properties>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[47, 30]"/>
@@ -558,9 +558,6 @@
                       <Dimension value="[78, 30]"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="choModeloKeyReleased"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
