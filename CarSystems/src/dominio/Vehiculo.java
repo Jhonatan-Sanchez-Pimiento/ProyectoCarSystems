@@ -5,7 +5,7 @@ import java.awt.Image;
 /**
  * @author IntegraSoft
  */
-public abstract class Vehiculo {
+public class Vehiculo {
     private String idVehiculo;
     private String tipoIdUsuario;
     private long idUsuario;
@@ -77,6 +77,8 @@ public abstract class Vehiculo {
         this.tipoMaquinaria = tipoMaquinaria;
     }
 
+    
+    
 //    public Vehiculo(String tipoServicio, String marca, String linea, String color, int modelo, int cupoPersona, boolean utilitario, double precio, String descripcion) {
 //        this.tipoServicio = tipoServicio;
 //        this.marca = marca;

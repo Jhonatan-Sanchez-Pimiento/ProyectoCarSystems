@@ -16,8 +16,8 @@ import java.util.logging.Logger;
 /**
  * @author IntegraSoft
  */
-public class UsuarioServiceImpl implements UsuarioService{
-    
+public class UsuarioServiceImpl implements UsuarioService {
+
     private static final String SQL_SELECT = "SELECT * FROM usuario";
     private static final String SQL_UPDATE = "UPDATE usuario SET primer_apellido=?, segundo_apellido=?, nombre_usuario=?, departamento=?, municipio=?, correo=?,direccion=?, telefono=?, rol=?, contrasena = ? WHERE id_Usuario = ? AND tipo_id=?";
     private static final String SQL_DELETE = "DELETE FROM usuario WHERE id_usuario = ?, tipo_id=?";
@@ -45,13 +45,10 @@ public class UsuarioServiceImpl implements UsuarioService{
             stmt.setString(10, usuario.getTelefono());
             stmt.setString(11, usuario.getRol());
             stmt.setString(12, usuario.getContrasena());
-            
             registros = stmt.executeUpdate();
-
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }
-        finally{
+        } finally {
             try {
                 close(stmt);
                 close(conn);
@@ -74,8 +71,7 @@ public class UsuarioServiceImpl implements UsuarioService{
             System.out.println("Usuario eliminado");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }
-        finally{
+        } finally {
             try {
                 close(stmt);
                 close(conn);
@@ -83,12 +79,11 @@ public class UsuarioServiceImpl implements UsuarioService{
                 ex.printStackTrace(System.out);
             }
         }
-    
     }
-    
+
     @Override
     public Usuario encontrarUsuario(Long idUsuario, String tipoId) {
-    Connection conn = null;
+        Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Usuario usuario = null;
@@ -98,7 +93,6 @@ public class UsuarioServiceImpl implements UsuarioService{
             stmt.setLong(1, idUsuario);
             stmt.setString(2, tipoId);
             rs = stmt.executeQuery();
-            
             while (rs.next()) {
                 String primerApellido = rs.getString("primer_apellido");
                 String segundoApellido = rs.getString("segundo_apellido");
@@ -111,9 +105,6 @@ public class UsuarioServiceImpl implements UsuarioService{
                 String rol = rs.getString("rol");
                 String contrasena = rs.getString("contrasena");
                 usuario = new Usuario(idUsuario, tipoId, primerApellido, segundoApellido, nombreUsuario, departamento, municipio, direccion, telefono, correo, rol, contrasena);
-                System.out.println("Usuario = " + usuario);
-                
-                
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -126,28 +117,20 @@ public class UsuarioServiceImpl implements UsuarioService{
                 ex.printStackTrace(System.out);
             }
         }
-
         return usuario;
     }
-    
 
     @Override
     public List<Usuario> listarUsuario() {
-            
-            Connection conn = new Conexion().getConnection();
-            PreparedStatement stmt;
-            ResultSet rs;
-            
-            List<Usuario> listaUsuario = new ArrayList<>();
-
+        Connection conn = new Conexion().getConnection();
+        PreparedStatement stmt;
+        ResultSet rs;
+        List<Usuario> listaUsuario = new ArrayList<>();
         try {
             stmt = (PreparedStatement) conn.createStatement();
             rs = stmt.executeQuery("SELEC * FROM Usuarios ");
-            
-            while(rs.next())
-            {   
-            Usuario usuario = new Usuario();
-            
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
                 usuario.setIdUsuario(rs.getInt("id"));
                 usuario.setApellido1(rs.getString("apellido1"));
                 usuario.setApellido2(rs.getString("apellido2"));
@@ -158,25 +141,21 @@ public class UsuarioServiceImpl implements UsuarioService{
                 usuario.setRol(rs.getString("rol"));
                 usuario.setContrasena(rs.getString("contrasena"));
                 listaUsuario.add(usuario);
-            
             }
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaUsuario;
-        
     }
 
     @Override
     public void actualizar(Usuario usuario) {
-
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
-
             stmt.setString(1, usuario.getApellido1());
             stmt.setString(2, usuario.getApellido2());
             stmt.setString(3, usuario.getNombreUsuario());
@@ -192,8 +171,7 @@ public class UsuarioServiceImpl implements UsuarioService{
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }
-        finally{
+        } finally {
             try {
                 close(stmt);
                 close(conn);
@@ -204,7 +182,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     }
 
     @Override
-    public Usuario encontrarUsuario(String correo){
+    public Usuario encontrarUsuario(String correo) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -215,7 +193,6 @@ public class UsuarioServiceImpl implements UsuarioService{
             stmt = conn.prepareStatement(SQL_CONSULTA);
             stmt.setString(1, correo);
             rs = stmt.executeQuery();
-            
             while (rs.next()) {
                 String tipoId = rs.getString("tipo_id");
                 long idUsuario = rs.getLong("id_usuario");
@@ -241,7 +218,6 @@ public class UsuarioServiceImpl implements UsuarioService{
                 ex.printStackTrace(System.out);
             }
         }
-
         return usuario;
     }
-    }
+}

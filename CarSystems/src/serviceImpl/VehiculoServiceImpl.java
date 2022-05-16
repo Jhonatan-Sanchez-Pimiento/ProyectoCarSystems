@@ -19,10 +19,9 @@ public class VehiculoServiceImpl implements VehiculoService {
             + "blindado, precio, imagen, descripcion, estado_judicial, peso, alto, ancho, largo, tipo_maquinaria) "
             + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String SQL_SELECT = "SELECT * FROM vehiculo";
-    private static final String SQL_UPDATE = "UPDATE vehiculo SET ("
-            + "tipo_servicio, tipo_vehiculo, marca, linea, color, modelo, cupo_persona, utiliario,"
-            + "blindado, precio, imagen, descripcion, estado_judicial, peso, alto, ancho, largo, tipo_maquinaria)"
-            + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    private static final String SQL_UPDATE = "UPDATE vehiculo SET "
+            + "tipo_servicio=?, tipo_vehiculo=?, marca=?, linea=?, color=?, modelo=?, cupo_persona=?, utilitario=?,"
+            + "blindado=?, precio=?, imagen=?, descripcion=?, estado_judicial=?, peso=?, alto=?, ancho=?, largo=?, tipo_maquinaria=? "
             + "WHERE id_vehiculo = ?";
     private static final String SQL_DELETE = "DELETE FROM vehiculo WHERE id_vehiculo = ?";
     private static String SQL_CONSULTA = "SELECT * FROM vehiculo WHERE id_vehiculo = ?";
@@ -163,7 +162,7 @@ public class VehiculoServiceImpl implements VehiculoService {
                 byte[] imagenByte = manejoImagen.convertirBlobaByte(blob);
                 Image imagen = manejoImagen.convertirBlobaImagen(blob);
 
-                vehiculo = new Vehiculo(idVehiculo, tipoIdUsuario, idUsuario, tipoServicio, tipoVehiculo, marca, linea, color, modelo, peso, utilitario, blindado, precio, imagen, imagenByte, descripcion, estadoJudicial, peso, alto, ancho, largo, tipoMaquinaria) {
+                vehiculo = new Vehiculo(idVehiculo, tipoIdUsuario, idUsuario, tipoServicio, tipoVehiculo, marca, linea, color, modelo, cupo, utilitario, blindado, precio, imagen, imagenByte, descripcion, estadoJudicial, peso, alto, ancho, largo, tipoMaquinaria) {
                 };
 
             }

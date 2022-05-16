@@ -2,6 +2,7 @@ package presentacion;
 
 import dominio.Funciones;
 import dominio.Usuario;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -14,6 +15,7 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import serviceImpl.UsuarioServiceImpl;
 
 /**
@@ -32,6 +34,7 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         this.setTitle("Login");
+
     }
 
     /**
@@ -81,12 +84,16 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Inicio de sesión");
 
+        txtEmail.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEmailKeyReleased(evt);
             }
         });
 
+        txtPassword.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPasswordKeyReleased(evt);
@@ -140,10 +147,6 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(55, 55, 55))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOlvidoContrasena)
-                .addGap(99, 99, 99))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(228, 228, 228)
@@ -162,7 +165,10 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(307, 307, 307)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(323, 323, 323)
+                        .addComponent(btnOlvidoContrasena)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -235,7 +241,7 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailKeyReleased
 
     private void btnOlvidoContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOlvidoContrasenaActionPerformed
-        recuperarPassword(JOptionPane.showInputDialog(null, "Ingrese el correo registrado en el sistema de información.","Recuperación de Contraseña",JOptionPane.QUESTION_MESSAGE));
+        recuperarPassword(JOptionPane.showInputDialog(null, "Ingrese el correo registrado en el sistema de información.", "Recuperación de Contraseña", JOptionPane.QUESTION_MESSAGE));
     }//GEN-LAST:event_btnOlvidoContrasenaActionPerformed
 
     public void recuperarPassword(String correoReceptor) {
@@ -265,12 +271,12 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
             String mensaje = "<p>Hola,</p>\n"
                     + "<p>Hemos recibido una solicitud de restablecimiento de contrase&ntilde;a:&nbsp;</p>\n"
                     + "<ul style=\"list-style-type: disc;\">\n"
-                    + "<li><span style=\"color: #ff0000;\"><strong>Nombre</strong></span> :&nbsp;"+usuario.getNombreUsuario()
+                    + "<li><span style=\"color: #ff0000;\"><strong>Nombre</strong></span> :&nbsp;" + usuario.getNombreUsuario()
                     + "</li>\n"
                     + "<li><span style=\"color: #ff0000;\"><strong>Apellidos</strong></span> :&nbsp;"
-                    + usuario.getApellido1()+" "+ usuario.getApellido2()+"</li>\n"
-                    + "<li><span style=\"color: #ff0000;\"><strong>Correo</strong></span> :&nbsp;"+ usuario.getEmailUsuario()+"</li>\n"
-                    + "<li><span style=\"color: #ff0000;\"><strong>Contrase&ntilde;a</strong></span> :&nbsp;"+usuario.getContrasena()+"</li>\n"
+                    + usuario.getApellido1() + " " + usuario.getApellido2() + "</li>\n"
+                    + "<li><span style=\"color: #ff0000;\"><strong>Correo</strong></span> :&nbsp;" + usuario.getEmailUsuario() + "</li>\n"
+                    + "<li><span style=\"color: #ff0000;\"><strong>Contrase&ntilde;a</strong></span> :&nbsp;" + usuario.getContrasena() + "</li>\n"
                     + "</ul>\n"
                     + "<p>Este correo ha sido enviado desde el correo institucional del Sistema de Informaci&oacute;n CarSystems, si usted no ha hecho esta solicitud por favor hacer caso omiso del mismo.</p>\n"
                     + "<p><em><strong>IntegraSoft.</strong></em></p>";
@@ -287,7 +293,7 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
             transporte.sendMessage(message, message.getRecipients(Message.RecipientType.TO));
             transporte.close();
 
-            JOptionPane.showMessageDialog(null, "Hemos enviado la información al correo "+usuario.getEmailUsuario(),"Recuperación de contraseña",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Hemos enviado la información al correo " + usuario.getEmailUsuario(), "Recuperación de contraseña", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (AddressException ex) {
             Logger.getLogger(VentanaInicioDeSesion.class.getName()).log(Level.SEVERE, null, ex);
@@ -301,7 +307,7 @@ public class VentanaInicioDeSesion extends javax.swing.JFrame {
             Usuario usuario = usuarioServicio.encontrarUsuario(txtEmail.getText());
             if (usuario != null) {
                 if (usuario.getContrasena().equals(txtPassword.getText())) {
-                    JOptionPane.showMessageDialog(null, "Acceso Correcto.", "Login", JOptionPane.YES_OPTION);
+                    JOptionPane.showMessageDialog(null, "Acceso Correcto.", "Login", JOptionPane.INFORMATION_MESSAGE);
                     VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
                     ventanaPrincipal.setVisible(true);
                     this.dispose();

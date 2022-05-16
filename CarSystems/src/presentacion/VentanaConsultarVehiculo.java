@@ -1,14 +1,14 @@
 package presentacion;
 
-import dominio.MaquinariaPesada;
 import dominio.Funciones;
+import dominio.Linea;
 import dominio.ManejoImagen;
 import dominio.ManejoPDF;
+import dominio.Marca;
 import dominio.TipoMaquinaria;
 import dominio.Usuario;
 import dominio.Vehiculo;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -22,7 +22,11 @@ import serviceImpl.VehiculoServiceImpl;
 public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     Funciones funciones = new Funciones();
+    VehiculoServiceImpl vehiculoServicio = new VehiculoServiceImpl();
+    Vehiculo vehiculo;
     UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
+    Usuario usuario;
+    Usuario propietario;
     ManejoPDF manejoPDF = new ManejoPDF();
     ManejoImagen manejoImagen = new ManejoImagen();
     String rutaPDF;
@@ -36,8 +40,10 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         this.setTitle("Formulario de Registro de Maquinaria Pesada");
-        cargarMarcas();
+        limpiarCampos();
         areatxtDescripcion.setLineWrap(true);
+        deshabilitarCamposUsuario(false, false, false);
+
     }
 
     /**
@@ -54,7 +60,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         lblImagen = new javax.swing.JLabel();
@@ -91,25 +97,31 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        txtTipoIdUsuario = new javax.swing.JTextField();
+        txtNombreUsuario = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        txtIdUsuario = new javax.swing.JTextField();
+        txtCiudad = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        cmbTipoServicio = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        txtTipoVehiculo = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txtCupo = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         cmbUtilitario = new javax.swing.JComboBox<>();
+        jLabel33 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        cmbTipoServicio = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
+        txtCupo = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        cmbBlindado = new javax.swing.JComboBox<>();
+        cmbTipoVehiculo = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         txtPlaca = new javax.swing.JTextField();
         cmbOpcionBusqueda = new javax.swing.JComboBox<>();
         lblBuscar = new javax.swing.JLabel();
         btnConsultar = new javax.swing.JButton();
-        btnGuardar1 = new javax.swing.JButton();
-        btnGuardar2 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -132,27 +144,27 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Consultar Vehículo");
 
-        btnGuardar.setBackground(new java.awt.Color(37, 196, 164));
-        btnGuardar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        btnGuardar.setText("Editar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setBackground(new java.awt.Color(37, 196, 164));
+        btnEditar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
-        btnGuardar.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnEditar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                btnGuardarKeyReleased(evt);
+                btnEditarKeyReleased(evt);
             }
         });
 
         jScrollPane1.setBackground(new java.awt.Color(30, 41, 57));
         jScrollPane1.setBorder(null);
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(999, 367));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(999, 531));
 
         jPanel2.setBackground(new java.awt.Color(30, 41, 57));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(999, 490));
+        jPanel2.setPreferredSize(new java.awt.Dimension(999, 550));
 
         lblImagen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -181,6 +193,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         cmbMarca.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         cmbMarca.setPreferredSize(new java.awt.Dimension(78, 30));
+        cmbMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMarcaActionPerformed(evt);
+            }
+        });
         cmbMarca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 cmbMarcaKeyReleased(evt);
@@ -248,7 +265,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         btnDescargarEJ.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         btnDescargarEJ.setForeground(new java.awt.Color(255, 255, 255));
         btnDescargarEJ.setText("Descargar E.J.");
-        btnDescargarEJ.setToolTipText("<html>Usuario, debe de tener en cuenta:\n <ul>\n<li>la p&aacute;gina genera cobro por la descarga del documento.</li>\n<li>puede descargar el archivo presionando la tecla <strong>Shift + P </strong>y guardar la p&aacute;gina como <strong><em>PDF</em></strong>.</li>\n<li>La cantidad de consultas permitidas para realizar por equipo es de\n<span style=\"color:red;\"><strong> 5</strong></span>.\n</li>\n</ul></html>");
+        btnDescargarEJ.setToolTipText("");
         btnDescargarEJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDescargarEJActionPerformed(evt);
@@ -405,86 +422,31 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel27.setText("Propietario tipo id.:");
+        jLabel27.setText("Propietario:");
 
-        txtTipoIdUsuario.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtTipoIdUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtTipoIdUsuario.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtTipoIdUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtTipoIdUsuarioKeyReleased(evt);
-            }
+        txtNombreUsuario.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNombreUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombreUsuario.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtNombreUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTipoIdUsuarioKeyTyped(evt);
+                txtNombreUsuarioKeyTyped(evt);
             }
         });
 
         jLabel28.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel28.setText("Nro. identificación:");
+        jLabel28.setText("Ciudad:");
 
-        txtIdUsuario.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtIdUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtIdUsuario.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtIdUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtIdUsuarioKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtIdUsuarioKeyTyped(evt);
-            }
-        });
+        txtCiudad.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCiudad.setPreferredSize(new java.awt.Dimension(6, 30));
 
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Tipo de vehículo:");
         jLabel9.setPreferredSize(new java.awt.Dimension(161, 35));
-
-        cmbTipoServicio.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Público", "Privado" }));
-        cmbTipoServicio.setPreferredSize(new java.awt.Dimension(78, 30));
-        cmbTipoServicio.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                cmbTipoServicioKeyReleased(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setText("Tipo de servicio:");
-        jLabel10.setPreferredSize(new java.awt.Dimension(161, 35));
-
-        txtTipoVehiculo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtTipoVehiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtTipoVehiculo.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtTipoVehiculo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtTipoVehiculoKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTipoVehiculoKeyTyped(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Cupo de personas:");
-
-        txtCupo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        txtCupo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCupo.setPreferredSize(new java.awt.Dimension(6, 30));
-        txtCupo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtCupoKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCupoKeyTyped(evt);
-            }
-        });
 
         jLabel12.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -502,6 +464,71 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             }
         });
 
+        jLabel33.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel33.setText("Correo eléctronico:");
+
+        txtEmail.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEmail.setPreferredSize(new java.awt.Dimension(6, 30));
+
+        jLabel32.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel32.setText("Tipo de servicio:");
+        jLabel32.setPreferredSize(new java.awt.Dimension(161, 35));
+
+        cmbTipoServicio.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        cmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Público", "Privado" }));
+        cmbTipoServicio.setPreferredSize(new java.awt.Dimension(78, 30));
+        cmbTipoServicio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cmbTipoServicioKeyReleased(evt);
+            }
+        });
+
+        jLabel34.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel34.setText("Cupo de personas:");
+
+        txtCupo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtCupo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCupo.setPreferredSize(new java.awt.Dimension(6, 30));
+        txtCupo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCupoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCupoKeyTyped(evt);
+            }
+        });
+
+        jLabel35.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel35.setText("Blindado:");
+        jLabel35.setPreferredSize(new java.awt.Dimension(161, 35));
+
+        cmbBlindado.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        cmbBlindado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Si", "No" }));
+        cmbBlindado.setPreferredSize(new java.awt.Dimension(78, 30));
+        cmbBlindado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cmbBlindadoKeyReleased(evt);
+            }
+        });
+
+        cmbTipoVehiculo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        cmbTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Automovil", "Camioneta", "Maquinaria pesada" }));
+        cmbTipoVehiculo.setPreferredSize(new java.awt.Dimension(78, 30));
+        cmbTipoVehiculo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cmbTipoVehiculoKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -509,78 +536,6 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmbTipoMaquinaria, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtLargo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblEstadoJudicial, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(8, 8, 8)
-                            .addComponent(btnCargarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnDescargarEJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmbLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTipoIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(5, 5, 5)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cmbTipoServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGap(3, 3, 3)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -590,14 +545,100 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(choModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbUtilitario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 5, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cmbLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(cmbTipoServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(3, 3, 3)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbTipoVehiculo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cmbTipoMaquinaria, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtLargo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblEstadoJudicial, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(8, 8, 8)
+                                    .addComponent(btnCargarPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnDescargarEJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbBlindado, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbUtilitario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -613,17 +654,23 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTipoIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbLinea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -639,13 +686,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                                 .addComponent(choModelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbUtilitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbUtilitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbBlindado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -678,13 +723,13 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                             .addComponent(lblEstadoJudicial, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCargarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -713,6 +758,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         cmbOpcionBusqueda.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         cmbOpcionBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Placa", "Nro. de Registro" }));
         cmbOpcionBusqueda.setPreferredSize(new java.awt.Dimension(78, 30));
+        cmbOpcionBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbOpcionBusquedaActionPerformed(evt);
+            }
+        });
         cmbOpcionBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 cmbOpcionBusquedaKeyReleased(evt);
@@ -768,31 +818,59 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                 .addGap(0, 8, Short.MAX_VALUE))
         );
 
-        btnGuardar1.setBackground(new java.awt.Color(37, 196, 164));
-        btnGuardar1.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        btnGuardar1.setText("Actualizar");
-        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setBackground(new java.awt.Color(37, 196, 164));
+        btnActualizar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardar1ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        btnGuardar1.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnActualizar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                btnGuardar1KeyReleased(evt);
+                btnActualizarKeyReleased(evt);
             }
         });
 
-        btnGuardar2.setBackground(new java.awt.Color(37, 196, 164));
-        btnGuardar2.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        btnGuardar2.setText("Eliminar");
-        btnGuardar2.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setBackground(new java.awt.Color(37, 196, 164));
+        btnEliminar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardar2ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        btnGuardar2.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnEliminar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                btnGuardar2KeyReleased(evt);
+                btnEliminarKeyReleased(evt);
+            }
+        });
+
+        btnLimpiar.setBackground(new java.awt.Color(37, 196, 164));
+        btnLimpiar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        btnLimpiar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnLimpiarKeyReleased(evt);
+            }
+        });
+
+        btnMenu.setBackground(new java.awt.Color(37, 196, 164));
+        btnMenu.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnMenu.setText("Menú Principal");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
+        btnMenu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnMenuKeyReleased(evt);
             }
         });
 
@@ -815,13 +893,17 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179)
-                .addComponent(btnGuardar1)
-                .addGap(179, 179, 179)
-                .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnMenu)
+                .addGap(75, 75, 75)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(btnActualizar)
+                .addGap(75, 75, 75)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(3, 3, 3)
@@ -835,18 +917,19 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -869,9 +952,9 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        guardar();
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        editar();
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnCargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagenActionPerformed
         seleccionarImagen();
@@ -882,7 +965,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCargarPDFActionPerformed
 
     private void btnDescargarEJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescargarEJActionPerformed
-        funciones.irAPaginaWeb("https://www.runt.com.co/consultaCiudadana/#/consultaVehiculo");
+
     }//GEN-LAST:event_btnDescargarEJActionPerformed
 
     private void btnCargarPDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCargarPDFKeyReleased
@@ -900,7 +983,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     private void cmbLineaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbLineaKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            cmbTipoMaquinaria.requestFocus();
+            txtColor.requestFocus();
         }
     }//GEN-LAST:event_cmbLineaKeyReleased
 
@@ -918,15 +1001,15 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     private void areatxtDescripcionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_areatxtDescripcionKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            btnGuardar.requestFocus();
+            btnActualizar.requestFocus();
         }
     }//GEN-LAST:event_areatxtDescripcionKeyReleased
 
-    private void btnGuardarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyReleased
+    private void btnEditarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditarKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            guardar();
+            editar();
         }
-    }//GEN-LAST:event_btnGuardarKeyReleased
+    }//GEN-LAST:event_btnEditarKeyReleased
 
     private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
         funciones.validarCampoNumero(evt, txtPeso, 12);
@@ -964,7 +1047,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     private void txtPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            btnCargarPDF.requestFocus();
+            areatxtDescripcion.requestFocus();
         }
     }//GEN-LAST:event_txtPrecioKeyReleased
 
@@ -974,13 +1057,17 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     private void choModeloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_choModeloKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtColor.requestFocus();
+            if (cmbTipoVehiculo.getSelectedItem().equals("Maquinaria pesada")) {
+                cmbTipoMaquinaria.requestFocus();
+            } else {
+                cmbBlindado.requestFocus();
+            }
         }
     }//GEN-LAST:event_choModeloKeyReleased
 
     private void txtColorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtPeso.requestFocus();
+            choModelo.requestFocus();
         }
     }//GEN-LAST:event_txtColorKeyReleased
 
@@ -994,7 +1081,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     private void cmbTipoMaquinariaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbTipoMaquinariaKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            choModelo.requestFocus();
+            txtPeso.requestFocus();
         }
     }//GEN-LAST:event_cmbTipoMaquinariaKeyReleased
 
@@ -1004,53 +1091,71 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPlacaKeyReleased
 
     private void txtPlacaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlacaKeyTyped
+        char caracter = evt.getKeyChar();
+        if (Character.isLowerCase(caracter)) {
+            evt.setKeyChar(Character.toUpperCase(caracter));
+        }
     }//GEN-LAST:event_txtPlacaKeyTyped
 
     private void cmbOpcionBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbOpcionBusquedaKeyReleased
-        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtPlaca.requestFocus();
+        }
     }//GEN-LAST:event_cmbOpcionBusquedaKeyReleased
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        guardar();
+        consultar();
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnConsultarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnConsultarKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            guardar();
+            consultar();
         }
     }//GEN-LAST:event_btnConsultarKeyReleased
 
-    private void txtTipoIdUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoIdUsuarioKeyReleased
+    private void txtNombreUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreUsuarioKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoIdUsuarioKeyReleased
+    }//GEN-LAST:event_txtNombreUsuarioKeyTyped
 
-    private void txtTipoIdUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoIdUsuarioKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoIdUsuarioKeyTyped
+    private void cmbUtilitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbUtilitarioKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtPrecio.requestFocus();
+        }
+    }//GEN-LAST:event_cmbUtilitarioKeyReleased
 
-    private void txtIdUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdUsuarioKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdUsuarioKeyReleased
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        actualizarVehiculo();
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
-    private void txtIdUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdUsuarioKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdUsuarioKeyTyped
+    private void btnActualizarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnActualizarKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            actualizarVehiculo();
+        }
+    }//GEN-LAST:event_btnActualizarKeyReleased
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        eliminarVehiculo();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnEliminarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            eliminarVehiculo();
+        }
+    }//GEN-LAST:event_btnEliminarKeyReleased
 
     private void cmbTipoServicioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbTipoServicioKeyReleased
-        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (cmbTipoVehiculo.getSelectedItem().equals("Maquinaria pesada")) {
+                cmbMarca.requestFocus();
+            } else {
+                txtCupo.requestFocus();
+            }
+        }
     }//GEN-LAST:event_cmbTipoServicioKeyReleased
-
-    private void txtTipoVehiculoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoVehiculoKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoVehiculoKeyReleased
-
-    private void txtTipoVehiculoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoVehiculoKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoVehiculoKeyTyped
 
     private void txtCupoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupoKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            cmbUtilitario.requestFocus();
+            cmbMarca.requestFocus();
         }
     }//GEN-LAST:event_txtCupoKeyReleased
 
@@ -1058,67 +1163,294 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         funciones.validarCampoNumero(evt, txtCupo, 3);
     }//GEN-LAST:event_txtCupoKeyTyped
 
-    private void cmbUtilitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbUtilitarioKeyReleased
+    private void cmbBlindadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbBlindadoKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cmbUtilitario.requestFocus();
         }
-    }//GEN-LAST:event_cmbUtilitarioKeyReleased
+    }//GEN-LAST:event_cmbBlindadoKeyReleased
 
-    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar1ActionPerformed
+    private void cmbOpcionBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionBusquedaActionPerformed
+        colocarNombreBuscar();
+    }//GEN-LAST:event_cmbOpcionBusquedaActionPerformed
 
-    private void btnGuardar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardar1KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar1KeyReleased
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        limpiarCampos();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void btnGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar2ActionPerformed
+    private void btnLimpiarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLimpiarKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            limpiarCampos();
+        }
+    }//GEN-LAST:event_btnLimpiarKeyReleased
 
-    private void btnGuardar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardar2KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardar2KeyReleased
+    private void cmbTipoVehiculoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbTipoVehiculoKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cmbTipoServicio.requestFocus();
+        }
+    }//GEN-LAST:event_cmbTipoVehiculoKeyReleased
 
-    public void guardar() {
-        if (validarCampos()) {
-            VehiculoServiceImpl vehiculoServicio = new VehiculoServiceImpl();
-            Usuario usuario = new Usuario();
-            usuario.setTipoId("Cedula de Ciudadanía");
-            usuario.setIdUsuario(1090497465L);
-//            MaquinariaPesada maquinariaPesada = new MaquinariaPesada(txtPlaca.getText(), usuario.getTipoId(), usuario.getIdUsuario(),
-//                    cmbTipoServicio4.getSelectedItem().toString(), cmbMarca.getSelectedItem().toString(), cmbLinea.getSelectedItem().toString(),
-//                    txtColor.getText(), choModelo.getYear(), 2, false, false, Double.parseDouble(txtPeso.getText()),
-//                    manejoImagen.guardarImagenVehiculo(rutaImagen), manejoImagen.convertirImagenaByte(rutaImagen), areatxtDescripcion.getText(),
-//                    manejoPDF.convertirPDFaByte(rutaPDF), Integer.parseInt(txtPeso.getText()), Integer.parseInt(txtAlto.getText()),
-//                    Integer.parseInt(txtAncho.getText()), Integer.parseInt(txtLargo.getText()), cmbTipoMaquinaria.getSelectedItem().toString());
-//            Vehiculo maquinariaPesadaEncontrado = vehiculoServicio.encontrarVehiculo(maquinariaPesada.getIdVehiculo());
-//            if (maquinariaPesadaEncontrado != null) {
-//                JOptionPane.showMessageDialog(null, "El Nro. de Registro ingresado, ya se encuentra registrado en el sistema. Por favor valide el campo e inténtelo nuevamente.", "Vehículo registrado", JOptionPane.ERROR_MESSAGE);
-//                txtPlaca.selectAll();
-//                txtPlaca.requestFocus();
-//            } else {
-//                try {
-//                    vehiculoServicio.guardar(maquinariaPesada);
-//                    int opcion = JOptionPane.showConfirmDialog(null, "<html>Vehículo registrado exitosamente. <strong>¿Desea realizar el registro del diagnóstico del vehículo? </strong></html>", "Registro exitoso", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//                    if (opcion == 0) {
-//                        VentanaDiganostico ventanaDiagnostico = new VentanaDiganostico();
-//                        ventanaDiagnostico.setVisible(true);
-//                        this.dispose();
-//                    } else {
-//                        limpiarCampos();
-//                    }
-//                } catch (Exception e) {
-//                    JOptionPane.showMessageDialog(null, "Ha ocurrido un error, por favor inténtelo de nuevo más tarde. \n" + e.getMessage(), "Registrar vehículo", JOptionPane.ERROR_MESSAGE);
-//                }
-//            }
+    private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMarcaActionPerformed
+        cargarLineasXMarca();
+    }//GEN-LAST:event_cmbMarcaActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        ventanaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnMenuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnMenuKeyReleased
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+            ventanaPrincipal.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnMenuKeyReleased
+
+    public void eliminarVehiculo() {
+        Vehiculo vehiculoEliminar = new Vehiculo();
+        vehiculoEliminar.setIdVehiculo(txtPlaca.getText());
+        int opcion = JOptionPane.showConfirmDialog(null, "<html><strong>¿Está seguro que desea eliminar el vehículo del sistema de información?</strong></html>", "Eliminar vehículo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opcion == 0) {
+            vehiculoServicio.eliminar(vehiculoEliminar);
+            JOptionPane.showMessageDialog(null, "<html><span style='color:DimGray'>Vehículo eliminado correctamente.<strong> </strong></span> se encuentra por favor validar campo.</html>", "Vehículo eliminado", JOptionPane.INFORMATION_MESSAGE);
+            limpiarCampos();
+        } else {
+            txtPlaca.selectAll();
+            txtPlaca.requestFocus();
         }
     }
 
-    public void cargarMarcas() {
+    public void actualizarVehiculo() {
+        if (cmbTipoVehiculo.getSelectedItem().equals("Automovil") || cmbTipoVehiculo.getSelectedItem().equals("Camioneta")) {
+            if (validarCamposAutomovilCamioneta()) {
+                actualizar();
+            }
+        } else if (cmbTipoVehiculo.getSelectedItem().equals("Maquinaria pesada")) {
+            if (validarCamposMaquinariaPesada()) {
+                actualizar();
+            }
+        } else {
+
+        }
+    }
+
+    public void actualizar() {
+        Vehiculo vehiculoActualizado = new Vehiculo(txtPlaca.getText(), propietario.getTipoId(), propietario.getIdUsuario(), cmbTipoServicio.getSelectedItem().toString(),
+                cmbTipoVehiculo.getSelectedItem().toString(), cmbMarca.getSelectedItem().toString(), cmbLinea.getSelectedItem().toString(),
+                txtColor.getText(), choModelo.getYear(), 2, funciones.convertirStringBoolean(cmbUtilitario.getSelectedItem().toString()),
+                funciones.convertirStringBoolean(cmbBlindado.getSelectedItem().toString()), Double.parseDouble(txtPrecio.getText()),
+                guardarImagen(), guardarImagenByte(), areatxtDescripcion.getText(),
+                guardarArchivoPDF(), validarNumero(txtPeso.getText()), validarNumero(txtAlto.getText()),
+                validarNumero(txtAncho.getText()), validarNumero(txtLargo.getText()), cmbTipoMaquinaria.getSelectedItem().toString());
+
+        vehiculoServicio.actualizar(vehiculoActualizado);
+
+        JOptionPane.showMessageDialog(null, "<html>El vehículo con " + cmbOpcionBusqueda.getSelectedItem().toString() + " " + txtPlaca.getText() + ",<strong> ha sido actualizado exitosamente.</strong></html>", "Vehículo actualizado", JOptionPane.INFORMATION_MESSAGE);
+        limpiarCampos();
+    }
+
+    public int validarNumero(String campo) {
+        int numero;
+        if (campo.equals("")) {
+            campo = "0";
+        }
+        return numero = Integer.parseInt(campo);
+    }
+
+    public byte[] guardarArchivoPDF() {
+        byte[] archivoPDF;
+        if (rutaPDF.equals("") || rutaPDF == null) {
+            archivoPDF = vehiculo.getEstadoJudicial();
+        } else {
+            archivoPDF = manejoPDF.convertirPDFaByte(rutaPDF);
+        }
+        return archivoPDF;
+    }
+
+    public Image guardarImagen() {
+        Image archivoImagen;
+        if (rutaImagen.equals("") || rutaImagen.equals(null)) {
+            archivoImagen = null;
+        } else {
+            archivoImagen = manejoImagen.guardarImagenVehiculo(rutaImagen);
+        }
+        return archivoImagen;
+    }
+
+    public byte[] guardarImagenByte() {
+        byte[] archivoImagen;
+        if (rutaImagen.equals("") || rutaImagen.equals(null)) {
+            archivoImagen = vehiculo.getImagenByte();
+        } else {
+            archivoImagen = manejoImagen.convertirImagenaByte(rutaImagen);
+        }
+        return archivoImagen;
+    }
+
+    public void editar() {
+        deshabilitarCamposConsulta();
+        if (cmbTipoVehiculo.getSelectedItem().equals("Automovil") || cmbTipoVehiculo.getSelectedItem().equals("Camioneta")) {
+            habilitarCamposAutomovilCamioneta();
+            cmbTipoVehiculo.requestFocus();
+        } else {
+            habilitarCamposMaquinariaPesada();
+            cmbTipoServicio.requestFocus();
+        }
+        habilitarBotones(false, true, false, true, false, false, true, false);
+    }
+
+    public void consultar() {
+        if (cmbOpcionBusqueda.getSelectedItem().equals("Placa")) {
+            vehiculo = vehiculoServicio.encontrarVehiculo(txtPlaca.getText());
+            if (vehiculo != null) {
+                cargarMarcasAutomovilCamioneta();
+                cargarTipoVehiculoAutomovilCamioneta();
+                colocarCamposBasicos(vehiculo);
+                cargarLineasAutomovilCamioneta();
+                cmbLinea.setSelectedItem(vehiculo.getLinea());
+            } else {
+                JOptionPane.showMessageDialog(null, "<html>La placa ingresada <strong> no se encuentra registrada en el sistema.</strong> Por favor validé el campo e inténtelo nuevamente.</html>", "Consulta de vehículo", JOptionPane.INFORMATION_MESSAGE);
+                txtPlaca.selectAll();
+                txtPlaca.requestFocus();
+            }
+        } else if (cmbOpcionBusqueda.getSelectedItem().equals("Nro. de Registro")) {
+            vehiculo = vehiculoServicio.encontrarVehiculo(txtPlaca.getText());
+            if (vehiculo != null) {
+                cargarMarcasTipoMaquinaria();
+                cargarTipoVehiculo();
+                colocarCamposBasicos(vehiculo);
+                cargarLineasMaquinariaPesada();
+                cmbLinea.setSelectedItem(vehiculo.getLinea());
+                cmbTipoMaquinaria.setSelectedItem(vehiculo.getTipoMaquinaria());
+                txtPeso.setText(String.valueOf(vehiculo.getPeso()));
+                txtAncho.setText(String.valueOf(vehiculo.getAncho()));
+                txtAlto.setText(String.valueOf(vehiculo.getAlto()));
+                txtLargo.setText(String.valueOf(vehiculo.getLargo()));
+            } else {
+                JOptionPane.showMessageDialog(null, "<html>El Nro. de registro ingresado <strong> no se encuentra registrado en el sistema.</strong> Por favor validé el campo e inténtelo nuevamente.</html>", "Consulta de vehículo", JOptionPane.INFORMATION_MESSAGE);
+                txtPlaca.selectAll();
+                txtPlaca.requestFocus();
+            }
+        } else {
+            imprimirCampoVacio("Busqueda de vehículo por", "sin seleccionar");
+            cmbOpcionBusqueda.requestFocus();
+        }
+    }
+
+    public void colocarCamposBasicos(Vehiculo vehiculo) {
+        cargarPropietario(vehiculo);
+        cmbTipoVehiculo.setSelectedItem(vehiculo.getTipoVehiculo());
+        cmbTipoServicio.setSelectedItem(vehiculo.getTipoServicio());
+        txtCupo.setText(String.valueOf(vehiculo.getCupoPersona()));
+        cmbMarca.setSelectedItem(vehiculo.getMarca());
+        txtColor.setText(vehiculo.getColor());
+        choModelo.setYear(vehiculo.getModelo());
+        txtPrecio.setText(String.valueOf(Math.round(vehiculo.getPrecio())));
+        cmbBlindado.setSelectedItem(funciones.convertirBooleanString(vehiculo.isBlindado()));
+        cmbUtilitario.setSelectedItem(funciones.convertirBooleanString(vehiculo.isUtilitario()));
+        areatxtDescripcion.setText(vehiculo.getDescripcion());
+        rutaPDF = "";
+        rutaImagen = "";
+        colocarImagen(vehiculo);
+        lblEstadoJudicial.setText("EstadoJudicial" + vehiculo.getIdVehiculo() + ".pdf");
+        habilitarBotones(true, false, true, false, true, true, false, true);
+    }
+
+    public void colocarImagen(Vehiculo vehiculo) {
+        try {
+            ImageIcon icono = new ImageIcon(vehiculo.getImagen().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
+            lblImagen.setIcon(icono);
+            this.setVisible(true);
+        } catch (Exception e) {
+        }
+    }
+
+    public void cargarPropietario(Vehiculo vehiculo) {
+        try {
+            propietario = usuarioServicio.encontrarUsuario(vehiculo.getIdUsuario(), vehiculo.getTipoIdUsuario());
+            txtNombreUsuario.setText(propietario.getNombreUsuario() + " " + propietario.getApellido1() + " " + propietario.getApellido2());
+            txtCiudad.setText(propietario.getMunicipio());
+            txtEmail.setText(propietario.getEmailUsuario());
+        } catch (Exception e) {
+        }
+    }
+
+    public void cargarMarcasTipoMaquinaria() {
+        cmbMarca.removeAllItems();
+        cmbMarca.addItem("Seleccionar");
         List<TipoMaquinaria> tipoMaquinarias = funciones.listarTipoMaquinaria();
         tipoMaquinarias.forEach(tipoMaquinaria -> {
             cmbMarca.addItem(tipoMaquinaria.getNombreTipoMaquinaria());
         });
+    }
+
+    public void cargarMarcasAutomovilCamioneta() {
+        cmbMarca.removeAllItems();
+        cmbMarca.addItem("Seleccionar");
+        List<Marca> marcas = funciones.listarMarcas();
+        marcas.forEach(marca -> {
+            cmbMarca.addItem(marca.getNombreMarca());
+        });
+    }
+
+    public void cargarLineasXMarca() {
+        if (cmbTipoVehiculo.getSelectedItem().equals("Automovil") || cmbTipoVehiculo.getSelectedItem().equals("Camioneta")) {
+            if (cmbMarca.getSelectedItem().equals("Seleccionar")) {
+                cmbLinea.removeAllItems();
+                cmbLinea.addItem("Seleccionar");
+            } else {
+                cmbLinea.removeAllItems();
+                cmbLinea.addItem("Seleccionar");
+                List<Linea> lineas = funciones.listarLineaXMarca(cmbMarca.getSelectedItem().toString());
+                lineas.forEach(linea -> {
+                    cmbLinea.addItem(linea.getNombreLinea());
+                });
+            }
+        }
+    }
+
+    public void cargarLineasAutomovilCamioneta() {
+        if (cmbMarca.getSelectedItem().equals("Seleccionar")) {
+            cmbLinea.removeAllItems();
+            cmbLinea.addItem("Seleccionar");
+        } else {
+            cmbLinea.removeAllItems();
+            cmbLinea.addItem("Seleccionar");
+            List<Linea> lineas = funciones.listarLineaXMarca(cmbMarca.getSelectedItem().toString());
+            lineas.forEach(linea -> {
+                cmbLinea.addItem(linea.getNombreLinea());
+            });
+        }
+    }
+
+    public void cargarLineasMaquinariaPesada() {
+        cmbLinea.removeAllItems();
+        cmbLinea.addItem("Seleccionar");
+        cmbLinea.addItem("Camiones articulados");
+        cmbLinea.addItem("Camiones de obras");
+        cmbLinea.addItem("Cargadores de cadenas");
+        cmbLinea.addItem("Cargadores de ruedas");
+        cmbLinea.addItem("Compactadores");
+        cmbLinea.addItem("Dragalinas");
+        cmbLinea.addItem("Excavadoras");
+        cmbLinea.addItem("Manipuladores de materiales");
+        cmbLinea.addItem("Manipuladores telescópicos");
+        cmbLinea.addItem("Maquinas forestales");
+        cmbLinea.addItem("Minicargadores");
+        cmbLinea.addItem("Motoniveladoras");
+        cmbLinea.addItem("Mototraillas");
+        cmbLinea.addItem("Palas de Cable Electrica");
+        cmbLinea.addItem("Palas hidraulica para mineria");
+        cmbLinea.addItem("Pavimentadoras de asfalto");
+        cmbLinea.addItem("Perfiladoras de pavimento en frio");
+        cmbLinea.addItem("Perforadoras");
+        cmbLinea.addItem("Recuperadores de camiones");
+        cmbLinea.addItem("Retroexcavadoras cargadoras");
+        cmbLinea.addItem("Subterraneo: roca dura");
+        cmbLinea.addItem("Subterraneo:tajo largo");
+        cmbLinea.addItem("Tiendetubos");
+        cmbLinea.addItem("Tractores");
     }
 
     public void seleccionarEstadoJudicial() {
@@ -1143,66 +1475,113 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         }
     }
 
-    public boolean validarCampos() {
+    public boolean validarCamposMaquinariaPesada() {
         boolean cumplenCampos = true;
         int yearModelo = choModelo.getYear();
-//        if (txtPlaca.getText().equals("")) {
-//            imprimirCampoVacio("Placa de vehículo", "vacío");
-//            cumplenCampos = false;
-//            txtPlaca.requestFocus();
-//        } else if (cmbTipoServicio4.getSelectedItem().toString().equals("Seleccionar")) {
-//            imprimirCampoVacio("Tipo de servicio", "sin seleccionar");
-//            cumplenCampos = false;
-//            cmbTipoServicio4.requestFocus();
-//        } else if (cmbMarca.getSelectedItem().toString().equals("Seleccionar")) {
-//            imprimirCampoVacio("Marca", "sin seleccionar");
-//            cumplenCampos = false;
-//            cmbMarca.requestFocus();
-//        } else if (cmbLinea.getSelectedItem().toString().equals("Seleccionar")) {
-//            imprimirCampoVacio("Linea", "sin seleccionar");
-//            cumplenCampos = false;
-//            cmbLinea.requestFocus();
-//        } else if (cmbTipoMaquinaria.getSelectedItem().toString().equals("Seleccionar")) {
-//            imprimirCampoVacio("Tipo de maquinaria", "sin seleccionar");
-//            cumplenCampos = false;
-//            cmbTipoMaquinaria.requestFocus();
-//        } else if (yearModelo == 0) {
-//            imprimirCampoVacio("Año de modelo", "sin seleccionar");
-//            cumplenCampos = false;
-//            choModelo.requestFocus();
-//        } else if (txtColor.getText().equals("")) {
-//            imprimirCampoVacio("Color", "vacío");
-//            cumplenCampos = false;
-//            txtColor.requestFocus();
-//        } else if (txtPeso.getText().equals("")) {
-//            imprimirCampoVacio("Peso", "vacío");
-//            cumplenCampos = false;
-//            txtPeso.requestFocus();
-//        } else if (txtAncho.getText().equals("")) {
-//            imprimirCampoVacio("Ancho", "vacío");
-//            cumplenCampos = false;
-//            txtAncho.requestFocus();
-//        } else if (txtAlto.getText().equals("")) {
-//            imprimirCampoVacio("Alto", "vacío");
-//            cumplenCampos = false;
-//            txtAlto.requestFocus();
-//        } else if (txtLargo.getText().equals("")) {
-//            imprimirCampoVacio("Largo", "vacío");
-//            cumplenCampos = false;
-//            txtLargo.requestFocus();
-//        } else if (txtPrecio.getText().equals("")) {
-//            imprimirCampoVacio("Precio", "vacío");
-//            cumplenCampos = false;
-//            txtPrecio.requestFocus();
-//        } else if ((lblEstadoJudicial.getText() == null) || (lblEstadoJudicial.getText().equals(""))) {
-//            imprimirCampoVacio("Estado judicial", "sin seleccionar");
-//            cumplenCampos = false;
-//            btnCargarPDF.requestFocus();
-//        } else if (rutaImagen.isEmpty()) {
-//            imprimirCampoVacio("Imagen", "sin seleccionar");
-//            cumplenCampos = false;
-//            btnCargarImagen.requestFocus();
-//        }
+        if (cmbTipoServicio.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Tipo de servicio", "sin seleccionar");
+            cumplenCampos = false;
+            cmbTipoServicio.requestFocus();
+        } else if (cmbMarca.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Marca", "sin seleccionar");
+            cumplenCampos = false;
+            cmbMarca.requestFocus();
+        } else if (cmbLinea.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Linea", "sin seleccionar");
+            cumplenCampos = false;
+            cmbLinea.requestFocus();
+        } else if (cmbTipoMaquinaria.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Tipo de maquinaria", "sin seleccionar");
+            cumplenCampos = false;
+            cmbTipoMaquinaria.requestFocus();
+        } else if (yearModelo == 0) {
+            imprimirCampoVacio("Año de modelo", "sin seleccionar");
+            cumplenCampos = false;
+            choModelo.requestFocus();
+        } else if (txtColor.getText().equals("")) {
+            imprimirCampoVacio("Color", "vacío");
+            cumplenCampos = false;
+            txtColor.requestFocus();
+        } else if (txtPeso.getText().equals("")) {
+            imprimirCampoVacio("Peso", "vacío");
+            cumplenCampos = false;
+            txtPeso.requestFocus();
+        } else if (txtAncho.getText().equals("")) {
+            imprimirCampoVacio("Ancho", "vacío");
+            cumplenCampos = false;
+            txtAncho.requestFocus();
+        } else if (txtAlto.getText().equals("")) {
+            imprimirCampoVacio("Alto", "vacío");
+            cumplenCampos = false;
+            txtAlto.requestFocus();
+        } else if (txtLargo.getText().equals("")) {
+            imprimirCampoVacio("Largo", "vacío");
+            cumplenCampos = false;
+            txtLargo.requestFocus();
+        } else if (txtPrecio.getText().equals("")) {
+            imprimirCampoVacio("Precio", "vacío");
+            cumplenCampos = false;
+            txtPrecio.requestFocus();
+        } else if ((lblEstadoJudicial.getText() == null) || (lblEstadoJudicial.getText().equals(""))) {
+            imprimirCampoVacio("Estado judicial", "sin seleccionar");
+            cumplenCampos = false;
+            btnCargarPDF.requestFocus();
+        } else if (lblImagen.getIcon() == null) {
+            imprimirCampoVacio("Imagen", "sin seleccionar");
+            cumplenCampos = false;
+            btnCargarImagen.requestFocus();
+        }
+        return cumplenCampos;
+    }
+
+    public boolean validarCamposAutomovilCamioneta() {
+        boolean cumplenCampos = true;
+        int yearModelo = choModelo.getYear();
+        if (cmbTipoServicio.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Tipo de servicio", "sin seleccionar");
+            cumplenCampos = false;
+            cmbTipoServicio.requestFocus();
+        } else if (cmbMarca.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Marca", "sin seleccionar");
+            cumplenCampos = false;
+            cmbMarca.requestFocus();
+        } else if (cmbLinea.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Linea", "sin seleccionar");
+            cumplenCampos = false;
+            cmbLinea.requestFocus();
+        } else if (yearModelo == 0) {
+            imprimirCampoVacio("Año de modelo", "sin seleccionar");
+            cumplenCampos = false;
+            choModelo.requestFocus();
+        } else if (txtColor.getText().equals("")) {
+            imprimirCampoVacio("Color", "vacío");
+            cumplenCampos = false;
+            txtColor.requestFocus();
+        } else if (txtCupo.getText().equals("")) {
+            imprimirCampoVacio("Cupo de personas", "vacío");
+            cumplenCampos = false;
+            txtCupo.requestFocus();
+        } else if (cmbUtilitario.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Utilitario", "sin seleccionar");
+            cumplenCampos = false;
+            cmbUtilitario.requestFocus();
+        } else if (cmbBlindado.getSelectedItem().toString().equals("Seleccionar")) {
+            imprimirCampoVacio("Blindado", "sin seleccionar");
+            cumplenCampos = false;
+            cmbBlindado.requestFocus();
+        } else if (txtPrecio.getText().equals("")) {
+            imprimirCampoVacio("Precio", "vacío");
+            cumplenCampos = false;
+            txtPrecio.requestFocus();
+        } else if ((lblEstadoJudicial.getText() == null) || (lblEstadoJudicial.getText().equals(""))) {
+            imprimirCampoVacio("Estado judicial", "sin seleccionar");
+            cumplenCampos = false;
+            btnCargarPDF.requestFocus();
+        } else if (lblImagen.getIcon() == null) {
+            imprimirCampoVacio("Imagen", "sin seleccionar");
+            cumplenCampos = false;
+            btnCargarImagen.requestFocus();
+        }
         return cumplenCampos;
     }
 
@@ -1210,14 +1589,110 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "<html>El campo <span style='color:red'><strong>" + campo + "</strong></span> se encuentra " + estadoCampo + ", por favor validar campo.</html>", "Campo " + estadoCampo, JOptionPane.INFORMATION_MESSAGE);
     }
 
+    public void colocarNombreBuscar() {
+        String nombreCampo = "Id. Vehículo";
+        if (cmbOpcionBusqueda.getSelectedItem().equals("Placa")) {
+            nombreCampo = "Placa";
+        } else if (cmbOpcionBusqueda.getSelectedItem().equals("Nro. de Registro")) {
+            nombreCampo = "Nro. de Registro";
+        }
+        lblBuscar.setText(nombreCampo + ":");
+    }
+
+    public void habilitarCamposAutomovilCamioneta() {
+        habilitarCampos(true, true, true, true, true, true, true, true, true, false, false, false, false, false, true, true);
+    }
+
+    public void deshabilitarCamposConsulta() {
+        habilitarCamposConsulta(false, false);
+    }
+
+    public void deshabilitarCamposTodos() {
+        habilitarCampos(false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
+    }
+
+    public void habilitarCamposMaquinariaPesada() {
+        habilitarCampos(false, true, false, true, true, true, true, false, false, true, true, true, true, true, true, true);
+    }
+
+    public void cargarTipoVehiculo() {
+        cmbTipoVehiculo.removeAllItems();
+        cmbTipoVehiculo.addItem("Seleccionar");
+        cmbTipoVehiculo.addItem("Automovil");
+        cmbTipoVehiculo.addItem("Camioneta");
+        cmbTipoVehiculo.addItem("Maquinaria pesada");
+    }
+
+    public void cargarTipoVehiculoAutomovilCamioneta() {
+        cmbTipoVehiculo.removeAllItems();
+        cmbTipoVehiculo.addItem("Seleccionar");
+        cmbTipoVehiculo.addItem("Automovil");
+        cmbTipoVehiculo.addItem("Camioneta");
+    }
+
+    public void habilitarBotones(boolean btnConsultar, boolean btnCargarPDF, boolean btnDescargarPDF, boolean btnCargarImagen, boolean btnLimpiar, boolean btnEditar, boolean btnActualizar, boolean btnEliminar) {
+        this.btnConsultar.setEnabled(btnConsultar);
+        this.btnCargarPDF.setEnabled(btnCargarPDF);
+        this.btnDescargarEJ.setEnabled(btnDescargarPDF);
+        this.btnCargarImagen.setEnabled(btnCargarImagen);
+        this.btnLimpiar.setEnabled(btnLimpiar);
+        this.btnEditar.setEnabled(btnEditar);
+        this.btnActualizar.setEnabled(btnActualizar);
+        this.btnEliminar.setEnabled(btnEliminar);
+    }
+
+    public void habilitarCamposConsulta(boolean cmbOpcionBuscar, boolean txtPlaca) {
+        this.cmbOpcionBusqueda.setEnabled(cmbOpcionBuscar);
+        this.txtPlaca.setEnabled(txtPlaca);
+    }
+
+    public void deshabilitarCamposUsuario(boolean txtNombreUsuario, boolean txtCiudad, boolean txtEmail) {
+        this.txtNombreUsuario.setEnabled(txtNombreUsuario);
+        this.txtCiudad.setEnabled(txtCiudad);
+        this.txtEmail.setEnabled(txtEmail);
+    }
+
+    public void habilitarCampos(boolean cmbTipoVehiculo,
+            boolean cmbTipoServicio, boolean txtCupo, boolean cmbMarca, boolean cmbLinea, boolean txtColor,
+            boolean choModelo, boolean cmbBlindado, boolean cmbUtilitario, boolean cmbTipoMaquinaria, boolean txtPeso,
+            boolean txtAncho, boolean txtAlto, boolean txtLargo, boolean txtPrecio, boolean areatxtDescripcion) {
+        this.cmbTipoVehiculo.setEnabled(cmbTipoVehiculo);
+        this.cmbTipoServicio.setEnabled(cmbTipoServicio);
+        this.txtCupo.setEnabled(txtCupo);
+        this.cmbMarca.setEnabled(cmbMarca);
+        this.cmbLinea.setEnabled(cmbLinea);
+        this.txtColor.setEnabled(txtColor);
+        this.choModelo.setEnabled(choModelo);
+        this.cmbBlindado.setEnabled(cmbBlindado);
+        this.cmbUtilitario.setEnabled(cmbUtilitario);
+        this.cmbTipoMaquinaria.setEnabled(cmbTipoMaquinaria);
+        this.txtPeso.setEnabled(txtPeso);
+        this.txtAncho.setEnabled(txtAncho);
+        this.txtAlto.setEnabled(txtAlto);
+        this.txtLargo.setEnabled(txtLargo);
+        this.txtPrecio.setEnabled(txtPrecio);
+        this.areatxtDescripcion.setEnabled(areatxtDescripcion);
+    }
+
     public void limpiarCampos() {
-//        txtPlaca.setText("");
-//        cmbTipoServicio4.setSelectedItem("Seleccionar");
-        cmbMarca.setSelectedItem("Seleccionar");
-        cmbLinea.setSelectedItem("Seleccionar");
-        cmbTipoMaquinaria.setSelectedItem("Seleccionar");
-        choModelo.setYear(2022);
+        cmbOpcionBusqueda.setSelectedItem("Seleccionar");
+        colocarNombreBuscar();
+        txtPlaca.setText("");
+        txtNombreUsuario.setText("");
+        txtCiudad.setText("");
+        txtEmail.setText("");
+        cmbTipoVehiculo.setSelectedItem("Seleccionar");
+        cmbTipoServicio.setSelectedItem("Seleccionar");
+        txtCupo.setText("");
+        cmbMarca.removeAllItems();
+        cmbMarca.addItem("Seleccionar");
+        cmbLinea.removeAllItems();
+        cmbLinea.addItem("Seleccionar");
         txtColor.setText("");
+        choModelo.setYear(0);
+        cmbBlindado.setSelectedItem("Seleccionar");
+        cmbUtilitario.setSelectedItem("Seleccionar");
+        cmbTipoMaquinaria.setSelectedItem("Seleccionar");
         txtPeso.setText("");
         txtAncho.setText("");
         txtAlto.setText("");
@@ -1225,8 +1700,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         txtPrecio.setText("");
         lblImagen.setIcon(null);
         lblEstadoJudicial.setText("");
-        cargarMarcas();
-//        txtPlaca.requestFocus();
+        areatxtDescripcion.setText("");
+        habilitarBotones(true, false, false, false, false, false, false, false);
+        habilitarCamposConsulta(true, true);
+        deshabilitarCamposTodos();
+        cmbOpcionBusqueda.requestFocus();
     }
 
     /**
@@ -1297,28 +1775,24 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areatxtDescripcion;
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnCargarImagen;
     private javax.swing.JButton btnCargarPDF;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnConsultar1;
-    private javax.swing.JButton btnConsultar2;
-    private javax.swing.JButton btnConsultar3;
     private javax.swing.JButton btnDescargarEJ;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnGuardar1;
-    private javax.swing.JButton btnGuardar2;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnMenu;
     private com.toedter.calendar.JYearChooser choModelo;
+    private javax.swing.JComboBox<String> cmbBlindado;
     private javax.swing.JComboBox<String> cmbLinea;
     private javax.swing.JComboBox<String> cmbMarca;
     private javax.swing.JComboBox<String> cmbOpcionBusqueda;
-    private javax.swing.JComboBox<String> cmbOpcionBusqueda1;
-    private javax.swing.JComboBox<String> cmbOpcionBusqueda2;
-    private javax.swing.JComboBox<String> cmbOpcionBusqueda3;
     private javax.swing.JComboBox<String> cmbTipoMaquinaria;
     private javax.swing.JComboBox<String> cmbTipoServicio;
+    private javax.swing.JComboBox<String> cmbTipoVehiculo;
     private javax.swing.JComboBox<String> cmbUtilitario;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1337,10 +1811,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1349,31 +1824,22 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBuscar;
-    private javax.swing.JLabel lblBuscar1;
-    private javax.swing.JLabel lblBuscar2;
-    private javax.swing.JLabel lblBuscar3;
     private javax.swing.JLabel lblEstadoJudicial;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JTextField txtAlto;
     private javax.swing.JTextField txtAncho;
+    private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtCupo;
-    private javax.swing.JTextField txtIdUsuario;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLargo;
+    private javax.swing.JTextField txtNombreUsuario;
     private javax.swing.JTextField txtPeso;
     private javax.swing.JTextField txtPlaca;
-    private javax.swing.JTextField txtPlaca1;
-    private javax.swing.JTextField txtPlaca2;
-    private javax.swing.JTextField txtPlaca3;
     private javax.swing.JTextField txtPrecio;
-    private javax.swing.JTextField txtTipoIdUsuario;
-    private javax.swing.JTextField txtTipoVehiculo;
     // End of variables declaration//GEN-END:variables
 }

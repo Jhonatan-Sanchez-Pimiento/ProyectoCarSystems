@@ -2,10 +2,8 @@ package presentacion;
 
 import dominio.MaquinariaPesada;
 import dominio.Funciones;
-import dominio.Linea;
 import dominio.ManejoImagen;
 import dominio.ManejoPDF;
-import dominio.Marca;
 import dominio.TipoMaquinaria;
 import dominio.Usuario;
 import dominio.Vehiculo;
@@ -802,7 +800,7 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
             usuario.setIdUsuario(1090497465L);
             MaquinariaPesada maquinariaPesada = new MaquinariaPesada(txtPlaca.getText(), usuario.getTipoId(), usuario.getIdUsuario(),
                     cmbTipoServicio.getSelectedItem().toString(), cmbMarca.getSelectedItem().toString(), cmbLinea.getSelectedItem().toString(),
-                    txtColor.getText(), choModelo.getYear(), 2, false, false, Double.parseDouble(txtPeso.getText()),
+                    txtColor.getText(), choModelo.getYear(), 2, false, false, Double.parseDouble(txtPrecio.getText()),
                     manejoImagen.guardarImagenVehiculo(rutaImagen), manejoImagen.convertirImagenaByte(rutaImagen), areatxtDescripcion.getText(),
                     manejoPDF.convertirPDFaByte(rutaPDF), Integer.parseInt(txtPeso.getText()), Integer.parseInt(txtAlto.getText()),
                     Integer.parseInt(txtAncho.getText()), Integer.parseInt(txtLargo.getText()), cmbTipoMaquinaria.getSelectedItem().toString());
