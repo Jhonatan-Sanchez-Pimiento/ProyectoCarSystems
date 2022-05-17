@@ -2,10 +2,12 @@
 package presentacion;
 
 import dominio.Departamento;
+import dominio.Funciones;
 import dominio.Municipio;
 import dominio.Usuario;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -20,7 +22,8 @@ import serviceImpl.MunicipioServiceImpl;
  * @author User
  */
 public class VentanaRegistroUsuario extends javax.swing.JFrame {
-
+    Funciones funciones = new Funciones();
+    
     public VentanaRegistroUsuario() throws SQLException {
         initComponents();
         cargarDepartamentos();
@@ -220,6 +223,11 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
 
         txt_correo.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_correo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_correo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_correoKeyReleased(evt);
+            }
+        });
 
         txt_nombre.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -575,6 +583,12 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbTipoDocumentoActionPerformed
 
+    private void txt_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_correoKeyReleased
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            pasf_contrasena.requestFocus();
+        }
+    }//GEN-LAST:event_txt_correoKeyReleased
+
     public void guardarUsuario() {
         UsuarioServiceImpl usuarioServicio = new UsuarioServiceImpl();
 
@@ -618,6 +632,23 @@ public class VentanaRegistroUsuario extends javax.swing.JFrame {
         cmbMunicipio.removeAllItems();
         cmbMunicipio.addItem("Seleccionar");
         cmbMunicipio.setSelectedItem(1);
+    }
+    
+    public boolean validarCampos() {
+        
+        boolean cumplenCampos = true;
+        
+        if (txt_correo.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo Email se encuentra vacio, por favor validar campo.", "Campo Email Vacio", JOptionPane.INFORMATION_MESSAGE);
+            cumplenCampos = false;
+            txt_correo.requestFocus();
+        } else if (!(funciones.isEmail(txt_correo.getText()))) {
+            JOptionPane.showMessageDialog(null, "Email no cumple con la estructura de un correo", "Validar Email", JOptionPane.INFORMATION_MESSAGE);
+            txt_correo.selectAll();
+            txt_correo.requestFocus();
+            cumplenCampos = false;
+        }
+        return false;
     }
     
 

@@ -186,73 +186,56 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel63" min="-2" pref="112" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <Component id="jLabel62" min="-2" pref="112" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel30" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
-                                              <Component id="jLabel29" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
-                                              <Component id="jLabel28" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
+                                      <Component id="jLabel19" min="-2" pref="285" max="-2" attributes="0"/>
+                                      <Component id="jLabel22" alignment="0" min="-2" pref="285" max="-2" attributes="0"/>
+                                      <Component id="jLabel24" min="-2" pref="285" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jrbFrenoS" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jrbClutchS" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jrbAceleradorS" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jrbClutchN" max="32767" attributes="0"/>
-                                              <Component id="jrbFrenoN" max="32767" attributes="0"/>
-                                              <Component id="jrbAceleradorN" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel19" min="-2" pref="285" max="-2" attributes="0"/>
-                                              <Component id="jLabel22" alignment="0" min="-2" pref="285" max="-2" attributes="0"/>
-                                              <Component id="jLabel24" min="-2" pref="285" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabel23" alignment="0" min="-2" pref="285" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel17" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                                  <Component id="jLabel20" min="-2" pref="112" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jrbLiquidoRefriS" max="32767" attributes="0"/>
-                                                      <Component id="jrbAceiteMotorS" max="32767" attributes="0"/>
-                                                      <Component id="jrbLiquidoFrenosS" max="32767" attributes="0"/>
-                                                      <Component id="jrbLiquidoHidraulicoS" max="32767" attributes="0"/>
-                                                      <Component id="jrbAguaVidriosS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jrbLiquidoRefriN" max="32767" attributes="0"/>
-                                                      <Component id="jrbAceiteMotorN" max="32767" attributes="0"/>
-                                                      <Component id="jrbLiquidoHidraulicoN" max="32767" attributes="0"/>
-                                                      <Component id="jrbLiquidoFrenosN" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jrbAguaVidriosN" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
+                                          <Component id="jLabel23" alignment="0" min="-2" pref="285" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="254" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jrbLiquidoRefriS" max="32767" attributes="0"/>
+                                              <Component id="jrbAceiteMotorS" max="32767" attributes="0"/>
+                                              <Component id="jrbLiquidoFrenosS" max="32767" attributes="0"/>
+                                              <Component id="jrbLiquidoHidraulicoS" max="32767" attributes="0"/>
+                                              <Component id="jrbAguaVidriosS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jrbLiquidoRefriN" max="32767" attributes="0"/>
+                                              <Component id="jrbAceiteMotorN" max="32767" attributes="0"/>
+                                              <Component id="jrbLiquidoHidraulicoN" max="32767" attributes="0"/>
+                                              <Component id="jrbLiquidoFrenosN" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jrbAguaVidriosN" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel17" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                          <Component id="jLabel20" min="-2" pref="112" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -260,254 +243,206 @@
                                       <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel27" alignment="1" max="32767" attributes="0"/>
                                       <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel31" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jLabel31" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
+                                          <Component id="jLabel21" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                          <Component id="jLabel66" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jLabel68" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                          <Component id="jLabel69" min="-2" pref="112" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
-                                                  <Component id="jLabel65" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="jLabel64" min="-2" pref="112" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel33" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel35" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                                      <Component id="jLabel34" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                                      <Component id="jLabel32" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                                      <Component id="jLabel36" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                                      <Component id="jLabel37" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                                      <Component id="jLabel38" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbLucesInternasS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jrbLucesInternasN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbLucesReversaS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jrbLucesReversaN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbTestigoTableroS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jrbTestigoTableroN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbLucesEstacionariasS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jrbLucesEstacionariasN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbLucesS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                                                          <Component id="jrbLucesN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbLucesDireccionalesS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jrbLucesDireccionalesN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jrbStopS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="jrbStopN" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="jLabel67" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                                      <Component id="jLabel53" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="jLabel61" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel60" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel58" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel57" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel54" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabel40" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
                                                   </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace pref="13" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel39" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                                                  <Component id="jLabel21" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                                  <Component id="jLabel66" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="jLabel68" min="-2" pref="112" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                                  <Component id="jLabel69" min="-2" pref="112" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                              <Component id="jLabel67" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                                                              <Component id="jLabel53" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                                              <Component id="jLabel61" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel60" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel58" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel57" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel54" alignment="0" max="32767" attributes="0"/>
-                                                              <Component id="jLabel40" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jrbSenalesReflectivasS" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jrbCajaHerramientasS" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jrbLinternaS" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Component id="jrbSenalesReflectivasN" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jrbCajaHerramientasN" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jrbLinternaN" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
                                                           </Group>
-                                                          <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jrbGatoS" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="jrbGatoN" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jrbBotiquinS" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="jrbBotiquinN" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jrbLlantasS" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="jrbLlantasN" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Group type="103" groupAlignment="1" attributes="0">
+                                                              <Component id="jrbExtintorN" min="-2" max="-2" attributes="0"/>
+                                                              <Group type="102" alignment="1" attributes="0">
+                                                                  <Component id="jrbEquipoCarreteraS" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+                                                                  <Component id="jrbEquipoCarreteraN" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <Component id="jrbLlantasRepuestoN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                                   <Group type="102" alignment="0" attributes="0">
                                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                                          <Component id="jrbSenalesReflectivasS" min="-2" max="-2" attributes="0"/>
-                                                                          <Component id="jrbCajaHerramientasS" min="-2" max="-2" attributes="0"/>
-                                                                          <Component id="jrbLinternaS" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jrbLlantasRepuestoS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jrbCrucetaS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jrbExtintorS" min="-2" max="-2" attributes="0"/>
                                                                       </Group>
                                                                       <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                                          <Component id="jrbSenalesReflectivasN" min="-2" max="-2" attributes="0"/>
-                                                                          <Component id="jrbCajaHerramientasN" min="-2" max="-2" attributes="0"/>
-                                                                          <Component id="jrbLinternaN" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jrbCrucetaN" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                                      <Component id="jrbFechaVenExtintorN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jrbFechaVenExtintorS" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace min="167" pref="167" max="-2" attributes="0"/>
                                                                       </Group>
                                                                   </Group>
+                                                              </Group>
+                                                              <Component id="jCalenderFechaVenExtintor" min="-2" pref="188" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                                                   <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="jrbGatoS" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace max="32767" attributes="0"/>
-                                                                      <Component id="jrbGatoN" min="-2" max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Group type="102" alignment="0" attributes="0">
+                                                                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                                                                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                                                          </Group>
+                                                                          <Group type="102" alignment="1" attributes="0">
+                                                                              <EmptySpace max="-2" attributes="0"/>
+                                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                                  <Component id="jLabel42" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                                                                  <Component id="jLabel41" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
+                                                                              </Group>
+                                                                          </Group>
+                                                                      </Group>
+                                                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                                                   </Group>
-                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="jrbBotiquinS" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace max="32767" attributes="0"/>
-                                                                      <Component id="jrbBotiquinN" min="-2" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="jrbLlantasS" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace max="32767" attributes="0"/>
-                                                                      <Component id="jrbLlantasN" min="-2" max="-2" attributes="0"/>
+                                                                  <Group type="102" alignment="1" attributes="0">
+                                                                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                          <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="jLabel43" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
+                                                                          <Component id="jLabel44" max="32767" attributes="0"/>
+                                                                          <Component id="jLabel48" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
+                                                                          <Component id="jLabel50" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                                                                          <Component id="jLabel49" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                                                                          <Component id="jLabel47" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                                                   </Group>
                                                               </Group>
                                                               <Group type="102" alignment="0" attributes="0">
-                                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                                      <Group type="102" alignment="1" attributes="0">
-                                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                                              <Component id="jrbFechaVenExtintorS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                              <Component id="jrbLlantasRepuestoS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                              <Component id="jrbCrucetaS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                              <Component id="jrbExtintorS" min="-2" max="-2" attributes="0"/>
-                                                                          </Group>
-                                                                          <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                                          <Component id="jrbCrucetaN" min="-2" max="-2" attributes="0"/>
-                                                                      </Group>
-                                                                      <Component id="jrbExtintorN" min="-2" max="-2" attributes="0"/>
-                                                                      <Group type="102" alignment="1" attributes="0">
-                                                                          <Component id="jrbEquipoCarreteraS" min="-2" max="-2" attributes="0"/>
-                                                                          <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                                                          <Component id="jrbEquipoCarreteraN" min="-2" max="-2" attributes="0"/>
-                                                                      </Group>
-                                                                      <Component id="jrbFechaVenExtintorN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="jrbLlantasRepuestoN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                                          <Group type="102" alignment="0" attributes="0">
-                                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                                                                                      <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                                                                                  </Group>
-                                                                                  <Group type="102" alignment="1" attributes="0">
-                                                                                      <EmptySpace max="-2" attributes="0"/>
-                                                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                                                          <Component id="jLabel42" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                                                                          <Component id="jLabel41" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
-                                                                                      </Group>
-                                                                                  </Group>
-                                                                              </Group>
-                                                                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                                                          </Group>
-                                                                          <Group type="102" alignment="1" attributes="0">
-                                                                              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                                                  <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                                                                                  <Component id="jLabel43" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
-                                                                                  <Component id="jLabel44" max="32767" attributes="0"/>
-                                                                                  <Component id="jLabel48" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
-                                                                                  <Component id="jLabel50" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
-                                                                                  <Component id="jLabel49" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                                                                  <Component id="jLabel47" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                                                              </Group>
-                                                                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                                                          </Group>
-                                                                      </Group>
-                                                                      <Group type="102" alignment="0" attributes="0">
-                                                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                                                          <Component id="jLabel51" min="-2" pref="212" max="-2" attributes="0"/>
-                                                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                                                      </Group>
-                                                                  </Group>
+                                                                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel51" min="-2" pref="212" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                                               </Group>
                                                           </Group>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jrbEspejosS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbBateriaS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbRinesS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbCinturonSeguridadS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbPitoReversaS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbPitoS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbFrenoEmergenciaS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbCarcasaLucesS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbLimpiaParabrisasS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbTapizadoS" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jrbPanoramicoS" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
                                                       </Group>
-                                                      <Component id="jLabel55" min="-2" pref="169" max="-2" attributes="0"/>
-                                                      <Component id="jLabel56" min="-2" pref="169" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jrbBateriaN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbRinesN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbCinturonSeguridadN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbPitoReversaN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbPitoN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbFrenoEmergenciaN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbEspejosN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbCarcasaLucesN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbLimpiaParabrisasN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbTapizadoN" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jrbPanoramicoN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbEspejosS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbBateriaS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbRinesS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbCinturonSeguridadS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbPitoReversaS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbPitoS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbFrenoEmergenciaS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbCarcasaLucesS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbLimpiaParabrisasS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbTapizadoS" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbPanoramicoS" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jScrollPane2" min="-2" pref="851" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="jLabel55" min="-2" pref="169" max="-2" attributes="0"/>
+                                              <Component id="jLabel56" min="-2" pref="169" max="-2" attributes="0"/>
                                           </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jrbBateriaN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbRinesN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbCinturonSeguridadN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbPitoReversaN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbPitoN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbFrenoEmergenciaN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbEspejosN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbCarcasaLucesN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbLimpiaParabrisasN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbTapizadoN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jrbPanoramicoN" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jScrollPane2" min="-2" pref="851" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jButton1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="jButton2" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="jButton3" min="-2" pref="119" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel39" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="txtTipoVehiculo" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                      <Component id="txtFechaManPreventivo" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                                  <Component id="jCalenderFechaManPreventivo" min="-2" pref="188" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                                  <Component id="txtFechaVenSOAT" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="jCalenderFechaVenSOAT" min="-2" pref="188" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -515,50 +450,112 @@
                                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="txtFechaInspeccion" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="jCalenderFechaInspeccion" min="-2" pref="188" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="txtPlacaVehiculo" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jCalenderFechaUltimoCambioAce" min="-2" pref="188" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtKilometrajeActual" min="-2" pref="175" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel30" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
+                                      <Component id="jLabel29" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
+                                      <Component id="jLabel28" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jrbFrenoS" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jrbClutchS" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jrbAceleradorS" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jrbClutchN" max="32767" attributes="0"/>
+                                      <Component id="jrbFrenoN" max="32767" attributes="0"/>
+                                      <Component id="jrbAceleradorN" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
+                                          <Component id="jLabel65" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                          <Component id="jLabel64" min="-2" pref="112" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel33" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="cmbEspejos" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="txtFechaUltimoCambioAce" min="-2" pref="175" max="-2" attributes="0"/>
-                                              <Component id="txtKilometrajeActual" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="jLabel35" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                              <Component id="jLabel34" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                              <Component id="jLabel32" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                              <Component id="jLabel36" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                              <Component id="jLabel37" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                              <Component id="jLabel38" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbLucesInternasS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jrbLucesInternasN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbLucesReversaS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jrbLucesReversaN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbTestigoTableroS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jrbTestigoTableroN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbLucesEstacionariasS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jrbLucesEstacionariasN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbLucesS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                                                  <Component id="jrbLucesN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbLucesDireccionalesS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jrbLucesDireccionalesN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jrbStopS" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="jrbStopN" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel63" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="jLabel62" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton1" min="-2" pref="119" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace pref="14" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -568,63 +565,48 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel10" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jCalenderFechaVenSOAT" min="-2" pref="26" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel7" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="jCalenderFechaManPreventivo" min="-2" pref="26" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jLabel6" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel13" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel14" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jCalenderFechaUltimoCambioAce" min="-2" pref="26" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtKilometrajeActual" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jCalenderFechaInspeccion" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtPlacaVehiculo" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                       <Component id="jLabel4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="txtFechaUltimoCambioAce" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="cmbEspejos" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtKilometrajeActual" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jLabel14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel10" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="txtFechaInspeccion" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel7" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                              <Component id="txtFechaManPreventivo" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="txtFechaVenSOAT" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtTipoVehiculo" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -678,7 +660,7 @@
                               <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                               <Component id="jrbAceleradorS" min="-2" max="-2" attributes="0"/>
@@ -698,7 +680,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel64" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -786,21 +768,29 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel53" min="-2" pref="23" max="-2" attributes="0"/>
-                                              <Component id="jrbExtintorS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jrbExtintorN" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jrbRinesS" min="-2" max="-2" attributes="0"/>
                                               <Component id="jrbRinesN" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jrbExtintorS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbExtintorN" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jrbFechaVenExtintorS" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jrbFechaVenExtintorN" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jrbCinturonSeguridadN" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jrbFechaVenExtintorN" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jrbFechaVenExtintorS" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel54" min="-2" pref="22" max="-2" attributes="0"/>
                                               <Component id="jrbCinturonSeguridadS" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel54" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                                              <Component id="jCalenderFechaVenExtintor" min="-2" pref="26" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
@@ -809,7 +799,7 @@
                                               <Component id="jrbPitoReversaS" min="-2" max="-2" attributes="0"/>
                                               <Component id="jrbPitoReversaN" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel56" min="-2" pref="27" max="-2" attributes="0"/>
@@ -830,7 +820,7 @@
                                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace pref="9" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jrbFrenoEmergenciaS" min="-2" max="-2" attributes="0"/>
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -897,7 +887,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                   <Component id="jrbLlantasN" min="-2" max="-2" attributes="0"/>
@@ -919,10 +909,17 @@
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="82" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane2" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -939,8 +936,6 @@
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Placa del vehiculo :"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaInspeccion">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
@@ -966,18 +961,6 @@
                     <Property name="text" type="java.lang.String" value="Fecha del &#xfa;ltimo mantenimiento :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Myanmar Text" size="18" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Tipo de vehiculo:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -988,18 +971,6 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Fecha de inspecci&#xf3;n :"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Myanmar Text" size="18" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Modelo del vehiculo :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
@@ -1025,23 +996,6 @@
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Kilometraje actual :"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaManPreventivo">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaManPreventivoActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaVenSOAT">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaVenSOATActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtTipoVehiculo">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTipoVehiculoActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtFechaUltimoCambioAce">
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtKilometrajeActual">
                 </Component>
@@ -1383,21 +1337,6 @@
                     <Property name="text" type="java.lang.String" value="Espejos :"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cmbEspejos">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Myanmar Text" size="18" style="2"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="1">
-                        <StringItem index="0" value="Seleccione"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel48">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1558,6 +1497,10 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Guardar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jButton1KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
@@ -2031,26 +1974,6 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jrbFechaVenExtintorS">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="33" green="33" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="baFechaVenExtintor"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jrbFechaVenExtintorN">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="33" green="33" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="baFechaVenExtintor"/>
-                    </Property>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JRadioButton" name="jrbLlantasRepuestoS">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2438,7 +2361,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea1">
+                    <Component class="javax.swing.JTextArea" name="jtaDescripcion">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -2446,6 +2369,61 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="jButton2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Limpiar"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cerrar"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jCalenderFechaInspeccion">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jrbFechaVenExtintorS">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="baFechaVenExtintor"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jrbFechaVenExtintorN">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="baFechaVenExtintor"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jCalenderFechaVenExtintor">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jCalenderFechaVenSOAT">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jCalenderFechaManPreventivo">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jCalenderFechaUltimoCambioAce">
+                  <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="yyyy-MMM-dd"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
