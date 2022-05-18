@@ -57,7 +57,6 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         btnEditar = new javax.swing.JButton();
@@ -122,6 +121,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -135,14 +135,12 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jLabel2.setIconTextGap(1);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Icono IntegraSoft.png"))); // NOI18N
-
         jSeparator1.setBackground(new java.awt.Color(37, 196, 164));
 
         jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Consultar VehÃ­culo");
+        jLabel4.setText("Consultar Vehículo");
 
         btnEditar.setBackground(new java.awt.Color(37, 196, 164));
         btnEditar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -172,7 +170,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         btnCargarImagen.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
         btnCargarImagen.setText("Cargar Imagen");
-        btnCargarImagen.setToolTipText("Seleccione un imagen del vehÃ­culo.");
+        btnCargarImagen.setToolTipText("Seleccione un imagen del vehículo.");
         btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarImagenActionPerformed(evt);
@@ -207,11 +205,11 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("LÃ­nea:");
+        jLabel7.setText("Línea:");
         jLabel7.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbLinea.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camiones articulados", "Camiones de obras", "Cargadores de cadenas", "Cargadores de ruedas", "Compactadores", "Dragalinas", "Excavadoras", "Manipuladores de materiales", "Manipuladores telescÃ³picos", "Maquinas forestales", "Minicargadores", "Motoniveladoras", "Mototraillas", "Palas de Cable Electrica", "Palas hidraulica para mineria", "Pavimentadoras de asfalto", "Perfiladoras de pavimento en frio", "Perforadoras", "Recuperadores de camiones", "Retroexcavadoras cargadoras", "Subterraneo: roca dura", "Subterraneo:tajo largo", "Tiendetubos", "Tractores", "Volquetas" }));
+        cmbLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camiones articulados", "Camiones de obras", "Cargadores de cadenas", "Cargadores de ruedas", "Compactadores", "Dragalinas", "Excavadoras", "Manipuladores de materiales", "Manipuladores telescópicos", "Maquinas forestales", "Minicargadores", "Motoniveladoras", "Mototraillas", "Palas de Cable Electrica", "Palas hidraulica para mineria", "Pavimentadoras de asfalto", "Perfiladoras de pavimento en frio", "Perforadoras", "Recuperadores de camiones", "Retroexcavadoras cargadoras", "Subterraneo: roca dura", "Subterraneo:tajo largo", "Tiendetubos", "Tractores", "Volquetas" }));
         cmbLinea.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbLinea.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -245,7 +243,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         btnCargarPDF.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         btnCargarPDF.setForeground(new java.awt.Color(255, 255, 255));
         btnCargarPDF.setText("Cargar PDF");
-        btnCargarPDF.setToolTipText("Seleccione un archivo PDF con la informaciÃ³n del estado judicial del vehÃ­culo.");
+        btnCargarPDF.setToolTipText("Seleccione un archivo PDF con la información del estado judicial del vehículo.");
         btnCargarPDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarPDFActionPerformed(evt);
@@ -275,7 +273,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel15.setText("DescripciÃ³n:");
+        jLabel15.setText("Descripción:");
 
         areatxtDescripcion.setColumns(20);
         areatxtDescripcion.setRows(5);
@@ -357,7 +355,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel21.setText("AÃ±o de Modelo:");
+        jLabel21.setText("Año de Modelo:");
 
         choModelo.setMinimumSize(new java.awt.Dimension(47, 30));
         choModelo.setPreferredSize(new java.awt.Dimension(78, 30));
@@ -391,7 +389,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel20.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbTipoMaquinaria.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbTipoMaquinaria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Agricultura", "Asfaltado", "Canteras", "ConstrucciÃ³n", "DemoliciÃ³n", "PavimentaciÃ³n", "Reciclaje", "Transporte de escombros" }));
+        cmbTipoMaquinaria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Agricultura", "Asfaltado", "Canteras", "Construcción", "Demolición", "Pavimentación", "Reciclaje", "Transporte de escombros" }));
         cmbTipoMaquinaria.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbTipoMaquinaria.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -445,7 +443,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("Tipo de vehÃ­culo:");
+        jLabel9.setText("Tipo de vehículo:");
         jLabel9.setPreferredSize(new java.awt.Dimension(161, 35));
 
         jLabel12.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -456,7 +454,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
         cmbUtilitario.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         cmbUtilitario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Si", "No" }));
-        cmbUtilitario.setToolTipText("Es un vehÃ­culo que estÃ¡ diseÃ±ado para realizar una tarea especÃ­fica con mÃ¡s eficacia que un vehÃ­culo de pasajeros. A veces se refiere a un camiÃ³n pequeÃ±o con lados bajos.");
+        cmbUtilitario.setToolTipText("Es un vehículo que está diseñado para realizar una tarea específica con más eficacia que un vehículo de pasajeros. A veces se refiere a un camión pequeño con lados bajos.");
         cmbUtilitario.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbUtilitario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -467,7 +465,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel33.setText("Correo elÃ©ctronico:");
+        jLabel33.setText("Correo eléctronico:");
 
         txtEmail.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -480,7 +478,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel32.setPreferredSize(new java.awt.Dimension(161, 35));
 
         cmbTipoServicio.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        cmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "PÃºblico", "Privado" }));
+        cmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Público", "Privado" }));
         cmbTipoServicio.setPreferredSize(new java.awt.Dimension(78, 30));
         cmbTipoServicio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -740,7 +738,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Buscar vehÃ­culo por:");
+        jLabel8.setText("Buscar vehículo por:");
 
         txtPlaca.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
         txtPlaca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -772,7 +770,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         lblBuscar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         lblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         lblBuscar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblBuscar.setText("Id. vehÃ­culo:");
+        lblBuscar.setText("Id. vehículo:");
 
         btnConsultar.setBackground(new java.awt.Color(37, 196, 164));
         btnConsultar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -862,7 +860,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
         btnMenu.setBackground(new java.awt.Color(37, 196, 164));
         btnMenu.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        btnMenu.setText("MenÃº Principal");
+        btnMenu.setText("Menú Principal");
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
@@ -874,18 +872,20 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Icono IntegraSoft.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
+                .addComponent(jLabel2)
+                .addGap(69, 69, 69))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -914,11 +914,12 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
