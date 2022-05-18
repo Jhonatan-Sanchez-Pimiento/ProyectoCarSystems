@@ -11,9 +11,13 @@ import serviceImpl.DiagnosticoServiceImpl;
  * @author CarSystems
  */
 public class VentanaDiganostico extends javax.swing.JFrame {
-
+    
+    
+        
     public VentanaDiganostico() {
         initComponents();
+//        ValidarCamposSeleccionados();
+        
     }
 
 
@@ -62,18 +66,11 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        txtFechaInspeccion = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        txtFechaManPreventivo = new javax.swing.JTextField();
-        txtFechaVenSOAT = new javax.swing.JTextField();
-        txtTipoVehiculo = new javax.swing.JTextField();
-        txtFechaUltimoCambioAce = new javax.swing.JTextField();
         txtKilometrajeActual = new javax.swing.JTextField();
         txtPlacaVehiculo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -104,7 +101,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        cmbEspejos = new javax.swing.JComboBox<>();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
@@ -164,8 +160,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jrbEquipoCarreteraN = new javax.swing.JRadioButton();
         jrbExtintorS = new javax.swing.JRadioButton();
         jrbExtintorN = new javax.swing.JRadioButton();
-        jrbFechaVenExtintorS = new javax.swing.JRadioButton();
-        jrbFechaVenExtintorN = new javax.swing.JRadioButton();
         jrbLlantasRepuestoS = new javax.swing.JRadioButton();
         jrbLlantasRepuestoN = new javax.swing.JRadioButton();
         jrbCrucetaS = new javax.swing.JRadioButton();
@@ -205,7 +199,16 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jrbPanoramicoS = new javax.swing.JRadioButton();
         jrbPanoramicoN = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtaDescripcion = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jCalenderFechaInspeccion = new com.toedter.calendar.JDateChooser();
+        jrbFechaVenExtintorS = new javax.swing.JRadioButton();
+        jrbFechaVenExtintorN = new javax.swing.JRadioButton();
+        jCalenderFechaVenExtintor = new com.toedter.calendar.JDateChooser();
+        jCalenderFechaVenSOAT = new com.toedter.calendar.JDateChooser();
+        jCalenderFechaManPreventivo = new com.toedter.calendar.JDateChooser();
+        jCalenderFechaUltimoCambioAce = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -235,20 +238,10 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Fecha del último mantenimiento :");
 
-        jLabel8.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("Tipo de vehiculo:");
-
         jLabel10.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(240, 240, 240));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Fecha de inspección :");
-
-        jLabel11.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setText("Modelo del vehiculo :");
 
         jLabel13.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(240, 240, 240));
@@ -259,24 +252,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(240, 240, 240));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel14.setText("Kilometraje actual :");
-
-        txtFechaManPreventivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaManPreventivoActionPerformed(evt);
-            }
-        });
-
-        txtFechaVenSOAT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaVenSOATActionPerformed(evt);
-            }
-        });
-
-        txtTipoVehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoVehiculoActionPerformed(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(240, 240, 240));
@@ -418,9 +393,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel47.setText("Espejos :");
 
-        cmbEspejos.setFont(new java.awt.Font("Myanmar Text", 2, 18)); // NOI18N
-        cmbEspejos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
-
         jLabel48.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(240, 240, 240));
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -487,6 +459,16 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jLabel61.setText("Botiquin");
 
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jButton1KeyTyped(evt);
+            }
+        });
 
         jLabel19.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(240, 240, 240));
@@ -645,12 +627,6 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jrbExtintorN.setBackground(new java.awt.Color(0, 51, 51));
         baExtintor.add(jrbExtintorN);
 
-        jrbFechaVenExtintorS.setBackground(new java.awt.Color(0, 51, 51));
-        baFechaVenExtintor.add(jrbFechaVenExtintorS);
-
-        jrbFechaVenExtintorN.setBackground(new java.awt.Color(0, 51, 51));
-        baFechaVenExtintor.add(jrbFechaVenExtintorN);
-
         jrbLlantasRepuestoS.setBackground(new java.awt.Color(0, 51, 51));
         baLlantasRepuesto.add(jrbLlantasRepuestoS);
 
@@ -765,304 +741,323 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         jrbPanoramicoN.setBackground(new java.awt.Color(0, 51, 51));
         baPanoramico.add(jrbPanoramicoN);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jtaDescripcion.setColumns(20);
+        jtaDescripcion.setRows(5);
+        jScrollPane2.setViewportView(jtaDescripcion);
+
+        jButton2.setText("Limpiar");
+
+        jButton3.setText("Cerrar");
+
+        jCalenderFechaInspeccion.setDateFormatString("yyyy-MMM-dd");
+
+        jrbFechaVenExtintorS.setBackground(new java.awt.Color(0, 51, 51));
+        baFechaVenExtintor.add(jrbFechaVenExtintorS);
+
+        jrbFechaVenExtintorN.setBackground(new java.awt.Color(0, 51, 51));
+        baFechaVenExtintor.add(jrbFechaVenExtintorN);
+
+        jCalenderFechaVenExtintor.setDateFormatString("yyyy-MMM-dd");
+
+        jCalenderFechaVenSOAT.setDateFormatString("yyyy-MMM-dd");
+
+        jCalenderFechaManPreventivo.setDateFormatString("yyyy-MMM-dd");
+
+        jCalenderFechaUltimoCambioAce.setDateFormatString("yyyy-MMM-dd");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(268, 268, 268))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addGap(122, 122, 122))
+                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(192, 192, 192)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jrbFrenoS)
-                                    .addComponent(jrbClutchS)
-                                    .addComponent(jrbAceleradorS))
-                                .addGap(153, 153, 153)
+                                .addGap(49, 49, 49)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jrbClutchN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jrbFrenoN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jrbAceleradorN)))
+                                    .addComponent(jrbLiquidoRefriS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbAceiteMotorS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbLiquidoFrenosS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbLiquidoHidraulicoS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbAguaVidriosS))
+                                .addGap(160, 160, 160)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jrbLiquidoRefriN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbAceiteMotorN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbLiquidoHidraulicoN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbLiquidoFrenosN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jrbAguaVidriosN))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(173, 173, 173)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addComponent(jLabel18)
-                                            .addGap(122, 122, 122))
-                                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(62, 62, 62)
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jrbLiquidoRefriS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbAceiteMotorS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbLiquidoFrenosS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbLiquidoHidraulicoS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbAguaVidriosS))
-                                        .addGap(160, 160, 160)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jrbLiquidoRefriN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbAceiteMotorN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbLiquidoHidraulicoN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbLiquidoFrenosN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jrbAguaVidriosN))))))
-                        .addGap(0, 254, Short.MAX_VALUE))
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(129, 129, 129)
+                                .addGap(194, 194, 194)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(321, 321, 321)
-                                        .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(65, 65, 65)
-                                        .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(66, 66, 66)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbLucesInternasS)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jrbLucesInternasN))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbLucesReversaS)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jrbLucesReversaN))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbTestigoTableroS)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jrbTestigoTableroN))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbLucesEstacionariasS)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jrbLucesEstacionariasN))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbLucesS)
-                                                .addGap(157, 157, 157)
-                                                .addComponent(jrbLucesN))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbLucesDireccionalesS)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jrbLucesDireccionalesN))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jrbStopS)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jrbStopN)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(20, 20, 20))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(194, 194, 194)
-                                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(43, 43, 43)
-                                        .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(54, 54, 54)
-                                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(57, 57, 57)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jrbSenalesReflectivasS)
+                                                        .addComponent(jrbCajaHerramientasS)
+                                                        .addComponent(jrbLinternaS))
+                                                    .addGap(146, 146, 146)
+                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jrbSenalesReflectivasN)
+                                                        .addComponent(jrbCajaHerramientasN)
+                                                        .addComponent(jrbLinternaN)))
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jrbGatoS)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jrbGatoN))
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jrbBotiquinS)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jrbBotiquinN))
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jrbLlantasS)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jrbLlantasN)))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(57, 57, 57)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jrbExtintorN)
+                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jrbEquipoCarreteraS)
+                                                        .addGap(146, 146, 146)
+                                                        .addComponent(jrbEquipoCarreteraN))
+                                                    .addComponent(jrbLlantasRepuestoN)
+                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(jrbSenalesReflectivasS)
-                                                                .addComponent(jrbCajaHerramientasS)
-                                                                .addComponent(jrbLinternaS))
+                                                                .addComponent(jrbLlantasRepuestoS)
+                                                                .addComponent(jrbCrucetaS)
+                                                                .addComponent(jrbExtintorS))
                                                             .addGap(146, 146, 146)
-                                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                .addComponent(jrbSenalesReflectivasN)
-                                                                .addComponent(jrbCajaHerramientasN)
-                                                                .addComponent(jrbLinternaN)))
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                            .addComponent(jrbGatoS)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jrbGatoN))
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                            .addComponent(jrbBotiquinS)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jrbBotiquinN))
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                            .addComponent(jrbLlantasS)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jrbLlantasN)))
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                            .addComponent(jrbCrucetaN))
                                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(jrbFechaVenExtintorS)
-                                                                    .addComponent(jrbLlantasRepuestoS)
-                                                                    .addComponent(jrbCrucetaS)
-                                                                    .addComponent(jrbExtintorS))
-                                                                .addGap(146, 146, 146)
-                                                                .addComponent(jrbCrucetaN))
-                                                            .addComponent(jrbExtintorN)
-                                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addComponent(jrbEquipoCarreteraS)
-                                                                .addGap(146, 146, 146)
-                                                                .addComponent(jrbEquipoCarreteraN))
                                                             .addComponent(jrbFechaVenExtintorN)
-                                                            .addComponent(jrbLlantasRepuestoN))
-                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                                .addComponent(jrbFechaVenExtintorS)
+                                                                .addGap(167, 167, 167))))
+                                                    .addComponent(jCalenderFechaVenExtintor, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel2Layout.createSequentialGroup()
                                                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                            .addGap(103, 103, 103)
-                                                                            .addComponent(jLabel45))
-                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                                    .addGap(55, 55, 55))
+                                                                    .addGap(103, 103, 103)
+                                                                    .addComponent(jLabel45))
                                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                                    .addGap(100, 100, 100)
-                                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addComponent(jLabel46)
-                                                                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                    .addGap(57, 57, 57)))
-                                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addGap(100, 100, 100)
-                                                                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(45, 45, 45)))))
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jrbEspejosS)
-                                                    .addComponent(jrbBateriaS)
-                                                    .addComponent(jrbRinesS)
-                                                    .addComponent(jrbCinturonSeguridadS)
-                                                    .addComponent(jrbPitoReversaS)
-                                                    .addComponent(jrbPitoS)
-                                                    .addComponent(jrbFrenoEmergenciaS)
-                                                    .addComponent(jrbCarcasaLucesS)
-                                                    .addComponent(jrbLimpiaParabrisasS)
-                                                    .addComponent(jrbTapizadoS)
-                                                    .addComponent(jrbPanoramicoS)))
-                                            .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                            .addGap(55, 55, 55))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                            .addGap(100, 100, 100)
+                                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(jLabel46)
+                                                                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGap(57, 57, 57)))
+                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addGap(100, 100, 100)
+                                                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(45, 45, 45)))))
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jrbBateriaN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbRinesN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbCinturonSeguridadN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbPitoReversaN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbPitoN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbFrenoEmergenciaN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbEspejosN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbCarcasaLucesN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbLimpiaParabrisasN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbTapizadoN, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jrbPanoramicoN, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(45, 45, 45))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 851, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                            .addComponent(jrbEspejosS)
+                                            .addComponent(jrbBateriaS)
+                                            .addComponent(jrbRinesS)
+                                            .addComponent(jrbCinturonSeguridadS)
+                                            .addComponent(jrbPitoReversaS)
+                                            .addComponent(jrbPitoS)
+                                            .addComponent(jrbFrenoEmergenciaS)
+                                            .addComponent(jrbCarcasaLucesS)
+                                            .addComponent(jrbLimpiaParabrisasS)
+                                            .addComponent(jrbTapizadoS)
+                                            .addComponent(jrbPanoramicoS)))
+                                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jrbBateriaN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbRinesN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbCinturonSeguridadN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbPitoReversaN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbPitoN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbFrenoEmergenciaN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbEspejosN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbCarcasaLucesN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbLimpiaParabrisasN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbTapizadoN, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jrbPanoramicoN, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(45, 45, 45))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 851, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(20, 20, 20)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel7))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txtTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtFechaManPreventivo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jLabel7)
+                                        .addGap(11, 11, 11)
+                                        .addComponent(jCalenderFechaManPreventivo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(11, 11, 11)
                                         .addComponent(jLabel6)
                                         .addGap(18, 18, 18)
-                                        .addComponent(txtFechaVenSOAT, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jCalenderFechaVenSOAT, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(115, 115, 115)
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtFechaInspeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jCalenderFechaInspeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(158, 158, 158)
+                                .addGap(145, 145, 145)
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtPlacaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(txtPlacaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(18, 18, 18)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCalenderFechaUltimoCambioAce, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(142, 142, 142)
+                                .addComponent(jLabel14)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtKilometrajeActual, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jrbFrenoS)
+                            .addComponent(jrbClutchS)
+                            .addComponent(jrbAceleradorS))
+                        .addGap(153, 153, 153)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jrbClutchN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jrbFrenoN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jrbAceleradorN)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(321, 321, 321)
+                                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(65, 65, 65)
+                                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cmbEspejos, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaUltimoCambioAce, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtKilometrajeActual, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(278, 278, 278))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))))
+                                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(66, 66, 66)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbLucesInternasS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbLucesInternasN))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbLucesReversaS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbLucesReversaN))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbTestigoTableroS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbTestigoTableroN))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbLucesEstacionariasS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbLucesEstacionariasN))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbLucesS)
+                                        .addGap(157, 157, 157)
+                                        .addComponent(jrbLucesN))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbLucesDireccionalesS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbLucesDireccionalesN))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jrbStopS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbStopN)))))))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1070,46 +1065,36 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPlacaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtFechaUltimoCambioAce, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(cmbEspejos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtKilometrajeActual, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFechaInspeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jCalenderFechaVenSOAT, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaManPreventivo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtFechaVenSOAT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                                    .addComponent(jCalenderFechaManPreventivo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jCalenderFechaUltimoCambioAce, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtKilometrajeActual, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jCalenderFechaInspeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(11, 11, 11)
+                            .addComponent(txtPlacaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1154,7 +1139,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel62)
                     .addComponent(jLabel63))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
                     .addComponent(jrbAceleradorS)
@@ -1171,7 +1156,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                     .addComponent(jrbFrenoS))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel31)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel64)
                     .addComponent(jLabel65))
@@ -1243,19 +1228,24 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel42)
                                     .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jrbExtintorS)
-                                    .addComponent(jrbExtintorN)
                                     .addComponent(jrbRinesS)
-                                    .addComponent(jrbRinesN))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jrbRinesN)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jrbExtintorS)
+                                            .addComponent(jrbExtintorN))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jrbFechaVenExtintorS)
+                                            .addComponent(jrbFechaVenExtintorN))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jrbCinturonSeguridadN)
-                                    .addComponent(jrbFechaVenExtintorN)
-                                    .addComponent(jrbFechaVenExtintorS)
                                     .addComponent(jLabel45)
+                                    .addComponent(jrbCinturonSeguridadS)
                                     .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jrbCinturonSeguridadS))
-                                .addGap(4, 4, 4)
+                                    .addComponent(jCalenderFechaVenExtintor, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel46)
                                     .addComponent(jLabel55)
@@ -1263,7 +1253,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                     .addComponent(jrbLlantasRepuestoN)
                                     .addComponent(jrbPitoReversaS)
                                     .addComponent(jrbPitoReversaN))
-                                .addGap(0, 3, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel43)
                                     .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1279,7 +1269,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                                 .addComponent(jrbSenalesReflectivasS)
                                 .addGap(22, 22, 22))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jrbFrenoEmergenciaS)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1331,7 +1321,7 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 8, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jrbLlantasN)
@@ -1345,10 +1335,15 @@ public class VentanaDiganostico extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jrbPanoramicoS)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(65, 65, 65))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3)))
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -1413,367 +1408,654 @@ public class VentanaDiganostico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFechaManPreventivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaManPreventivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaManPreventivoActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//        registrarDiagnostico();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtTipoVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoVehiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoVehiculoActionPerformed
+    private void jButton1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyTyped
+        //registrarDiagnostico();
+    }//GEN-LAST:event_jButton1KeyTyped
 
-    private void txtFechaVenSOATActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaVenSOATActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaVenSOATActionPerformed
+//        public void ValidarCamposSeleccionados() {
+//            
+//            baLiquidoRefrigerante.add(jrbLiquidoRefriS);
+//            baLiquidoRefrigerante.add(jrbLiquidoRefriN);
+//            
+//            baLiquidoFrenos.add(jrbLiquidoFrenosS);
+//            baLiquidoFrenos.add(jrbLiquidoFrenosN);
+//            
+//            baAceiteMotor.add(jrbAceiteMotorS);
+//            baAceiteMotor.add(jrbAceiteMotorN);
+//            
+//            baLiquidoHidraulico.add(jrbLiquidoHidraulicoS);
+//            baLiquidoHidraulico.add(jrbLiquidoHidraulicoN);
+//            
+//            baAguaVidrios.add(jrbAguaVidriosS);
+//            baAguaVidrios.add(jrbAguaVidriosN);
+//            
+//            baAcelerador.add(jrbAceleradorS);
+//            baAcelerador.add(jrbAceleradorN);
+//            
+//            baClutch.add(jrbClutchS);
+//            baClutch.add(jrbClutchN);
+//            
+//            baFreno.add(jrbFrenoS);
+//            baFreno.add(jrbFrenoN);
+//            
+//            baLuces.add(jrbLucesS);
+//            baLuces.add(jrbLucesN);
+//            
+//            baLucesDireccionales.add(jrbLucesDireccionalesS);
+//            baLucesDireccionales.add(jrbLucesDireccionalesN);
+//            
+//            baLucesEstacionarias.add(jrbLucesEstacionariasS);
+//            baLucesEstacionarias.add(jrbLucesEstacionariasN);
+//            
+//            baStop.add(jrbStopS);
+//            baStop.add(jrbStopN);
+//            
+//            baTestigoTablero.add(jrbTestigoTableroS);
+//            baTestigoTablero.add(jrbTestigoTableroN);
+//            
+//            baLucesReversa.add(jrbLucesReversaS);
+//            baLucesReversa.add(jrbLucesReversaN);
+//            
+//            baLucesInternas.add(jrbLucesInternasS);
+//            baLucesInternas.add(jrbLucesInternasN);
+//            
+//            baEquipoCarretera.add(jrbEquipoCarreteraS);
+//            baEquipoCarretera.add(jrbEquipoCarreteraN);
+//            
+//            baExtintor.add(jrbExtintorS);
+//            baExtintor.add(jrbExtintorN);
+//            
+//            baFechaVenExtintor.add(jrbFechaVenExtintorS);
+//            baFechaVenExtintor.add(jrbFechaVenExtintorN);
+//            
+//            baLlantasRepuesto.add(jrbLlantasRepuestoS);
+//            baLlantasRepuesto.add(jrbLlantasRepuestoN);
+//            
+//            baCruceta.add(jrbCrucetaS);
+//            baCruceta.add(jrbCrucetaN);
+//            
+//            baSenalesReflectivas.add(jrbSenalesReflectivasS);
+//            baSenalesReflectivas.add(jrbSenalesReflectivasN);
+//            
+//            baCajaHerramientas.add(jrbCajaHerramientasS);
+//            baCajaHerramientas.add(jrbCajaHerramientasN);
+//            
+//            baLinterna.add(jrbLinternaS);
+//            baLinterna.add(jrbLinternaN);
+//            
+//            baGato.add(jrbGatoS);
+//            baGato.add(jrbGatoN);
+//            
+//            baBotiquin.add(jrbBotiquinS);
+//            baBotiquin.add(jrbBotiquinN);
+//            
+//            baLlantas.add(jrbLlantasS);
+//            baLlantas.add(jrbLlantasN);
+//            
+//            baBateria.add(jrbBateriaS);
+//            baBateria.add(jrbBateriaN);
+//            
+//            baRines.add(jrbRinesS);
+//            baRines.add(jrbRinesN);
+//            
+//            baCinturonSeguridad.add(jrbCinturonSeguridadS);
+//            baCinturonSeguridad.add(jrbCinturonSeguridadN);
+//            
+//            baPitoReversa.add(jrbPitoReversaS);
+//            baPitoReversa.add(jrbPitoReversaN);
+//            
+//            baPito.add(jrbPitoS);
+//            baPito.add(jrbPitoN);
+//            
+//            baFrenoEmergencia.add(jrbFrenoEmergenciaS);
+//            baFrenoEmergencia.add(jrbFrenoEmergenciaN);
+//            
+//            baEspejos.add(jrbEspejosS);
+//            baEspejos.add(jrbEspejosN);
+//            
+//            baCarcasaLuces.add(jrbCarcasaLucesS);
+//            baCarcasaLuces.add(jrbCarcasaLucesN);
+//            
+//            baLimpiaParabrisas.add(jrbLimpiaParabrisasS);
+//            baLimpiaParabrisas.add(jrbLimpiaParabrisasN);
+//            
+//            baTapizado.add(jrbTapizadoS);
+//            baTapizado.add(jrbTapizadoN);
+//            
+//            baPanoramico.add(jrbPanoramicoS);
+//            baPanoramico.add(jrbPanoramicoN);
+//            
+//        }  
+//        
+//        public boolean validarCampos() {
+//            boolean camposValidados = true;
+//            if (txtPlacaVehiculo.getText().equals("")){
+//                imprimirCampoVacio("Placa vehiculo");
+//                camposValidados = false;
+//                txtPlacaVehiculo.requestFocus();
+//            }else if(jCalenderFechaInspeccion.getDateFormatString().equals("")){
+//                imprimirCampoVacio("Fecha de Inspeccion");
+//                camposValidados = false;
+//                jCalenderFechaInspeccion.requestFocus();
+//            }else if(jCalenderFechaVenSOAT.getDateFormatString().equals("")){
+//                imprimirCampoVacio("Fecha vencimiento SOAT");
+//                camposValidados = false;
+//                jCalenderFechaVenSOAT.requestFocus();
+//            }else if(jCalenderFechaManPreventivo.getDateFormatString().equals("")){
+//                imprimirCampoVacio("Fecha del ultimo Mntenimiento");
+//                camposValidados = false;
+//                jCalenderFechaManPreventivo.requestFocus();
+//            }else if(jCalenderFechaUltimoCambioAce.getDateFormatString().equals("")){
+//                imprimirCampoVacio("Fecha ultimo cambio de aceite");
+//                camposValidados = false;
+//                jCalenderFechaUltimoCambioAce.requestFocus();
+//            }else if(txtKilometrajeActual.getText().equals("")){
+//                imprimirCampoVacio("Kilometraje actual");
+//                camposValidados = false;
+//                txtKilometrajeActual.requestFocus();
+//            }else if((jrbLiquidoRefriS.isSelected() == false) && (jrbLiquidoRefriN.isSelected() == false)){
+//                imprimirCampoVacio("Liquido refrigerante");
+//                camposValidados = false;
+//                jrbLiquidoRefriS.requestFocus();
+//            }else if((jrbLiquidoFrenosS.isSelected() == false) && (jrbLiquidoFrenosN.isSelected() == false)){
+//                imprimirCampoVacio("Liquido de frenos");
+//                camposValidados = false;
+//                jrbLiquidoFrenosS.requestFocus();
+//            }else if((jrbAceiteMotorS.isSelected() == false) && (jrbAceiteMotorN.isSelected() == false)){
+//                imprimirCampoVacio("Aceite de motor");
+//                camposValidados = false;
+//                jrbAceiteMotorS.requestFocus();
+//            }else if((jrbLiquidoHidraulicoS.isSelected() == false) && (jrbLiquidoHidraulicoN.isSelected() == false)){
+//                imprimirCampoVacio("Liquido hidraulico");
+//                camposValidados = false;
+//                jrbLiquidoHidraulicoS.requestFocus();
+//            }else if((jrbAguaVidriosS.isSelected() == false) && (jrbAguaVidriosN.isSelected() == false)){
+//                imprimirCampoVacio("Agua limpia vidrios");
+//                camposValidados = false;
+//                jrbAguaVidriosS.requestFocus();
+//            }else if((jrbAceleradorS.isSelected() == false) && (jrbAceleradorN.isSelected() == false)){
+//                imprimirCampoVacio("Acelerador");
+//                camposValidados = false;
+//                jrbAceleradorS.requestFocus();
+//            }else if((jrbClutchS.isSelected() == false) && (jrbClutchN.isSelected() == false)){
+//                imprimirCampoVacio("Clutch");
+//                camposValidados = false;
+//                jrbClutchS.requestFocus();
+//            }else if((jrbFrenoS.isSelected() == false) && (jrbFrenoN.isSelected() == false)){
+//                imprimirCampoVacio("Frenos");
+//                camposValidados = false;
+//                jrbFrenoS.requestFocus();
+//            }else if((jrbLucesS.isSelected() == false) && (jrbLucesN.isSelected() == false)){
+//                imprimirCampoVacio("Luces");
+//                camposValidados = false;
+//                jrbLucesS.requestFocus();
+//            }else if((jrbLucesDireccionalesS.isSelected() == false) && (jrbLucesDireccionalesN.isSelected() == false)){
+//                imprimirCampoVacio("Luces direccionales");
+//                camposValidados = false;
+//                jrbLucesDireccionalesS.requestFocus();
+//            }else if((jrbLucesEstacionariasS.isSelected() == false) && (jrbLucesEstacionariasN.isSelected() == false)){
+//                imprimirCampoVacio("Luces estacionarias");
+//                camposValidados = false;
+//                jrbLucesEstacionariasS.requestFocus();
+//            }else if((jrbStopS.isSelected() == false) && (jrbStopN.isSelected() == false)){
+//                imprimirCampoVacio("stop");
+//                camposValidados = false;
+//                jrbStopS.requestFocus();
+//            }else if((jrbTestigoTableroS.isSelected() == false) && (jrbTestigoTableroN.isSelected() == false)){
+//                imprimirCampoVacio("Testigos tablero");
+//                camposValidados = false;
+//                jrbTestigoTableroS.requestFocus();
+//            }else if((jrbLucesReversaS.isSelected() == false) && (jrbLucesReversaN.isSelected() == false)){
+//                imprimirCampoVacio("Luces de reversa");
+//                camposValidados = false;
+//                jrbLucesReversaS.requestFocus();
+//            }else if((jrbLucesInternasS.isSelected() == false) && (jrbLucesInternasN.isSelected() == false)){
+//                imprimirCampoVacio("Luces internas");
+//                camposValidados = false;
+//                jrbLucesInternasS.requestFocus();
+//            }else if((jrbEquipoCarreteraS.isSelected() == false) && (jrbEquipoCarreteraN.isSelected() == false)){
+//                imprimirCampoVacio("Equipo carretera");
+//                camposValidados = false;
+//                jrbEquipoCarreteraS.requestFocus();
+//            }else if((jrbExtintorS.isSelected() == false) && (jrbExtintorN.isSelected() == false)){
+//                imprimirCampoVacio("Extintor");
+//                camposValidados = false;
+//                jrbExtintorS.requestFocus();
+//            }else if((jrbFechaVenExtintorS.isSelected() == false) && (jrbFechaVenExtintorN.isSelected() == false)){
+//                imprimirCampoVacio("Fecha vencimiento extintor");
+//                camposValidados = false;
+//                jrbFechaVenExtintorS.requestFocus();
+//            }else if((jrbLlantasRepuestoS.isSelected() == false) && (jrbLlantasRepuestoN.isSelected() == false)){
+//                imprimirCampoVacio("Llantas de repuesto");
+//                camposValidados = false;
+//                jrbLlantasRepuestoS.requestFocus();
+//            }else if((jrbCrucetaS.isSelected() == false) && (jrbCrucetaN.isSelected() == false)){
+//                imprimirCampoVacio("Cruceta");
+//                camposValidados = false;
+//                jrbCrucetaS.requestFocus();
+//            }else if((jrbSenalesReflectivasS.isSelected() == false) && (jrbSenalesReflectivasN.isSelected() == false)){
+//                imprimirCampoVacio("Señales reflectivas");
+//                camposValidados = false;
+//                jrbSenalesReflectivasS.requestFocus();
+//            }else if((jrbCajaHerramientasS.isSelected() == false) && (jrbCajaHerramientasN.isSelected() == false)){
+//                imprimirCampoVacio("Caja de herramientas");
+//                camposValidados = false;
+//                jrbCajaHerramientasS.requestFocus();
+//            }else if((jrbLinternaS.isSelected() == false) && (jrbLinternaN.isSelected() == false)){
+//                imprimirCampoVacio("Linterna");
+//                camposValidados = false;
+//                jrbLinternaS.requestFocus();
+//            }else if((jrbGatoS.isSelected() == false) && (jrbGatoN.isSelected() == false)){
+//                imprimirCampoVacio("Gato");
+//                camposValidados = false;
+//                jrbGatoS.requestFocus();
+//            }else if((jrbBotiquinS.isSelected() == false) && (jrbBotiquinN.isSelected() == false)){
+//                imprimirCampoVacio("Botiquin");
+//                camposValidados = false;
+//                jrbBotiquinS.requestFocus();
+//            }else if((jrbLlantasS.isSelected() == false) && (jrbLlantasN.isSelected() == false)){
+//                imprimirCampoVacio("Llantas");
+//                camposValidados = false;
+//                jrbLlantasS.requestFocus();
+//            }else if((jrbBateriaS.isSelected() == false) && (jrbBateriaN.isSelected() == false)){
+//                imprimirCampoVacio("Bateria");
+//                camposValidados = false;
+//                jrbBateriaS.requestFocus();
+//            }else if((jrbRinesS.isSelected() == false) && (jrbRinesN.isSelected() == false)){
+//                imprimirCampoVacio("Rines");
+//                camposValidados = false;
+//                jrbRinesS.requestFocus();
+//            }else if((jrbCinturonSeguridadS.isSelected() == false) && (jrbCinturonSeguridadN.isSelected() == false)){
+//                imprimirCampoVacio("Cinturon de seguridad");
+//                camposValidados = false;
+//                jrbCinturonSeguridadS.requestFocus();
+//            }else if((jrbPitoReversaS.isSelected() == false) && (jrbPitoReversaN.isSelected() == false)){
+//                imprimirCampoVacio("Pito reversa");
+//                camposValidados = false;
+//                jrbPitoReversaS.requestFocus();
+//            }else if((jrbPitoS.isSelected() == false) && (jrbPitoN.isSelected() == false)){
+//                imprimirCampoVacio("Pito");
+//                camposValidados = false;
+//                jrbPitoS.requestFocus();
+//            }else if((jrbFrenoEmergenciaS.isSelected() == false) && (jrbFrenoEmergenciaN.isSelected() == false)){
+//                imprimirCampoVacio("Frenos de emergencia");
+//                camposValidados = false;
+//                jrbFrenoEmergenciaS.requestFocus();
+//            }else if((jrbEspejosS.isSelected() == false) && (jrbEspejosN.isSelected() == false)){
+//                imprimirCampoVacio("Espejos");
+//                camposValidados = false;
+//                jrbEspejosS.requestFocus();
+//            }else if((jrbCarcasaLucesS.isSelected() == false) && (jrbCarcasaLucesN.isSelected() == false)){
+//                imprimirCampoVacio("Carcasa de luces");
+//                camposValidados = false;
+//                jrbCarcasaLucesS.requestFocus();
+//            }else if((jrbLimpiaParabrisasS.isSelected() == false) && (jrbLimpiaParabrisasN.isSelected() == false)){
+//                imprimirCampoVacio("Limpia parabrisas");
+//                camposValidados = false;
+//                jrbLimpiaParabrisasS.requestFocus();
+//            }else if((jrbTapizadoS.isSelected() == false) && (jrbTapizadoN.isSelected() == false)){
+//                imprimirCampoVacio("Tapizados");
+//                camposValidados = false;
+//                jrbTapizadoS.requestFocus();
+//            }else if((jrbPanoramicoS.isSelected() == false) && (jrbPanoramicoN.isSelected() == false)){
+//                imprimirCampoVacio("Panoramico");
+//                camposValidados = false;
+//                jrbPanoramicoS.requestFocus();
+//        } 
+//        return camposValidados;
+//        }
+//        public void imprimirCampoVacio(String campo){
+//            JOptionPane.showMessageDialog(null, "El campo "+campo+ " se encuentra vacío. Por favor, validar campo.", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+//            }
+//        
+//        public String convertirBooleanString(boolean valorBooleano) {
+//        String valorString = null;
+//        try {
+//            if (valorBooleano == true) {
+//                valorString = "verdadero";
+//            } else {
+//                valorString = "falso";
+//            }
+//        } catch (Exception e) {
+//        }
+//        return valorString;
+//    }
+//
+//        public boolean convertirStringBoolean(String valorString) {
+//        boolean valorBoolean = false;
+//        try {
+//            if (valorString == "verdadero") {
+//                valorBoolean = true;
+//            } else {
+//                valorBoolean = false;
+//            }
+//        } catch (Exception e) {
+//        }
+//        return valorBoolean;
+//    }
+//        
+//
+//        
+//        public void registrarDiagnostico(){
+//            
+//        DiagnosticoServiceImpl diagnosticoServicio = new DiagnosticoServiceImpl();
+//        
+//                
+//        boolean botonGrupLiquidoRef = true;
+//            if(jrbLiquidoRefriS.isSelected())
+//            {
+//                botonGrupLiquidoRef  = (true);
+//            }else if(jrbLiquidoRefriN.isSelected()){
+//                botonGrupLiquidoRef  = (false);
+//            }
+//        boolean botonGrupLiquidoFrenos = true;
+//            if(jrbLiquidoFrenosS.isSelected())
+//            {
+//                botonGrupLiquidoFrenos  = (true);
+//            }else if(jrbLiquidoFrenosN.isSelected()){
+//                botonGrupLiquidoFrenos  = (false);
+//            }
+//        boolean botonGrupAceiteMotor = true;
+//            if(jrbAceiteMotorS.isSelected())
+//            {
+//                botonGrupAceiteMotor  = (true);
+//            }else if(jrbAceiteMotorN.isSelected()){
+//                botonGrupAceiteMotor  = (false);
+//            }
+//         boolean botonGrupLiquidoHidraulico = true;
+//            if(jrbLiquidoHidraulicoS.isSelected())
+//            {
+//                botonGrupLiquidoHidraulico  = (true);
+//            }else if(jrbLiquidoHidraulicoN.isSelected()){
+//                botonGrupLiquidoHidraulico  = (false);
+//            }
+//        boolean botonGrupAguaVidrios = true;
+//            if(jrbAguaVidriosS.isSelected())
+//            {
+//                botonGrupAguaVidrios  = (true);
+//            }else if(jrbAguaVidriosN.isSelected()){
+//                botonGrupAguaVidrios  = (false);
+//            }  
+//        boolean botonGrupAcelerador = true;
+//            if(jrbAceleradorS.isSelected())
+//            {
+//                botonGrupAcelerador  = (true);
+//            }else if(jrbAceleradorN.isSelected()){
+//                botonGrupAcelerador  = (false);
+//            }
+//        boolean botonGrupClutch = true;
+//            if(jrbClutchS.isSelected())
+//            {
+//                botonGrupClutch  = (true);
+//            }else if(jrbClutchN.isSelected()){
+//                botonGrupClutch  = (false);
+//            }
+//        boolean botonGrupFreno = true;
+//            if(jrbFrenoS.isSelected())
+//            {
+//                botonGrupFreno  = (true);
+//            }else if(jrbFrenoN.isSelected()){
+//                botonGrupFreno  = (false);
+//            }
+//        boolean botonGrupLuces = true;
+//            if(jrbLucesS.isSelected())
+//            {
+//                botonGrupLuces  = (true);
+//            }else if(jrbLucesN.isSelected()){
+//                botonGrupLuces  = (false);
+//            }
+//        boolean botonGrupLucesDireccionales = true;
+//            if(jrbLucesDireccionalesS.isSelected())
+//            {
+//                botonGrupLucesDireccionales  = (true);
+//            }else if(jrbLucesDireccionalesN.isSelected()){
+//                botonGrupLucesDireccionales  = (false);
+//            }
+//        boolean botonGrupLucesEstacionarias = true;
+//            if(jrbLucesEstacionariasS.isSelected())
+//            {
+//                botonGrupLucesEstacionarias  = (true);
+//            }else if(jrbLucesEstacionariasN.isSelected()){
+//                botonGrupLucesEstacionarias = (false);
+//            }
+//        boolean botonGrupStop = true;
+//            if(jrbStopS.isSelected())
+//            {
+//                botonGrupStop  = (true);
+//            }else if(jrbStopN.isSelected()){
+//                botonGrupStop = (false);
+//            }
+//        boolean botonGrupTestigoTablero = true;
+//            if(jrbTestigoTableroS.isSelected())
+//            {
+//                botonGrupTestigoTablero  = (true);
+//            }else if(jrbTestigoTableroN.isSelected()){
+//                botonGrupTestigoTablero = (false);
+//            }
+//        boolean botonGrupLucesReversa = true;
+//            if(jrbLucesReversaS.isSelected())
+//            {
+//                botonGrupLucesReversa  = (true);
+//            }else if(jrbLucesReversaN.isSelected()){
+//                botonGrupLucesReversa = (false);
+//            }
+//        boolean botonGrupLucesInternas = true;
+//            if(jrbLucesInternasS.isSelected())
+//            {
+//                botonGrupLucesInternas  = (true);
+//            }else if(jrbLucesInternasN.isSelected()){
+//                botonGrupLucesInternas = (false);
+//            }
+//        boolean botonGrupEquipoCarretera = true;
+//            if(jrbEquipoCarreteraS.isSelected())
+//            {
+//                botonGrupEquipoCarretera  = (true);
+//            }else if(jrbEquipoCarreteraN.isSelected()){
+//                botonGrupEquipoCarretera = (false);
+//            }
+//        boolean botonGrupExtintor = true;
+//            if(jrbExtintorS.isSelected())
+//            {
+//                botonGrupExtintor  = (true);
+//            }else if(jrbExtintorN.isSelected()){
+//                botonGrupExtintor = (false);
+//            }
+//        boolean botonGrupFechaVenExtintor = true;
+//            if(jrbFechaVenExtintorS.isSelected())
+//            {
+//                botonGrupFechaVenExtintor  = (true);
+//            }else if(jrbFechaVenExtintorN.isSelected()){
+//                botonGrupFechaVenExtintor = (false);
+//            } 
+//          
+//        boolean botonGrupLlantasRepuesto = true;
+//            if(jrbLlantasRepuestoS.isSelected())
+//            {
+//                botonGrupLlantasRepuesto = (true);
+//            }else if(jrbLlantasRepuestoN.isSelected()){
+//                botonGrupLlantasRepuesto = (false);
+//            }
+//        boolean botonGrupCruceta = true;
+//            if(jrbCrucetaS.isSelected())
+//            {
+//                botonGrupCruceta = (true);
+//            }else if(jrbCrucetaN.isSelected()){
+//                botonGrupCruceta = (false);
+//            }
+//        boolean botonGrupSenalesReflectivas = true;
+//            if(jrbSenalesReflectivasS.isSelected())
+//            {
+//                botonGrupSenalesReflectivas = (true);
+//            }else if(jrbSenalesReflectivasN.isSelected()){
+//                botonGrupSenalesReflectivas = (false);
+//            }
+//        boolean botonGrupCajaHerramientas = true;
+//            if(jrbCajaHerramientasS.isSelected())
+//            {
+//                botonGrupCajaHerramientas = (true);
+//            }else if(jrbCajaHerramientasN.isSelected()){
+//                botonGrupCajaHerramientas = (false);
+//            }
+//        boolean botonGrupLinterna = true;
+//            if(jrbLinternaS.isSelected())
+//            {
+//                botonGrupLinterna = (true);
+//            }else if(jrbLinternaN.isSelected()){
+//                botonGrupLinterna = (false);
+//            }
+//        boolean botonGrupGato = true;
+//            if(jrbGatoS.isSelected())
+//            {
+//                botonGrupGato = (true);
+//            }else if(jrbGatoN.isSelected()){
+//                botonGrupGato = (false);
+//            }
+//        boolean botonGrupBotiquin = true;
+//            if(jrbBotiquinS.isSelected())
+//            {
+//                botonGrupBotiquin = (true);
+//            }else if(jrbBotiquinN.isSelected()){
+//                botonGrupBotiquin = (false);
+//            }
+//        boolean botonGrupLlantas = true;
+//            if(jrbLlantasS.isSelected())
+//            {
+//                botonGrupLlantas = (true);
+//            }else if(jrbLlantasN.isSelected()){
+//                botonGrupLlantas = (false);
+//            }
+//        boolean botonGrupBateria = true;
+//            if(jrbBateriaS.isSelected())
+//            {
+//                botonGrupBateria = (true);
+//            }else if(jrbBateriaN.isSelected()){
+//                botonGrupBateria = (false);
+//            }
+//        boolean botonGrupRines = true;
+//            if(jrbRinesS.isSelected())
+//            {
+//                botonGrupRines = (true);
+//            }else if(jrbRinesN.isSelected()){
+//                botonGrupRines = (false);
+//            }
+//        boolean botonGrupCinturonSeguridad = true;
+//            if(jrbCinturonSeguridadS.isSelected())
+//            {
+//                botonGrupCinturonSeguridad = (true);
+//            }else if(jrbCinturonSeguridadN.isSelected()){
+//                botonGrupCinturonSeguridad = (false);
+//            }
+//        boolean botonGrupPitoReversa = true;
+//            if(jrbPitoReversaS.isSelected())
+//            {
+//                botonGrupPitoReversa = (true);
+//            }else if(jrbPitoReversaN.isSelected()){
+//                botonGrupPitoReversa= (false);
+//            }
+//        boolean botonGrupPito = true;
+//            if(jrbPitoS.isSelected())
+//            {
+//                botonGrupPito = (true);
+//            }else if(jrbPitoN.isSelected()){
+//                botonGrupPito= (false);
+//            }
+//        boolean botonGrupFrenoEmergencia = true;
+//            if(jrbFrenoEmergenciaS.isSelected())
+//            {
+//                botonGrupFrenoEmergencia = (true);
+//            }else if(jrbFrenoEmergenciaN.isSelected()){
+//                botonGrupFrenoEmergencia= (false);
+//            }
+//        boolean botonGrupEspejos = true;
+//            if(jrbEspejosS.isSelected())
+//            {
+//                botonGrupEspejos = (true);
+//            }else if(jrbEspejosN.isSelected()){
+//                botonGrupEspejos = (false);
+//            }
+//        boolean botonGrupCarcasaLuces = true;
+//            if(jrbCarcasaLucesS.isSelected())
+//            {
+//                botonGrupCarcasaLuces = (true);
+//            }else if(jrbCarcasaLucesN.isSelected()){
+//                botonGrupCarcasaLuces = (false);
+//            }
+//        boolean botonGrupLimpiaParabrisas = true;
+//            if(jrbLimpiaParabrisasS.isSelected())
+//            {
+//                botonGrupLimpiaParabrisas = (true);
+//            }else if(jrbLimpiaParabrisasN.isSelected()){
+//                botonGrupLimpiaParabrisas = (false);
+//            }
+//        boolean botonGrupTapizado = true;
+//            if(jrbTapizadoS.isSelected())
+//            {
+//                botonGrupTapizado = (true);
+//            }else if(jrbTapizadoN.isSelected()){
+//                botonGrupTapizado = (false);
+//            }
+//        boolean botonGrupPanoramico = true;
+//            if(jrbPanoramicoS.isSelected())
+//            {
+//                botonGrupPanoramico = (true);
+//            }else if(jrbPanoramicoN.isSelected()){
+//                botonGrupPanoramico = (false);
+//            }
+           
+//        Diagnostico diagnostico = new Diagnostico(txtPlacaVehiculo.getText(),
+//                jCalenderFechaInspeccion.getDateFormatString(),
+//                jCalenderFechaVenSOAT.getDateFormatString(), 
+//                jCalenderFechaManPreventivo.getDateFormatString(),
+//                jCalenderFechaUltimoCambioAce.getDateFormatString(),
+//                Integer.parseInt(txtKilometrajeActual.getText().toString()),
+//                botonGrupLiquidoRef,
+//                botonGrupLiquidoFrenos,
+//                botonGrupAceiteMotor,
+//                botonGrupLiquidoHidraulico,
+//                botonGrupAguaVidrios,
+//                botonGrupAcelerador,
+//                botonGrupClutch,
+//                botonGrupFreno,
+//                botonGrupLuces,
+//                botonGrupLucesDireccionales,
+//                botonGrupLucesEstacionarias,
+//                botonGrupStop,
+//                botonGrupTestigoTablero,
+//                botonGrupLucesReversa,
+//                botonGrupLucesInternas,
+//                botonGrupEquipoCarretera,
+//                botonGrupExtintor,
+//                //botonGrupFechaVenExtintor,
+//                botonGrupLlantasRepuesto,
+//                botonGrupCruceta,
+//                botonGrupSenalesReflectivas,
+//                botonGrupCajaHerramientas,
+//                botonGrupLinterna,
+//                botonGrupGato,
+//                botonGrupBotiquin,
+//                botonGrupLlantas,
+//                botonGrupBateria,
+//                botonGrupRines,
+//                botonGrupCinturonSeguridad,
+//                botonGrupPitoReversa,
+//                botonGrupPito,
+//                botonGrupFrenoEmergencia,
+//                botonGrupEspejos,
+//                botonGrupCarcasaLuces,
+//                botonGrupLimpiaParabrisas,
+//                botonGrupTapizado,
+//                botonGrupPanoramico,
+//                jtaDescripcion.getText());
+//        diagnosticoServicio.guardar(diagnostico);
+//        
+//        diagnosticoServicio.encontrarDiagnostico(5);
+//    }
 
-        public void ValidarCamposSeleccionados() {
-            
-            baLiquidoRefrigerante.add(jrbLiquidoRefriS);
-            baLiquidoRefrigerante.add(jrbLiquidoRefriN);
-            
-            baLiquidoFrenos.add(jrbLiquidoFrenosS);
-            baLiquidoFrenos.add(jrbLiquidoFrenosN);
-            
-            baAceiteMotor.add(jrbAceiteMotorS);
-            baAceiteMotor.add(jrbAceiteMotorN);
-            
-            baLiquidoHidraulico.add(jrbLiquidoHidraulicoS);
-            baLiquidoHidraulico.add(jrbLiquidoHidraulicoN);
-            
-            baAguaVidrios.add(jrbAguaVidriosS);
-            baAguaVidrios.add(jrbAguaVidriosN);
-            
-            baAcelerador.add(jrbAceleradorS);
-            baAcelerador.add(jrbAceleradorN);
-            
-            baClutch.add(jrbClutchS);
-            baClutch.add(jrbClutchN);
-            
-            baFreno.add(jrbFrenoS);
-            baFreno.add(jrbFrenoN);
-            
-            baLuces.add(jrbLucesS);
-            baLuces.add(jrbLucesN);
-            
-            baLucesDireccionales.add(jrbLucesDireccionalesS);
-            baLucesDireccionales.add(jrbLucesDireccionalesN);
-            
-            baLucesEstacionarias.add(jrbLucesEstacionariasS);
-            baLucesEstacionarias.add(jrbLucesEstacionariasN);
-            
-            baStop.add(jrbStopS);
-            baStop.add(jrbStopN);
-            
-            baTestigoTablero.add(jrbTestigoTableroS);
-            baTestigoTablero.add(jrbTestigoTableroN);
-            
-            baLucesReversa.add(jrbLucesReversaS);
-            baLucesReversa.add(jrbLucesReversaN);
-            
-            baLucesInternas.add(jrbLucesInternasS);
-            baLucesInternas.add(jrbLucesInternasN);
-            
-            baEquipoCarretera.add(jrbEquipoCarreteraS);
-            baEquipoCarretera.add(jrbEquipoCarreteraN);
-            
-            baExtintor.add(jrbExtintorS);
-            baExtintor.add(jrbExtintorN);
-            
-            baFechaVenExtintor.add(jrbFechaVenExtintorS);
-            baFechaVenExtintor.add(jrbFechaVenExtintorN);
-            
-            baLlantasRepuesto.add(jrbLlantasRepuestoS);
-            baLlantasRepuesto.add(jrbLlantasRepuestoN);
-            
-            baCruceta.add(jrbCrucetaS);
-            baCruceta.add(jrbCrucetaN);
-            
-            baSenalesReflectivas.add(jrbSenalesReflectivasS);
-            baSenalesReflectivas.add(jrbSenalesReflectivasN);
-            
-            baCajaHerramientas.add(jrbCajaHerramientasS);
-            baCajaHerramientas.add(jrbCajaHerramientasN);
-            
-            baLinterna.add(jrbLinternaS);
-            baLinterna.add(jrbLinternaN);
-            
-            baGato.add(jrbGatoS);
-            baGato.add(jrbGatoN);
-            
-            baBotiquin.add(jrbBotiquinS);
-            baBotiquin.add(jrbBotiquinN);
-            
-            baLlantas.add(jrbLlantasS);
-            baLlantas.add(jrbLlantasN);
-            
-            baBateria.add(jrbBateriaS);
-            baBateria.add(jrbBateriaN);
-            
-            baRines.add(jrbRinesS);
-            baRines.add(jrbRinesN);
-            
-            baCinturonSeguridad.add(jrbCinturonSeguridadS);
-            baCinturonSeguridad.add(jrbCinturonSeguridadN);
-            
-            baPitoReversa.add(jrbPitoReversaS);
-            baPitoReversa.add(jrbPitoReversaN);
-            
-            baPito.add(jrbPitoS);
-            baPito.add(jrbPitoN);
-            
-            baFrenoEmergencia.add(jrbFrenoEmergenciaS);
-            baFrenoEmergencia.add(jrbFrenoEmergenciaN);
-            
-            baEspejos.add(jrbEspejosS);
-            baEspejos.add(jrbEspejosN);
-            
-            baCarcasaLuces.add(jrbCarcasaLucesS);
-            baCarcasaLuces.add(jrbCarcasaLucesN);
-            
-            baLimpiaParabrisas.add(jrbLimpiaParabrisasS);
-            baLimpiaParabrisas.add(jrbLimpiaParabrisasN);
-            
-            baTapizado.add(jrbTapizadoS);
-            baTapizado.add(jrbTapizadoN);
-            
-            baPanoramico.add(jrbPanoramicoS);
-            baPanoramico.add(jrbPanoramicoN);
-            
-        }  
         
-        public boolean validarCampos() {
-            boolean camposValidados = true;
-            if (txtPlacaVehiculo.getText().equals("")){
-                imprimirCampoVacio("Placa vehiculo");
-                camposValidados = false;
-                txtPlacaVehiculo.requestFocus();
-            }else if(txtFechaInspeccion.getText().equals("")){
-                imprimirCampoVacio("Fecha de Inspeccion");
-                camposValidados = false;
-                txtFechaInspeccion.requestFocus();
-            }else if(txtFechaVenSOAT.getText().equals("")){
-                imprimirCampoVacio("Fecha vencimiento SOAT");
-                camposValidados = false;
-                txtFechaVenSOAT.requestFocus();
-            }else if(txtFechaManPreventivo.getText().equals("")){
-                imprimirCampoVacio("Fecha del ultimo Mntenimiento");
-                camposValidados = false;
-                txtFechaManPreventivo.requestFocus();
-            }else if(txtFechaUltimoCambioAce.getText().equals("")){
-                imprimirCampoVacio("Fecha ultimo cambio de aceite");
-                camposValidados = false;
-                txtFechaUltimoCambioAce.requestFocus();
-            }else if(txtKilometrajeActual.getText().equals("")){
-                imprimirCampoVacio("Kilometraje actual");
-                camposValidados = false;
-                txtKilometrajeActual.requestFocus();
-            }else if((jrbLiquidoRefriS.isSelected() == false) && (jrbLiquidoRefriN.isSelected() == false)){
-                imprimirCampoVacio("Liquido refrigerante");
-                camposValidados = false;
-                jrbLiquidoRefriS.requestFocus();
-            }else if((jrbLiquidoFrenosS.isSelected() == false) && (jrbLiquidoFrenosN.isSelected() == false)){
-                imprimirCampoVacio("Liquido de frenos");
-                camposValidados = false;
-                jrbLiquidoFrenosS.requestFocus();
-            }else if((jrbAceiteMotorS.isSelected() == false) && (jrbAceiteMotorN.isSelected() == false)){
-                imprimirCampoVacio("Aceite de motor");
-                camposValidados = false;
-                jrbAceiteMotorS.requestFocus();
-            }else if((jrbLiquidoHidraulicoS.isSelected() == false) && (jrbLiquidoHidraulicoN.isSelected() == false)){
-                imprimirCampoVacio("Liquido hidraulico");
-                camposValidados = false;
-                jrbLiquidoHidraulicoS.requestFocus();
-            }else if((jrbAguaVidriosS.isSelected() == false) && (jrbAguaVidriosN.isSelected() == false)){
-                imprimirCampoVacio("Agua limpia vidrios");
-                camposValidados = false;
-                jrbAguaVidriosS.requestFocus();
-            }else if((jrbAceleradorS.isSelected() == false) && (jrbAceleradorN.isSelected() == false)){
-                imprimirCampoVacio("Acelerador");
-                camposValidados = false;
-                jrbAceleradorS.requestFocus();
-            }else if((jrbClutchS.isSelected() == false) && (jrbClutchN.isSelected() == false)){
-                imprimirCampoVacio("Clutch");
-                camposValidados = false;
-                jrbClutchS.requestFocus();
-            }else if((jrbFrenoS.isSelected() == false) && (jrbFrenoN.isSelected() == false)){
-                imprimirCampoVacio("Frenos");
-                camposValidados = false;
-                jrbFrenoS.requestFocus();
-            }else if((jrbLucesS.isSelected() == false) && (jrbLucesN.isSelected() == false)){
-                imprimirCampoVacio("Luces");
-                camposValidados = false;
-                jrbLucesS.requestFocus();
-            }else if((jrbLucesDireccionalesS.isSelected() == false) && (jrbLucesDireccionalesN.isSelected() == false)){
-                imprimirCampoVacio("Luces direccionales");
-                camposValidados = false;
-                jrbLucesDireccionalesS.requestFocus();
-            }else if((jrbLucesEstacionariasS.isSelected() == false) && (jrbLucesEstacionariasN.isSelected() == false)){
-                imprimirCampoVacio("Luces estacionarias");
-                camposValidados = false;
-                jrbLucesEstacionariasS.requestFocus();
-            }else if((jrbStopS.isSelected() == false) && (jrbStopN.isSelected() == false)){
-                imprimirCampoVacio("stop");
-                camposValidados = false;
-                jrbStopS.requestFocus();
-            }else if((jrbTestigoTableroS.isSelected() == false) && (jrbTestigoTableroN.isSelected() == false)){
-                imprimirCampoVacio("Testigos tablero");
-                camposValidados = false;
-                jrbTestigoTableroS.requestFocus();
-            }else if((jrbLucesReversaS.isSelected() == false) && (jrbLucesReversaN.isSelected() == false)){
-                imprimirCampoVacio("Luces de reversa");
-                camposValidados = false;
-                jrbLucesReversaS.requestFocus();
-            }else if((jrbLucesInternasS.isSelected() == false) && (jrbLucesInternasN.isSelected() == false)){
-                imprimirCampoVacio("Luces internas");
-                camposValidados = false;
-                jrbLucesInternasS.requestFocus();
-            }else if((jrbEquipoCarreteraS.isSelected() == false) && (jrbEquipoCarreteraN.isSelected() == false)){
-                imprimirCampoVacio("Equipo carretera");
-                camposValidados = false;
-                jrbEquipoCarreteraS.requestFocus();
-            }else if((jrbExtintorS.isSelected() == false) && (jrbExtintorN.isSelected() == false)){
-                imprimirCampoVacio("Extintor");
-                camposValidados = false;
-                jrbExtintorS.requestFocus();
-            }else if((jrbFechaVenExtintorS.isSelected() == false) && (jrbFechaVenExtintorN.isSelected() == false)){
-                imprimirCampoVacio("Fecha vencimiento extintor");
-                camposValidados = false;
-                jrbFechaVenExtintorS.requestFocus();
-            }else if((jrbLlantasRepuestoS.isSelected() == false) && (jrbLlantasRepuestoN.isSelected() == false)){
-                imprimirCampoVacio("Llantas de repuesto");
-                camposValidados = false;
-                jrbLlantasRepuestoS.requestFocus();
-            }else if((jrbCrucetaS.isSelected() == false) && (jrbCrucetaN.isSelected() == false)){
-                imprimirCampoVacio("Cruceta");
-                camposValidados = false;
-                jrbCrucetaS.requestFocus();
-            }else if((jrbSenalesReflectivasS.isSelected() == false) && (jrbSenalesReflectivasN.isSelected() == false)){
-                imprimirCampoVacio("Señales reflectivas");
-                camposValidados = false;
-                jrbSenalesReflectivasS.requestFocus();
-            }else if((jrbCajaHerramientasS.isSelected() == false) && (jrbCajaHerramientasN.isSelected() == false)){
-                imprimirCampoVacio("Caja de herramientas");
-                camposValidados = false;
-                jrbCajaHerramientasS.requestFocus();
-            }else if((jrbLinternaS.isSelected() == false) && (jrbLinternaN.isSelected() == false)){
-                imprimirCampoVacio("Linterna");
-                camposValidados = false;
-                jrbLinternaS.requestFocus();
-            }else if((jrbGatoS.isSelected() == false) && (jrbGatoN.isSelected() == false)){
-                imprimirCampoVacio("Gato");
-                camposValidados = false;
-                jrbGatoS.requestFocus();
-            }else if((jrbBotiquinS.isSelected() == false) && (jrbBotiquinN.isSelected() == false)){
-                imprimirCampoVacio("Botiquin");
-                camposValidados = false;
-                jrbBotiquinS.requestFocus();
-            }else if((jrbLlantasS.isSelected() == false) && (jrbLlantasN.isSelected() == false)){
-                imprimirCampoVacio("Llantas");
-                camposValidados = false;
-                jrbLlantasS.requestFocus();
-            }else if((jrbBateriaS.isSelected() == false) && (jrbBateriaN.isSelected() == false)){
-                imprimirCampoVacio("Bateria");
-                camposValidados = false;
-                jrbBateriaS.requestFocus();
-            }else if((jrbRinesS.isSelected() == false) && (jrbRinesN.isSelected() == false)){
-                imprimirCampoVacio("Rines");
-                camposValidados = false;
-                jrbRinesS.requestFocus();
-            }else if((jrbCinturonSeguridadS.isSelected() == false) && (jrbCinturonSeguridadN.isSelected() == false)){
-                imprimirCampoVacio("Cinturon de seguridad");
-                camposValidados = false;
-                jrbCinturonSeguridadS.requestFocus();
-            }else if((jrbPitoReversaS.isSelected() == false) && (jrbPitoReversaN.isSelected() == false)){
-                imprimirCampoVacio("Pito reversa");
-                camposValidados = false;
-                jrbPitoReversaS.requestFocus();
-            }else if((jrbPitoS.isSelected() == false) && (jrbPitoN.isSelected() == false)){
-                imprimirCampoVacio("Pito");
-                camposValidados = false;
-                jrbPitoS.requestFocus();
-            }else if((jrbFrenoEmergenciaS.isSelected() == false) && (jrbFrenoEmergenciaN.isSelected() == false)){
-                imprimirCampoVacio("Frenos de emergencia");
-                camposValidados = false;
-                jrbFrenoEmergenciaS.requestFocus();
-            }else if((jrbEspejosS.isSelected() == false) && (jrbEspejosN.isSelected() == false)){
-                imprimirCampoVacio("Espejos");
-                camposValidados = false;
-                jrbEspejosS.requestFocus();
-            }else if((jrbCarcasaLucesS.isSelected() == false) && (jrbCarcasaLucesN.isSelected() == false)){
-                imprimirCampoVacio("Carcasa de luces");
-                camposValidados = false;
-                jrbCarcasaLucesS.requestFocus();
-            }else if((jrbLimpiaParabrisasS.isSelected() == false) && (jrbLimpiaParabrisasN.isSelected() == false)){
-                imprimirCampoVacio("Limpia parabrisas");
-                camposValidados = false;
-                jrbLimpiaParabrisasS.requestFocus();
-            }else if((jrbTapizadoS.isSelected() == false) && (jrbTapizadoN.isSelected() == false)){
-                imprimirCampoVacio("Tapizados");
-                camposValidados = false;
-                jrbTapizadoS.requestFocus();
-            }else if((jrbPanoramicoS.isSelected() == false) && (jrbPanoramicoN.isSelected() == false)){
-                imprimirCampoVacio("Panoramico");
-                camposValidados = false;
-                jrbPanoramicoS.requestFocus();
-//        }else if(cmbBlindado.getSelectedItem().equals("Seleccionar")){
-//            imprimirCampoVacio("Blindado");
-//            camposValidados = false;
-//            cmbBlindado.requestFocus();
-//        }else if(txtCupoPersonas.getText().equals("")){
-//            imprimirCampoVacio("Cupo Personas");
-//            camposValidados = false;
-//            txtCupoPersonas.requestFocus();
-//        }else if(txtPrecio.getText().equals("")){
-//            imprimirCampoVacio("Precio");
-//            camposValidados = false;
-//            txtPrecio.requestFocus();
-//        }else if(txtDescripcion.getText().equals("")){
-//            imprimirCampoVacio("Descripcion");
-//            camposValidados = false;
-//            txtDescripcion.requestFocus();
-//        }else if(lblNombrePDF.getText().equals("")){
-//            imprimirCampoVacio("Archivo PDF");
-//            camposValidados = false;
-//            btnCargarEstadoJudicial.requestFocus();
-//        }else if(lblImagen.getIcon().equals(null)){
-//            imprimirCampoVacio("Imagen");
-//            camposValidados = false;
-//            btnCargarImagen.requestFocus();
-//        } else {
-//            javax.swing.JOptionPane.showMessageDialog(this, "Registro Exitoso \n", "Error!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } 
-        return camposValidados;
-  }
-    
-
-            public void imprimirCampoVacio(String campo){
-                JOptionPane.showMessageDialog(null, "El campo "+campo+ " se encuentra vacío. Por favor, validar campo.", "Campo vacío", JOptionPane.ERROR_MESSAGE);
-            }
-        
-        public String convertirBooleanString(boolean valorBooleano) {
-        String valorString = null;
-        try {
-            if (valorBooleano == true) {
-                valorString = "Buen estado";
-            } else {
-                valorString = "Mal estado";
-            }
-        } catch (Exception e) {
-        }
-        return valorString;
-    }
-
-        public boolean convertirStringBoolean(String valorString) {
-        boolean valorBoolean = false;
-        try {
-            if (valorString == "Si") {
-                valorBoolean = true;
-            } else {
-                valorBoolean = false;
-            }
-        } catch (Exception e) {
-        }
-        return valorBoolean;
-    }
                 
 //                txtPlacaAutomovil.getText(), usuario.getTipoId(), usuario.getIdUsuario(), cmbTipoServicio.getSelectedItem().toString(),
 //                txtMarca.getText(), txtLinea.getText(), txtColor.getText(), Integer.parseInt(txtModelo.getText()),
@@ -1856,11 +2138,16 @@ public class VentanaDiganostico extends javax.swing.JFrame {
     private javax.swing.ButtonGroup baStop;
     private javax.swing.ButtonGroup baTapizado;
     private javax.swing.ButtonGroup baTestigoTablero;
-    private javax.swing.JComboBox<String> cmbEspejos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private com.toedter.calendar.JDateChooser jCalenderFechaInspeccion;
+    private com.toedter.calendar.JDateChooser jCalenderFechaManPreventivo;
+    private com.toedter.calendar.JDateChooser jCalenderFechaUltimoCambioAce;
+    private com.toedter.calendar.JDateChooser jCalenderFechaVenExtintor;
+    private com.toedter.calendar.JDateChooser jCalenderFechaVenSOAT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
@@ -1919,13 +2206,11 @@ public class VentanaDiganostico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JRadioButton jrbAceiteMotorN;
     private javax.swing.JRadioButton jrbAceiteMotorS;
     private javax.swing.JRadioButton jrbAceleradorN;
@@ -2000,12 +2285,8 @@ public class VentanaDiganostico extends javax.swing.JFrame {
     private javax.swing.JRadioButton jrbTapizadoS;
     private javax.swing.JRadioButton jrbTestigoTableroN;
     private javax.swing.JRadioButton jrbTestigoTableroS;
-    private javax.swing.JTextField txtFechaInspeccion;
-    private javax.swing.JTextField txtFechaManPreventivo;
-    private javax.swing.JTextField txtFechaUltimoCambioAce;
-    private javax.swing.JTextField txtFechaVenSOAT;
+    private javax.swing.JTextArea jtaDescripcion;
     private javax.swing.JTextField txtKilometrajeActual;
     private javax.swing.JTextField txtPlacaVehiculo;
-    private javax.swing.JTextField txtTipoVehiculo;
     // End of variables declaration//GEN-END:variables
 }

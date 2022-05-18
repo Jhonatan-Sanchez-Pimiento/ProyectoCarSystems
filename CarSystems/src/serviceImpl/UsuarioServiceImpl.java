@@ -135,7 +135,7 @@ public class UsuarioServiceImpl implements UsuarioService {
             Usuario usuario = new Usuario();
             
                 usuario.setTipoId(rs.getString("tipo_id"));
-                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setIdUsuario(rs.getLong("id_usuario"));
                 usuario.setApellido1(rs.getString("primer_apellido"));
                 usuario.setApellido2(rs.getString("segundo_apellido"));
                 usuario.setNombreUsuario(rs.getString("nombre_usuario"));

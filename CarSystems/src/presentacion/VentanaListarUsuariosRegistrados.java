@@ -220,7 +220,8 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
                     jtablaUsuarios.setValueAt(usuario.get(posicionFila).getTelefono(),posicionFila , 9);
                     jtablaUsuarios.setValueAt(usuario.get(posicionFila).getRol(),posicionFila , 10);
                     jtablaUsuarios.setValueAt(usuario.get(posicionFila).getContrasena(),posicionFila , 11);
-                }           
+                }
+                
     }
 
         
