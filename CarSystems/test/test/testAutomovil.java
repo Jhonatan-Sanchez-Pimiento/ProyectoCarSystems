@@ -16,7 +16,7 @@ public class testAutomovil {
         
         Usuario usuario = usuarioServicio.encontrarUsuario(1022968969L, "CC");
         
-        Automovil vehiculo = new Automovil("WWW-123", usuario.getTipoId(), usuario.getIdUsuario(), 
+        Automovil vehiculo = new Automovil("QWE-123", usuario.getTipoId(), usuario.getIdUsuario(), 
                 "Publico", "Hyundai", "Accent Vision", "Rojo", 2022, 4, false, false, 12500, null, null, "Esta en buen estado", null);
         vehiculoServicio.guardar(vehiculo);
         

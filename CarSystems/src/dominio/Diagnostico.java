@@ -29,7 +29,6 @@ public class Diagnostico {
     private boolean lucesInternas;
     private boolean equipoCarretera;
     private boolean extintor;
-    private String fechaVenExtintor;
     private boolean llantaRepuesto;
     private boolean cruceta;
     private boolean senalesReflectivas;
@@ -54,7 +53,7 @@ public class Diagnostico {
     public Diagnostico() {
     }
 
-    public Diagnostico(String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCamAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, String fechaVenExtintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
+    public Diagnostico(String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCamAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
         this.idVehiculo = idVehiculo;
         this.fechaInspeccion = fechaInspeccion;
         this.fechaVenSoat = fechaVenSoat;
@@ -78,7 +77,6 @@ public class Diagnostico {
         this.lucesInternas = lucesInternas;
         this.equipoCarretera = equipoCarretera;
         this.extintor = extintor;
-        this.fechaVenExtintor = fechaVenExtintor;
         this.llantaRepuesto = llantaRepuesto;
         this.cruceta = cruceta;
         this.senalesReflectivas = senalesReflectivas;
@@ -101,7 +99,7 @@ public class Diagnostico {
         this.observacion = observacion;
     }
 
-    public Diagnostico(long idInspeccion, String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCamAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, String fechaVenExtintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
+    public Diagnostico(long idInspeccion, String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCamAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, boolean fechaVenExtintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
         this.idInspeccion = idInspeccion;
         this.idVehiculo = idVehiculo;
         this.fechaInspeccion = fechaInspeccion;
@@ -126,7 +124,6 @@ public class Diagnostico {
         this.lucesInternas = lucesInternas;
         this.equipoCarretera = equipoCarretera;
         this.extintor = extintor;
-        this.fechaVenExtintor = fechaVenExtintor;
         this.llantaRepuesto = llantaRepuesto;
         this.cruceta = cruceta;
         this.senalesReflectivas = senalesReflectivas;
@@ -147,6 +144,10 @@ public class Diagnostico {
         this.tapizado = tapizado;
         this.panoramico = panoramico;
         this.observacion = observacion;
+    }
+
+    public Diagnostico(long idDiagnostico, String idVehiculo, String fechaInspeccion, String fechaVenSoat, String fechaManPreventivo, String fechaUltCambioAceite, int kmActual, boolean liquidoRefrigerante, boolean liquidoFreno, boolean aceiteMotor, boolean liquidoHidraulico, boolean aguaLimpiavidrios, boolean acelerador, boolean clutsh, boolean freno, boolean luces, boolean direccionales, boolean estacionarias, boolean stops, boolean testigoTablero, boolean luzReversa, boolean lucesInternas, boolean equipoCarretera, boolean extintor, boolean llantaRepuesto, boolean cruceta, boolean senalesReflectivas, boolean cajaHerramientas, boolean linterna, boolean gato, boolean botiquin, boolean llantas, boolean bateria, boolean rines, boolean cinturonSeguridad, boolean pitoReversa, boolean pito, boolean frenoEmergencia, boolean espejos, boolean carcasaLuces, boolean limpiaparabrisas, boolean tapizado, boolean panoramico, String observacion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public long getIdInspeccion() {
@@ -341,14 +342,6 @@ public class Diagnostico {
         this.extintor = extintor;
     }
 
-    public String getFechaVenExtintor() {
-        return fechaVenExtintor;
-    }
-
-    public void setFechaVenExtintor(String fechaVenExtintor) {
-        this.fechaVenExtintor = fechaVenExtintor;
-    }
-
     public boolean isLlantaRepuesto() {
         return llantaRepuesto;
     }
@@ -511,7 +504,7 @@ public class Diagnostico {
 
     @Override
     public String toString() {
-        return "Diagnostico{" + "idInspeccion=" + idInspeccion + ", idVehiculo=" + idVehiculo + ", fechaInspeccion=" + fechaInspeccion + ", fechaVenSoat=" + fechaVenSoat + ", fechaManPreventivo=" + fechaManPreventivo + ", fechaUltCamAceite=" + fechaUltCamAceite + ", kmActual=" + kmActual + ", liquidoRefrigerante=" + liquidoRefrigerante + ", liquidoFreno=" + liquidoFreno + ", aceiteMotor=" + aceiteMotor + ", liquidoHidraulico=" + liquidoHidraulico + ", aguaLimpiavidrios=" + aguaLimpiavidrios + ", acelerador=" + acelerador + ", clutsh=" + clutsh + ", freno=" + freno + ", luces=" + luces + ", direccionales=" + direccionales + ", estacionarias=" + estacionarias + ", stops=" + stops + ", testigoTablero=" + testigoTablero + ", luzReversa=" + luzReversa + ", lucesInternas=" + lucesInternas + ", equipoCarretera=" + equipoCarretera + ", extintor=" + extintor + ", fechaVenExtintor=" + fechaVenExtintor + ", llantaRepuesto=" + llantaRepuesto + ", cruceta=" + cruceta + ", senalesReflectivas=" + senalesReflectivas + ", cajaHerramientas=" + cajaHerramientas + ", linterna=" + linterna + ", gato=" + gato + ", botiquin=" + botiquin + ", llantas=" + llantas + ", bateria=" + bateria + ", rines=" + rines + ", cinturonSeguridad=" + cinturonSeguridad + ", pitoReversa=" + pitoReversa + ", pito=" + pito + ", frenoEmergencia=" + frenoEmergencia + ", espejos=" + espejos + ", carcasaLuces=" + carcasaLuces + ", limpiaparabrisas=" + limpiaparabrisas + ", tapizado=" + tapizado + ", panoramico=" + panoramico + ", observacion=" + observacion + '}';
+        return "Diagnostico{" + "idInspeccion=" + idInspeccion + ", idVehiculo=" + idVehiculo + ", fechaInspeccion=" + fechaInspeccion + ", fechaVenSoat=" + fechaVenSoat + ", fechaManPreventivo=" + fechaManPreventivo + ", fechaUltCamAceite=" + fechaUltCamAceite + ", kmActual=" + kmActual + ", liquidoRefrigerante=" + liquidoRefrigerante + ", liquidoFreno=" + liquidoFreno + ", aceiteMotor=" + aceiteMotor + ", liquidoHidraulico=" + liquidoHidraulico + ", aguaLimpiavidrios=" + aguaLimpiavidrios + ", acelerador=" + acelerador + ", clutsh=" + clutsh + ", freno=" + freno + ", luces=" + luces + ", direccionales=" + direccionales + ", estacionarias=" + estacionarias + ", stops=" + stops + ", testigoTablero=" + testigoTablero + ", luzReversa=" + luzReversa + ", lucesInternas=" + lucesInternas + ", equipoCarretera=" + equipoCarretera + ", extintor=" + extintor + ", fechaVenExtintor=" + ", llantaRepuesto=" + llantaRepuesto + ", cruceta=" + cruceta + ", senalesReflectivas=" + senalesReflectivas + ", cajaHerramientas=" + cajaHerramientas + ", linterna=" + linterna + ", gato=" + gato + ", botiquin=" + botiquin + ", llantas=" + llantas + ", bateria=" + bateria + ", rines=" + rines + ", cinturonSeguridad=" + cinturonSeguridad + ", pitoReversa=" + pitoReversa + ", pito=" + pito + ", frenoEmergencia=" + frenoEmergencia + ", espejos=" + espejos + ", carcasaLuces=" + carcasaLuces + ", limpiaparabrisas=" + limpiaparabrisas + ", tapizado=" + tapizado + ", panoramico=" + panoramico + ", observacion=" + observacion + '}';
     }
     
 }

@@ -23,17 +23,17 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
     static final String CAMPOSBD = "(id_vehiculo,fecha_inspeccion, fecha_ven_soat,"
             + "fecha_man_preventivo,fecha_ult_cambio_aceite, km_actual, liquido_refrigerante, liquido_freno, aceite_motor,"
             + "liquido_hidraulico, agua_limpiavidrios, acelerador, clutsh, freno, luces, direccionales, estacionarias, stops,"
-            + "testigo_tablero, luz_reversa, luces_internas, equipo_carretera, extintor, fecha_ven_extintor,"
+            + "testigo_tablero, luz_reversa, luces_internas, equipo_carretera, extintor,"
             + "llanta_repuesto, cruceta, senales_reflectivas, caja_herramientas, linterna, gato, botiquin,"
             + "llantas, bateria, rines, cinturon_seguridad, pito_reversa, pito, freno_emergencia, espejos, carcasa_luces,"
             + "limpia_parabrisa, tapizado, panoramico, observacion) ";
-    static final String VALORESCAMPOSBD = "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    static final String VALORESCAMPOSBD = "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String SQL_INSERT = "INSERT INTO inspeccion" + CAMPOSBD + VALORESCAMPOSBD;
     private static final String SQL_SELECT = "SELECT * FROM inspeccion";
     private static final String SQL_UPDATE = "UPDATE inspeccion SET " + CAMPOSBD + VALORESCAMPOSBD + " WHERE id_inspeccion=?";
     private static final String SQL_DELETE = "DELETE FROM inspeccion WHERE id_inspeccion = ?";
     private static final String SQL_CONSULTA = "SELECT * FROM inspeccion WHERE id_inspeccion = ?";
-    private final SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+    //private final SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     public void guardar(Diagnostico diagnostico) {
@@ -66,27 +66,26 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
             stmt.setBoolean(21, diagnostico.isLucesInternas());
             stmt.setBoolean(22, diagnostico.isEquipoCarretera());
             stmt.setBoolean(23, diagnostico.isExtintor());
-            stmt.setString(24, diagnostico.getFechaVenExtintor());
-            stmt.setBoolean(25, diagnostico.isLlantaRepuesto());
-            stmt.setBoolean(26, diagnostico.isCruceta());
-            stmt.setBoolean(27, diagnostico.isSenalesReflectivas());
-            stmt.setBoolean(28, diagnostico.isCajaHerramientas());
-            stmt.setBoolean(29, diagnostico.isLinterna());
-            stmt.setBoolean(30, diagnostico.isGato());
-            stmt.setBoolean(31, diagnostico.isBotiquin());
-            stmt.setBoolean(32, diagnostico.isLlantas());
-            stmt.setBoolean(33, diagnostico.isBateria());
-            stmt.setBoolean(34, diagnostico.isRines());
-            stmt.setBoolean(35, diagnostico.isCinturonSeguridad());
-            stmt.setBoolean(36, diagnostico.isPitoReversa());
-            stmt.setBoolean(37, diagnostico.isPito());
-            stmt.setBoolean(38, diagnostico.isFrenoEmergencia());
-            stmt.setBoolean(39, diagnostico.isEspejos());
-            stmt.setBoolean(40, diagnostico.isCarcasaLuces());
-            stmt.setBoolean(41, diagnostico.isLimpiaparabrisas());
-            stmt.setBoolean(42, diagnostico.isTapizado());
-            stmt.setBoolean(43, diagnostico.isPanoramico());
-            stmt.setBoolean(44, diagnostico.isLlantas());
+            stmt.setBoolean(24, diagnostico.isLlantaRepuesto());
+            stmt.setBoolean(25, diagnostico.isCruceta());
+            stmt.setBoolean(26, diagnostico.isSenalesReflectivas());
+            stmt.setBoolean(27, diagnostico.isCajaHerramientas());
+            stmt.setBoolean(28, diagnostico.isLinterna());
+            stmt.setBoolean(29, diagnostico.isGato());
+            stmt.setBoolean(30, diagnostico.isBotiquin());
+            stmt.setBoolean(31, diagnostico.isLlantas());
+            stmt.setBoolean(32, diagnostico.isBateria());
+            stmt.setBoolean(33, diagnostico.isRines());
+            stmt.setBoolean(34, diagnostico.isCinturonSeguridad());
+            stmt.setBoolean(35, diagnostico.isPitoReversa());
+            stmt.setBoolean(36, diagnostico.isPito());
+            stmt.setBoolean(37, diagnostico.isFrenoEmergencia());
+            stmt.setBoolean(38, diagnostico.isEspejos());
+            stmt.setBoolean(39, diagnostico.isCarcasaLuces());
+            stmt.setBoolean(40, diagnostico.isLimpiaparabrisas());
+            stmt.setBoolean(41, diagnostico.isTapizado());
+            stmt.setBoolean(42, diagnostico.isPanoramico());
+            stmt.setBoolean(43, diagnostico.isLlantas());
 
             registros = stmt.executeUpdate();
             System.out.println("Diagnostico guardado.");
@@ -163,7 +162,6 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
                 boolean lucesInternas = rs.getBoolean("luces_internas");
                 boolean equipoCarretera = rs.getBoolean("equipo_carretera");
                 boolean extintor = rs.getBoolean("extintor");
-                String fechaVenExtintor = rs.getString("fecha_ven_extintor");
                 boolean llantaRepuesto = rs.getBoolean("llanta_repuesto");
                 boolean cruceta = rs.getBoolean("cruceta");
                 boolean senalesReflectivas = rs.getBoolean("senales_reflectivas");
@@ -185,7 +183,7 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
                 boolean panoramico = rs.getBoolean("panoramico");
                 String observacion = rs.getString("observacion");
 
-                diagnostico = new Diagnostico(idDiagnostico, idVehiculo, fechaInspeccion, fechaVenSoat, fechaManPreventivo, fechaUltCambioAceite, kmActual, liquidoRefrigerante, liquidoFreno, aceiteMotor, liquidoHidraulico, aguaLimpiavidrios, acelerador, clutsh, freno, luces, direccionales, estacionarias, stops, testigoTablero, luzReversa, lucesInternas, equipoCarretera, extintor, fechaVenExtintor, llantaRepuesto, cruceta, senalesReflectivas, cajaHerramientas, linterna, gato, botiquin, llantas, bateria, rines, cinturonSeguridad, pitoReversa, pito, frenoEmergencia, espejos, carcasaLuces, limpiaparabrisas, tapizado, panoramico, observacion);
+                diagnostico = new Diagnostico(idDiagnostico, idVehiculo, fechaInspeccion, fechaVenSoat, fechaManPreventivo, fechaUltCambioAceite, kmActual, liquidoRefrigerante, liquidoFreno, aceiteMotor, liquidoHidraulico, aguaLimpiavidrios, acelerador, clutsh, freno, luces, direccionales, estacionarias, stops, testigoTablero, luzReversa, lucesInternas, equipoCarretera, extintor, llantaRepuesto, cruceta, senalesReflectivas, cajaHerramientas, linterna, gato, botiquin, llantas, bateria, rines, cinturonSeguridad, pitoReversa, pito, frenoEmergencia, espejos, carcasaLuces, limpiaparabrisas, tapizado, panoramico, observacion);
                 diagnosticos.add(diagnostico);
             }
         } catch (SQLException ex) {
@@ -238,7 +236,6 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
                 boolean lucesInternas = rs.getBoolean("luces_internas");
                 boolean equipoCarretera = rs.getBoolean("equipo_carretera");
                 boolean extintor = rs.getBoolean("extintor");
-                String fechaVenExtintor = rs.getString("fecha_ven_extintor");
                 boolean llantaRepuesto = rs.getBoolean("llanta_repuesto");
                 boolean cruceta = rs.getBoolean("cruceta");
                 boolean senalesReflectivas = rs.getBoolean("senales_reflectivas");
@@ -260,7 +257,7 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
                 boolean panoramico = rs.getBoolean("panoramico");
                 String observacion = rs.getString("observacion");
                 
-                diagnostico = new Diagnostico(idDiagnostico, idVehiculo, fechaInspeccion, fechaVenSoat, fechaManPreventivo, fechaUltCambioAceite, kmActual, liquidoRefrigerante, liquidoFreno, aceiteMotor, liquidoHidraulico, aguaLimpiavidrios, acelerador, clutsh, freno, luces, direccionales, estacionarias, stops, testigoTablero, luzReversa, lucesInternas, equipoCarretera, extintor, fechaVenExtintor, llantaRepuesto, cruceta, senalesReflectivas, cajaHerramientas, linterna, gato, botiquin, llantas, bateria, rines, cinturonSeguridad, pitoReversa, pito, frenoEmergencia, espejos, carcasaLuces, limpiaparabrisas, tapizado, panoramico, observacion);
+                diagnostico = new Diagnostico(idDiagnostico, idVehiculo, fechaInspeccion, fechaVenSoat, fechaManPreventivo, fechaUltCambioAceite, kmActual, liquidoRefrigerante, liquidoFreno, aceiteMotor, liquidoHidraulico, aguaLimpiavidrios, acelerador, clutsh, freno, luces, direccionales, estacionarias, stops, testigoTablero, luzReversa, lucesInternas, equipoCarretera, extintor, llantaRepuesto, cruceta, senalesReflectivas, cajaHerramientas, linterna, gato, botiquin, llantas, bateria, rines, cinturonSeguridad, pitoReversa, pito, frenoEmergencia, espejos, carcasaLuces, limpiaparabrisas, tapizado, panoramico, observacion);
                 System.out.println("Diagnostico = " + diagnostico);
             }
         } catch (SQLException ex) {
@@ -309,27 +306,26 @@ public class DiagnosticoServiceImpl implements DiagnosticoService {
             stmt.setBoolean(21, diagnostico.isLucesInternas());
             stmt.setBoolean(22, diagnostico.isEquipoCarretera());
             stmt.setBoolean(23, diagnostico.isExtintor());
-            stmt.setString(24, diagnostico.getFechaVenExtintor());
-            stmt.setBoolean(25, diagnostico.isLlantaRepuesto());
-            stmt.setBoolean(26, diagnostico.isCruceta());
-            stmt.setBoolean(27, diagnostico.isSenalesReflectivas());
-            stmt.setBoolean(28, diagnostico.isCajaHerramientas());
-            stmt.setBoolean(29, diagnostico.isLinterna());
-            stmt.setBoolean(30, diagnostico.isGato());
-            stmt.setBoolean(31, diagnostico.isBotiquin());
-            stmt.setBoolean(32, diagnostico.isLlantas());
-            stmt.setBoolean(33, diagnostico.isBateria());
-            stmt.setBoolean(34, diagnostico.isRines());
-            stmt.setBoolean(35, diagnostico.isCinturonSeguridad());
-            stmt.setBoolean(36, diagnostico.isPitoReversa());
-            stmt.setBoolean(37, diagnostico.isPito());
-            stmt.setBoolean(38, diagnostico.isFrenoEmergencia());
-            stmt.setBoolean(39, diagnostico.isEspejos());
-            stmt.setBoolean(40, diagnostico.isCarcasaLuces());
-            stmt.setBoolean(41, diagnostico.isLimpiaparabrisas());
-            stmt.setBoolean(42, diagnostico.isTapizado());
-            stmt.setBoolean(43, diagnostico.isPanoramico());
-            stmt.setBoolean(44, diagnostico.isLlantas());
+            stmt.setBoolean(24, diagnostico.isLlantaRepuesto());
+            stmt.setBoolean(25, diagnostico.isCruceta());
+            stmt.setBoolean(26, diagnostico.isSenalesReflectivas());
+            stmt.setBoolean(27, diagnostico.isCajaHerramientas());
+            stmt.setBoolean(28, diagnostico.isLinterna());
+            stmt.setBoolean(29, diagnostico.isGato());
+            stmt.setBoolean(30, diagnostico.isBotiquin());
+            stmt.setBoolean(31, diagnostico.isLlantas());
+            stmt.setBoolean(32, diagnostico.isBateria());
+            stmt.setBoolean(33, diagnostico.isRines());
+            stmt.setBoolean(34, diagnostico.isCinturonSeguridad());
+            stmt.setBoolean(35, diagnostico.isPitoReversa());
+            stmt.setBoolean(36, diagnostico.isPito());
+            stmt.setBoolean(37, diagnostico.isFrenoEmergencia());
+            stmt.setBoolean(38, diagnostico.isEspejos());
+            stmt.setBoolean(39, diagnostico.isCarcasaLuces());
+            stmt.setBoolean(40, diagnostico.isLimpiaparabrisas());
+            stmt.setBoolean(41, diagnostico.isTapizado());
+            stmt.setBoolean(42, diagnostico.isPanoramico());
+            stmt.setBoolean(43, diagnostico.isLlantas());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al actualizar el diagnostico : "+ex.getMessage(), "Actualizar Diagnostico",JOptionPane.ERROR_MESSAGE);
