@@ -1,24 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package presentacion;
 
+import dominio.Usuario;
+
 /**
- *
- * @author nicol
+ * @author IntegraSoft
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private static Usuario usuario;
     /**
      * Creates new form VentanaPrincipal2
      */
-    public VentanaPrincipal() {
+    public VentanaPrincipal(Usuario usuarioLogueado) {
+        this.usuario = usuarioLogueado;
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setTitle("Ventana Principal");
+        permiso();
+    }
+
+    VentanaPrincipal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -45,10 +48,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnComprar = new javax.swing.JButton();
+        btnVender = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
 
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -215,61 +218,62 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(37, 196, 164));
 
-        jButton1.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa pequeña.png"))); // NOI18N
-        jButton1.setText("Buscar");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa pequeña.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa grande.png"))); // NOI18N
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa pequeña.png"))); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.setContentAreaFilled(false);
+        btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBuscar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa pequeña.png"))); // NOI18N
+        btnBuscar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa grande.png"))); // NOI18N
+        btnBuscar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/comprar pequeño.png"))); // NOI18N
-        jButton2.setText("Comprar");
-        jButton2.setContentAreaFilled(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/comprar pequeño.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/comprar grande.png"))); // NOI18N
-        jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnComprar.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
+        btnComprar.setForeground(new java.awt.Color(255, 255, 255));
+        btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/comprar pequeño.png"))); // NOI18N
+        btnComprar.setText("Comprar");
+        btnComprar.setContentAreaFilled(false);
+        btnComprar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnComprar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/comprar pequeño.png"))); // NOI18N
+        btnComprar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/comprar grande.png"))); // NOI18N
+        btnComprar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnComprar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnComprarActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bolsa-de-dinero pequeña.png"))); // NOI18N
-        jButton3.setText("Vender");
-        jButton3.setContentAreaFilled(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bolsa-de-dinero pequeña.png"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bolsa-de-dinero grande.png"))); // NOI18N
-        jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnVender.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
+        btnVender.setForeground(new java.awt.Color(255, 255, 255));
+        btnVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bolsa-de-dinero pequeña.png"))); // NOI18N
+        btnVender.setText("Vender");
+        btnVender.setContentAreaFilled(false);
+        btnVender.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVender.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bolsa-de-dinero pequeña.png"))); // NOI18N
+        btnVender.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/bolsa-de-dinero grande.png"))); // NOI18N
+        btnVender.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnVender.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnVenderActionPerformed(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usuario pequeño.png"))); // NOI18N
-        jButton4.setContentAreaFilled(false);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usuario pequeño.png"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usuario (1) (1) (1) (1) (1) (1).png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usuario pequeño.png"))); // NOI18N
+        btnCerrarSesion.setToolTipText("<html><h2 style=\"color:red;\"><strong> CERRAR SESIÓN</strong></h2></html>");
+        btnCerrarSesion.setContentAreaFilled(false);
+        btnCerrarSesion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usuario pequeño.png"))); // NOI18N
+        btnCerrarSesion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/usuario (1) (1) (1) (1) (1) (1).png"))); // NOI18N
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnCerrarSesionActionPerformed(evt);
             }
         });
 
@@ -286,18 +290,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(76, 76, 76)
                         .addComponent(jLabel3)
                         .addGap(144, 144, 144)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(29, 29, 29))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(133, 133, 133)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVender, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -306,7 +310,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -317,9 +321,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
+                    .addComponent(btnComprar)
+                    .addComponent(btnVender)
+                    .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -339,21 +343,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        VentanaConsultar ventanaConsultar = new VentanaConsultar(this.usuario);
+        ventanaConsultar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+        VentanaListarMarca listarMarca = new VentanaListarMarca();
+        listarMarca.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnComprarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+        VentanaVender ventanaVender = new VentanaVender(usuario);
+        ventanaVender.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVenderActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        VentanaInicioDeSesion inicioSesion = new VentanaInicioDeSesion();
+        inicioSesion.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -371,6 +383,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    public void permiso(){
+        if(usuario != null){
+        if(usuario.getRol().equals("Vendedor")){
+            habilitarBotonesPermisos(false,true);
+        }else if(usuario.getRol().equals("Comprador")){
+            habilitarBotonesPermisos(true,false);
+        }
+        }
+    }
+    
+    public void habilitarBotonesPermisos(boolean btnComprar, boolean btnVender){
+        this.btnComprar.setEnabled(btnComprar);
+        this.btnVender.setEnabled(btnVender);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -402,16 +429,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipal(usuario).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnComprar;
+    private javax.swing.JButton btnVender;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

@@ -115,7 +115,7 @@ public class MarcaServiceImpl implements MarcaService {
             stmt = conn.prepareStatement(SQL_CONSULTA);
             stmt.setString(1, nombreMarca);
             rs = stmt.executeQuery();
-            while (rs.first()) {
+            while (rs.next()) {
                 int idMarca = rs.getInt("id_marca");
                 marca = new Marca(idMarca, nombreMarca);
             }

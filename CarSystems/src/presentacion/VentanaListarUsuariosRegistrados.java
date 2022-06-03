@@ -1,14 +1,11 @@
 
 package presentacion;
 
-import dominio.Marca;
+import dominio.Funciones;
 import dominio.Usuario;
-import java.util.Iterator;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import serviceImpl.MarcaServiceImpl;
 import serviceImpl.UsuarioServiceImpl;
-import sun.security.pkcs11.wrapper.Functions;
 
 /**
  *
@@ -17,9 +14,14 @@ import sun.security.pkcs11.wrapper.Functions;
 public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
     
     DefaultTableModel modelo;
+    private static Usuario usuarioLogueado;
+    Funciones funciones = new Funciones();
     
-    public VentanaListarUsuariosRegistrados() {
+    public VentanaListarUsuariosRegistrados(Usuario usuarioLogueado) {
         initComponents();
+        this.usuarioLogueado = usuarioLogueado;
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         modelo = new DefaultTableModel();
         modelo.addColumn("Tipo documento");//Con este comando se le coloca el nombre a las columnas
         modelo.addColumn("Docuemto");
@@ -32,7 +34,6 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
         modelo.addColumn("Direccion");
         modelo.addColumn("Telefono");
         modelo.addColumn("Rol");
-        modelo.addColumn("Contrasena");
         this.jtablaUsuarios.setModel(modelo);//aquí le asigna el modelo a la tabla
         cargarUsiaros();
     }
@@ -65,10 +66,10 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
         jLabel2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jLabel2.setIconTextGap(1);
 
-        jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Myanmar Text", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Listado usuarios registrados");
+        jLabel4.setText("LISTADO USUARIO REGISTRADOS");
 
         jSeparator1.setBackground(new java.awt.Color(37, 196, 164));
 
@@ -79,14 +80,14 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Tipo Documento", "Documento", "Pirmer apellido", "Segundo apellido", "Nombre", "Correo", "Departamento", "Municipio", "Direccion", "Telefono", "Rol", "Contrasena"
+                "Tipo Documento", "Documento", "Pirmer apellido", "Segundo apellido", "Nombre", "Correo", "Departamento", "Municipio", "Direccion", "Telefono", "Rol"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -113,20 +114,25 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
             jtablaUsuarios.getColumnModel().getColumn(8).setPreferredWidth(20);
             jtablaUsuarios.getColumnModel().getColumn(9).setPreferredWidth(20);
             jtablaUsuarios.getColumnModel().getColumn(10).setPreferredWidth(20);
-            jtablaUsuarios.getColumnModel().getColumn(11).setPreferredWidth(20);
         }
 
-        jButton1.setText("Exportar");
+        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jButton1.setText("Menú principal");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/mostrar pequeño.png"))); // NOI18N
-        jButton2.setContentAreaFilled(false);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/mostrar pequeño.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/mostrar grande.png"))); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 102, 102));
+        jButton2.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        jButton2.setText("Consultar usuario");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,33 +154,30 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(268, 268, 268)
+                .addComponent(jButton2)
+                .addGap(268, 268, 268)
                 .addComponent(jButton1)
-                .addGap(481, 481, 481))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(5, 5, 5)
-                .addComponent(jButton2)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,17 +188,23 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarioLogueado);
+        ventanaPrincipal.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        VentanaConsultaUsuario consultarUsuario = new VentanaConsultaUsuario();
+        consultarUsuario.setVisible(true);
+        this.dispose();;
+    }//GEN-LAST:event_jButton2ActionPerformed
 
         private void cargarUsiaros() {
         
@@ -219,7 +228,6 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
                     jtablaUsuarios.setValueAt(usuario.get(posicionFila).getDireccion(),posicionFila , 8);
                     jtablaUsuarios.setValueAt(usuario.get(posicionFila).getTelefono(),posicionFila , 9);
                     jtablaUsuarios.setValueAt(usuario.get(posicionFila).getRol(),posicionFila , 10);
-                    jtablaUsuarios.setValueAt(usuario.get(posicionFila).getContrasena(),posicionFila , 11);
                 }
                 
     }
@@ -259,7 +267,7 @@ public class VentanaListarUsuariosRegistrados extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaListarUsuariosRegistrados().setVisible(true);
+                new VentanaListarUsuariosRegistrados(usuarioLogueado).setVisible(true);
             }
         });
     }

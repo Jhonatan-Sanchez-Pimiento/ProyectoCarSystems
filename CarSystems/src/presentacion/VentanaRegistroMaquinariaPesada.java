@@ -94,6 +94,7 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        btnGuardar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -576,6 +577,20 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
+        btnGuardar1.setBackground(new java.awt.Color(37, 196, 164));
+        btnGuardar1.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnGuardar1.setText("Menú principal");
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
+        btnGuardar1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnGuardar1KeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -592,10 +607,12 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 27, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(232, 232, 232)
                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(467, 467, 467))
+                .addGap(217, 217, 217)
+                .addComponent(btnGuardar1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(3, 3, 3)
@@ -615,7 +632,9 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -790,6 +809,16 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
             choModelo.requestFocus();
         }
     }//GEN-LAST:event_cmbTipoMaquinariaKeyReleased
+
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(null);
+        ventanaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
+
+    private void btnGuardar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardar1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardar1KeyReleased
 
     public void guardar() {
         if (validarCampos()) {
@@ -998,6 +1027,7 @@ public class VentanaRegistroMaquinariaPesada extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarPDF;
     private javax.swing.JButton btnDescargarEJ;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar1;
     private com.toedter.calendar.JYearChooser choModelo;
     private javax.swing.JComboBox<String> cmbLinea;
     private javax.swing.JComboBox<String> cmbMarca;

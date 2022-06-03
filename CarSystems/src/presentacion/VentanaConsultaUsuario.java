@@ -22,7 +22,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
     Usuario usuarioEncontrada;
     
-    public VentanaConsultaUsuario() throws SQLException {
+    public VentanaConsultaUsuario() {
         initComponents();
 
         this.setResizable(false);
@@ -124,6 +124,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
 
         txt_documento.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         txt_documento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_documento.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         txt_documento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_documentoKeyTyped(evt);
@@ -612,7 +613,7 @@ public class VentanaConsultaUsuario extends javax.swing.JFrame {
             public void run() {
                 try {
                     new VentanaConsultaUsuario().setVisible(true);
-                } catch (SQLException ex) {
+                } catch (Exception ex) {
                     Logger.getLogger(VentanaConsultaUsuario.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

@@ -28,12 +28,14 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     ManejoImagen manejoImagen = new ManejoImagen();
     String rutaPDF;
     String rutaImagen;
+    static Usuario usuarioLogueado;
 
     /**
      * Creates new form VentanaInicioDeSesion
      */
-    public VentanaRegistroCamioneta() {
+    public VentanaRegistroCamioneta(Usuario usuarioLogueado) {
         initComponents();
+        this.usuarioLogueado = usuarioLogueado;
         setLocationRelativeTo(null);
         setResizable(false);
         this.setTitle("Formulario de Registro de Camioneta");
@@ -87,6 +89,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         areatxtDescripcion = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        btnVentanaPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -192,11 +195,6 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         cmbMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbMarcaActionPerformed(evt);
-            }
-        });
-        cmbMarca.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                cmbMarcaKeyReleased(evt);
             }
         });
 
@@ -497,6 +495,20 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Icono IntegraSoft.png"))); // NOI18N
 
+        btnVentanaPrincipal.setBackground(new java.awt.Color(37, 196, 164));
+        btnVentanaPrincipal.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnVentanaPrincipal.setText("Ventana Principal");
+        btnVentanaPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentanaPrincipalActionPerformed(evt);
+            }
+        });
+        btnVentanaPrincipal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnVentanaPrincipalKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -510,14 +522,15 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(83, 83, 83))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(467, 467, 467)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 27, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(322, 322, 322)
+                .addComponent(btnVentanaPrincipal)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(3, 3, 3)
@@ -539,9 +552,11 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(27, 27, 27)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVentanaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(125, 125, 125)
@@ -610,13 +625,6 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmbTipoServicioKeyReleased
 
-    private void cmbMarcaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbMarcaKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            cargarLineas();
-            cmbLinea.requestFocus();
-        }
-    }//GEN-LAST:event_cmbMarcaKeyReleased
-
     private void cmbLineaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbLineaKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             choModelo.requestFocus();
@@ -678,7 +686,11 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarKeyReleased
 
     private void cmbMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMarcaActionPerformed
-        cargarLineas();
+        try {
+            cargarLineas();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
     }//GEN-LAST:event_cmbMarcaActionPerformed
 
     private void txtColorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyTyped
@@ -696,6 +708,16 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
         funciones.validarCampoNumero(evt, txtPrecio, 12);
     }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void btnVentanaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentanaPrincipalActionPerformed
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarioLogueado);
+        ventanaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVentanaPrincipalActionPerformed
+
+    private void btnVentanaPrincipalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnVentanaPrincipalKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVentanaPrincipalKeyReleased
 
     public void guardar() {
         if (validarCampos()) {
@@ -741,16 +763,21 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     }
 
     public void cargarLineas() {
-        if (cmbMarca.getSelectedItem().equals("Seleccionar")) {
-            cmbLinea.removeAllItems();
-            cmbLinea.addItem("Seleccionar");
-        } else {
-            cmbLinea.removeAllItems();
-            cmbLinea.addItem("Seleccionar");
-            List<Linea> lineas = funciones.listarLineaXMarca(cmbMarca.getSelectedItem().toString());
-            lineas.forEach(linea -> {
-                cmbLinea.addItem(linea.getNombreLinea());
-            });
+        try {
+            String cmbmarca = cmbMarca.getSelectedItem().toString();
+            if (!(cmbmarca.equals("Seleccionar"))) {
+                cmbLinea.removeAllItems();
+                cmbLinea.addItem("Seleccionar");
+                List<Linea> lineas = funciones.listarLineaXMarca(cmbMarca.getSelectedItem().toString());
+                lineas.forEach(linea -> {
+                    cmbLinea.addItem(linea.getNombreLinea());
+                });
+            } else {
+                cmbLinea.removeAllItems();
+                cmbLinea.addItem("Seleccionar");
+            }
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
         }
     }
 
@@ -857,11 +884,6 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -890,7 +912,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaRegistroCamioneta().setVisible(true);
+                new VentanaRegistroCamioneta(usuarioLogueado).setVisible(true);
             }
         });
     }
@@ -901,6 +923,7 @@ public class VentanaRegistroCamioneta extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarPDF;
     private javax.swing.JButton btnDescargarEJ;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnVentanaPrincipal;
     private com.toedter.calendar.JYearChooser choModelo;
     private javax.swing.JComboBox<String> cmbBlindado;
     private javax.swing.JComboBox<String> cmbLinea;

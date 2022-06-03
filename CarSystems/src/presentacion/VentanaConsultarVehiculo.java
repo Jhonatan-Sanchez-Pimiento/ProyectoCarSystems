@@ -21,6 +21,7 @@ import serviceImpl.VehiculoServiceImpl;
  */
 public class VentanaConsultarVehiculo extends javax.swing.JFrame {
 
+    private static Usuario usuarioLogueado;
     Funciones funciones = new Funciones();
     VehiculoServiceImpl vehiculoServicio = new VehiculoServiceImpl();
     Vehiculo vehiculo;
@@ -35,7 +36,8 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     /**
      * Creates new form VentanaInicioDeSesion
      */
-    public VentanaConsultarVehiculo() {
+    public VentanaConsultarVehiculo(Usuario usuarioLogueado) {
+        this.usuarioLogueado = usuarioLogueado;
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -770,7 +772,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         lblBuscar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
         lblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         lblBuscar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblBuscar.setText("Id. vehículo:");
+        lblBuscar.setText("Vehiculo");
 
         btnConsultar.setBackground(new java.awt.Color(37, 196, 164));
         btnConsultar.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
@@ -1195,14 +1197,14 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbMarcaActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarioLogueado);
         ventanaPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMenuActionPerformed
 
     private void btnMenuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnMenuKeyReleased
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarioLogueado);
             ventanaPrincipal.setVisible(true);
             this.dispose();
         }
@@ -1591,7 +1593,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
     }
 
     public void colocarNombreBuscar() {
-        String nombreCampo = "Id. VehÃ­culo";
+        String nombreCampo = "Id. Vehículo";
         if (cmbOpcionBusqueda.getSelectedItem().equals("Placa")) {
             nombreCampo = "Placa";
         } else if (cmbOpcionBusqueda.getSelectedItem().equals("Nro. de Registro")) {
@@ -1769,7 +1771,7 @@ public class VentanaConsultarVehiculo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaConsultarVehiculo().setVisible(true);
+                new VentanaConsultarVehiculo(usuarioLogueado).setVisible(true);
             }
         });
     }

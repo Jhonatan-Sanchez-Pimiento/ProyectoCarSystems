@@ -177,7 +177,6 @@ public class LineaServiceImpl implements LineaService{
         ResultSet rs = null;
         Linea linea = null;
         SQL_CONSULTA = "SELECT * FROM linea WHERE id_marca = ?";
-        System.out.println("Marca encontrada ="+marca);
         try {
             conn = new Conexion().getConnection();
             stmt = conn.prepareStatement(SQL_CONSULTA);

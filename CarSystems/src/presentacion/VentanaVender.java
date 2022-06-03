@@ -1,5 +1,7 @@
 package presentacion;
 
+import dominio.Usuario;
+
 /**
  * @author IntegraSoft
  */
@@ -8,8 +10,11 @@ public class VentanaVender extends javax.swing.JFrame {
     /**
      * Creates new form VentanaVender
      */
-    public VentanaVender() {
+    private static Usuario usuarioLogueado;
+    
+    public VentanaVender(Usuario usuarioLogueado) {
         initComponents();
+        this.usuarioLogueado = usuarioLogueado;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setTitle("Vender vehículo");
@@ -34,6 +39,7 @@ public class VentanaVender extends javax.swing.JFrame {
         btnMaquinariaPesada = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(914, 480));
 
         jPanel1.setBackground(new java.awt.Color(30, 41, 57));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(37, 196, 164), 3));
@@ -161,13 +167,13 @@ public class VentanaVender extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAutomovilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutomovilActionPerformed
-        VentanaRegistroAutomovil formRegistrarAutomovil = new VentanaRegistroAutomovil();
+        VentanaRegistroAutomovil formRegistrarAutomovil = new VentanaRegistroAutomovil(this.usuarioLogueado);
         formRegistrarAutomovil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAutomovilActionPerformed
 
     private void btnCamionetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCamionetaActionPerformed
-        VentanaRegistroCamioneta formRegistrarCamioneta = new VentanaRegistroCamioneta();
+        VentanaRegistroCamioneta formRegistrarCamioneta = new VentanaRegistroCamioneta(usuarioLogueado);
         formRegistrarCamioneta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCamionetaActionPerformed
@@ -209,7 +215,7 @@ public class VentanaVender extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaVender().setVisible(true);
+                new VentanaVender(usuarioLogueado).setVisible(true);
             }
         });
     }

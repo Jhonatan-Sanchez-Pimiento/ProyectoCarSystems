@@ -28,12 +28,13 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
     ManejoImagen manejoImagen = new ManejoImagen();
     String rutaPDF;
     String rutaImagen;
-
+    private static Usuario usuarioLogueado;
     /**
      * Creates new form VentanaInicioDeSesion
      */
-    public VentanaRegistroAutomovil() {
+    public VentanaRegistroAutomovil(Usuario usuarioLogueado) {
         initComponents();
+        this.usuarioLogueado = usuarioLogueado;
         setLocationRelativeTo(null);
         setResizable(false);
         this.setTitle("Formulario de Registro de Automovil");
@@ -88,13 +89,14 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
         choModelo1 = new com.toedter.calendar.JYearChooser();
         choModelo = new com.toedter.calendar.JYearChooser();
         jLabel3 = new javax.swing.JLabel();
+        btnGuardar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1042, 600));
+        setPreferredSize(new java.awt.Dimension(1042, 580));
 
         jPanel1.setBackground(new java.awt.Color(30, 41, 57));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(37, 196, 164), 3));
-        jPanel1.setPreferredSize(new java.awt.Dimension(835, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(835, 580));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/My project (9) (1) (2).png"))); // NOI18N
@@ -495,6 +497,20 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Icono IntegraSoft.png"))); // NOI18N
 
+        btnGuardar1.setBackground(new java.awt.Color(37, 196, 164));
+        btnGuardar1.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        btnGuardar1.setText("Ventana principal");
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
+        btnGuardar1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnGuardar1KeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -508,14 +524,15 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(89, 89, 89))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(467, 467, 467)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 27, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(264, 264, 264)
+                .addComponent(btnGuardar1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(3, 3, 3)
@@ -537,14 +554,16 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(27, 27, 27)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(125, 125, 125)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(426, Short.MAX_VALUE)))
+                    .addContainerGap(421, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -555,7 +574,7 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
         );
 
         pack();
@@ -698,6 +717,16 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
     private void areatxtDescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_areatxtDescripcionKeyTyped
         funciones.limitarCaracteresAreaText(evt, areatxtDescripcion, 255);
     }//GEN-LAST:event_areatxtDescripcionKeyTyped
+
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(usuarioLogueado);
+        ventanaPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
+
+    private void btnGuardar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardar1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardar1KeyReleased
 
     public void guardar() {
         if (validarCampos()) {
@@ -888,7 +917,7 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaRegistroAutomovil().setVisible(true);
+                new VentanaRegistroAutomovil(usuarioLogueado).setVisible(true);
             }
         });
     }
@@ -899,6 +928,7 @@ public class VentanaRegistroAutomovil extends javax.swing.JFrame {
     private javax.swing.JButton btnCargarPDF;
     private javax.swing.JButton btnDescargarEJ;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar1;
     private com.toedter.calendar.JYearChooser choModelo;
     private com.toedter.calendar.JYearChooser choModelo1;
     private javax.swing.JComboBox<String> cmbBlindado;
